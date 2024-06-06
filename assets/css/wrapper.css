@@ -1,0 +1,31 @@
+.wrapper {
+  position: absolute;
+  z-index: 2;
+}
+
+.wrapper img {
+  max-width: 100%;
+  height: auto;
+}
+
+.wrapper iframe {
+  display: none;
+}
+
+.play-btn {
+  position: absolute;
+  z-index: 666;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: transparent;
+  border: 0;
+}
+
+.play-btn:hover {
+  cursor: pointer;
+}
+
+.play-btn:focus {
+  outline: 0;
+}
