@@ -55,6 +55,9 @@ h6 {
 h2 {
   color: #b4ddfb !important;
 }
+.projectheader{
+  font-size: 22px;
+}
 
 .resume-item:hover{
   transition: transform .3s ease-out;
