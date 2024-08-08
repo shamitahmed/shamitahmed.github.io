@@ -139,7 +139,7 @@ h2 {
   position:relative;
   box-sizing: border-box;
   background: none;
-  display: flex;
+  display: flex;  
   overflow-y: hidden !important;
 }
 .timieline-title {
@@ -148,8 +148,8 @@ h2 {
   color: #b4ddfb !important;
 }
 .timeline-content {
-  max-width: 300px;
-  height: 200px;
+  max-width: 310px;
+  height: 220px;
   padding: 20px;
   flex-shrink: 0;
   flex-grow: 0;
