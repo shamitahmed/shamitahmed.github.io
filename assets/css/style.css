@@ -80,6 +80,22 @@ h2 {
 .timeline-content:not(:hover){
   transition: transform .3s ease-out;
 }
+.acquiredSkills-item:hover{
+  transition: transform .3s ease-out;
+  transform: translateY(-3%);
+}
+.acquiredSkills-item:not(:hover){
+  transition: transform .3s ease-out;
+}
+.sidebar:hover{
+  transition: transform .3s ease-out;
+  transform: translateY(-5%);
+  font-size: medium;
+}
+.sidebar:not(:hover){
+  transition: transform .3s ease-out;
+  
+}
 /*--------------------------------------------------------------
 # Back to top button
 --------------------------------------------------------------*/
