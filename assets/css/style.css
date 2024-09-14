@@ -19,6 +19,7 @@ margin: 0% !important;
   vertical-align: none !important;
   transform: translateY(-60px);
   margin-right: 30px;
+  border-radius: 50%;
 }
 a {
   /* color: #0ED068 !important; */
