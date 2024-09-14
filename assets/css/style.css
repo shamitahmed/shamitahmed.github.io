@@ -57,6 +57,8 @@ h2 {
 }
 .projectheader{
   font-size: 22px;
+  background-color: black;
+  color: white !important;
 }
 
 .resume-item:hover{
@@ -90,7 +92,7 @@ h2 {
 .sidebar:hover{
   transition: transform .3s ease-out;
   transform: translateY(-5%);
-  font-size: medium;
+  font-size: large;
 }
 .sidebar:not(:hover){
   transition: transform .3s ease-out;
@@ -313,9 +315,13 @@ h2 {
   transition: 0.3s;
 }
 
-
 #portfolio .description ul{
-  transform: translateX(-25px);
+  transform: translateX(-35px);
+  background-color: black;
+  padding-top: 10px;
+  padding-bottom  : 10px;
+  padding-right: 10px;
+  text-align: left;
 }
 
 #gallerysc div.gallery {
