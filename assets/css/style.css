@@ -166,8 +166,8 @@ h2 {
   font-weight: bold; 
   color: #b4ddfb !important;
 }
-.timeline-content {
-  max-width: 310px;
+.timeline-content { 
+  max-width: 340px;
   height: 220px;
   padding: 20px;
   flex-shrink: 0;
