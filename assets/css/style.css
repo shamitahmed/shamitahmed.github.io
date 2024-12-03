@@ -750,6 +750,11 @@ border: none;
 /*--------------------------------------------------------------
 # Resume
 --------------------------------------------------------------*/
+
+.engineLogo{
+  width: 30px !important;
+  height: 30px !important;
+}
 .resume .resume-title {
   font-size: 26px;
   font-weight: 700;
