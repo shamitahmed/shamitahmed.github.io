@@ -371,7 +371,24 @@ h2 {
 height: 200px;
 width: 300px;
 }
-
+.gradientButton{
+  background: linear-gradient(-45deg, #FFA63D, #FF3D77, #338AFF, #3CF0C5);
+     background-size: 600%;
+     animation: anime 8s linear infinite;
+     z-index: -1;
+     
+}
+@keyframes anime {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/
