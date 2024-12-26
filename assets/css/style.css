@@ -324,7 +324,7 @@ h2 {
   padding-bottom  : 10px;
   padding-right: 10px;
   text-align: left;
-  border-radius: 7px;
+  border-radius: 5px;
 }
 
 #gallerysc div.gallery {
@@ -372,7 +372,7 @@ h2 {
 .activegif {
 height: 200px;
 width: 300px;
-border-radius: 7px;
+border-radius: 5px;
 }
 .gradientButton{
   background: linear-gradient(-45deg, #FFA63D, #FF3D77, #338AFF, #3CF0C5);
