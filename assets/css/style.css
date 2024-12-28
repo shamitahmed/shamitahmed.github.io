@@ -375,8 +375,15 @@ width: 300px;
 border-radius: 5px;
 }
 .gradientButton{
-  background: linear-gradient(-45deg, #FFA63D, #FF3D77, #338AFF, #3CF0C5);
+  background: linear-gradient(-45deg, #FFA63D, #FF3D77, #338AFF, #179d5a);
      background-size: 600%;
+     animation: anime 8s reverse infinite;
+     z-index: -1;
+     
+}
+.gradientText{
+  color: linear-gradient(-45deg, #FFA63D, #FF3D77, #338AFF, #3CF0C5) !important;
+     
      animation: anime 8s linear infinite;
      z-index: -1;
      
