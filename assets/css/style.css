@@ -496,9 +496,9 @@ width: 300px;
 border-radius: 5px;
 }
 .gradientButton{
-  background: linear-gradient(-45deg, #FFA63D, #FF3D77, #338AFF, #179d5a);
+  background: linear-gradient(-45deg, #00772a, #3fee53);
      background-size: 600%;
-     animation: anime 8s reverse infinite;
+     animation: anime 2s reverse infinite;
      z-index: -1;
      
 }
