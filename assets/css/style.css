@@ -89,7 +89,8 @@ body.light p {
 }
 
 body.light .projectheader{
-  background-color: white;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0) !important;
 }
 body.light #about{
    background: #eaf1f9;
@@ -110,6 +111,9 @@ body.light .section-bg-tools {
 body.light #resume .resume {
   background: #eaf1f9; 
 
+}
+body.light #header{
+  background-color: #eaf1f9;
 }
 
 body.light .site-footer
@@ -174,7 +178,7 @@ h2 {
 }
 .projectheader{
   font-size: 22px;
-  background-color: black;
+  background-color: rgb(18, 19, 33);
   color: white !important;
 }
 
@@ -374,9 +378,9 @@ h2 {
   padding: 0 15px;
   /* background: rgb(0, 0, 0); */
   /* background: linear-gradient(0deg,  rgba(0,0,0,1) 60%, rgba(29,32,56,1) 95%);  */
-  background: #ddd;
+  background: rgb(18, 19, 33);
   background-size: 300%;
-  background-image: var(--gradient);
+  /* background-image: var(--gradient); */
   animation: bg-animation 15s infinite;
   overflow: none;
 }
@@ -436,7 +440,7 @@ h2 {
 
 #portfolio .description ul{
   transform: translateX(-35px);
-  background-color: rgb(27, 27, 27);
+  background-color: rgb(18, 19, 33);
   padding-top: 10px;
   padding-bottom  : 10px;
   padding-right: 10px;
