@@ -14,7 +14,7 @@
   <!-- Favicons -->
   <link href="assets/img/profile-img.PNG" rel="icon">
   <link href="assets/img/profile-img.PNG" rel="apple-touch-icon">
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
@@ -38,7 +38,6 @@
   <meta property='og:url' content='https://shamitfpgl.github.io/Portfolio/'/>
 
   <link rel="icon" href="assets/img/icon.png">
-
   <style>
     .box {display:flex;}
     mode-viewer {width: 800px; height: 500px; margin:0, auto}
@@ -86,7 +85,7 @@
           <!-- <li class="active"><a href="index.html"><i class="bx bx-home"></i> <span>Home</span></a></li> -->
           <li><a href="#about" class="sidebar" style="color: white !important;"><i class="bx bx-user"></i> <span>About</span></a></li> 
           <li><a href="#portfolio" class="sidebar" style="color: white !important;"><i class="bx bx-dumbbell"></i>Projects</a></li>
-          <li><a href="#resume" class="sidebar" style="color: white !important;"><i class='bx bx-medal' ></i><span>Experience</span></a></li>
+          <li><a href="#education" class="sidebar" style="color: white !important;"><i class='bx bx-medal' ></i><span>Experience</span></a></li>
           <li><a href="#acquiredSkills" class="sidebar" style="color: white !important;"><i class='bx bx-book-content'></i> <span>Research</span></a></li>
           <li><a href="#art" class="sidebar" style="color: white !important;"><i class='bx bx-palette'></i>Art & Design</a></li>
           <li><a href="#skills" class="sidebar" style="color: white !important;"><i class='bx bx-slider'></i>Proficiency</a></li>
@@ -99,6 +98,17 @@
         </ul>
       </nav><!-- .nav-menu -->
       <button type="button" class="mobile-nav-toggle d-xl-none"><i class="icofont-navigation-menu"></i></button>
+
+      <!-- Day/Night Toggle Button -->
+      <div class="theme-toggle-container"><P style="margin-top: 7px;">🌙</P>
+        <input type="checkbox" id="theme-toggle" class="theme-toggle">
+        <label for="theme-toggle" class="toggle-label">
+          
+          <!-- <i class="fa-solid fa-sun"></i>
+          <i class="fa-solid fa-moon"></i> -->
+          <span class="ball"></span>
+        </label><P style="margin-top: 7px;">☀️</P>
+      </div>
 
     </div>
   </header><!-- End Header -->
@@ -119,8 +129,7 @@
     
     <!-- ======= About Section ======= -->
      
-    <section id="about" class="about" style="background: rgb(29,32,56);
-    background: linear-gradient(0deg,  rgba(0,0,0,1) 0%, rgba(29,32,56,1) 95%); ">
+    <section id="about" class="about">
       <div class="container" style="display: block;   grid-template-columns: 800px 1fr;
       gap: 1rem;
       align-items: center;">
@@ -128,14 +137,16 @@
            <br>
            <br>
            <br>
+           <br>
         <div class="section-title">
-          <h2>About</h2>
+          <!-- <h2>About</h2> -->
          
         </div>
 
 
       <div class="matha"> 
-    
+  
+
           <img class="ami" src="assets/img/me.JPG" alt="" width="185" height="200">
       
           <!-- <div style="border:1px solid black">
@@ -167,55 +178,9 @@
     <br>
     <br>
     <br>
+    <br>
 
-    <section id="education" class="education">
-    <div class="container">
-
-      <div class="section-title">
-        <h4>🎓Education</h4>
-        <div class="timeline">
-          <!-- <div class="timeline-content">
-            <div class="timeline-period">1998 - 2000</div>
-            <div class="timieline-title">Title</div>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non nunc eget magna dictum egestas. Nam sed tempor lectus, suscipit mollis erat. Aenean dignissim sem nec orci tempus lacinia. 
-          </div>
-          
-          <div class="timeline-content">
-            <div class="timeline-period">2000 - 2002</div>
-            <div class="timieline-title">Title</div>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non nunc eget magna dictum egestas. Nam sed tempor lectus, suscipit mollis erat. Aenean dignissim sem nec orci tempus lacinia. 
-          </div> -->
-          
-          <div class="timeline-content">
-            <div class="timeline-period">2023 - Present</div>
-            <img src="assets/img/aalto.png" alt="Aalto" width="65" height="65">
-            <div class="timieline-title">Aalto University</div>
-            Master of Science (MSc) in Computer, Communication and Information Sciences (CCIS) <br>Major in <strong>Game Design and Development</strong> <br>Minor in <strong>Virtual Reality</strong> 
-            <!-- <br>Current Grade: 4.73 / 5.00 -->
-            <p style="color: yellow;"><strong>Awards: </strong>Finland Scholarship, Dean's Award</p>
-          </div>
-          
-          <div class="timeline-content">
-            <div class="timeline-period">2015 - 2019</div>
-            <img src="assets/img/aust.png" alt="Ahsanullah" width="65" height="65">
-            <div class="timieline-title">Ahsanullah University of Science and Technology</div>
-            Bachelor of Science (BSc) in Computer Science and Engineering 
-            <!-- <br>Grade: 3.05 / 4.00 -->
-          </div>
-          
-          <div class="timeline-content">
-            <div class="timeline-period">2004 - 2014</div>
-            <img src="assets/img/drmc.png" alt="Drme" width="65" height="65">
-            <div class="timieline-title">Dhaka Residential Model College</div>
-            Secondary School Certificate (SSC) and Higher Secondary School Certificate (HSC)
-            <!-- <br>Grade: 5.00 / 5.00 -->
-            <!-- <p style="color: yellow;"><strong>Award: </strong>Golden GPA 5</p> -->
-          </div>
-        </div>
-      </div>
-
-      </div>
-      </section>
+      <br>
         <!-- ======= Portfolio Section ======= -->
         <section id="portfolio" class="portfolio section-bg section-bg-portfolio">
           <div class="container">
@@ -382,6 +347,7 @@
             <img class="activegif" src="assets/img/projects/sl.gif">
             <p><a class="projectheader" href="https://www.youtube.com/embed/GTHPUJtnczI" target="_blank" style="font-weight: bold;">Spooky Land</a> </p>
             <div class="description" style="color: white;">
+              <ul>
               Guarding a graveyard, you have to use your flashlight to keep ghosts at bay and survive the night!👻 
               <br><br>
               <img src="assets/img/screenshots/sl1.png" style = "height: 80px; width: 145px;">
@@ -1141,7 +1107,54 @@
         </section><!-- End Portfolio Section -->
 
 
-
+        <section id="education" class="education">
+          <div class="container">
+      
+            <div class="section-title">
+              <h4>🎓Education</h4>
+              <div class="timeline">
+                <!-- <div class="timeline-content">
+                  <div class="timeline-period">1998 - 2000</div>
+                  <div class="timieline-title">Title</div>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non nunc eget magna dictum egestas. Nam sed tempor lectus, suscipit mollis erat. Aenean dignissim sem nec orci tempus lacinia. 
+                </div>
+                
+                <div class="timeline-content">
+                  <div class="timeline-period">2000 - 2002</div>
+                  <div class="timieline-title">Title</div>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non nunc eget magna dictum egestas. Nam sed tempor lectus, suscipit mollis erat. Aenean dignissim sem nec orci tempus lacinia. 
+                </div> -->
+                
+                <div class="timeline-content">
+                  <div class="timeline-period"><h6>2023 - Present</h6></div>
+                  <img src="assets/img/aalto.png" alt="Aalto" width="65" height="65">
+                  <div class="timieline-title"><h6>Aalto University</h6></div>
+                  <p>Master of Science (MSc) in Computer, Communication and Information Sciences (CCIS) <br>Major in <strong>Game Design and Development</strong> <br>Minor in <strong>Virtual Reality</strong> </p>
+                  <!-- <br>Current Grade: 4.73 / 5.00 -->
+                  <p style="color: yellow;"><strong>Awards: </strong>Finland Scholarship, Dean's Award</p>
+                </div>
+                
+                <div class="timeline-content">
+                  <div class="timeline-period"><h6>2015 - 2019</h6></div>
+                  <img src="assets/img/aust.png" alt="Ahsanullah" width="65" height="65">
+                  <div class="timieline-title"><h6>Ahsanullah University of Science and Technology</h6></div>
+                  <p>Bachelor of Science (BSc) in Computer Science and Engineering</p>
+                  <!-- <br>Grade: 3.05 / 4.00 -->
+                </div>
+                
+                <div class="timeline-content">
+                  <div class="timeline-period"><h6>2004 - 2014</h6></div>
+                  <img src="assets/img/drmc.png" alt="Drme" width="65" height="65">
+                  <div class="timieline-title"><h6>Dhaka Residential Model College</h6></div>
+                  <P>Secondary School Certificate (SSC) and Higher Secondary School Certificate (HSC)</P>
+                  <!-- <br>Grade: 5.00 / 5.00 -->
+                  <!-- <p style="color: yellow;"><strong>Award: </strong>Golden GPA 5</p> -->
+                </div>
+              </div>
+            </div>
+      
+            </div>
+            </section>
     <!-- ======= Resume Section ======= -->
     <section id="resume" class="resume">
       <div class="container">
@@ -1919,6 +1932,7 @@
 
   <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
+
   <script src="assets/vendor/jquery/jquery.min.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
@@ -1934,6 +1948,27 @@
   <script src="assets/js/main.js"></script>
   <script src="assets/js/wrapper.js"></script>
 
+  <script>
+    const toggleSwitch = document.querySelector('.theme-toggle');
+    const body = document.body;
+  
+    // Check local storage for theme
+    if (localStorage.getItem('theme') === 'light') {
+      body.classList.add('light');
+      toggleSwitch.checked = true;
+    }
+  
+    toggleSwitch.addEventListener('change', () => {
+      if (toggleSwitch.checked) {
+        body.classList.add('light');
+        localStorage.setItem('theme', 'light');
+      } else {
+        body.classList.remove('light');
+        localStorage.setItem('theme', 'dark');
+      }
+    });
+  </script>
+  
 </body>
   <!-- Site footer -->
   
@@ -1955,7 +1990,7 @@
               <br>
               <ol style="  list-style: none; align-items: right;">
                 <legend style="text-align: left; color: white;">
-                  Come say Hi!👋
+                  <p>Come say Hi!👋</p>
                 </legend>
               <label for="name">Name</label>
               <br>
@@ -1975,9 +2010,10 @@
                   <br><br>
                   <a href="mailto:shamitaditta380@gmail.com" style="background-color: rgb(5, 154, 62); display: inline-block; border-radius: 4px; font-size: 18px; font-weight: bold; color: white !important ; padding: 1%;">SEND</a>
                <br><br>
-          <p class="copyright-text"style="text-align: left;">Copyright &copy; 2024 All Rights Reserved by 
-            <a href="https://www.linkedin.com/in/shamitahmed/">Shamit Ahmed</a>
-               </p>
+               <P>Website created by Shamit Ahmed & Faiza Anan Noor</P>
+               <p class="copyright-text"style="text-align: left;">Copyright &copy; 2025 All Rights Reserved by 
+                <a href="https://www.linkedin.com/in/shamitahmed/">Shamit Ahmed</a>
+                   </p>
                 </ol>
             </fieldset>
            

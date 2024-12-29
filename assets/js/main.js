@@ -93,6 +93,13 @@
     });
   });
 
+  //Day Night Toggle
+  const checkbox = $('.body').getElementById("checkbox")
+  
+  checkbox.addEventListener("change", () => {
+    document.body.classList.toggle("dark")
+  })
+
   // Back to top button
   $(window).scroll(function() {
     if ($(this).scrollTop() > 100) {

@@ -5,10 +5,126 @@ body {
   font-family: 'Open Sans', sans-serif;
   color: white !important;
   /* background-color: black !important; */
-  background: rgb(29,32,56);
+
   background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(29,32,56,1) 78%); 
   /* background-image: linear-gradient(210deg, blue, black) !important; */
 }
+/*  DAY NIGHT TOGGLE START *//*  DAY NIGHT TOGGLE START *//*  DAY NIGHT TOGGLE START *//*  DAY NIGHT TOGGLE START *//*  DAY NIGHT TOGGLE START */
+/* Theme Toggle Styles */
+.theme-toggle-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px auto;
+  
+}
+
+.theme-toggle {
+  display: none;
+}
+
+.toggle-label {
+  width: 60px;
+  height: 30px;
+  background: #3d505e;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+  cursor: pointer;
+  position: relative;
+  transition: 0.3s ease;
+}
+
+.toggle-label i {
+  color: #f1c40f;
+  font-size: 14px;
+  z-index: 1;
+}
+
+.toggle-label .fa-moon {
+  color: #f1c40f;
+}
+
+.toggle-label .fa-sun {
+  color: #f39c12;
+}
+
+.toggle-label .ball {
+  width: 24px;
+  height: 24px;
+  background: #94c4e7;
+  border-radius: 50%;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  transition: transform 0.3s ease;
+}
+
+
+
+.theme-toggle:checked + .toggle-label .ball {
+  transform: translateX(30px);
+}
+
+body.light {
+  background: #e0e9f3;
+  color: #000000;
+  transition: background 0.5s, color 0.5s;
+}
+
+body.light .title,
+body.light h1,
+body.light h2,
+body.light h3,
+body.light h4,
+body.light h5,
+body.light h6,
+body.light ul,
+body.light a,
+body.light marquee,
+body.light p {
+  color: #000000 !important;
+}
+
+body.light .projectheader{
+  background-color: white;
+}
+body.light #about{
+   background: #eaf1f9;
+}
+body.light #portfolio .description ul{
+  transform: translateX(-35px);
+  background-color:  #ffffff;
+}
+body.light .section-bg-portfolio{
+  background-color:  #eaf1f9;
+}
+body.light .section-bg-skills {
+  background: #eaf1f9;
+}
+body.light .section-bg-tools {
+  background: #eaf1f9; 
+}
+body.light #resume .resume {
+  background: #eaf1f9; 
+
+}
+
+body.light .site-footer
+{
+  background-color:#eaf1f9;
+}
+body.light .acquiredSkills-container{
+  display: inline-flex !important;
+}
+
+.acquiredSkills-container{
+  display: inline-flex !important;
+  flex-wrap: wrap;
+}
+/*  DAY NIGHT TOGGLE END *//*  DAY NIGHT TOGGLE END *//*  DAY NIGHT TOGGLE END *//*  DAY NIGHT TOGGLE END *//*  DAY NIGHT TOGGLE END */
 .matha p{
 display: inline-block;
 width: 80%;
@@ -178,7 +294,7 @@ h2 {
   position: relative;
   border-radius: 0px;
   margin-right: 10px;
-  box-shadow: 0px 0px 2px 2px rgba(0,0,0, 0.2);
+  /* box-shadow: 0px 0px 2px 2px rgba(0,0,0, 0.2); */
   font-size: 0.75em;
 }
 .timeline-content:before {
@@ -210,7 +326,7 @@ h2 {
   text-align:center;
   border-radius: 10px;
   left: calc(50% - 80px);
-  box-shadow: 0px 0px 2px 2px rgba(0,0,0, 0.2);
+  /* box-shadow: 0px 0px 2px 2px rgba(0,0,0, 0.2); */
 }
 .timeline-period:before {
   width: 15px;
@@ -243,7 +359,8 @@ h2 {
 # Header
 --------------------------------------------------------------*/
 :root {
-  --gradient: linear-gradient(-25deg, #000000 , #0a0b13 ,  #1D2038 , #1f7aa4);
+  
+  --gradient: linear-gradient(-25deg, #000000 , #0a0b13 ,  #1D2038 , #5680a8);
 }
 #header {
   position: fixed;
@@ -255,8 +372,8 @@ h2 {
   z-index: 9997;
   transition: all 0.5s;
   padding: 0 15px;
-  background: rgb(29,32,56);
-  background: linear-gradient(0deg,  rgba(0,0,0,1) 60%, rgba(29,32,56,1) 95%); 
+  /* background: rgb(0, 0, 0); */
+  /* background: linear-gradient(0deg,  rgba(0,0,0,1) 60%, rgba(29,32,56,1) 95%);  */
   background: #ddd;
   background-size: 300%;
   background-image: var(--gradient);
@@ -319,7 +436,7 @@ h2 {
 
 #portfolio .description ul{
   transform: translateX(-35px);
-  background-color: black;
+  background-color: rgb(27, 27, 27);
   padding-top: 10px;
   padding-bottom  : 10px;
   padding-right: 10px;
@@ -576,21 +693,20 @@ section {
 
 .section-bg-skills {
   background: rgb(29,32,56);
-  background: linear-gradient(180deg, rgba(29,32,56,1) 0%, rgba(0,0,0,1) 78%); 
+  /* background: linear-gradient(180deg, rgba(29,32,56,1) 0%, rgba(0,0,0,1) 78%);  */
 }
 .section-bg-tools {
   background: rgb(29,32,56);
   background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(29,32,56,1) 78%); 
 }
 .section-bg-portfolio {
-  background: rgb(29,32,56);
-  background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(29,32,56,1) 78%); 
+  background: rgb(0, 0, 0);
+  /* background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(29,32,56,1) 78%);  */
 }
 .section-title {
   padding-bottom: 0px;
 }
 #resume{
-  background: linear-gradient(180deg, rgba(29,32,56,1) 0%, rgba(0,0,0,1) 78%); 
   display: inline-flex;
 }
 .portfolio-item iframe{
