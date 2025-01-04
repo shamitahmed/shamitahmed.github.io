@@ -176,6 +176,10 @@ h6 {
 h2 {
   color: #b4ddfb !important;
 }
+.ss:hover{
+  height: 200%;
+  width: 200%;
+}
 .projectheader{
   font-size: 22px;
   background-color: rgb(18, 19, 33);
