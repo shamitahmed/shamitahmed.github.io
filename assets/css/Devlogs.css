@@ -1,0 +1,366 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: rgb(255, 255, 255) !important;
+  background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(29,32,56,1) 78%); 
+  margin: 0;
+  padding: 0;
+}
+* {
+  box-sizing: border-box;
+}
+.year {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 20px 0;
+}
+.sidebar:hover{
+  transition: transform .3s ease-out;
+  transform: translateY(-5%);
+  font-size: large;
+}
+.sidebar:not(:hover){
+  transition: transform .3s ease-out;
+  
+}
+a {
+  color: #0ED068 !important;
+  color: #94c4e7 !important;
+}
+.nav-menu {
+  padding-top: 10px;
+}
+.nav-menu * {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-menu > ul > li {
+  position: relative;
+  white-space: nowrap;
+}
+
+.nav-menu a {
+  display: flex;
+  align-items: center;
+  color: #dddddd;
+  padding: 6px 60px;
+  margin-bottom: 5px;
+  transition: 0.3s;
+  font-size: 25px;
+  text-decoration: none;
+}
+.priority{
+ 
+  flex: 0 0 33.3333333333%;
+  max-width: 35.3333333333%;
+
+}
+.nav-menu a i {
+font-size: 24px;
+padding-right: 8px;
+color: #6f7180;
+}
+
+.nav-menu a:hover,
+.nav-menu .active > a,
+.nav-menu li:hover > a {
+text-decoration: none;
+color: yellow;
+font-size: 35px;
+}
+
+.nav-menu a:hover i,
+.nav-menu .active > a i,
+.nav-menu li:hover > a i {
+color: yellow !important;
+}
+
+/* Mobile Navigation */
+.mobile-nav-toggle {
+position: fixed;
+right: 15px;
+top: 15px;
+z-index: 9998;
+border: 0;
+background: none;
+font-size: 24px;
+transition: all 0.4s;
+outline: none !important;
+line-height: 1;
+cursor: pointer;
+text-align: right;
+}
+
+.mobile-nav-toggle i {
+color: #0ED068;
+}
+
+.mobile-nav-active {
+overflow: hidden;
+}
+
+.mobile-nav-active #header {
+left: 0;
+}
+
+.mobile-nav-active .mobile-nav-toggle i {
+color: #fff;
+}
+.part_3_overlay{
+  max-width: 100%;
+  display: grid;
+  /* grid-template-columns: 30% 70%; */
+  margin-left: 20%;
+}
+.version{
+  width: 100%;
+  margin-left: 20px;
+  margin-bottom: 100px;
+}
+.part_3 {
+  width: 100%;
+  height: auto;
+  font-family: sans-serif;
+  background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(29,32,56,1) 78%); 
+  color: #ffffff;
+  display: inline-block;
+}
+.versionList_3 {
+  list-style-type: none;
+  background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(29,32,56,1) 78%); 
+  width: 100%;
+  margin: 20px;
+  padding: 0;
+  display: inline-block;
+}
+.versionList_3 > li {
+  padding: 10px;
+  width: calc(100%-20px);
+  cursor: pointer;
+}
+.versionList_3 > li:hover a,
+.versionList_3 > li:hover {
+  background: #a8adaf;
+  color: white;
+}
+.versionList_3 > li > a {
+  text-decoration: none;
+  color: #586265;
+}
+
+.versionList_3 > li.active,
+.versionList_3 > li.active > a {
+  background: #586265;
+  color: white;
+}
+.date_3 {
+  border-left: 5px solid #eee;
+  padding: 10px 20px;
+  margin: 0 0 20px;
+  font-size: 17.5px;
+}
+.version_3{
+  color: #ffffff;
+  font-size: 36px;
+  margin-left: 50px;
+}
+.changes_3{
+  margin-left: 30px;
+}
+
+@media (max-width: 1199px) {
+  #header {
+    left: -300px;
+  }
+  #main {
+    margin-left: 0;
+  }
+}
+#header .profile p{
+  color: #0ED068 !important;
+  margin-left: -30px;
+}
+.mobile-nav-active #header {
+  left: 0;
+}
+body.light #header{
+  background-color: #eaf1f9;
+}
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 220px;
+  transition: all ease-in-out 0.5s;
+  z-index: 9997;
+  transition: all 0.5s;
+  padding: 0 15px;
+  /* background: rgb(0, 0, 0); */
+  /* background: linear-gradient(0deg,  rgba(0,0,0,1) 60%, rgba(29,32,56,1) 95%);  */
+  background: rgb(18, 19, 33);
+  background-size: 300%;
+  /* background-image: var(--gradient); */
+  animation: bg-animation 15s infinite;
+  overflow: none;
+}
+@keyframes bg-animation {
+  0% {
+    background-position: left;
+  }
+  50% {
+    background-position: right;
+  }
+  100% {
+    background-position: left;
+  }
+}
+#header .profile img {
+  margin: 12px auto;
+  display: block;
+  width: 150px;
+}
+.profile-text{
+  transform: translateX(55px);
+}
+#header .profile h1 {
+  font-size: 24px;
+  margin: 0;
+  margin-top: 40px !important;
+  padding: 0;
+  font-weight: 600;
+  -moz-text-align-last: left;
+  text-align-last: left;
+  font-family: 'Poppins', sans-serif;
+  margin-left: -30px;
+}
+
+#header .profile h1 a,
+#header .profile h1 a:hover {
+  color: #fff;
+  text-decoration: none;
+  font-size: 40px;
+  /* margin-top: -50px; */
+}
+/*  DAY NIGHT TOGGLE START *//*  DAY NIGHT TOGGLE START *//*  DAY NIGHT TOGGLE START *//*  DAY NIGHT TOGGLE START *//*  DAY NIGHT TOGGLE START */
+/* Theme Toggle Styles */
+.theme-toggle-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px auto;
+  
+}
+
+.theme-toggle {
+  display: none;
+}
+
+.toggle-label {
+  width: 60px;
+  height: 30px;
+  background: #3d505e;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+  cursor: pointer;
+  position: relative;
+  transition: 0.3s ease;
+}
+
+.toggle-label i {
+  color: #f1c40f;
+  font-size: 14px;
+  z-index: 1;
+}
+
+.toggle-label .fa-moon {
+  color: #f1c40f;
+}
+
+.toggle-label .fa-sun {
+  color: #f39c12;
+}
+
+.toggle-label .ball {
+  width: 24px;
+  height: 24px;
+  background: #94c4e7;
+  border-radius: 50%;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  transition: transform 0.3s ease;
+}
+
+
+
+.theme-toggle:checked + .toggle-label .ball {
+  transform: translateX(30px);
+}
+
+body.light {
+  background: #e0e9f3;
+  color: #000000;
+  transition: background 0.5s, color 0.5s;
+}
+
+body.light .title,
+body.light h1,
+body.light h2,
+body.light h3,
+body.light h4,
+body.light h5,
+body.light h6,
+body.light ul,
+body.light a,
+body.light marquee,
+body.light p {
+  color: #000000 !important;
+}
+
+body.light .projectheader{
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0) !important;
+}
+body.light #about{
+   background: #eaf1f9;
+}
+body.light #portfolio .description ul{
+  transform: translateX(-35px);
+  background-color:  #ffffff;
+}
+body.light .section-bg-portfolio{
+  background-color:  #eaf1f9;
+}
+body.light .section-bg-skills {
+  background: #eaf1f9;
+}
+body.light .section-bg-tools {
+  background: #eaf1f9; 
+}
+body.light #resume .resume {
+  background: #eaf1f9; 
+
+}
+body.light #header{
+  background-color: #eaf1f9;
+}
+
+body.light .site-footer
+{
+  background-color:#eaf1f9;
+}
+body.light .acquiredSkills-container{
+  display: inline-flex !important;
+}
+
+.acquiredSkills-container{
+  display: inline-flex !important;
+  flex-wrap: wrap;
+}
+/*  DAY NIGHT TOGGLE END *//*  DAY NIGHT TOGGLE END *//*  DAY NIGHT TOGGLE END *//*  DAY NIGHT TOGGLE END *//*  DAY NIGHT TOGGLE END */
+
