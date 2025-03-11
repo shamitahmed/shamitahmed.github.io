@@ -444,14 +444,19 @@ h2 {
 
 #portfolio .description ul{
   transform: translateX(-35px);
-  background-color: rgb(18, 19, 33);
+  /* background-color: rgb(18, 19, 33); */
   padding-top: 10px;
   padding-bottom  : 10px;
   padding-right: 10px;
   text-align: left;
   border-radius: 5px;
 }
-
+.portfolio .description ul:hover{
+  background-color: rgb(25, 26, 47);
+}
+.portfolio .description ul:not(:hover){
+  background-color: rgb(13, 14, 24);
+}
 #gallerysc div.gallery {
 	margin: 3px;
 	/* border: 1px solid #ccc; */
