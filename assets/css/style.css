@@ -1,5 +1,6 @@
 * {
   font-family: 'Poppins', sans-serif !important;
+  text-align-last:auto;
 }
 body {
   font-family: 'Open Sans', sans-serif;
@@ -444,6 +445,7 @@ h2 {
 
 #portfolio .description ul{
   transform: translateX(-35px);
+  color: rgb(170, 170, 170);
   /* background-color: rgb(18, 19, 33); */
   padding-top: 10px;
   padding-bottom  : 10px;
@@ -453,6 +455,7 @@ h2 {
 }
 .portfolio .description ul:hover{
   background-color: rgb(25, 26, 47);
+  color: rgb(255, 255, 255) !important;
 }
 .portfolio .description ul:not(:hover){
   background-color: rgb(13, 14, 24);
@@ -498,12 +501,25 @@ h2 {
     margin-left: 0;
   }
 }
-
-.activegif {
-height: 200px;
-width: 300px;
-border-radius: 5px;
+.activegif{
+  height: 200px;
+  width: 300px;
+  border-radius: 5px;
 }
+/* .activegif:hover{
+  align-self: left;
+  height: 235px;
+  width: 335px;
+  border-radius: 5px;
+  transition: transform .5s ease-out;
+}
+.activegif:not(:hover){
+  align-self: left;
+  height: 200px;
+  width: 300px;
+  border-radius: 0px;
+  transition: transform .5s ease-out;
+} */
 .gradientButton{
   background: linear-gradient(-45deg, #00772a, #3fee53);
      background-size: 600%;
