@@ -4,7 +4,7 @@
 }
 body {
   font-family: 'Open Sans', sans-serif;
-  color: rgb(188, 187, 187) !important;
+  color: rgb(221, 220, 220) !important;
   /* background-color: black !important; */
 
   background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(29,32,56,1) 78%); 
@@ -445,7 +445,7 @@ h2 {
 
 #portfolio .description ul{
   transform: translateX(-35px);
-  color: rgb(170, 170, 170);
+  color: rgb(209, 209, 209);
   /* background-color: rgb(18, 19, 33); */
   padding-top: 10px;
   padding-bottom  : 10px;
@@ -453,10 +453,10 @@ h2 {
   text-align: left;
   border-radius: 5px;
 }
-.portfolio .description ul:hover{
+/* .portfolio .description ul:hover{
   background-color: rgb(25, 26, 47);
   color: rgb(255, 255, 255) !important;
-}
+} */
 .portfolio .description ul:not(:hover){
   background-color: rgb(13, 14, 24);
 }
@@ -991,7 +991,7 @@ border: none;
 # Portfolio
 --------------------------------------------------------------*/
 .portfolio .portfolio-item {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
  
 }
  #acquiredSkill-flters {
