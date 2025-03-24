@@ -453,10 +453,10 @@ h2 {
   text-align: left;
   border-radius: 5px;
 }
-/* .portfolio .description ul:hover{
+.portfolio .description ul:hover{
   background-color: rgb(25, 26, 47);
   color: rgb(255, 255, 255) !important;
-} */
+}
 .portfolio .description ul:not(:hover){
   background-color: rgb(13, 14, 24);
 }
