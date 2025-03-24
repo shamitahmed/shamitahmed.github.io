@@ -443,6 +443,16 @@ h2 {
   transition: 0.3s;
 }
 
+#portfolio .descriptionFeatured ul{
+  transform: translateX(-35px);
+  color: rgb(209, 209, 209);
+  /* background-color: rgb(18, 19, 33); */
+  padding-top: 10px;
+  padding-bottom  : 10px;
+  padding-right: 10px;
+  text-align: left;
+  border-radius: 5px;
+}
 #portfolio .description ul{
   transform: translateX(-35px);
   color: rgb(209, 209, 209);
