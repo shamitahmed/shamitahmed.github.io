@@ -71,7 +71,7 @@
           <!-- <a href="https://www.facebook.com/shamit.ahmed" class="facebook"><i class="bx bxl-facebook"></i></a> -->
           <a href="https://www.linkedin.com/in/shamitahmed/" target="_blank" class="linkedin" style="color: white !important;"><i class="bx bxl-linkedin"></i></a>
 
-          <a href="https://roboshamit.itch.io/?fbclid=IwAR3nQIQkzR1vSFuVvhrA3VXgcUuWlPDiSxgCDVL71bDru8BeC9zSRpr_pEs" target="_blank" class="itch-io"><img src="assets/img/itch-io-brands.png" class="bx bxl-itch-io"></a>
+          <a href="https://shamitahmed.itch.io/" target="_blank" class="itch-io"><img src="assets/img/itch-io-brands.png" class="bx bxl-itch-io"></a>
       
       <a href="https://github.com/shamitahmed" target="_blank" class="github" style="color: white !important;"><i class="bx bxl-github"></i></a>
       <a href="https://www.youtube.com/@shamitahmed/videos" target="_blank" class="youtube" style="color: white !important;"><i class="bx bxl-youtube"></i></a>
@@ -84,7 +84,7 @@
         <ul>
           <!-- <li class="active"><a href="index.html"><i class="bx bx-home"></i> <span>Home</span></a></li> -->
           <li><a href="#about" class="sidebar"><i class="bx bx-user"></i> <span>About</span></a></li> 
-          <li><a href="#portfolio" class="sidebar"><i class="bx bx-dumbbell"></i>Projects</a></li>
+          <li><a href="projects.html" class="sidebar"><i class="bx bx-dumbbell"></i>Projects</a></li>
           <li><a href="#education" class="sidebar"><i class='bx bx-medal' ></i><span>Experience</span></a></li>
           <li><a href="#acquiredSkills" class="sidebar"><i class='bx bx-book-content'></i> <span>Research</span></a></li>
           <li><a href="#skills" class="sidebar"><i class='bx bx-slider'></i>Skills & Tools</a></li>
@@ -117,8 +117,6 @@
   <!-- ======= Hero Section ======= -->
   <section id="hero"  class="d-flex flex-column justify-content-center align-items-center">
     <div class="hero-container" data-aos="fade-in">
-   
-
       <h1>Shamit Ahmed</h1>
       <h3>Game Programmer</h3>
 
@@ -155,9 +153,79 @@
             <br>
             Engaging video games, immersive-interactive multimedia and breathtaking art of various forms have always been my motivation to achieve more. I am currently focusing on Virtual Reality and Computer Vision based Locomotion and Interaction Design. I am also working on Exergames that require Physical Movement.</p>
             <h5>✦My fields of interest </h5>
-            <marquee width="100%" direction="left" height="20px" scrollamount="4" BEHAVIOR="alternate">
-              ✦ Exergames ✦ <strong>Game Design and Balance </strong> ✦ Rapid Prototyping ✦ <strong> Game Feel/UX </strong> ✦ Generative AI ✦ <strong> Indoor Navigation </strong> ✦ Geospatial Visualization ✦ <strong>Data Analytics </strong> ✦ AR ✦ <strong>VR </strong> ✦ Computer Vision ✦ <strong>Technical Art</strong> ✦ Web Development ✦ <strong> Micro-Controllers </strong>✦
-          </marquee>
+           
+            <style>
+              body {
+                margin: 0;
+                background: #111;
+                color: white;
+                font-family: sans-serif;
+              }
+          
+              .marquee-container {
+                width: 100%;
+                overflow: hidden;
+                white-space: nowrap;
+                position: relative;
+                height: 40px;
+              }
+          
+              .marquee {
+                display: inline-block;
+                white-space: nowrap;
+                animation: scroll 30s linear infinite; /* Slower scroll */
+                font-size: 20px;
+              }
+          
+              @keyframes scroll {
+                0% { transform: translateX(0); }
+                100% { transform: translateX(-50%); }
+              }
+          
+              .char {
+                display: inline-block;
+                animation: wave 2s infinite ease-in-out;
+              }
+          
+              @keyframes wave {
+                0%   { transform: translateY(0); }
+                25%  { transform: translateY(-4px); }
+                50%  { transform: translateY(0); }
+                75%  { transform: translateY(4px); }
+                100% { transform: translateY(0); }
+              }
+            </style>
+          </head>
+          <body>
+          
+            <div class="marquee-container">
+              <div class="marquee" id="waveText"></div>
+            </div>
+          
+            <script>
+              const text = "✦ Exergames ✦ Rapid Prototyping ✦ Game Feel/UX ✦ Generative AI ✦ Indoor Navigation ✦ Geospatial Visualization ✦ Data Analytics ✦ AR ✦ VR ✦ Computer Vision ✦ Technical Art ✦ Web Development ✦ Micro-Controllers ";
+              const container = document.getElementById("waveText");
+          
+              const makeWaveSpans = (str, offset = 0) => {
+                const frag = document.createDocumentFragment();
+                for (let i = 0; i < str.length; i++) {
+                  const span = document.createElement("span");
+                  span.textContent = str[i];
+                  span.className = "char";
+                  // negative delay starts animation already "in motion"
+                  span.style.animationDelay = `${-(i + offset) * 0.05}s`;
+                  frag.appendChild(span);
+                }
+                return frag;
+              };
+          
+              // Add two copies of the text for seamless scroll
+              container.appendChild(makeWaveSpans(text, 0));
+              container.appendChild(makeWaveSpans(text, text.length));
+            </script>
+          
+          
+          
     </div>
 
       </div>
@@ -192,6 +260,41 @@
          
             <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
          
+              <div class="col-12 portfolio-item filter-xr">
+                <div class="row" style="background-color: rgba(13, 14, 24, 0); background-image: url(assets/img/screenshots/unb.png);padding: 20px; border-radius: 10px;">
+                    <!-- GIF on the left -->
+                    <div class="col-md-4">
+                        <br><img class="activegif img-fluid" src="assets/img/projects/bark.jpg" alt="Bark No More" style="height: 170px  !important; width: 300px !important;">
+                        <br><br>
+                        <div class="screenshot-container">
+                            <img src="assets/img/screenshots/bark1.png" class="img-fluid" style="height: 80px; width: 145px; margin: 0.5%;">
+                            <img src="assets/img/screenshots/bark2.png" class="img-fluid" style="height: 80px; width: 145px; margin: 0%;">
+                            <img src="assets/img/screenshots/bark3.png" class="img-fluid" style="height: 80px; width: 145px; margin: 0.5%;">
+                            <img src="assets/img/screenshots/bark4.png" class="img-fluid" style="height: 80px; width: 145px; margin: 0.5%;">
+                        </div>
+                    </div>
+                    <!-- Content on the right -->
+                    <div class="col-md-8">
+                        <p><a class="projectheader" href="https://shamitahmed.itch.io/barknomore" target="_blank" style="font-weight: bold; color: white; font-size: xx-large;">Bark No More</a> 2025</p>
+                        <div class="descriptionFeatured" style="color: white;">
+                            <ul>
+                              Bark no More is a mixed reality (MR) tower defense game that reimagines your everyday surroundings as an interactive battlefield. By leveraging spatial mapping and depth sensing, the game blends virtual elements with the physical world. The core gameplay centers on intuitive, embodied interaction. Players use natural hand gestures to collect energy dropped by defeated enemies or to hammer down and upgrade towers in real-time. These physical motions replace traditional controller-based inputs, creating a seamless bridge between the player’s body and the game world. 
+                                <br><br><strong>Genre:</strong> Tower Defense
+                                <br><strong>Role:</strong> Programmer, Game Designer
+                                <br><strong>Contributions:</strong> Gameplay, Game Design, Hand Tracking, Gesture Recognition
+                                <br><br><p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Embodied Interaction</p> 
+                                <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">MR</p> 
+                                <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">2 People</p> 
+                                <!-- <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">2024</p>  -->
+                                <a class="gradientButton" href="https://shamitahmed.itch.io/barknomore" target="_blank" style="background-color: rgb(5, 154, 62); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: normal; color: white !important ; padding: 1%;">Itch.io</a>
+                                <a href="https://www.youtube.com/watch?v=-lfP-QiiHZw" target="_blank" style="background-color: rgb(199, 55, 39); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: normal; color: white !important ; padding: 1%;">Gameplay</a>
+                                <img class="engineLogo" src="assets/img/unity.png" width="50px" height="50px">
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
               <div class="col-12 portfolio-item filter-app">
                 <div class="row" style="background-color: rgba(13, 14, 24, 0); background-image: url(assets/img/screenshots/mcb.jpg); padding: 20px; border-radius: 10px;">
                   <!-- background-image: url('assets/img/screenshots/mc3.png'); -->
@@ -380,7 +483,7 @@
                 <img src="assets/img/screenshots/ds3.png" style = "height: 80px; width: 145px;">
                 <br><br>
                 <strong>Genre:</strong> Puzzle, Platformer
-                <br><strong>Role:</strong> Programmer, Game Designer, Producer, Vision Holder
+                <br><strong>Role:</strong> Programmer, Game Designer, Producer
                 <br><p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px; padding: 0.85%;"> Game Project 1 at Aalto</p>
                 <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">PC</p> 
                 <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">6 People</p> 
@@ -392,788 +495,24 @@
               </ul>
             </div>
          </div>
-
-          
-       
-         <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-    
-          <!-- <iframe src="https://www.youtube.com/embed/0AXJRzSCh6U" >
-          </iframe> -->
-          <img class="activegif" src="assets/img/projects/mama.gif" style="width: 220px;height: 250px;">
-      
-          <p><a class="projectheader" href="https://rayonez.itch.io/mamapato" target="_blank" style="font-weight: bold;">Mamapato</a> </p>
-          <div class="description" style="color: white;">
-            <ul>
-              You and a bunch of ducklings are chasing after the coolest duck around, the Queen of Ducks. Find your way through three stages that are packed with obstacles and points to score – but remember to move to the rhythm!</li>
-              <br><br>
-              <img src="assets/img/screenshots/mp1.png" style = "height: 140px; width: 80px;">
-              <img src="assets/img/screenshots/mp2.png" style = "height: 140px; width: 80px;">
-              <img src="assets/img/screenshots/mp3.png" style = "height: 140px; width: 80px;">
-              <br><br><strong>Genre:</strong> Rhythm, Runner
-              <br><strong>Role:</strong> Programmer<br>
-              <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Aalto Orientation Jam 2023</p> 
-              <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Web</p> 
-              <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">7 People</p> 
-            <br><a class="gradientButton" href="https://rayonez.itch.io/mamapato" target="_blank" style="background-color: rgb(5, 154, 62); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: normal; color: white !important ; padding: 1%;">Itch.io</a>
-            <img class="engineLogo" src="assets/img/unity.png" width="50px" height="50px">  
-          </ul>
-          </div>
-        </div>
-        
-        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-    
-          <!-- <iframe src="https://www.youtube.com/embed/851XQkQdt3o
-                <li>A topdown 3D game where you, a security ">
-          </iframe> -->
-          <img class="activegif" src="assets/img/projects/isc.gif" style="height: 250px; width: 230px;">
-          <p><a class="projectheader" href="https://play.google.com/store/apps/details?id=idle.sea.cleaner" target="_blank" style="font-weight: bold;">Idle Sea Cleaner</a> </p>
-          <div class="description" style="color: white;">
-            <ul>
-              A topdown 3D game where your primary objective is to clean the sea by collecting different types of trash. Unlock new items, explore new areas and upgrade your ship while at it!
-              <br><br>
-              <img src="assets/img/screenshots/sc1.png" style = "height: 140px; width: 80px;">
-              <img src="assets/img/screenshots/sc2.png" style = "height: 140px; width: 80px;">
-              <img src="assets/img/screenshots/sc3.png" style = "height: 140px; width: 80px;">
-              <br><br><strong>Genre:</strong> Idle Arcade
-              <br><strong>Role:</strong> Programmer, Game Designer <br>
-              
-              <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Mobile</p>
-              <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">6 People</p> 
-              <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">2022</p> 
-              <br><a class="gradientButton" href="https://play.google.com/store/apps/details?id=idle.sea.cleaner" target="_blank" style="background-color: rgb(5, 154, 62); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: normal; color: white !important ; padding: 1%;">GooglePlay</a>
-              <img class="engineLogo" src="assets/img/unity.png" width="50px" height="50px">
-            </ul>
-          </div>
-        </div>
-
-        <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-app" >
-    
-          <img class="activegif" src="assets/img/projects/dino.gif" style="height: 250px; width: 200px;">
-          <p><a class="projectheader" href="https://play.google.com/store/apps/details?id=com.fpg.dinoattack&hl=en&gl=US" style="font-weight: bold;">Dinosaur Attack Simulator 3D</a> </p>
-          <div class="description" style="color: white;">
-            <ul>
-              I started working on this prototype as a solo developer. Through iterative improvements, the game has turned into a huge success with 500K+ downloads. It features multiple engaging game modes and tons of character customization.</li>
-              <br><br>Genre: Topdown, Action
-              <br>Role: Programmer, Designer<br>
-      
-              <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Mobile</p> 
-              <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">7 People</p> 
-              <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">2019</p>
-              <br><a href="https://play.google.com/store/apps/details?id=com.fpg.dinoattack&hl=en&gl=US"  style="background-color: rgb(5, 154, 62); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: normal; color: white !important ; padding: 1%;">GooglePlay</a> 
-            </ul>
-          </div>
-        </div> -->
-
-              <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-app" >
-                <img class="activegif" src="assets/img/projects/dr.gif">
-                <p><a class="projectheader" href="https://alium-basir-sakib.itch.io/diet-run" style="font-weight: bold;">Diet Run</a> </p>
-                <div class="description" style="color: white;">
-                  <ul>
-                    Survival depends on carefully choosing between eating healthy and junk food since they both have their pros and cons.The main idea is to promote health consciousness and encourage users to maintain a healthy diet and lifestyle in a fun way.</li>
-                    <br><br>Genre: Infinite Runner
-                    <br>Role: Programmer, Artist<br>
-                 
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Jam Entry</p> 
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Web</p> 
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">2 People</p> 
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">2021</p>
-                    <br><a href="https://alium-basir-sakib.itch.io/diet-run"  style="background-color: rgb(5, 154, 62); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: normal; color: white !important ; padding: 1%;">Itch.io</a> 
-                    <a href="https://www.youtube.com/watch?v=bG1jO76Qvr4&ab_channel=ShamitAhmed" style="background-color: rgb(199, 55, 39); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: normal; color: white !important ; padding: 1%;">Youtube</a>
-                  </ul>
-                </div>
-              </div> -->
-         
-
-           
-              <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-    
-                <!-- <iframe src="https://www.youtube.com/embed/C4uogvEXNks" >
-                </iframe> -->
-                <img class="activegif" src="assets/img/projects/slab.png">
-                <p><a class="projectheader" href="https://www.youtube.com/embed/6U5HbPwynCQ" target="_blank" style="font-weight: bold;">Shark Lab</a> </p>
-                <div class="description" style="color: white;">
-                  <ul>
-                    A 2D platformer where player has to capture injured sharks and treat them in the lab. 
-                    <br><br>
-                    <img src="assets/img/screenshots/slab1.png" style = "height: 80px; width: 145px;">
-                    <img src="assets/img/screenshots/slab2.png" style = "height: 80px; width: 145px;">
-                    <img src="assets/img/screenshots/slab3.png" style = "height: 80px; width: 145px;">
-                    <br><br>
-                    <strong>Genre:</strong> Platformer<br>
-                    <strong>Role:</strong> Programmer, Game Designer<br>
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Unreleased</p> 
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Mobile</p> 
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">2 People</p>
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">2022</p> 
-                   
-                    <br> 
-                    <a href="https://www.youtube.com/embed/6U5HbPwynCQ" target="_blank" style="background-color: rgb(199, 55, 39); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: normal; color: white !important ; padding: 1%;">Youtube</a>
-                    <img class="engineLogo" src="assets/img/unity.png" width="50px" height="50px">
-                  </ul>
-                </div>
-              </div>
-                      
-              <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-    
-                <img class="activegif" src="assets/img/projects/fs.gif" style="width: 160px;height: 240px;">
-                <p><a class="projectheader" href="https://play.google.com/store/apps/details?id=com.funvai.fishingsurvival&hl=en_US&gl=US" style="font-weight: bold;">Fishing Survival</a> </p>
-                <div class="description" style="color: white;">
-                  <ul>
-                    A relaxing fishing game that features multiple customizations, upgrades, novel level selection system and many more unique features.
-                    <br><br>
-                    <img src="assets/img/screenshots/fs1.jpg" style = "height: 140px; width: 80px;">
-                    <img src="assets/img/screenshots/fs2.jpg" style = "height: 140px; width: 80px;">
-                    <img src="assets/img/screenshots/fs3.jpg" style = "height: 140px; width: 80px;">
-                    <img src="assets/img/screenshots/fs4.jpg" style = "height: 140px; width: 80px;">
-                    <img src="assets/img/screenshots/fs5.jpg" style = "height: 140px; width: 80px;">
-                    <img src="assets/img/screenshots/fs6.jpg" style = "height: 140px; width: 80px;">
-                    <br><br>
-                    <strong>Genre:</strong> Idle Arcade, Fishing<br>
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Mobile</p>
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">6 People</p> 
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">2021</p> 
-                    <br><a href="https://play.google.com/store/apps/details?id=com.funvai.fishingsurvival&hl=en_US&gl=US"  style="background-color: rgb(5, 154, 62); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: normal; color: white !important ; padding: 1%;">GooglePlay</a>
-                    <a href="https://www.youtube.com/embed/Cr12jAI3ml4" style="background-color: rgb(199, 55, 39); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: normal; color: white !important ; padding: 1%;">Youtube</a>
-                    <img class="engineLogo" src="assets/img/unity.png" width="50px" height="50px">
-                  </ul>
-                </div>
-              </div>
-
-              <div class="col-lg-4 col-md-6 portfolio-item filter-app">             
-                <!-- <iframe src="https://www.youtube.com/embed/2WS1l9TvCMM" >
-                </iframe> -->
-                <img class="activegif" src="assets/img/projects/hii.gif">
-                <p><a class="projectheader" href="https://fu-wei.itch.io/hold-it-in" target="_blank" style="font-weight: bold;">Hold It In</a> </p>
-                <div class="description" target="_blank" style="color: white;">
-                  <ul>
-                    A fart-tastic game where you try to hold in your fart to avoid unimmaginable consequences. Making this game was technically challenging yet well-scoped considering it was developed in 48 hours.</li>
-                    <br><br>
-                    <img src="assets/img/screenshots/hi1.png" style = "height: 80px; width: 145px;">
-                    <img src="assets/img/screenshots/hi2.png" style = "height: 80px; width: 145px;">
-                    <img src="assets/img/screenshots/hi3.png" style = "height: 80px; width: 145px;">
-                    <br><br>
-                    <strong>Genre:</strong> Casual
-                    <br><strong>Role:</strong> Programmer, Game Designer<br>
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Global Game Jam 2024</p> 
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Web</p> 
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">7 People</p> 
-                  <br><a class="gradientButton" href="https://fu-wei.itch.io/hold-it-in" target="_blank" style="background-color: rgb(5, 154, 62); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: normal; color: white !important ; padding: 1%;">Itch.io</a>
-                  <a href="https://www.youtube.com/embed/2WS1l9TvCMM" target="_blank" style="background-color: rgb(199, 55, 39); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: normal; color: white !important ; padding: 1%;">Youtube</a>
-                  <img class="engineLogo" src="assets/img/unity.png" width="50px" height="50px">
-                </ul>
-                </div>
-              </div>
-
-              <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-    
-                <!-- <iframe src="https://www.youtube.com/embed/C4uogvEXNks" >
-                </iframe> -->
-                <img class="activegif" src="assets/img/projects/cr.gif">
-                <p><a class="projectheader" href="https://roboshamit.itch.io/catroot" target="_blank" style="font-weight: bold;">Cat Root</a> </p>
-                <div class="description" style="color: white;">
-                  <ul>
-                    A cute side-scrolling platformer where a farmer's cat has to find water sources to grow the vegetables.
-                    <br><br>
-                    <img src="assets/img/screenshots/cr1.png" style = "height: 80px; width: 145px;">
-                    <img src="assets/img/screenshots/cr2.png" style = "height: 80px; width: 145px;">
-                    <img src="assets/img/screenshots/cr3.png" style = "height: 80px; width: 145px;">
-                    <br><br>
-                    <strong>Genre:</strong> Platformer<br>
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Global Game Jam 2023</p> 
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">PC</p>
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Solo</p> 
-                   
-                    <br>  <a class="gradientButton" href="https://roboshamit.itch.io/catroot" target="_blank" style="background-color: rgb(5, 154, 62); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: normal; color: white !important ; padding: 1%;">Itch.io</a> 
-                    <img class="engineLogo" src="assets/img/unity.png" width="50px" height="50px">
-                  </ul>
-                </div>
-              </div>
-
-              <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-    
-                <img class="activegif" src="assets/img/projects/rev.gif">
-                <p><a class="projectheader" href="https://play.google.com/store/apps/details?id=com.hypersomniacgames.revrecycle" target="_blank" style="font-weight: bold;">Rev-Recycle</a> </p>
-                <div class="description" style="color: white;">
-                  <ul>
-                    Cleaners have decided to protest against mass littering by littering. Hence their roles have reversed! Survive from the cops for as long as you can and reach higher scores by littering all around!</li>
-                    <br><br>
-                    <img src="assets/img/screenshots/rr1.png" style = "height: 140px; width: 80px;">
-                    <img src="assets/img/screenshots/rr2.png" style = "height: 140px; width: 80px;">
-                    <img src="assets/img/screenshots/rr3.png" style = "height: 140px; width: 80px;">
-                    <br><br>
-                    <strong>Genre:</strong> Racing, Survival<br>
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">GMTK Game Jam 2023</p> 
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Web</p> 
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Solo</p> 
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">2023</p> 
-                    <br><a class="gradientButton" href="https://play.google.com/store/apps/details?id=com.hypersomniacgames.revrecycle" target="_blank" style="background-color: rgb(5, 154, 62); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: bold; color: white !important ; padding: 1%;">Itch.io</a>
-                    <img class="engineLogo" src="assets/img/unity.png" width="50px" height="50px">
-                  </ul>
-                </div>
-              </div>
-              <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                <img class="activegif" src="assets/img/projects/pvt.gif" style="width: 220px;height: 240px;">
-                <p><a href="https://www.youtube.com/embed/UCb8fbDmiuk" style="font-weight: bold;">Police vs Thief</a> </p>
-                <div class="description" style="color: white;">
-                  <ul>
-                    <li>I have worked on the shop system + minigames such as: Road Chase, highway Chase, Catch Thief, Supercop, Prison Break etc</li>
-                    <li>Genre: Racing, Action</li>
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Mobile</p>
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">9 People</p> 
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">2022</p> 
-                    <br> <a href="https://play.google.com/store/apps/details?id=com.funvai.policevsthief" style="background-color: rgb(5, 154, 62); display: inline-block; border-radius: 4px; font-size: 18px; font-weight: bold; color: white !important ; padding: 1%;">PLAY</a>
-                  </ul>
-                </div>
-              </div> -->
-
-              <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-    
-                <img class="activegif" src="assets/img/projects/tower.gif" style="width: 160px;height: 240px;">
-                <p><a class="projectheader" href="https://play.google.com/store/apps/details?id=battle.field.military.defence.td&hl=en"  target="_blank" style="font-weight: bold;">Tower Hero Idle: Army Rush 3D</a> </p>
-                <div class="description" style="color: white;">
-                  <ul>
-                    Idle tower defense/clicker game with a diverse upgrade system, stunning visuals and solid gameloop.
-                    <br><br>
-                    <img src="assets/img/screenshots/td1.png" style = "height: 140px; width: 80px;">
-                    <img src="assets/img/screenshots/td2.jpg" style = "height: 140px; width: 80px;">
-                    <img src="assets/img/screenshots/td3.jpg" style = "height: 140px; width: 80px;">
-                    <br><br>
-                    <strong>Genre:</strong> Idle Defense, Survival
-                    <br><strong>Role:</strong> Programmer, Designer<br>
-                  
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Mobile</p>
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">6 People</p> 
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">2022</p> 
-                    <br> <a class="gradientButton" href="https://play.google.com/store/apps/details?id=battle.field.military.defence.td&hl=en" target="_blank" style="background-color: rgb(5, 154, 62); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: normal; color: white !important ; padding: 1%;">GooglePlay</a>
-                    <img class="engineLogo" src="assets/img/unity.png" width="50px" height="50px">
-                  </ul>
-                </div>
-              </div>
-
-              <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-
-                <img class="activegif" src="assets/img/projects/hamba.gif" style="width: 180px;height: 240px;">
-                  <p><a class="projectheader" href="https://play.google.com/store/apps/details?id=com.HypersomniacGames.HAMBAAA" target="_blank" style="font-weight: bold;">Hambaaa Run</a> </p>
-                <div class="description" style="color: white;">
-                  <ul>
-                    Infinite runner where the primary objective is to catch the runaway cow while avoiding chaos in the streets! Another minigame turns the table and lets the player be in the cow's shoes!
-                    <br><br>
-                    <img src="assets/img/screenshots/hr1.png" style = "height: 140px; width: 80px;">
-                    <img src="assets/img/screenshots/hr2.png" style = "height: 140px; width: 80px;">
-                    <img src="assets/img/screenshots/hr3.png" style = "height: 140px; width: 80px;">
-                    <br><br>
-                    <strong>Genre:</strong> Runner<br>
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Mobile</p>
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Solo</p> 
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">2021</p> 
-                  <br> <a class="gradientButton" href="https://play.google.com/store/apps/details?id=com.HypersomniacGames.HAMBAAA" target="_blank" style="background-color: rgb(5, 154, 62); display: inline-block; border-radius: 4px; font-size: 18px; font-weight: normal; color: white !important ; padding: 1%;">GooglePlay</a>
-                  <a href="https://www.youtube.com/embed/thRxVod3Fcg" target="_blank" style="background-color: rgb(199, 55, 39); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: normal; color: white !important ; padding: 1%;">Youtube</a> 
-                  <img class="engineLogo" src="assets/img/unity.png" width="50px" height="50px">
-                </ul>
-                </div>
-              </div>
-              
-              <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-    
-                <img class="activegif" src="assets/img/projects/cubi.gif" style="width: 180px;height: 240px;">
-                <p><a class="projectheader" href="https://shamitahmed.itch.io/cubi" target="_blank" style="font-weight: bold;">Cubi</a> </p>
-                <div class="description" style="color: white;">
-                  <ul>
-                    Keep switching colors to match your enemies and survive as long as you can!
-                    <br><br>
-                    <img src="assets/img/screenshots/c1.png" style = "height: 140px; width: 80px;">
-                    <br><br>
-                    <strong>Genre:</strong> Casual, Survival<br>
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Mix and Game Jam 2020</p> 
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Mobile</p>
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Web</p>
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Solo</p> 
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">2020</p> 
-                    <br><a class="gradientButton" href="https://shamitahmed.itch.io/cubi" target="_blank" style="background-color: rgb(5, 154, 62); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: normal; color: white !important ; padding: 1%;">Itch.io</a>
-                    <img class="engineLogo" src="assets/img/unity.png" width="50px" height="50px">
-                  </ul>
-                </div>
-              </div>
-
-<!--               <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-    
-                <img class="activegif" src="assets/img/projects/thorn.gif" style="width: 200px;height: 240px;">
-                <p><a class="projectheader" href="https://shamitahmed.itch.io/thorn" target="_blank" style="font-weight: bold;">Thorn</a> </p>
-                <div class="description" style="color: white;">
-                  <ul>
-                    Addictive clicker game where you TAP to shoot targets while avoiding cheeky obstacles.
-                    <br><br>
-                    <img src="assets/img/screenshots/t1.png" style = "height: 140px; width: 80px;">
-                    <img src="assets/img/screenshots/t2.png" style = "height: 140px; width: 80px;">
-                    <img src="assets/img/screenshots/t3.png" style = "height: 140px; width: 80px;">
-                    <br><br>
-                    <strong>Genre:</strong> Arcade<br>
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Mobile</p>
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Web</p>
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Solo</p> 
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">2019</p> 
-                    <br> <a class="gradientButton" href="https://shamitahmed.itch.io/thorn" target="_blank" style="background-color: rgb(5, 154, 62); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: normal; color: white !important ; padding: 1%;">Itch.io</a>
-                    <img class="engineLogo" src="assets/img/unity.png" width="50px" height="50px">
-                  </ul>
-                </div>
-              </div> -->
-
-             <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-    
-              <img class="activegif" src="assets/img/projects/shortcut.gif" style="width: 180px;height: 240px;">
-              <p><a class="projectheader" href="https://play.google.com/store/apps/details?id=com.HypersomniacGames.ShortCircuit3DRunner" target="_blank" style="font-weight: bold;">Short Circuit: 3D Runner</a> </p>
-              <div class="description" style="color: white;">
-                <ul>
-                  A hypercasual prototype that I created in 4 days for a technical assignment as part of a recruitment process.<br>
-                  <p style="font-size: small; text-align: left;">Features: <br>1. Spline-based Level Design, <br>2. Smooth Player Controls <br>3. Intelligent Enemy AI</p>
-                  
-                  <img src="assets/img/screenshots/sr1.png" style = "height: 140px; width: 80px;">
-                  <img src="assets/img/screenshots/sr2.png" style = "height: 140px; width: 80px;">
-                  <img src="assets/img/screenshots/sr3.png" style = "height: 140px; width: 80px;">
-                  <br><br>
-                  <strong>Genre:</strong> Runner<br>
-                  <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Mobile</p>
-                  <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Solo</p> 
-                  <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">2022</p> 
-                  <br><a class="gradientButton" href="https://play.google.com/store/apps/details?id=com.HypersomniacGames.ShortCircuit3DRunner" target="_blank" style="background-color: rgb(5, 154, 62); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: normal; color: white !important ; padding: 1%;">GooglePlay</a>
-                  <a href="https://github.com/shamitahmed/ShortcutRun" target="_blank" style="background-color: rgb(94, 5, 154); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: normal; color: white !important ; padding: 1%;">Github</a>
-                  <a href="https://www.youtube.com/embed/wGJNtnq4th0" target="_blank" style="background-color: rgb(199, 55, 39); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: normal; color: white !important ; padding: 1%;">Youtube</a>
-                  <img class="engineLogo" src="assets/img/unity.png" width="50px" height="50px">
-                </ul>
-              </div>
             </div>
-
-              <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-    
-                <iframe src="https://www.youtube.com/embed/nP-DmMv7dZ8">
-                </iframe>
-                <p><a href="https://www.youtube.com/embed/nP-DmMv7dZ8" style="font-weight: bold;">My Friend Rashed</a> </p>
-                <div class="description" style="color: white;">
-                  <ul>
-                    <li>A 2D platformer based on real incidents during the Liberation War of Bangladesh in 1971. Use tactics, solve puzzles and fight your way to victory while assisting the freedom fighters.</li>
-                    <li>Based on novel by<a href="https://en.wikipedia.org/wiki/Amar_Bondhu_Rashed" target="_blank" style="font-weight: normal;">Muhammad Zafar Iqbal.</a></li>
-                    <li>Genre: Action, Platformer</li>
-                    <li>Role: Programmer, Artist, Team Lead</a></li>
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Mobile</p> 
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">PC</p>
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">5 People</p> 
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">2018</p> 
-                  </ul>
-                </div>
-              </div> -->
-
-              <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-    
-                <iframe src="https://www.youtube.com/embed/JI-wq-5XKNw">
-                </iframe>
-                <p><a href="https://www.youtube.com/embed/JI-wq-5XKNw" style="font-weight: bold;">Hyper Cyclist</a> </p>
-                <div class="description" style="color: white;">
-                  <ul>
-                    <li>My immense love for cycling encouraged me to work on this project, which I envision, will motivate people to use bicycles, educate them about road safety and will be adored by all cyclists! Players have to jump, switch lanes and balance their way to victory!</li>
-                    <li>Meta Loop: Garage Decor, Character Skins, Upgrades and MORE!</li>
-                    <li>Genre: Casual, Platformer</li>
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Mobile</p>
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Solo</p> 
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">2022</p> 
-                    <br><a href="https://play.google.com/store/apps/details?id=com.hypersomniacGames.HyperCyclist"  style="background-color: rgb(5, 154, 62); display: inline-block; border-radius: 4px; font-size: 18px; font-weight: bold; color: white !important ; padding: 1%;">PLAY</a>
-                  </ul>
-                </div>
-              </div> -->
-
-              <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-    
-                <img class="activegif" src="assets/img/projects/zombrain.gif">
-                <p><a class="projectheader" href="https://www.youtube.com/embed/PO9nuQd07eg"  target="_blank"style="font-weight: bold;">Zombrain</a> </p>
-                <div class="description" style="color: white;">
-                  <ul>               
-                    Zombies have stolen the brains of extraordinary scientists in pursuit to dominate the world. Retrieve their brains and save humanity!<br>
-                    My 1st game made in unity that also won the 1st place in IUT ICT Fest 2016! Making a 2D platformer for the first time and winning a Competition as a cherry on top has kept me hooked into making games ever since!</a><br>
-                    <br><strong>Genre:</strong> Action, Platformer<br>
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">First Unity Project</p>
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">PC</p>
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Solo</p> 
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">2016</p>
-                    <br><a href="https://www.youtube.com/embed/PO9nuQd07eg" target="_blank" style="background-color: rgb(199, 55, 39); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: normal; color: white !important ; padding: 1%;">Youtube</a> 
-                    <img class="engineLogo" src="assets/img/unity.png" width="50px" height="50px">
-                  </ul>
-                </div>
-              </div>
-              <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-    
-                <iframe src="https://www.youtube.com/embed/0U3uozcWkoc">
-                </iframe>
-                <p><a href="https://www.youtube.com/embed/0U3uozcWkoc" style="font-weight: bold;">Bangla Surfers</a> </p>
-                <div class="description" style="color: white;">
-                  <ul>
-                    <li>A 2D platformer created to promote surfing in Bangladesh and to raise awareness against environmental pollution.</li>
-                    <p style="background-color:dodgerblue;  display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Mobile</p> 
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">2017</p> 
-                  </ul>
-                </div>
-              </div> -->
-
-              <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-jam">
-    
-                <div class="game-preview">
-                  <a href="https://roboshamit.itch.io/retro-stuck">
-                  <img src="assets/img/rsz_retro.png" class="img-fluid" alt="">
+              <div style="text-align: center; margin-top: 20px;">
+                <a href="projects.html" 
+                   style="background-color: rgb(5, 154, 62); 
+                          color: white !important; 
+                          font-size: 18px; 
+                          font-weight: bold; 
+                          padding: 12px 24px; 
+                          border-radius: 6px; 
+                          text-decoration: none; 
+                          display: inline-block;
+                          transition: background-color 0.3s ease;"
+                   onmouseover="this.style.backgroundColor='rgb(4, 130, 50)'" 
+                   onmouseout="this.style.backgroundColor='rgb(5, 154, 62)'">
+                   View More Projects
                 </a>
-                </div>
-                <p><a href="https://roboshamit.itch.io/retro-stuck" style="font-weight: bold;">Retro Stuck | Ludum Dare 47 (2021)</a> </p>
-                <div class="description" style="color: white;">
-                  <ul>
-                    <li>You are stuck in a retro loop and only solution is to type your way out!</li>
-                    <a href="https://ldjam.com/events/ludum-dare/47/retro-stuck" style="background-color: salmon; display: inline-block; border-radius: 4px; font-size: 18px; font-weight: bold; padding: 1%;">PLAY</a>
-                    <p style="background-color: blueviolet;  display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;"> Jam Entry </p>
-                    <p style="background-color:darkred;  display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Web</p> 
-                  </ul>
-                </div>
-              </div> -->
-            
-
-              <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-    
-                <img class="activegif" src="assets/img/projects/aqua.gif" style="height: 250px; width: 180px;">
-                <p><a class="projectheader" href="https://www.youtube.com/watch?v=6Ep_N9nU8qI" target="_blank" style="font-weight: bold;">Aquarium Island</a> </p>
-                <div class="description" style="color: white;">
-                  <ul>
-                    <!-- <li>A fun shark battle game where I enjoyed working on gameplay, lighting and overall polishing.</li> -->
-                    Aquatic Park management game that features relaxing fishing, progressive gameplay and seafoods! I was responsible for features such as: game design, player controls, fish movement, catching and storage, level up system, upgrade system and overall look and feel of the game.</li>
-                    <br><br>
-                    <img src="assets/img/screenshots/aqua3.png" style = "height: 140px; width: 80px;">
-                    <img src="assets/img/screenshots/aqua2.png" style = "height: 140px; width: 80px;">
-                    <img src="assets/img/screenshots/aqua1.png" style = "height: 140px; width: 80px;">
-                    <br><br>
-                    <strong>Genre:</strong> Hybrid-Casual, Idle Arcade<br>
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Mobile</p>
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">3 People</p> 
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">2022</p> 
-                    <br><a href="https://www.youtube.com/watch?v=6Ep_N9nU8qI" target="_blank" style="background-color: rgb(199, 55, 39); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: normal; color: white !important ; padding: 1%;">Youtube</a> 
-                    <img class="engineLogo" src="assets/img/unity.png" width="50px" height="50px">
-                  </ul>
-                </div>
-              </div>            
-      
-              <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-    
-                <img class="activegif" src="assets/img/projects/flappy.gif" style="height: 250px; width: 180px;">
-                <p><a class="projectheader" href="https://play.google.com/store/apps/details?id=com.HypersomniacGames.SuperFlappyChickenGame" target="_blank" style="font-weight: bold;">Super Flappy Chicken Game</a> </p>
-                <div class="description" style="color: white;">
-                  <ul>
-                    2.5D Infinite Sidescroller game featuring unique customization, powerups and upgrades. Special Game Modes all around the year including spooky Halloween and snowy Winter!
-                    <br><br>
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Mobile</p>
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Solo</p> 
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">2021</p> 
-                    <br> <a href="https://play.google.com/store/apps/details?id=com.HypersomniacGames.SuperFlappyChickenGame" target="_blank" style="background-color: rgb(5, 154, 62); display: inline-block; border-radius: 4px; font-size: 18px; font-weight: normal; color: white !important ; padding: 1%;">GooglePlay</a>
-                    <img class="engineLogo" src="assets/img/unity.png" width="50px" height="50px">
-                  </ul>
-                </div>
-              </div> -->
-
-              <div class="col-lg-4 col-md-6 portfolio-item filter-xr">
-                <img class="activegif" src="assets/img/projects/squatgames.gif">
-                <!-- <iframe src="https://www.youtube.com/watch?v=Zgrdv_sjKgg">
-                </iframe> -->
-                <p><a class="projectheader" href="https://www.youtube.com/watch?v=cJv0qYWjzaA" target="_blank" style="font-weight: bold;">Squat Games - Kinect</a> </p>
-                <div class="description" style="color: white;">
-                  <ul>
-                    Squat Games is a <strong>gestural interaction based exergame </strong>prototype I developed using Unity and Kinect. <br><br> Player can embody a pogostick by controlling it with their gestures. Raising hands in specific direction changes the direction of the pogostick and squatting moves it forward.
-                    <br><br>
-                    Squat games aims to promote physical exercise by motivating players to move MORE!
-                    <br><br>
-                    <img src="assets/img/screenshots/squat1.png" style = "height: 80px; width: 145px;">
-                    <img src="assets/img/screenshots/squat2.png" style = "height: 80px; width: 145px;">
-                    <br><br>
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px; padding: 0.85%;">Embodied Interaction</p>
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px; padding: 0.85%;">Kinect</p>
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Solo</p> 
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">2025</p> 
-                    <!-- <br> <a class="gradientButton" href="https://shamitahmed.itch.io/vrsewerescape?secret=2oTy6LNxlOOO1Wqr9kruPi34Pw" target="_blank" style="background-color: rgb(5, 154, 62); display: inline-block; border-radius: 4px; font-size: 18px; font-weight: normal; color: white !important ; padding: 1%;">Itch.io</a> -->
-                    <a href="https://www.youtube.com/watch?v=cJv0qYWjzaA" target="_blank" style="background-color: rgb(199, 55, 39); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: normal; color: white !important ; padding: 1%;">Youtube</a> 
-                    <img class="engineLogo" src="assets/img/unity.png" width="50px" height="50px">
-                    <img class="engineLogo" src="assets/img/kinect.png" width="100px" height="50px">
-                  </ul>
-                </div>
-              </div>
-
-              <div class="col-lg-4 col-md-6 portfolio-item filter-xr">
-                <img class="activegif" src="assets/img/projects/beat.gif">
-                <!-- <iframe src="https://www.youtube.com/watch?v=Zgrdv_sjKgg">
-                </iframe> -->
-                <p><a class="projectheader" href="https://shamitahmed.itch.io/beat-saber-clone-vr" target="_blank" style="font-weight: bold;">VR Beat Saber</a> </p>
-                <div class="description" style="color: white;">
-                  <ul>
-                    The game features satisfying cube cutting with lightsabers, controller haptics and many visual effects that facilitate immersion and improve user experience.  
-                    Made with Unity using the Meta Quest 3 Headset.</li>                    
-                    <br><br>
-                    <img src="assets/img/screenshots/beats1.png" style = "height: 120px; width: 120px;">
-                    <img src="assets/img/screenshots/beats2.png" style = "height: 120px; width: 120px;">
-                    <br><br>
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px; padding: 0.85%;">Coding Virtual Worlds</p>
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px; padding: 0.85%;">VR</p>
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Solo</p> 
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">2024</p> 
-                    <br> <a class="gradientButton" href="https://shamitahmed.itch.io/beat-saber-clone-vr" target="_blank" style="background-color: rgb(5, 154, 62); display: inline-block; border-radius: 4px; font-size: 18px; font-weight: normal; color: white !important ; padding: 1%;">Itch.io</a>
-                    <a href="https://www.youtube.com/watch?v=aENvmh3HnQA" target="_blank" style="background-color: rgb(199, 55, 39); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: normal; color: white !important ; padding: 1%;">Youtube</a> 
-                    <img class="engineLogo" src="assets/img/unity.png" width="50px" height="50px">
-                    <img class="engineLogo" src="assets/img/meta.png" width="50px" height="50px">
-                  </ul>
-                </div>
-              </div>
-
-              <div class="col-lg-4 col-md-6 portfolio-item filter-xr">
-                <img class="activegif" src="assets/img/projects/escape.gif">
-                <!-- <iframe src="https://www.youtube.com/watch?v=Zgrdv_sjKgg">
-                </iframe> -->
-                <p><a class="projectheader" href="https://shamitahmed.itch.io/vrsewerescape?secret=2oTy6LNxlOOO1Wqr9kruPi34Pw" target="_blank" style="font-weight: bold;">VR Sewer Escape</a> </p>
-                <div class="description" style="color: white;">
-                  <ul>
-                    VR Escape Room game featuring multiple <strong>interaction</strong> techniques including socket interactors, grab interactables, drawers, doors, switches, UI etc.
-                    </li>                    
-                    <br><br>
-                    <img src="assets/img/screenshots/se1.png" style = "height: 80px; width: 145px;">
-                    <br><br>
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px; padding: 0.85%;">Coding Virtual Worlds</p>
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px; padding: 0.85%;">VR</p>
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Solo</p> 
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">2024</p> 
-                    <br> <a class="gradientButton" href="https://shamitahmed.itch.io/vrsewerescape?secret=2oTy6LNxlOOO1Wqr9kruPi34Pw" target="_blank" style="background-color: rgb(5, 154, 62); display: inline-block; border-radius: 4px; font-size: 18px; font-weight: normal; color: white !important ; padding: 1%;">Itch.io</a>
-                    <a href="https://youtu.be/DzD_mD1MJxY" target="_blank" style="background-color: rgb(199, 55, 39); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: normal; color: white !important ; padding: 1%;">Youtube</a> 
-                    <img class="engineLogo" src="assets/img/unity.png" width="50px" height="50px">
-                    <img class="engineLogo" src="assets/img/meta.png" width="50px" height="50px">
-                  </ul>
-                </div>
-              </div>
-
-              <div class="col-lg-4 col-md-6 portfolio-item filter-xr">
-                <img class="activegif" src="assets/img/projects/bowl.gif">
-                <!-- <iframe src="https://www.youtube.com/watch?v=Zgrdv_sjKgg">
-                </iframe> -->
-                <p><a class="projectheader" href="https://shamitahmed.itch.io/vrbowlingsim" target="_blank" style="font-weight: bold;">VR Bowling Simulator</a> </p>
-                <div class="description" style="color: white;">
-                  <ul>
-                    VR Bowling Simulator game for improving your bowling skills!
-                    The game features avatar customization, multiple bowling lanes and bowling pin types. The design features multiple <strong>locomotion</strong> techniques including teleportation, snap turn and free movement. Made with Unity using the Meta Quest 3 Headset.</li>                    
-                    <br><br>
-                    <img src="assets/img/screenshots/bs1.png" style = "height: 120px; width: 120px;">
-                    <br><br>
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px; padding: 0.85%;">Coding Virtual Worlds</p>
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px; padding: 0.85%;">VR</p>
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Solo</p> 
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">2024</p> 
-                    <br> <a class="gradientButton" href="https://shamitahmed.itch.io/vrbowlingsim" target="_blank" style="background-color: rgb(5, 154, 62); display: inline-block; border-radius: 4px; font-size: 18px; font-weight: normal; color: white !important ; padding: 1%;">Itch.io</a>
-                    <a href="https://youtu.be/aQrsIXOxMSc" target="_blank" style="background-color: rgb(199, 55, 39); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: normal; color: white !important ; padding: 1%;">Youtube</a> 
-                    <img class="engineLogo" src="assets/img/unity.png" width="50px" height="50px">
-                    <img class="engineLogo" src="assets/img/meta.png" width="50px" height="50px">
-                  </ul>
-                </div>
-              </div>
-
-              <div class="col-lg-4 col-md-6 portfolio-item filter-xr">
-                <img class="activegif" src="assets/img/projects/uganda.gif" style="width: 220px;height: 240px;">
-                <!-- <iframe src="https://www.youtube.com/watch?v=Zgrdv_sjKgg">
-                </iframe> -->
-                <p><a class="projectheader" href="https://www.youtube.com/embed/sPJw7607Njo" target="_blank" style="font-weight: bold;">AR Ugandan Musical Instruments🥁</a> </p>
-                <div class="description" style="color: white;">
-                  <ul>
-                    An augmented reality application designed to teach about native musical instruments from different regions of Uganda 🇺🇬. This technical demonstration was a component of an Aalto University MA in New Media student's master's thesis.</li>                    
-                    <br><br>
-                    <img src="assets/img/screenshots/uar3.png" style = "height: 140px; width: 80px;">
-                    <img src="assets/img/screenshots/uar1.png" style = "height: 140px; width: 80px;">
-                    <img src="assets/img/screenshots/uar2.png" style = "height: 140px; width: 80px;">
-                    <br><br>
-                    Role: Thesis Collaborator, Programmer, Designer</a>
-                    <br><p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px; padding: 0.85%;">AR</p>
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">3 People</p> 
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">2024</p> 
-                    <br> <a href="https://aaltodoc.aalto.fi/items/b8ee979b-437e-41c2-9787-40fa96891322" target="_blank" target="_blank" style="background-color: rgb(5, 154, 62); display: inline-block; border-radius: 4px; font-size: 18px; font-weight: normal; color: white !important ; padding: 1%;">Thesis</a>
-                     <a href="https://www.youtube.com/embed/sPJw7607Njo" target="_blank" target="_blank" style="background-color: rgb(199, 55, 39); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: normal; color: white !important ; padding: 1%;">Youtube</a> 
-                     <img class="engineLogo" src="assets/img/unity.png" width="50px" height="50px">
-                    </ul>
-                </div>
-              </div>
-
-              <div class="col-lg-4 col-md-6 portfolio-item filter-xr">
-                <img class="activegif" src="assets/img/projects/drone.gif">
-                <!-- <iframe src="https://www.youtube.com/watch?v=Zgrdv_sjKgg">
-                </iframe> -->
-                <p><a class="projectheader" href="https://www.youtube.com/watch?v=31kDyzSwjJE" target="_blank" style="font-weight: bold;">AR Outdoor Navigation Assistant</a> </p>
-                <div class="description" style="color: white;">
-                  <ul>
-                    Outdoor navigation drone assistant using Cesium Geospatial Visualization tool in Unity as part of a course project. The application detects current device location and generates 3D realistic tiles to aid with visualization, navigation and additional information.</li>                    
-                    <br><br><p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px; padding: 0.85%;">AR</p>
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Solo</p> 
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">2023</p> 
-                    <br> <a href="https://www.youtube.com/watch?v=31kDyzSwjJE" target="_blank" style="background-color: rgb(199, 55, 39); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: normal; color: white !important ; padding: 1%;">Youtube</a> 
-                    <img class="engineLogo" src="assets/img/unity.png" width="50px" height="50px">
-                  </ul>
-                </div>
-              </div>
-   
-              <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                <img class="activegif" src="assets/img/projects/where.gif">
-                <!-- <iframe src="https://www.youtube.com/watch?v=Zgrdv_sjKgg">
-                </iframe> -->
-                <p><a class="projectheader" href="https://www.youtube.com/watch?v=Zgrdv_sjKgg" target="_blank" style="font-weight: bold;">projectWHERE-Graffathon2024</a> </p>
-                <div class="description" style="color: white;">
-                  <ul>
-                    Entry for the Computer Graphics Hackathon, Graffathon 2024 at Aalto University. Features short narrative tied by audio-visual synchronization.<br>    
-                    🎖️6th Place in Beginners Category<br><br>
-                    Used: Geospatial data for loading photorealistic 3D tilesets in Unity<br>    <br>       
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px; padding: 0.85%;">Demo</p>
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Solo</p> 
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">2024</p> 
-                    <br> <a href="https://www.youtube.com/watch?v=Zgrdv_sjKgg" target="_blank" style="background-color: rgb(199, 55, 39); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: normal; color: white !important ; padding: 1%;">Youtube</a> 
-                    <img class="engineLogo" src="assets/img/unity.png" width="50px" height="50px">
-                  </ul>
-                </div>
-              </div>
-              
-              <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                <img class="activegif" src="assets/img/projects/eid.gif" style="height: 250px; width: 200px;">
-                <!-- <iframe src="https://www.youtube.com/embed/2E2ZSeKS8dE">
-                </iframe> -->
-                <p><a class="projectheader" href="https://www.youtube.com/shorts/2E2ZSeKS8dE" target="_blank" style="font-weight: bold;">Eid-ul-Fitr Cinematic</a> </p>
-                <div class="description" style="color: white;">
-                  <ul>
-                    A cozy cinematic I created alongside my spouse celebrating the festivities and wishing a happy Eid to everyone!
-                    <br>Rendering Pipeline: Unity HDRP<br>              
-                    <br><p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px; padding: 0.85%;">Cinematic</p>
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">2 People</p> 
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">2022</p> 
-                    <br> <a href="https://www.youtube.com/shorts/2E2ZSeKS8dE" target="_blank" style="background-color: rgb(199, 55, 39); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: normal; color: white !important ; padding: 1%;">Youtube</a> 
-                    <img class="engineLogo" src="assets/img/unity.png" width="50px" height="50px">
-                  </ul>
-                </div>
-              </div>
-           
-              <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                <img class="activegif" src="assets/img/projects/cov.gif" style="height: 250px; width: 200px;">
-                <!-- <iframe src="https://www.youtube.com/embed/5-wReg5ooAw"> -->
-                </iframe>
-                <p><a class="projectheader" href="https://www.youtube.com/embed/5-wReg5ooAw" target="_blank" style="font-weight: bold;">Quarantined Morning Cinematic</a> </p>
-                <div class="description" style="color: white;">
-                  <ul>
-                    A short made during the COVID-19 pandemic showcasing a relaxed morning in a uncrowded city under lockdown.<br>     
-                    <br><p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px; padding: 0.85%;">Cinematic</p>
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Solo</p>  
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">2020</p>    
-                    <br> <a href="https://www.youtube.com/embed/5-wReg5ooAw" target="_blank" style="background-color: rgb(199, 55, 39); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: normal; color: white !important ; padding: 1%;">Youtube</a>         
-                    <img class="engineLogo" src="assets/img/unity.png" width="50px" height="50px">
-                  </ul>
-                </div>
-              </div>
-
-              <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-    
-                <img class="activegif" src="assets/img/projects/rick.gif">
-                <p><a class="projectheader" href="https://www.youtube.com/embed/WNNYTpsCYSY" target="_blank" style="font-weight: bold;"> Rides of Bangladesh: Rickshaw</a> </p>
-                <div class="description" style="color: white;">
-                  <ul>
-                    A short product packaging design that I loved rendering using Unity!
-                      Done by me: textures, lighting, audio, VFX, post-processing<br><br>
-                      <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px; padding: 0.85%;">Cinematic</p> 
-                      <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Solo</p> 
-                      <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">2023</p>     
-                      <br> <a href="https://www.youtube.com/embed/WNNYTpsCYSY" target="_blank" style="background-color: rgb(199, 55, 39); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: normal; color: white !important ; padding: 1%;">Youtube</a>                     
-                      <img class="engineLogo" src="assets/img/unity.png" width="50px" height="50px">
-                    </ul>
-                </div>
-              </div>
-
-              <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-    
-                <iframe src="https://www.youtube.com/embed/aye3FuckJVs">
-                </iframe>
-                <p><a href="https://www.youtube.com/embed/aye3FuckJVs" style="font-weight: bold;">Fall Guys Environment Design</a> </p>
-                <div class="description" style="color: white;">
-                  <ul>
-                    <li>A small level design mimicing the artstyle and color palette of the game "Fall Guys".</li>        
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px; padding: 0.85%;">Cinematic</p>  
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">2021</p>           
-                  </ul>
-                </div>
-              </div> -->
-
-              <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-    
-                <img class="activegif" src="assets/img/projects/brain.gif">
-                <p><a class="projectheader" href="https://www.youtube.com/embed/NPbu_50IvO4" target="_blank" style="font-weight: bold;">DMRI Tract Segmentation Visualization</a> </p>
-                <div class="description" style="color: white;">
-                  <ul>
-                    In my BSc. thesis, I classified the brain tracts using supervised machine learning algorithms including NN, One Class SVM etc. This is the 3D Brain Visualization Tool that I created with help of 3D data. </li>  
-                    <br><br><p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px; padding: 0.85%;">Application</p>
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px; padding: 0.85%;">Research</p>
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px; padding: 0.85%;">BSc. Thesis</p>
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">4 People</p> 
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">2019</p> 
-                    <br> <a href="https://www.youtube.com/embed/NPbu_50IvO4" target="_blank" style="background-color: rgb(199, 55, 39); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: normal; color: white !important ; padding: 1%;">Youtube</a>     
-                    <img class="engineLogo" src="assets/img/python.png" width="50px" height="50px">
-                  </ul>
-                </div>
-              </div>
-             
-              <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-    
-                <img class="activegif" src="assets/img/projects/covid.gif" target="_blank" style="height: 250px; width: 180px;">
-                <p><a class="projectheader" href="https://www.youtube.com/embed/84vSJtvDYec" target="_blank" style="font-weight: bold;">Daily Covid-19 Updater</a> </p>
-                <div class="description" style="color: white;">
-                  <ul>
-                    A COVID-19 app that uses API to fetch real-time global data and gives regular region specific updates.    
-                    <br><br><strong>Role:</strong> Design, API integration, UI/UX 
-                    <br><p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px; padding: 0.85%;">Mobile Application</p>  
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">2 People</p> 
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">2020</p>             
-                    <br> <a href="https://www.youtube.com/embed/84vSJtvDYec" target="_blank" style="background-color: rgb(199, 55, 39); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: normal; color: white !important ; padding: 1%;">Youtube</a> 
-                    <img class="engineLogo" src="assets/img/unity.png" width="50px" height="50px">
-                  </ul>
-                </div>
-              </div>
-
-         
-
-              <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-    
-                <img class="activegif" src="assets/img/projects/anao.gif">
-                <p><a class="projectheader" href="https://www.youtube.com/embed/kqYJuthEJyo" target="_blank" style="font-weight: bold;">Anao.com</a> </p>
-                <div class="description" style="color: white;">
-                  <ul>
-                    An undergraduate project that showcases an ecommerce site that enables customers to bring products from abroad through the help of travelers.
-                    <br><br><strong>Tools:</strong> PHP, JS, MySQL
-                    <br><p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px; padding: 0.85%;">Web Application</p>
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">3 People</p> 
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">2018</p>   
-                    <br><a href="https://github.com/roboshamit/Anao.com" target="_blank" style="background-color: rgb(94, 5, 154); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: normal; color: white !important ; padding: 1%;">Github</a>        
-                    <a href="https://www.youtube.com/embed/kqYJuthEJyo" target="_blank" style="background-color: rgb(199, 55, 39); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: normal; color: white !important ; padding: 1%;">Youtube</a>           
-                    <img class="engineLogo" src="assets/img/php.png" width="50px" height="50px">
-                  </ul>
-                </div>
-              </div>
-
-              <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                  <a href="https://github.com/roboshamit/DoctorKothay">
-                  <img class="activegif" src="assets/img/rsz_doctor.png" class="img-fluid" alt="">
-                </a>
-                <p><a class="projectheader" href="https://github.com/roboshamit/DoctorKothay" target="_blank" style="font-weight: bold;">Doctor Kothay</a> </p>
-                
-                <div class="description" style="color: white;">
-                  <ul>
-                    A website facilitating medical support and information utilizing geolocation and google maps API.
-                    <br>Users can 1. Search for doctors according to their department and location 2. Find nearby medicine shop, hospital and diagnostic center and 3. Place appointment to their doctor of preference.                   
-                    <br><br><strong>Tools:</strong> ASP.net, MySQL
-                    <br><p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px; padding: 0.85%;">Web Application</p>
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">3 People</p> 
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">2017</p>             
-                    <br><a href="https://github.com/roboshamit/DoctorKothay" target="_blank" style="background-color: rgb(94, 5, 154); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: normal; color: white !important ; padding: 1%;">Github</a>
-                  </ul>
-                </div>
-              </div>
-
             </div>
-       
-
-          </div>
+      
 
         
         </section><!-- End Portfolio Section -->
@@ -2097,8 +1436,8 @@
                <br><br>
                <!-- <P style="text-align: left;">Website created by Shamit Ahmed & Faiza Anan Noor</P> -->
                 <br><br><br>
-               <p class="copyright-text"style="text-align: left;">Copyright &copy; 2025 All Rights Reserved by 
-                <a href="https://www.linkedin.com/in/shamitahmed/">Shamit Ahmed</a>
+               <p class="copyright-text"style="text-align: left;">© 2025 Shamit Ahmed. All rights reserved.
+                <a href="https://www.linkedin.com/in/shamitahmed/"></a>
                    </p>
                 </ol>
             </fieldset>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>My Journal</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 2rem;
+      background: #f0f4f8;
+      max-width: 700px;
+      margin: auto;
+    }
+    h1 {
+      text-align: center;
+    }
+    textarea, input {
+      width: 100%;
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    button {
+      padding: 0.5rem 1rem;
+      background: #4f46e5;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-right: 1rem;
+    }
+    #previewContainer {
+      display: none;
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>📓 My Journal</h1>
+
+  <form id="journalForm">
+    <input type="text" id="title" placeholder="Title" required />
+    <textarea id="content" rows="6" placeholder="Write your thoughts..." required></textarea>
+    <input type="text" id="year" placeholder="Year (e.g., 2023)" required />
+    <input type="file" id="image" accept="image/*" />
+    <div id="previewContainer">
+      <p><strong>Image Preview:</strong></p>
+      <img id="previewImage" src="" alt="Preview" />
+    </div>
+    <button type="submit">Save Entry</button>
+  </form>
+
+  <script>
+    const form = document.getElementById('journalForm');
+    const imageInput = document.getElementById('image');
+    const previewContainer = document.getElementById('previewContainer');
+    const previewImage = document.getElementById('previewImage');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const title = document.getElementById('title').value.trim();
+      const content = document.getElementById('content').value.trim();
+      const year = document.getElementById('year').value.trim();
+      const file = imageInput.files[0];
+
+      if (!title || !content || !year) {
+        alert("Please fill out all fields, including the year.");
+        return;
+      }
+
+      let imageData = null;
+      if (file) {
+        imageData = await toBase64(file);
+      }
+
+      const newEntry = {
+        title,
+        content,
+        date: new Date().toISOString(),
+        year: year,  // Include the year input here
+        image: imageData
+      };
+
+      console.log("Saving new entry:", newEntry);  // Debugging: Check the entry being saved
+
+      // Get current entries from localStorage, or an empty array if none exist
+      const entries = JSON.parse(localStorage.getItem('journalEntries') || '[]');
+      entries.push(newEntry);
+
+      // Save the updated entries back to localStorage
+      localStorage.setItem('journalEntries', JSON.stringify(entries));
+
+      // Reset the form and hide the preview
+      form.reset();
+      previewContainer.style.display = "none";
+
+      // Notify user that entry was saved
+      alert("Entry Saved!");
+    });
+
+    function toBase64(file) {
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = () => resolve(reader.result);
+        reader.onerror = reject;
+      });
+    }
+
+    imageInput.addEventListener('change', () => {
+      const file = imageInput.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = () => {
+          previewImage.src = reader.result;
+          previewContainer.style.display = "block";
+        };
+        reader.readAsDataURL(file);
+      } else {
+        previewContainer.style.display = "none";
+      }
+    });
+  </script>
+
+</body>
+</html>
