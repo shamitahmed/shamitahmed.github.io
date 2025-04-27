@@ -42,7 +42,7 @@
     html { scroll-behavior: smooth; }
     body { display:block; gap: 0px; background-color: #000; color: #fff; }
     #year-sidebar {
-      position: fixed; top: 45%; transform: translateY(-45%); left: 20px;
+      position: fixed; top: 75%; transform: translateY(-75%); left: 20px;
       display: flex; flex-direction: column; background-color: none;
       padding: 10px; border-radius: 10px; z-index: 1000;margin-left: 50px;
     }
@@ -60,12 +60,40 @@
     .year-link:hover { background-color: #555; }
     #portfolio-content { margin-left: 120px; flex: 1; }
     .year-section { margin-bottom: 150px;}
+    
   </style>
 
 </head>
 
 <body>
-
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const sections = document.querySelectorAll('div[id^="year-"]');
+      const navLinks = document.querySelectorAll('.year-link');
+    
+      window.addEventListener('scroll', () => {
+        let current = "";
+    
+        const scrollPos = window.scrollY + window.innerHeight / 2; // middle of screen
+    
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop;
+          const sectionBottom = sectionTop + section.offsetHeight;
+          
+          if (scrollPos >= sectionTop && scrollPos < sectionBottom) {
+            current = section.getAttribute('id');
+          }
+        });
+    
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (current && link.getAttribute('href') === `#${current}`) {
+            link.classList.add('active');
+          }
+        });
+      });
+    });
+    </script>
   <!-- ======= Mobile nav toggle button ======= -->
   <button type="button" class="mobile-nav-toggle d-xl-none"><i class="icofont-navigation-menu"></i></button>
 
@@ -411,6 +439,31 @@
         </div>
       </div>
 
+      <div class="col-lg-4 col-md-6 portfolio-item filter-app">             
+        <!-- <iframe src="https://www.youtube.com/embed/2WS1l9TvCMM" >
+        </iframe> -->
+        <img class="activegif" src="assets/img/projects/hii.gif">
+        <p><a class="projectheader" href="https://fu-wei.itch.io/hold-it-in" target="_blank" style="font-weight: bold;">Hold It In</a> </p>
+        <div class="description" target="_blank" style="color: white;">
+          <ul>
+            A fart-tastic game where you try to hold in your fart to avoid unimmaginable consequences. Making this game was technically challenging yet well-scoped considering it was developed in 48 hours.</li>
+            <br><br>
+            <img src="assets/img/screenshots/hi1.png" style = "height: 80px; width: 145px;">
+            <img src="assets/img/screenshots/hi2.png" style = "height: 80px; width: 145px;">
+            <img src="assets/img/screenshots/hi3.png" style = "height: 80px; width: 145px;">
+            <br><br>
+            <strong>Genre:</strong> Casual
+            <br><strong>Role:</strong> Programmer, Game Designer<br>
+            <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Global Game Jam 2024</p> 
+            <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Web</p> 
+            <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">7 People</p> 
+          <br><a class="gradientButton" href="https://fu-wei.itch.io/hold-it-in" target="_blank" style="background-color: rgb(5, 154, 62); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: normal; color: white !important ; padding: 1%;">Itch.io</a>
+          <a href="https://www.youtube.com/embed/2WS1l9TvCMM" target="_blank" style="background-color: rgb(199, 55, 39); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: normal; color: white !important ; padding: 1%;">Youtube</a>
+          <img class="engineLogo" src="assets/img/unity.png" width="50px" height="50px">
+        </ul>
+        </div>
+      </div>
+
       <div class="col-lg-4 col-md-6 portfolio-item filter-xr">
         <img class="activegif" src="assets/img/projects/uganda.gif" style="width: 220px;height: 240px;">
         <!-- <iframe src="https://www.youtube.com/watch?v=Zgrdv_sjKgg">
@@ -536,6 +589,54 @@
           </ul>
           </div></div>
 
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+    
+            <!-- <iframe src="https://www.youtube.com/embed/C4uogvEXNks" >
+            </iframe> -->
+            <img class="activegif" src="assets/img/projects/cr.gif">
+            <p><a class="projectheader" href="https://roboshamit.itch.io/catroot" target="_blank" style="font-weight: bold;">Cat Root</a> </p>
+            <div class="description" style="color: white;">
+              <ul>
+                A cute side-scrolling platformer where a farmer's cat has to find water sources to grow the vegetables.
+                <br><br>
+                <img src="assets/img/screenshots/cr1.png" style = "height: 80px; width: 145px;">
+                <img src="assets/img/screenshots/cr2.png" style = "height: 80px; width: 145px;">
+                <img src="assets/img/screenshots/cr3.png" style = "height: 80px; width: 145px;">
+                <br><br>
+                <strong>Genre:</strong> Platformer<br>
+                <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Global Game Jam 2023</p> 
+                <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">PC</p>
+                <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Solo</p> 
+               
+                <br>  <a class="gradientButton" href="https://roboshamit.itch.io/catroot" target="_blank" style="background-color: rgb(5, 154, 62); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: normal; color: white !important ; padding: 1%;">Itch.io</a> 
+                <img class="engineLogo" src="assets/img/unity.png" width="50px" height="50px">
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+
+            <img class="activegif" src="assets/img/projects/rev.gif">
+            <p><a class="projectheader" href="https://play.google.com/store/apps/details?id=com.hypersomniacgames.revrecycle" target="_blank" style="font-weight: bold;">Rev-Recycle</a> </p>
+            <div class="description" style="color: white;">
+              <ul>
+                Cleaners have decided to protest against mass littering by littering. Hence their roles have reversed! Survive from the cops for as long as you can and reach higher scores by littering all around!</li>
+                <br><br>
+                <img src="assets/img/screenshots/rr1.png" style = "height: 140px; width: 80px;">
+                <img src="assets/img/screenshots/rr2.png" style = "height: 140px; width: 80px;">
+                <img src="assets/img/screenshots/rr3.png" style = "height: 140px; width: 80px;">
+                <br><br>
+                <strong>Genre:</strong> Racing, Survival<br>
+                <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">GMTK Game Jam 2023</p> 
+                <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Web</p> 
+                <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Solo</p> 
+                <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">2023</p> 
+                <br><a class="gradientButton" href="https://play.google.com/store/apps/details?id=com.hypersomniacgames.revrecycle" target="_blank" style="background-color: rgb(5, 154, 62); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: bold; color: white !important ; padding: 1%;">Itch.io</a>
+                <img class="engineLogo" src="assets/img/unity.png" width="50px" height="50px">
+              </ul>
+            </div>
+          </div>
+
           <div class="col-lg-4 col-md-6 portfolio-item filter-xr">
             <img class="activegif" src="assets/img/projects/drone.gif">
             <!-- <iframe src="https://www.youtube.com/watch?v=Zgrdv_sjKgg">
@@ -628,107 +729,6 @@
                 </div>
               </div>
          
-                      
-              <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-    
-                <img class="activegif" src="assets/img/projects/fs.gif" style="width: 160px;height: 240px;">
-                <p><a class="projectheader" href="https://play.google.com/store/apps/details?id=com.funvai.fishingsurvival&hl=en_US&gl=US" style="font-weight: bold;">Fishing Survival</a> </p>
-                <div class="description" style="color: white;">
-                  <ul>
-                    A relaxing fishing game that features multiple customizations, upgrades, novel level selection system and many more unique features.
-                    <br><br>
-                    <img src="assets/img/screenshots/fs1.jpg" style = "height: 140px; width: 80px;">
-                    <img src="assets/img/screenshots/fs2.jpg" style = "height: 140px; width: 80px;">
-                    <img src="assets/img/screenshots/fs3.jpg" style = "height: 140px; width: 80px;">
-                    <img src="assets/img/screenshots/fs4.jpg" style = "height: 140px; width: 80px;">
-                    <img src="assets/img/screenshots/fs5.jpg" style = "height: 140px; width: 80px;">
-                    <img src="assets/img/screenshots/fs6.jpg" style = "height: 140px; width: 80px;">
-                    <br><br>
-                    <strong>Genre:</strong> Idle Arcade, Fishing<br>
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Mobile</p>
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">6 People</p> 
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">2021</p> 
-                    <br><a href="https://play.google.com/store/apps/details?id=com.funvai.fishingsurvival&hl=en_US&gl=US"  style="background-color: rgb(5, 154, 62); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: normal; color: white !important ; padding: 1%;">GooglePlay</a>
-                    <a href="https://www.youtube.com/embed/Cr12jAI3ml4" style="background-color: rgb(199, 55, 39); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: normal; color: white !important ; padding: 1%;">Youtube</a>
-                    <img class="engineLogo" src="assets/img/unity.png" width="50px" height="50px">
-                  </ul>
-                </div>
-              </div>
-
-              <div class="col-lg-4 col-md-6 portfolio-item filter-app">             
-                <!-- <iframe src="https://www.youtube.com/embed/2WS1l9TvCMM" >
-                </iframe> -->
-                <img class="activegif" src="assets/img/projects/hii.gif">
-                <p><a class="projectheader" href="https://fu-wei.itch.io/hold-it-in" target="_blank" style="font-weight: bold;">Hold It In</a> </p>
-                <div class="description" target="_blank" style="color: white;">
-                  <ul>
-                    A fart-tastic game where you try to hold in your fart to avoid unimmaginable consequences. Making this game was technically challenging yet well-scoped considering it was developed in 48 hours.</li>
-                    <br><br>
-                    <img src="assets/img/screenshots/hi1.png" style = "height: 80px; width: 145px;">
-                    <img src="assets/img/screenshots/hi2.png" style = "height: 80px; width: 145px;">
-                    <img src="assets/img/screenshots/hi3.png" style = "height: 80px; width: 145px;">
-                    <br><br>
-                    <strong>Genre:</strong> Casual
-                    <br><strong>Role:</strong> Programmer, Game Designer<br>
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Global Game Jam 2024</p> 
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Web</p> 
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">7 People</p> 
-                  <br><a class="gradientButton" href="https://fu-wei.itch.io/hold-it-in" target="_blank" style="background-color: rgb(5, 154, 62); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: normal; color: white !important ; padding: 1%;">Itch.io</a>
-                  <a href="https://www.youtube.com/embed/2WS1l9TvCMM" target="_blank" style="background-color: rgb(199, 55, 39); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: normal; color: white !important ; padding: 1%;">Youtube</a>
-                  <img class="engineLogo" src="assets/img/unity.png" width="50px" height="50px">
-                </ul>
-                </div>
-              </div>
-
-              <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-    
-                <!-- <iframe src="https://www.youtube.com/embed/C4uogvEXNks" >
-                </iframe> -->
-                <img class="activegif" src="assets/img/projects/cr.gif">
-                <p><a class="projectheader" href="https://roboshamit.itch.io/catroot" target="_blank" style="font-weight: bold;">Cat Root</a> </p>
-                <div class="description" style="color: white;">
-                  <ul>
-                    A cute side-scrolling platformer where a farmer's cat has to find water sources to grow the vegetables.
-                    <br><br>
-                    <img src="assets/img/screenshots/cr1.png" style = "height: 80px; width: 145px;">
-                    <img src="assets/img/screenshots/cr2.png" style = "height: 80px; width: 145px;">
-                    <img src="assets/img/screenshots/cr3.png" style = "height: 80px; width: 145px;">
-                    <br><br>
-                    <strong>Genre:</strong> Platformer<br>
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Global Game Jam 2023</p> 
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">PC</p>
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Solo</p> 
-                   
-                    <br>  <a class="gradientButton" href="https://roboshamit.itch.io/catroot" target="_blank" style="background-color: rgb(5, 154, 62); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: normal; color: white !important ; padding: 1%;">Itch.io</a> 
-                    <img class="engineLogo" src="assets/img/unity.png" width="50px" height="50px">
-                  </ul>
-                </div>
-              </div>
-
-              <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-    
-                <img class="activegif" src="assets/img/projects/rev.gif">
-                <p><a class="projectheader" href="https://play.google.com/store/apps/details?id=com.hypersomniacgames.revrecycle" target="_blank" style="font-weight: bold;">Rev-Recycle</a> </p>
-                <div class="description" style="color: white;">
-                  <ul>
-                    Cleaners have decided to protest against mass littering by littering. Hence their roles have reversed! Survive from the cops for as long as you can and reach higher scores by littering all around!</li>
-                    <br><br>
-                    <img src="assets/img/screenshots/rr1.png" style = "height: 140px; width: 80px;">
-                    <img src="assets/img/screenshots/rr2.png" style = "height: 140px; width: 80px;">
-                    <img src="assets/img/screenshots/rr3.png" style = "height: 140px; width: 80px;">
-                    <br><br>
-                    <strong>Genre:</strong> Racing, Survival<br>
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">GMTK Game Jam 2023</p> 
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Web</p> 
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Solo</p> 
-                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">2023</p> 
-                    <br><a class="gradientButton" href="https://play.google.com/store/apps/details?id=com.hypersomniacgames.revrecycle" target="_blank" style="background-color: rgb(5, 154, 62); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: bold; color: white !important ; padding: 1%;">Itch.io</a>
-                    <img class="engineLogo" src="assets/img/unity.png" width="50px" height="50px">
-                  </ul>
-                </div>
-              </div>
-             
-              
               <div class="col-lg-4 col-md-6 portfolio-item filter-app">
                 <img class="activegif" src="assets/img/projects/pvt.gif" style="width: 220px;height: 240px;">
                 <p><a href="https://www.youtube.com/embed/UCb8fbDmiuk" style="font-weight: bold;">Police vs Thief</a> </p>
@@ -895,6 +895,32 @@
         </div>
      </div>
 
+     <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+    
+      <img class="activegif" src="assets/img/projects/fs.gif" style="width: 160px;height: 240px;">
+      <p><a class="projectheader" href="https://play.google.com/store/apps/details?id=com.funvai.fishingsurvival&hl=en_US&gl=US" style="font-weight: bold;">Fishing Survival</a> </p>
+      <div class="description" style="color: white;">
+        <ul>
+          A relaxing fishing game that features multiple customizations, upgrades, novel level selection system and many more unique features.
+          <br><br>
+          <img src="assets/img/screenshots/fs1.jpg" style = "height: 140px; width: 80px;">
+          <img src="assets/img/screenshots/fs2.jpg" style = "height: 140px; width: 80px;">
+          <img src="assets/img/screenshots/fs3.jpg" style = "height: 140px; width: 80px;">
+          <img src="assets/img/screenshots/fs4.jpg" style = "height: 140px; width: 80px;">
+          <img src="assets/img/screenshots/fs5.jpg" style = "height: 140px; width: 80px;">
+          <img src="assets/img/screenshots/fs6.jpg" style = "height: 140px; width: 80px;">
+          <br><br>
+          <strong>Genre:</strong> Idle Arcade, Fishing<br>
+          <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Mobile</p>
+          <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">6 People</p> 
+          <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">2021</p> 
+          <br><a href="https://play.google.com/store/apps/details?id=com.funvai.fishingsurvival&hl=en_US&gl=US"  style="background-color: rgb(5, 154, 62); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: normal; color: white !important ; padding: 1%;">GooglePlay</a>
+          <a href="https://www.youtube.com/embed/Cr12jAI3ml4" style="background-color: rgb(199, 55, 39); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: normal; color: white !important ; padding: 1%;">Youtube</a>
+          <img class="engineLogo" src="assets/img/unity.png" width="50px" height="50px">
+        </ul>
+      </div>
+    </div>
+    
      <div class="col-lg-4 col-md-6 portfolio-item filter-app" >
       <img class="activegif" src="assets/img/projects/dr.gif">
       <p><a class="projectheader" href="https://alium-basir-sakib.itch.io/diet-run" style="font-weight: bold;">Diet Run</a> </p>
