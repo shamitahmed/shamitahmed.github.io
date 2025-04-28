@@ -1,0 +1,227 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini Portfolio - Improved</title>
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body {
+      background-color: #000;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    #year-sidebar {
+      position: fixed;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 20px;
+      display: flex;
+      flex-direction: column;
+      background-color: #111;
+      padding: 10px;
+      border-radius: 10px;
+      z-index: 1000;
+    }
+    .year-link {
+      margin-bottom: 10px;
+      padding: 8px 14px;
+      background-color: #333;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: normal;
+      transition: background-color 0.3s, transform 0.3s;
+      text-align: center;
+    }
+    .year-link.active {
+      background-color: #00ffe5;
+      color: black;
+      font-weight: bold;
+      transform: scale(1.1);
+    }
+    .year-link:hover { background-color: #555; }
+
+    .container {
+      margin-left: 120px;
+      padding: 20px;
+    }
+    .year-heading {
+      font-size: 36px;
+      color: #00ffe5;
+      margin-top: 100px;
+      margin-bottom: 50px;
+      text-align: center;
+      text-shadow: 0px 0px 10px #00ffe5;
+    }
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    .card {
+      background-color: #1a1a1a;
+      border-radius: 10px;
+      overflow: hidden;
+      width: 300px;
+      transition: transform 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .card:hover {
+      transform: scale(1.05);
+    }
+    .card img {
+      height: 200px;
+      object-fit: cover;
+      width: 100%;
+    }
+    .card-content {
+      padding: 15px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .project-title {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .tags {
+      margin-top: 10px;
+    }
+    .tag {
+      display: inline-block;
+      border: 1px solid #00ffe5;
+      border-radius: 5px;
+      padding: 2px 6px;
+      font-size: 12px;
+      margin: 2px;
+    }
+    .button-row {
+      margin-top: 10px;
+      display: flex;
+      gap: 10px;
+    }
+    .btn {
+      flex: 1;
+      text-align: center;
+      background-color: #333;
+      color: white;
+      padding: 8px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 14px;
+    }
+    .btn:hover {
+      background-color: #00ffe5;
+      color: black;
+    }
+
+    @media (max-width: 768px) {
+      #year-sidebar {
+        display: none;
+      }
+      .container {
+        margin-left: 0;
+        padding: 10px;
+      }
+      .row {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div id="year-sidebar">
+  <a href="#year-2024" class="year-link">2024</a>
+</div>
+
+<div class="container">
+
+  <div id="year-2024" class="year-section">
+    <h2 class="year-heading">2024 Projects</h2>
+
+    <div class="row">
+
+      <div class="card" data-aos="fade-up">
+        <img src="https://via.placeholder.com/300x200?text=Unreality+VR" alt="Unreality VR">
+        <div class="card-content">
+          <div class="project-title">(Un)Reality VR</div>
+          <div class="tags">
+            <span class="tag">VR</span>
+            <span class="tag">Unity</span>
+            <span class="tag">4 People</span>
+          </div>
+          <div class="button-row">
+            <a href="#" class="btn">🎮 Itch.io</a>
+            <a href="#" class="btn">▶️ Trailer</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" data-aos="fade-up" data-aos-delay="100">
+        <img src="https://via.placeholder.com/300x200?text=Thoughts+Out" alt="Thoughts Out!">
+        <div class="card-content">
+          <div class="project-title">Thoughts Out!</div>
+          <div class="tags">
+            <span class="tag">Puzzle</span>
+            <span class="tag">Unreal</span>
+            <span class="tag">9 People</span>
+          </div>
+          <div class="button-row">
+            <a href="#" class="btn">🎮 Itch.io</a>
+            <a href="#" class="btn">▶️ Trailer</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+AOS.init();
+
+document.addEventListener("DOMContentLoaded", function() {
+  const sections = document.querySelectorAll('div[id^="year-"]');
+  const navLinks = document.querySelectorAll('.year-link');
+
+  window.addEventListener('scroll', () => {
+    let current = "";
+
+    const scrollPos = window.scrollY + window.innerHeight / 2;
+
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      const sectionBottom = sectionTop + section.offsetHeight;
+
+      if (scrollPos >= sectionTop && scrollPos < sectionBottom) {
+        current = section.getAttribute('id');
+      }
+    });
+
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (current && link.getAttribute('href') === `#${current}`) {
+        link.classList.add('active');
+      }
+    });
+  });
+});
+</script>
+
+</body>
+</html>
