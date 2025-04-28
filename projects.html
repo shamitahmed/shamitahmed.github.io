@@ -128,6 +128,66 @@
         <a href="#year-2017" class="year-link">2017</a>
         <a href="#year-2016" class="year-link">2016</a>
       </div>
+      <script>
+        document.addEventListener("DOMContentLoaded", function() {
+          const sections = document.querySelectorAll('div[id^="year-"]');
+          const navLinks = document.querySelectorAll('.year-link');
+          const yearSelect = document.getElementById('year-select');
+        
+          // Scroll highlight system (same as before)
+          window.addEventListener('scroll', () => {
+            let current = "";
+            const scrollPos = window.scrollY + window.innerHeight / 2;
+            sections.forEach(section => {
+              const sectionTop = section.offsetTop;
+              const sectionBottom = sectionTop + section.offsetHeight;
+              if (scrollPos >= sectionTop && scrollPos < sectionBottom) {
+                current = section.getAttribute('id');
+              }
+            });
+        
+            navLinks.forEach(link => {
+              link.classList.remove('active');
+              if (current && link.getAttribute('href') === `#${current}`) {
+                link.classList.add('active');
+              }
+            });
+          });
+        
+          // Scroll to selected year when mobile dropdown changes
+          if (yearSelect) {
+            yearSelect.addEventListener('change', function() {
+              const selectedValue = this.value;
+              if (selectedValue) {
+                document.querySelector(selectedValue).scrollIntoView({ behavior: 'smooth' });
+              }
+            });
+          }
+        });
+        </script>
+        <style>
+          @media (max-width: 768px) {
+            #year-sidebar { display: none; }
+            #year-dropdown { display: block; }
+          }
+          @media (min-width: 769px) {
+            #year-dropdown { display: none; }
+          }
+          </style>
+      <div id="year-dropdown" style="display: none; margin: 10px;">
+        <select id="year-select" style="padding: 8px; border-radius: 5px; background: #111; color: white;">
+          <option value="#year-2025">2025</option>
+          <option value="#year-2024">2024</option>
+          <option value="#year-2023">2023</option>
+          <option value="#year-2022">2022</option>
+          <option value="#year-2021">2021</option>
+          <option value="#year-2020">2020</option>
+          <option value="#year-2019">2019</option>
+          <option value="#year-2018">2018</option>
+          <option value="#year-2017">2017</option>
+          <option value="#year-2016">2016</option>
+        </select>
+      </div>
 </div>  
       <button type="button" class="mobile-nav-toggle d-xl-none"><i class="icofont-navigation-menu"></i></button>
 
