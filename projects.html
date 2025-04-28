@@ -42,9 +42,16 @@
     html { scroll-behavior: smooth; }
     body { display:block; gap: 0px; background-color: #000; color: #fff; }
     #year-sidebar {
-      position: fixed; top: 75%; transform: translateY(-75%); left: 20px;
-      display: flex; flex-direction: column; background-color: none;
-      padding: 10px; border-radius: 10px; z-index: 1000;margin-left: 50px;
+      position: fixed;
+      top: 75%;
+      transform: translateY(-75%);
+      left: 70px;
+      display: flex;
+      flex-direction: column;
+      background-color: none;
+      padding: 10px;
+      border-radius: 10px;
+      z-index: 1000;
     }
     .year-heading {
       font-size: 45px;
@@ -54,11 +61,36 @@
       text-align: center;
     }
     .year-link {
-      margin-bottom: 10px; padding: 8px 14px; background-color: #333;
-      color: white; text-decoration: none; border-radius: 5px;
-      font-weight: normal; transition: background-color 0.3s, transform 0.3s;
+      margin-bottom: 10px;
+      padding: 8px 14px;
+      background-color: #333;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: normal;
       text-align: center;
+      opacity: 0;
+      transform: translateX(-50px);
+      animation: slideIn 0.5s forwards;
     }
+    /* Make each button slide in one after another */
+    .year-link:nth-child(1) { animation-delay: 0.1s; }
+    .year-link:nth-child(2) { animation-delay: 0.2s; }
+    .year-link:nth-child(3) { animation-delay: 0.3s; }
+    .year-link:nth-child(4) { animation-delay: 0.4s; }
+    .year-link:nth-child(5) { animation-delay: 0.5s; }
+    .year-link:nth-child(6) { animation-delay: 0.6s; }
+    .year-link:nth-child(7) { animation-delay: 0.7s; }
+    .year-link:nth-child(8) { animation-delay: 0.8s; }
+    .year-link:nth-child(9) { animation-delay: 0.9s; }
+    .year-link:nth-child(10) { animation-delay: 1.0s; }
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
     .year-link.active {
       background-color: #007bff;
       font-weight: bold;
