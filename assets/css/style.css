@@ -5,9 +5,9 @@
 body {
   font-family: 'Open Sans', sans-serif;
   color: rgb(221, 220, 220) !important;
-  /* background-color: black !important; */
+  background-color: black !important;
 
-  background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(29,32,56,1) 78%); 
+  /* background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(29,32,56,1) 78%);  */
   /* background-image: linear-gradient(210deg, blue, black) !important; */
 }
 /*  DAY NIGHT TOGGLE START *//*  DAY NIGHT TOGGLE START *//*  DAY NIGHT TOGGLE START *//*  DAY NIGHT TOGGLE START *//*  DAY NIGHT TOGGLE START */
@@ -70,7 +70,7 @@ body {
 }
 
 body.light {
-  background: #e0e9f3;
+  background: #e0e9f3 !important;
   color: #272727;
   transition: background 0.5s, color 0.5s;
 }
@@ -731,15 +731,15 @@ section {
 }
 
 .section-bg-skills {
-  background: rgb(29,32,56);
+  /* background: rgb(29,32,56); */
   /* background: linear-gradient(180deg, rgba(29,32,56,1) 0%, rgba(0,0,0,1) 78%);  */
 }
 .section-bg-tools {
-  background: rgb(29,32,56);
-  background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(29,32,56,1) 78%); 
+  /* background: rgb(29,32,56); */
+  /* background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(29,32,56,1) 78%);  */
 }
 .section-bg-portfolio {
-  background: rgb(0, 0, 0);
+  /* background: rgb(0, 0, 0); */
   /* background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(29,32,56,1) 78%);  */
 }
 .section-title {
