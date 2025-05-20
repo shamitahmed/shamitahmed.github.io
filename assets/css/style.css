@@ -183,7 +183,7 @@ h2 {
 }
 .projectheader{
   font-size: 22px;
-  background-color: rgb(18, 19, 33);
+  /* background-color: rgb(18, 19, 33); */
   color: white !important;
 }
 
