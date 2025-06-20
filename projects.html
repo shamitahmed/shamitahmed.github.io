@@ -97,7 +97,18 @@
     .year-section { margin-bottom: 150px;}
     
   </style>
+  <style>
+  /* Fade animation */
+body {
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
 
+/* When ready, fade in */
+body.page-loaded {
+  opacity: 1;
+}
+  </style>
 </head>
 
 <body>
@@ -1590,5 +1601,31 @@ Swipe your finger on screen to move your Shark. Make your Shark stronger and big
 
         
         </section><!-- End Portfolio Section -->
-</footer>
+<script>
+// FADE IN on load
+document.addEventListener("DOMContentLoaded", function() {
+  document.body.classList.add('page-loaded');
+});
+
+// FADE OUT only when clicking the "All Projects" link
+document.querySelectorAll('a').forEach(link => {
+  if (
+    link.target !== "_blank" &&
+    link.href &&
+    link.origin === location.origin &&
+    link.getAttribute('href').includes('projects.html') // Only target link to projects.html
+  ) {
+    link.addEventListener("click", function(e) {
+      e.preventDefault();
+      document.body.classList.remove('page-loaded'); // triggers fade out
+      setTimeout(() => {
+        window.location.href = link.href;
+      }, 600); // match transition time
+    });
+  }
+});
+</script>
+
+
+      </body>
 </html>
