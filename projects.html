@@ -42,19 +42,13 @@
     html { scroll-behavior: smooth; }
     body { display:block; gap: 0px; background-color: #000; color: #fff; }
     #year-sidebar {
-      position: fixed;
-      top: 75%;
-      transform: translateY(-75%);
-      left: 70px;
+      margin-top: 10%;
       display: flex;
       flex-direction: column;
-      background-color: none;
-      padding: 10px;
-      border-radius: 10px;
-      z-index: 1000;
+      width: 100%;
     }
     .year-heading {
-      font-size: 45px;
+      font-size: 55px;
       color: #00ffe5;
       margin-top: 60px;
       margin-bottom: 30px;
@@ -63,11 +57,12 @@
     .year-link {
       margin-bottom: 10px;
       padding: 8px 14px;
-      background-color: #333;
+      background-color: none;
       color: white;
       text-decoration: none;
       border-radius: 5px;
-      font-weight: normal;
+      font-weight:500;
+      font-size: larger;
       text-align: center;
       opacity: 0;
       transform: translateX(-50px);
@@ -94,9 +89,10 @@
     .year-link.active {
       background-color: #007bff;
       font-weight: bold;
+      font-size: xx-large;
       transform: scale(1.1);
     }
-    .year-link:hover { background-color: #555; }
+    .year-link:hover { background-color: #20202d; }
     #portfolio-content { margin-left: 120px; flex: 1; }
     .year-section { margin-bottom: 150px;}
     
