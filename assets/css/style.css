@@ -186,6 +186,20 @@ h2 {
   /* background-color: rgb(18, 19, 33); */
   color: white !important;
 }
+.portfolio-item {
+  position: relative;
+}
+
+.project-number-badge {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  background-color: none;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 25px;
+}
 
 .resume-item:hover{
   transition: transform .1s ease-out;
