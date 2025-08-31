@@ -385,23 +385,21 @@ h2 {
   
   --gradient: linear-gradient(-25deg, #000000 , #0a0b13 ,  #1D2038 , #5680a8);
 }
+
 #header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;       /* span full width */
-  height: 60px;      /* adjust as needed for your top bar */
-  padding: 0 20px;   /* horizontal padding */
-  background: rgb(18, 19, 33);
-  background-size: 300%;
-  animation: bg-animation 15s infinite;
-  z-index: 9997;
-  display: flex;
-  align-items: center;   /* vertically center content */
-  justify-content: space-between; /* space between name, nav, and socials */
-  overflow: visible;     /* no clipping */
-  transition: all 0.5s ease-in-out;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 70px;      /* adjust as needed for top bar */
+padding: 0 20px;   /* horizontal padding */
+z-index: 9999;
+background: #10199d;
+display: flex;
+flex-direction: column;
+animation: bg-animation 15s infinite;
 }
+
 @keyframes bg-animation {
   0% {
     background-position: left;
@@ -424,7 +422,7 @@ h2 {
 #header .profile h1 {
   font-size: 24px;
   margin: 0;
-  margin-top: 40px !important;
+  margin-top: 20px !important;
   padding: 0;
   font-weight: 600;
   -moz-text-align-last: left;
