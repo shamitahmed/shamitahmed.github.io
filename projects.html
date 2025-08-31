@@ -41,51 +41,69 @@
   <style>
     html { scroll-behavior: smooth; }
     body { display:block; gap: 0px; background-color: #000; color: #fff; }
-    #year-sidebar {
-      margin-top: 10%;
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-    }
-    .year-heading {
-      font-size: 55px;
-      color: #00ffe5;
-      margin-top: 60px;
-      margin-bottom: 30px;
-      text-align: center;
-    }
-    .year-link {
-      margin-bottom: 10px;
-      padding: 8px 14px;
-      background-color: none;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-      font-weight:500;
-      font-size: larger;
-      text-align: center;
-      opacity: 0;
-      transform: translateX(-50px);
-      animation: slideIn 0.5s forwards;
-    }
-    /* Make each button slide in one after another */
-    .year-link:nth-child(1) { animation-delay: 0.1s; }
-    .year-link:nth-child(2) { animation-delay: 0.2s; }
-    .year-link:nth-child(3) { animation-delay: 0.3s; }
-    .year-link:nth-child(4) { animation-delay: 0.4s; }
-    .year-link:nth-child(5) { animation-delay: 0.5s; }
-    .year-link:nth-child(6) { animation-delay: 0.6s; }
-    .year-link:nth-child(7) { animation-delay: 0.7s; }
-    .year-link:nth-child(8) { animation-delay: 0.8s; }
-    .year-link:nth-child(9) { animation-delay: 0.9s; }
-    .year-link:nth-child(10) { animation-delay: 1.0s; }
+/* New Topbar Style */
+#year-topbar {
+  position: fixed;
+  top: 60px; /* directly under the main header */
+  left: 0;
+  width: 100%;
+  background: #121321;
+  z-index: 9996;
+  /* display: flex; */
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 10px 0;
+  margin-left: 0%;
+  padding-left: 30%;
+  gap: 10px;
+  /* border-bottom: 1px solid #333; */
+}
 
-@keyframes slideIn {
+#year-topbar .year-link {
+  color: white;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  font-weight: 500;
+  font-size: 16px;
+  opacity: 0;
+  transform: translateY(-10px);
+  animation: slideDown 0.5s forwards;
+}
+
+#year-topbar .year-link:hover {
+  background-color: #20202d;
+}
+
+#year-topbar .year-link.active {
+  background-color: #007bff;
+  font-weight: bold;
+  transform: scale(1.1);
+}
+
+#year-topbar .year-link:nth-child(1) { animation-delay: 0.1s; }
+#year-topbar .year-link:nth-child(2) { animation-delay: 0.2s; }
+#year-topbar .year-link:nth-child(3) { animation-delay: 0.3s; }
+#year-topbar .year-link:nth-child(4) { animation-delay: 0.4s; }
+#year-topbar .year-link:nth-child(5) { animation-delay: 0.5s; }
+#year-topbar .year-link:nth-child(6) { animation-delay: 0.6s; }
+#year-topbar .year-link:nth-child(7) { animation-delay: 0.7s; }
+#year-topbar .year-link:nth-child(8) { animation-delay: 0.8s; }
+#year-topbar .year-link:nth-child(9) { animation-delay: 0.9s; }
+#year-topbar .year-link:nth-child(10) { animation-delay: 1s; }
+
+@keyframes slideDown {
   to {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateY(0);
   }
 }
+
+/* Adjust content scroll offset to account for two topbars */
+html {
+  scroll-padding-top: 120px;
+}
+
     .year-link.active {
       background-color: #007bff;
       font-weight: bold;
@@ -152,15 +170,16 @@ body.page-loaded {
         <div class="profile-text"> 
           <!-- <button style="background-color:yellow; margin-left: 11%; " class="btn btn-warning" type="submit" onclick="window.open('assets/files/ResumeFinal.pdf')">Download<strong> Resume</strong></button> -->
          
-          <h1 style="margin-top:0px;text-align: left !important;" class="text-light"><a href="index.html" style="font-style: normal; color: white !important;"><strong style="
-  font-weight: bold;
-  background: linear-gradient(270deg, #31f8ff, #09ee96, #3191ff);
-  background-size: 600% 600%;
-  animation: gradientMove 6s ease infinite;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;">SHAMIT</strong> AHMED✦</a></h1>
+      <h1 style="margin:0; font-style: normal; color: white;">
+        <a href="index.html" style="font-weight:bold;
+          background: linear-gradient(270deg, #31f8ff, #09ee96, #3191ff);
+          background-size: 600% 600%;
+          animation: gradientMove 6s ease infinite;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+          color: transparent;">HOME</a>
+      </h1><br>
   <style>
 @keyframes gradientMove {
   0% {
@@ -176,7 +195,7 @@ body.page-loaded {
 </style>
       </div>
       </div>
-      <div id="year-sidebar">
+      <div id="year-topbar">
         <a href="#year-2025" class="year-link">2025</a>
         <a href="#year-2024" class="year-link">2024</a>
         <a href="#year-2023" class="year-link">2023</a>
@@ -272,7 +291,7 @@ body.page-loaded {
     
             <div class="section-title">
               <h2>Portfolio</h2>
-            </div><br><br>
+            </div><br><br><br><br><br><br>
             <div class="marquee-container">
               <div class="marquee" id="waveText"></div>
             </div>

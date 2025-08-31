@@ -389,19 +389,18 @@ h2 {
   position: fixed;
   top: 0;
   left: 0;
-  bottom: 0;
-  width: 220px;
-  transition: all ease-in-out 0.5s;
-  z-index: 9997;
-  transition: all 0.5s;
-  padding: 0 15px;
-  /* background: rgb(0, 0, 0); */
-  /* background: linear-gradient(0deg,  rgba(0,0,0,1) 60%, rgba(29,32,56,1) 95%);  */
+  width: 100%;       /* span full width */
+  height: 60px;      /* adjust as needed for your top bar */
+  padding: 0 20px;   /* horizontal padding */
   background: rgb(18, 19, 33);
   background-size: 300%;
-  /* background-image: var(--gradient); */
   animation: bg-animation 15s infinite;
-  overflow: none;
+  z-index: 9997;
+  display: flex;
+  align-items: center;   /* vertically center content */
+  justify-content: space-between; /* space between name, nav, and socials */
+  overflow: visible;     /* no clipping */
+  transition: all 0.5s ease-in-out;
 }
 @keyframes bg-animation {
   0% {
@@ -514,7 +513,7 @@ h2 {
 }
 
 #main {
-  margin-left: 220px;
+  margin-left: 0px;
 }
 
 @media (max-width: 1199px) {

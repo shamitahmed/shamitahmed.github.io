@@ -63,112 +63,89 @@ body.page-loaded {
 
   <!-- ======= Header ======= -->
   <header id="header">
-    <div class="d-flex flex-column">
+  <div class="d-flex align-items-center justify-content-between" style="padding: 10px 20px; background-color: #111;">
 
-      <div class="profile">
-        
-        <div class="profile-text"> 
-          <!-- <button style="background-color:yellow; margin-left: 11%; " class="btn btn-warning" type="submit" onclick="window.open('assets/files/ResumeFinal.pdf')">Download<strong> Resume</strong></button> -->
-         
-          <h1 style="margin-top:0px;text-align: left !important;" class="text-light"><a href="" style="font-style: normal; color: white !important;"><strong style="
-  font-weight: bold;
-  background: linear-gradient(270deg, #31f8ff, #09ee96, #3191ff);
-  background-size: 600% 600%;
-  animation: gradientMove 6s ease infinite;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;">SHAMIT</strong> AHMED✦</a></h1>
-  <style>
-@keyframes gradientMove {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-</style>
-          <!-- <marquee width="50%" direction="left" height="25px" scrollamount="3" BEHAVIOR="alternate">
-            <p style="margin-top:0px;text-align: left !important; font-style: normal;font-size:14px; color:white !important;" class="text-light">Game Programmer ✦ Student ✦ Researcher ✦ Designer</p>
-          </marquee> -->
-          
-          <!-- <p style="text-align: left;margin-bottom: 0px !important; margin-top: 0.86rem !important;">Senior Game Developer,</p>
-        <a href="https://playense.com/">Playense</a> -->
-      </div>
-        <div class="social-links mt-3 text-center">
-          <!-- <a href="https://www.facebook.com/shamit.ahmed" class="facebook"><i class="bx bxl-facebook"></i></a> -->
-          <a href="https://www.linkedin.com/in/shamitahmed/" target="_blank" class="linkedin" style="color: white !important;"><i class="bx bxl-linkedin"></i></a>
-
-          <a href="https://shamitahmed.itch.io/" target="_blank" class="itch-io"><img src="assets/img/itch-io-brands.png" class="bx bxl-itch-io"></a>
-      
-      <a href="https://github.com/shamitahmed" target="_blank" class="github" style="color: white !important;"><i class="bx bxl-github"></i></a>
-      <a href="https://www.youtube.com/@shamitahmed/videos" target="_blank" class="youtube" style="color: white !important;"><i class="bx bxl-youtube"></i></a>
-          <!-- <a href="https://www.youtube.com/@shamitahmed/videos" 
-		  class="youtube"><img src="assets/img/behance-brands.png" class="bx bxl-youtube"></a>  -->
-        </div>
-      </div>
-
+    <!-- Profile / Name -->
+    <div class="profile d-flex align-items-center">
+      <h1 style="margin:0; font-style: normal; color: white;">
+        <a href="" style="font-weight:bold;
+          background: linear-gradient(270deg, #31f8ff, #09ee96, #3191ff);
+          background-size: 600% 600%;
+          animation: gradientMove 6s ease infinite;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+          color: transparent;">SHAMIT</a> AHMED
+      </h1>
       <style>
-        /* Animate nav-menu sidebar */
-        
-        .nav-menu ul li {
-          opacity: 0;
-          transform: translateX(-50px);
-          animation: slideInNav 0.5s forwards;
+        @keyframes gradientMove {
+          0% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
         }
-        
-        /* Cascading animation delays */
-        .nav-menu ul li:nth-child(1) { animation-delay: 0.1s; }
-        .nav-menu ul li:nth-child(2) { animation-delay: 0.2s; }
-        .nav-menu ul li:nth-child(3) { animation-delay: 0.3s; }
-        .nav-menu ul li:nth-child(4) { animation-delay: 0.4s; }
-        .nav-menu ul li:nth-child(5) { animation-delay: 0.5s; }
-        .nav-menu ul li:nth-child(6) { animation-delay: 0.6s; }
-        .nav-menu ul li:nth-child(7) { animation-delay: 0.7s; }
-        .nav-menu ul li:nth-child(8) { animation-delay: 0.8s; }
-        .nav-menu ul li:nth-child(9) { animation-delay: 0.9s; }
-        
-        @keyframes slideInNav {
-          to {
-            opacity: 1;
-            transform: translateX(0);
-          }
-        }
-        </style>
-      <nav class="nav-menu">
-        <ul>
-          <!-- <li class="active"><a href="index.html"><i class="bx bx-home"></i> <span>Home</span></a></li> -->
-          <li><a href="#about" class="sidebar"><i class="bx bx-user"></i> <span>About</span></a></li> 
-          <li><a href="projects.html" class="sidebar"><i class="bx bx-dumbbell"></i>All Projects</a></li>
-          <li><a href="#education" class="sidebar"><i class='bx bx-medal' ></i><span>Experience</span></a></li>
-          <li><a href="#acquiredSkills" class="sidebar"><i class='bx bx-book-content'></i> <span>Research</span></a></li>
-          <li><a href="#skills" class="sidebar"><i class='bx bx-slider'></i>Skills & Tools</a></li>
-          <li><a href="#art" class="sidebar"><i class='bx bx-palette'></i>Art & Design</a></li>
-          <!-- <li><a href="#skills" class="sidebar" ><i class='bx bx-wrench'></i></a></li> -->
-          <li><a href="#gallerysc" class="sidebar"><i class='bx bx-photo-album'></i> <span>Good Times</span></a></li>
-          <li><a href="#recommsc" class="sidebar"><i class='bx bx-envelope'></i> <span>Recommendations</span></a></li>
-          <!-- <li><a href="Devlogs.html" class="sidebar"><i class='bx bx-calendar'></i><span>Devlogs</span></a></li> -->
-          <!-- <li><a href="#services"><i class="bx bx-server"></i> Services</a></li>
-          <li><a href="#contact"><i class="bx bx-envelope"></i> Contact</a></li> -->
-
-        </ul>
-      </nav><!-- .nav-menu -->
-      <button type="button" class="mobile-nav-toggle d-xl-none"><i class="icofont-navigation-menu"></i></button>
-
-      <!-- Day/Night Toggle Button -->
-      <!-- <div class="theme-toggle-container"><P style="margin-top: 7px;">🌙</P>
-        <input type="checkbox" id="theme-toggle" class="theme-toggle">
-        <label for="theme-toggle" class="toggle-label">
-          <span class="ball"></span>
-        </label><P style="margin-top: 7px;">☀️</P>
-      </div> -->
-
+      </style>
     </div>
-  </header><!-- End Header -->
+
+    <!-- Navigation Menu (Horizontal) -->
+    <nav class="nav-menu">
+      <ul class="d-flex" style="list-style:none; margin:0; padding:0;">
+        <li><a href="#about"><i class="bx bx-user"></i> About</a></li>
+        <li><a href="projects.html"><i class="bx bx-dumbbell"></i> All Projects</a></li>
+        <li><a href="#education"><i class='bx bx-medal'></i> Experience</a></li>
+        <li><a href="#acquiredSkills"><i class='bx bx-book-content'></i> Research</a></li>
+        <li><a href="#skills"><i class='bx bx-slider'></i> Skills & Tools</a></li>
+        <li><a href="#art"><i class='bx bx-palette'></i> Art & Design</a></li>
+        <li><a href="#gallerysc"><i class='bx bx-photo-album'></i> Good Times</a></li>
+        <li><a href="#recommsc"><i class='bx bx-envelope'></i> Recommendations</a></li>
+      </ul>
+    </nav>
+
+    <!-- Social Links -->
+    <div class="social-links d-flex align-items-center">
+      <a href="https://www.linkedin.com/in/shamitahmed/" target="_blank" style="margin-right:10px;"><img src="assets/img/li.png" style="height:20px;"></a>
+      <a href="https://shamitahmed.itch.io/" target="_blank" style="margin-right:10px;"><img src="assets/img/itch-io-brands.png" style="height:20px;"></a>
+      <a href="https://github.com/shamitahmed" target="_blank" style="margin-right:10px;"><img src="assets/img/github.png" style="height:20px;"></a>
+      <a href="https://www.youtube.com/@shamitahmed/videos" style="margin-right:10px;"><img src="assets/img/youtube.png" style="height:20px;"></a>
+    </div>
+
+  </div>
+</header>
+
+<style>
+  /* Simple horizontal animation for nav items */
+  .nav-menu ul li {
+    opacity: 0;
+    transform: translateY(-10px);
+    animation: slideInNav 0.5s forwards;
+    margin-right: 20px;
+  }
+  .nav-menu ul li:nth-child(1) { animation-delay: 0.1s; }
+  .nav-menu ul li:nth-child(2) { animation-delay: 0.2s; }
+  .nav-menu ul li:nth-child(3) { animation-delay: 0.3s; }
+  .nav-menu ul li:nth-child(4) { animation-delay: 0.4s; }
+  .nav-menu ul li:nth-child(5) { animation-delay: 0.5s; }
+  .nav-menu ul li:nth-child(6) { animation-delay: 0.6s; }
+  .nav-menu ul li:nth-child(7) { animation-delay: 0.7s; }
+  .nav-menu ul li:nth-child(8) { animation-delay: 0.8s; }
+
+  @keyframes slideInNav {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Nav links styling */
+  .nav-menu ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .nav-menu ul li a:hover {
+    color: #09ee96;
+  }
+</style>
+
 
   <!-- ======= Hero Section ======= -->
   <section id="hero"  class="d-flex flex-column justify-content-center align-items-center">
