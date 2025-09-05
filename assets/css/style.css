@@ -249,8 +249,8 @@ h2 {
   border-radius: 50px;
   right: 15px;
   bottom: 15px;
-  background: rgb(29,32,56);
-  background: linear-gradient(0deg,  rgb(53, 56, 59) 0%, rgb(82, 91, 155) 78%); 
+  background: #10199d;
+  /*background: linear-gradient(0deg,  rgb(53, 56, 59) 0%, rgb(82, 91, 155) 78%); */
   color: #fff;
   transition: display 0.5s ease-in-out;
   z-index: 99999;
