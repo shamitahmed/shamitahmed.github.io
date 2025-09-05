@@ -184,12 +184,12 @@ body.page-loaded {
             <model-viewer camera-controls alt="Model" src="https://modelviewer.dev/shared-assets/models/shishkebab.glb">
             </model-viewer>
         </div> -->
-          <p>Hello👋 My name is <strong>Shamit.</strong><br> A <strong>multidisciplinary programmer</strong> based in Helsinki, Finland 🇫🇮 with <strong>5 years of game industry experience.</strong> <br>I am currently studying for my MSc degree at <strong><a href="https://www.aalto.fi/en">Aalto University</a></strong>.
+          <p>Hello👋 My name is <strong>Shamit.</strong><br> A <strong>multidisciplinary programmer</strong> based in Helsinki, Finland 🇫🇮 with <strong>4 years of game industry experience.</strong> <br>I am currently studying for my MSc degree at <strong><a href="https://www.aalto.fi/en">Aalto University</a></strong>.
            <br>Major in <strong><a href="https://www.aalto.fi/en/study-options/game-design-and-development-computer-communication-and-information-sciences-master-of-science">Game Design and Development</strong></a> and minor in <strong><a href="https://www.aalto.fi/en/minors/building-virtual-worlds-minor">Virtual Reality</strong></a>. 
             <br>
             <br>
-            <!-- Engaging video games, immersive-interactive multimedia and breathtaking art of various forms have always been my motivation to achieve more. -->
-            Focusing on Virtual Reality and Computer Vision based Locomotion and Interaction Design.
+            Engaging video games, immersive-interactive multimedia and breathtaking art of various forms have always been my motivation to achieve more.
+            I am currently focusing on <strong>Virtual Reality and Computer Vision-based Locomotion and Interaction Design.</strong>
             <!-- I am also working on Exergames that require Physical Movement. -->
           </p><br><br><br>
             <h5 style="color: rgb(255, 255, 255) !important;margin-bottom: 5px;text-align: center !important;">My fields of interest </h5>
@@ -202,68 +202,75 @@ body.page-loaded {
                 font-family: sans-serif;
               }
           
-              .marquee-container {
-                width: 100%;
-                /* overflow: hidden; */
-                white-space: nowrap;
-                position: relative;
-                height: 50px;
-              }
-          
-              .marquee {
-                display: inline-block;
-                white-space: nowrap;
-                animation: scroll 30s linear infinite; /* Slower scroll */
-                font-size: 20px;
-              }
-          
-              @keyframes scroll {
-                0% { transform: translateX(0); }
-                100% { transform: translateX(-50%); }
-              }
-          
-              .char {
-                display: inline-block;
-                animation: wave 2s infinite ease-in-out;
-              }
-          
-              @keyframes wave {
-                0%   { transform: translateY(0); }
-                25%  { transform: translateY(-4px); }
-                50%  { transform: translateY(0); }
-                75%  { transform: translateY(4px); }
-                100% { transform: translateY(0); }
-              }
-            </style>
-          </head>
-          <body>
-          
-            <div class="marquee-container">
-              <div class="marquee" id="waveText"></div>
-            </div>
-          
-            <script>
-              const text = "✦ Exergames ✦ Rapid Prototyping ✦ Game Feel/UX ✦ Generative AI ✦ Navigation ✦ Geospatial Visualization ✦ Data Analytics ✦ AR ✦ VR ✦ Computer Vision ✦ Technical Art ✦ Web Development ✦ Micro-Controllers ";
-              const container = document.getElementById("waveText");
-          
-              const makeWaveSpans = (str, offset = 0) => {
-                const frag = document.createDocumentFragment();
-                for (let i = 0; i < str.length; i++) {
-                  const span = document.createElement("span");
-                  span.textContent = str[i];
-                  span.className = "char";
-                  // negative delay starts animation already "in motion"
-                  span.style.animationDelay = `${-(i + offset) * 0.05}s`;
-                  frag.appendChild(span);
-                }
-                return frag;
-              };
-          
-              // Add two copies of the text for seamless scroll
-              container.appendChild(makeWaveSpans(text, 0));
-              container.appendChild(makeWaveSpans(text, text.length));
-            </script>
-          
+<style>
+.marquee-container {
+  width: 100%;
+  overflow: hidden; /* hide overflowing text */
+  position: relative;
+  height: 50px;
+}
+
+.marquee {
+  display: block;       /* changed from inline-block */
+  white-space: nowrap;
+  font-size: 20px;
+  /* animate the inner container */
+}
+
+.marquee-inner {
+  display: inline-block;
+  white-space: nowrap;
+  animation: scroll 30s linear infinite;
+}
+
+/* Scroll the inner container by its full width */
+@keyframes scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); } /* moves left by half (first copy width) */
+}
+
+.char {
+  display: inline-block;
+  animation: wave 2s infinite ease-in-out;
+}
+
+@keyframes wave {
+  0%   { transform: translateY(0); }
+  25%  { transform: translateY(-4px); }
+  50%  { transform: translateY(0); }
+  75%  { transform: translateY(4px); }
+  100% { transform: translateY(0); }
+}
+</style>
+
+<div class="marquee-container">
+  <div class="marquee">
+    <div class="marquee-inner" id="waveText"></div>
+  </div>
+</div>
+
+<script>
+const text = "✦ Game Design ✦ Economy Design and Balancing ✦ Exergames ✦ Rapid Prototyping ✦ Game Feel/UX ✦ Generative AI ✦ Navigation ✦ Geospatial Visualization ✦ Data Analytics ✦ AR ✦ VR ✦ Computer Vision ✦ Technical Art ✦ Web Development ✦ Micro-Controllers ";
+
+const marqueeInner = document.getElementById("waveText");
+
+const makeWaveSpans = (str, offset = 0) => {
+  const frag = document.createDocumentFragment();
+  for (let i = 0; i < str.length; i++) {
+    const span = document.createElement("span");
+    span.textContent = str[i];
+    span.className = "char";
+    span.style.animationDelay = `${-(i + offset) * 0.05}s`;
+    frag.appendChild(span);
+  }
+  return frag;
+};
+
+// Duplicate text for seamless scroll
+marqueeInner.appendChild(makeWaveSpans(text, 0));
+marqueeInner.appendChild(makeWaveSpans(text, text.length));
+</script>
+
           
           
     </div>
