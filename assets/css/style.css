@@ -16,8 +16,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 10px auto;
-  
+  /* margin: 10px auto; */
+  margin-right: 10%;
 }
 
 .theme-toggle {
@@ -27,12 +27,13 @@ body {
 .toggle-label {
   width: 60px;
   height: 30px;
-  background: #3d505e;
+  background: #0d016e;
   border-radius: 50px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 5px;
+  margin-top: 20%;
   cursor: pointer;
   position: relative;
   transition: 0.3s ease;
@@ -55,7 +56,7 @@ body {
 .toggle-label .ball {
   width: 24px;
   height: 24px;
-  background: #94c4e7;
+  background: #ffffff;
   border-radius: 50%;
   position: absolute;
   top: 3px;
@@ -71,7 +72,7 @@ body {
 
 body.light {
   background: #e0e9f3 !important;
-  color: #272727;
+  color: #1d1c1c;
   transition: background 0.5s, color 0.5s;
 }
 
@@ -84,13 +85,16 @@ body.light h5,
 body.light h6,
 body.light ul,
 body.light a,
-body.light marquee,
 body.light p {
-  color: #303030 !important;
+  color: #212121 !important;
 }
 
+/* body.light a {
+  color: #0800ff !important;
+} */
+
 body.light .projectheader{
-  background-color: rgb(255, 255, 255);
+  background-color: rgba(255, 255, 255, 0);
   color: rgb(0, 0, 0) !important;
 }
 body.light #about{
@@ -98,7 +102,8 @@ body.light #about{
 }
 body.light #portfolio .description ul{
   transform: translateX(-35px);
-  background-color:  #ffffff;
+  background-color:  #ffffff00;
+  color: #000;
 }
 body.light .section-bg-portfolio{
   background-color:  #eaf1f9;
@@ -114,7 +119,7 @@ body.light #resume .resume {
 
 }
 body.light #header{
-  background-color: #eaf1f9;
+  /* background-color: #eaf1f9; */
 }
 
 body.light .site-footer
@@ -165,7 +170,8 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+a {
   font-family: 'Raleway', sans-serif;
   /* color: #fdc576 !important; */
   color: white !important;
@@ -433,7 +439,7 @@ animation: bg-animation 15s infinite;
 
 #header .profile h1 a,
 #header .profile h1 a:hover {
-  color: #fff;
+  /* color: #fff; */
   text-decoration: none;
   font-size: 40px;
   /* margin-top: -50px; */
@@ -446,18 +452,27 @@ animation: bg-animation 15s infinite;
   color: #fff;
   line-height: 1;
   padding: 8px 0;
-  margin-right: 4px;
+  margin-right: 40px;
   border-radius: 50%;
   text-align: center;
   width: 36px;
   height: 36px;
   transition: 0.3s;
 }
-
+body.light #portfolio .descriptionFeatured ul{
+  transform: translateX(-35px);
+  color: rgb(0, 0, 0);
+  background-color: rgba(18, 19, 33, 0);
+  padding-top: 10px;
+  padding-bottom  : 10px;
+  padding-right: 10px;
+  text-align: left;
+  border-radius: 5px;
+}
 #portfolio .descriptionFeatured ul{
   transform: translateX(-35px);
   color: rgb(209, 209, 209);
-  /* background-color: rgb(18, 19, 33); */
+  background-color: rgba(18, 19, 33, 0);
   padding-top: 10px;
   padding-bottom  : 10px;
   padding-right: 10px;
@@ -467,7 +482,7 @@ animation: bg-animation 15s infinite;
 #portfolio .description ul{
   transform: translateX(-35px);
   color: rgb(209, 209, 209);
-  /* background-color: rgb(18, 19, 33); */
+  background-color: rgba(18, 19, 33, 0);
   padding-top: 10px;
   padding-bottom  : 10px;
   padding-right: 10px;
@@ -475,11 +490,11 @@ animation: bg-animation 15s infinite;
   border-radius: 5px;
 }
 .portfolio .description ul:hover{
-  background-color: rgb(25, 26, 47);
-  color: rgb(255, 255, 255) !important;
+  /* background-color: rgb(25, 26, 47);
+  color: rgb(255, 255, 255) !important; */
 }
 .portfolio .description ul:not(:hover){
-  background-color: rgb(13, 14, 24);
+  background-color: rgba(13, 14, 24, 0);
 }
 #gallerysc div.gallery {
 	margin: 3px;

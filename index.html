@@ -7,7 +7,7 @@
   <meta http-equiv = "x-ua-compatible" content = "IE=edge">
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 
-  <title>Shamit Ahmed</title>
+  <title>Shamit Ahmed's Portfolio</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -90,28 +90,58 @@ body.page-loaded {
     <!-- Navigation Menu (Horizontal) -->
     <nav class="nav-menu">
       <ul class="d-flex" style="list-style:none; margin:0; padding:0;">
-        <li><a href="#about"><i class="bx bx-user"></i> About</a></li>
-        <li><a href="projects.html"><i class="bx bx-dumbbell"></i> All Projects</a></li>
-        <li><a href="#education"><i class='bx bx-medal'></i> Experience</a></li>
-        <li><a href="#acquiredSkills"><i class='bx bx-book-content'></i> Research</a></li>
-        <li><a href="#skills"><i class='bx bx-slider'></i> Skills & Tools</a></li>
+        <li><a href="#about" style="color: white !important;"><i class="bx bx-user"></i> About</a></li>
+        <li><a href="projects.html" style="color: white !important;"><i class="bx bx-dumbbell"></i> All Projects</a></li>
+        <li><a href="#education" style="color: white !important;"><i class='bx bx-medal'></i> Experience</a></li>
+        <li><a href="#acquiredSkills" style="color: #ffffff !important;"><i class='bx bx-book-content'></i> Research</a></li>
+        <li><a href="#skills" style="color: white !important;"><i class='bx bx-slider'></i> Skills & Tools</a></li>
         <!-- <li><a href="#art"><i class='bx bx-palette'></i> Art & Design</a></li> -->
         <!-- <li><a href="#gallerysc"><i class='bx bx-photo-album'></i> Good Times</a></li> -->
         <!-- <li><a href="#recommsc"><i class='bx bx-envelope'></i> Recommendations</a></li> -->
+         
       </ul>
+      
     </nav>
 
     <!-- Social Links -->
     <div class="social-links d-flex align-items-center">
+            <!-- Theme Toggle Button -->
+        <div class="theme-toggle-container">
+          <input type="checkbox" id="theme-toggle" class="theme-toggle">
+          <label for="theme-toggle" class="toggle-label">
+            <img src="assets/img/moon.png" style="height:15px;">
+            <img src="assets/img/sun.png" style="height:18.5px;">
+            <div class="ball"></div>
+          </label>
+        </div>
       <a href="https://www.linkedin.com/in/shamitahmed/" target="_blank" style="margin-right:10px;"><img src="assets/img/li.png" style="height:20px;"></a>
       <a href="https://shamitahmed.itch.io/" target="_blank" style="margin-right:10px;"><img src="assets/img/itch-io-brands.png" style="height:20px;"></a>
       <a href="https://github.com/shamitahmed" target="_blank" style="margin-right:10px;"><img src="assets/img/github.png" style="height:20px;"></a>
-      <a href="https://www.youtube.com/@shamitahmed/videos" style="margin-right:10px;"><img src="assets/img/youtube.png" style="height:20px;"></a>
+      <a href="https://www.youtube.com/@shamitahmed/videos" style="margin-right:50px;"><img src="assets/img/youtube.png" style="height:20px;"></a>
     </div>
 
   </div>
 </header>
+<script>
+  const toggle = document.getElementById('theme-toggle');
+  const pageBody = document.body;
 
+  // Check local storage on load
+  if (localStorage.getItem('theme') === 'light') {
+    pageBody.classList.add('light');
+    toggle.checked = true;
+  }
+
+  toggle.addEventListener('change', () => {
+    if (toggle.checked) {
+      pageBody.classList.add('light');
+      localStorage.setItem('theme', 'light');
+    } else {
+      pageBody.classList.remove('light');
+      localStorage.setItem('theme', 'dark');
+    }
+  });
+</script>
 <style>
   /* Simple horizontal animation for nav items */
   .nav-menu ul li {
@@ -151,7 +181,7 @@ body.page-loaded {
   <!-- ======= Hero Section ======= -->
   <section id="hero"  class="d-flex flex-column justify-content-center align-items-center">
     <div class="hero-container" data-aos="fade-in">
-      <h1>Shamit Ahmed</h1>
+      <h1>Shamit Ahmed Portfolio</h1>
       <h3>Game Programmer</h3>
 
       <!-- <p>I'm a <span class="typed" data-typed-items="Game Developer, Graphic Designer, Creative Art Enthusiast, Freelancer, Cyclist, Cartoonist, Gamer, Traveler"></span></p> -->
@@ -184,8 +214,8 @@ body.page-loaded {
             <model-viewer camera-controls alt="Model" src="https://modelviewer.dev/shared-assets/models/shishkebab.glb">
             </model-viewer>
         </div> -->
-          <p>Hello👋 My name is <strong>Shamit.</strong><br> A <strong>multidisciplinary programmer</strong> based in Helsinki, Finland 🇫🇮 with <strong>4 years of game industry experience.</strong> <br>I am currently studying for my MSc degree at <strong><a href="https://www.aalto.fi/en">Aalto University</a></strong>.
-           <br>Major in <strong><a href="https://www.aalto.fi/en/study-options/game-design-and-development-computer-communication-and-information-sciences-master-of-science">Game Design and Development</strong></a> and minor in <strong><a href="https://www.aalto.fi/en/minors/building-virtual-worlds-minor">Virtual Reality</strong></a>. 
+          <p style="color: white !important;">I am a <strong>multidisciplinary programmer</strong> based in Helsinki, Finland 🇫🇮 with <strong>4 years of game industry experience.</strong> <br>Currently working on completing my master's degree at <strong><a href="https://www.aalto.fi/en" style="color: white !important;">Aalto University</a></strong>.
+           <br>Major in <strong><a href="https://www.aalto.fi/en/study-options/game-design-and-development-computer-communication-and-information-sciences-master-of-science" style="color: white !important;">Game Design and Development</strong></a> and minor in <strong><a href="https://www.aalto.fi/en/minors/building-virtual-worlds-minor" style="color: white !important;">Virtual Reality</strong></a>. 
             <br>
             <br>
             Engaging video games, immersive-interactive multimedia and breathtaking art of various forms have always been my motivation to achieve more.
@@ -202,7 +232,9 @@ body.page-loaded {
                 font-family: sans-serif;
               }
           
-<style>
+</style>
+
+  <style>
 .marquee-container {
   width: 100%;
   overflow: hidden; /* hide overflowing text */
@@ -304,11 +336,11 @@ marqueeInner.appendChild(makeWaveSpans(text, text.length));
                 </ul> -->
               <!-- </div>
             </div> -->
-            <h4 style="color: rgb(255, 200, 0) !important;margin-bottom: 45px;text-align: center !important;padding-top: 100px;">✦Featured Projects</h4>
+            <h4 style="color: rgb(255, 234, 0) !important;margin-bottom: 45px;text-align: center !important;padding-top: 100px;">✦Featured Projects✦</h4>
             <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
-
+<!-- background-image: url(assets/img/screenshots/tob.png); -->
                            <div class="col-12 portfolio-item filter-app">
-              <div class="row" style="background-color: rgba(13, 14, 24, 0); background-image: url(assets/img/screenshots/tob.png);padding: 20px; border-radius: 10px;">
+              <div class="row" style="background-color: rgba(13, 14, 24, 0); padding: 20px; border-radius: 10px;">
                   <!-- GIF on the left -->
                   <div class="col-md-4">
                       <br><img class="activegif img-fluid" src="assets/img/projects/thought.gif" alt="Thoughts Out!">
@@ -342,9 +374,9 @@ marqueeInner.appendChild(makeWaveSpans(text, text.length));
                   </div>
               </div>
           </div>
-          
+          <!-- background-image: url(assets/img/screenshots/unb.png); -->
               <div class="col-12 portfolio-item filter-xr">
-                <div class="row" style="background-color: rgba(13, 14, 24, 0); background-image: url(assets/img/screenshots/unb.png);padding: 20px; border-radius: 10px;">
+                <div class="row" style="background-color: rgba(13, 14, 24, 0); padding: 20px; border-radius: 10px;">
                     <!-- GIF on the left -->
                     <div class="col-md-4">
                         <br><img class="activegif img-fluid" src="assets/img/projects/bark.jpg" alt="Bark No More" style="height: 170px  !important; width: 300px !important;">
@@ -377,9 +409,9 @@ marqueeInner.appendChild(makeWaveSpans(text, text.length));
                     </div>
                 </div>
             </div>
-
+ <!-- background-image: url(assets/img/screenshots/mcb.jpg);  -->
               <div class="col-12 portfolio-item filter-app">
-                <div class="row" style="background-color: rgba(13, 14, 24, 0); background-image: url(assets/img/screenshots/mcb.jpg); padding: 20px; border-radius: 10px;">
+                <div class="row" style="background-color: rgba(13, 14, 24, 0);padding: 20px; border-radius: 10px;">
                   <!-- background-image: url('assets/img/screenshots/mc3.png'); -->
                    <!-- GIF on the left -->
                    <div class="col-md-4">
@@ -415,9 +447,9 @@ marqueeInner.appendChild(makeWaveSpans(text, text.length));
                    </div>
                 </div>
              </div>
-
+ <!-- background-image: url(assets/img/screenshots/unb.png); -->
              <div class="col-12 portfolio-item filter-xr">
-              <div class="row" style="background-color: rgba(13, 14, 24, 0); background-image: url(assets/img/screenshots/unb.png);padding: 20px; border-radius: 10px;">
+              <div class="row" style="background-color: rgba(13, 14, 24, 0);padding: 20px; border-radius: 10px;">
                   <!-- GIF on the left -->
                   <div class="col-md-4">
                       <br><img class="activegif img-fluid" src="assets/img/projects/unreality.gif" alt="Unreality VR" style="height: 170px  !important; width: 300px !important;">
@@ -568,7 +600,7 @@ marqueeInner.appendChild(makeWaveSpans(text, text.length));
           <div class="container">
       
             <div class="section-title">
-              <h4>🎓Education</h4>
+              <h2 style="color: rgb(0, 0, 0);">🎓Education</h4>
               <div class="timeline">
                 <!-- <div class="timeline-content">
                   <div class="timeline-period">1998 - 2000</div>

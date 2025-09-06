@@ -7,7 +7,7 @@
   <meta http-equiv = "x-ua-compatible" content = "IE=edge">
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 
-  <title>Shamit Ahmed</title>
+  <title>Shamit Ahmed's Portfolio</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -163,16 +163,13 @@ body.page-loaded {
 
   <!-- ======= Header ======= -->
   <header id="header">
-    <div class="d-flex flex-column">
+  <div class="d-flex align-items-center justify-content-between" style="padding: 0px 0px;">
 
-      <div class="profile">
-        
-        <div class="profile-text"> 
-          <!-- <button style="background-color:yellow; margin-left: 11%; " class="btn btn-warning" type="submit" onclick="window.open('assets/files/ResumeFinal.pdf')">Download<strong> Resume</strong></button> -->
-         
+    <!-- Profile / Name -->
+    <div class="profile d-flex align-items-center">
       <h1 style="margin:0; font-style: normal; color: white;">
         <a href="index.html" style="font-weight:bold;
-          /* background: linear-gradient(270deg, #31f8ff, #09ee96, #3191ff); */
+          background: linear-gradient(270deg, #31f8ff, #09ee96, #3191ff);
           background: white;
           background-size: 600% 600%;
           animation: gradientMove 6s ease infinite;
@@ -180,33 +177,62 @@ body.page-loaded {
           -webkit-text-fill-color: transparent;
           background-clip: text;
           color: transparent;">HOME</a>
-      </h1><br>
-  <style>
-@keyframes gradientMove {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-</style>
-      </div>
-      </div>
-      <div id="year-topbar">
-        <a href="#year-2025" class="year-link">2025</a>
-        <a href="#year-2024" class="year-link">2024</a>
-        <a href="#year-2023" class="year-link">2023</a>
-        <a href="#year-2022" class="year-link">2022</a>
-        <a href="#year-2021" class="year-link">2021</a>
-        <a href="#year-2020" class="year-link">2020</a>
-        <a href="#year-2019" class="year-link">2019</a>
-        <a href="#year-2018" class="year-link">2018</a>
-        <a href="#year-2017" class="year-link">2017</a>
-        <a href="#year-2016" class="year-link">2016</a>
+      </h1>
+      <style>
+        @keyframes gradientMove {
+          0% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
+        }
+      </style>
+    </div>
+
+    <!-- Navigation Menu (Horizontal) -->
+    <nav class="nav-menu">
+      <ul class="d-flex" style="list-style:none; margin:0; padding:0;">
+        <li><a href="#about" style="color: white !important;"><i class="bx bx-user"></i> About</a></li>
+        <li><a href="projects.html" style="color: white !important;"><i class="bx bx-dumbbell"></i> All Projects</a></li>
+        <li><a href="#education" style="color: white !important;"><i class='bx bx-medal'></i> Experience</a></li>
+        <li><a href="#acquiredSkills" style="color: white !important;"><i class='bx bx-book-content'></i> Research</a></li>
+        <li><a href="#skills" style="color: white !important;"><i class='bx bx-slider'></i> Skills & Tools</a></li>
+        <!-- <li><a href="#art"><i class='bx bx-palette'></i> Art & Design</a></li> -->
+        <!-- <li><a href="#gallerysc"><i class='bx bx-photo-album'></i> Good Times</a></li> -->
+        <!-- <li><a href="#recommsc"><i class='bx bx-envelope'></i> Recommendations</a></li> -->
+         
+      </ul>
+      
+    </nav>
+
+    <!-- Social Links -->
+    <div class="social-links d-flex align-items-center">
+            <!-- Theme Toggle Button -->
+        <div class="theme-toggle-container">
+          <input type="checkbox" id="theme-toggle" class="theme-toggle">
+          <label for="theme-toggle" class="toggle-label">
+            <img src="assets/img/moon.png" style="height:15px;">
+            <img src="assets/img/sun.png" style="height:18.5px;">
+            <div class="ball"></div>
+          </label>
+        </div>
+      <a href="https://www.linkedin.com/in/shamitahmed/" target="_blank" style="margin-right:10px;"><img src="assets/img/li.png" style="height:20px;"></a>
+      <a href="https://shamitahmed.itch.io/" target="_blank" style="margin-right:10px;"><img src="assets/img/itch-io-brands.png" style="height:20px;"></a>
+      <a href="https://github.com/shamitahmed" target="_blank" style="margin-right:10px;"><img src="assets/img/github.png" style="height:20px;"></a>
+      <a href="https://www.youtube.com/@shamitahmed/videos" style="margin-right:50px;"><img src="assets/img/youtube.png" style="height:20px;"></a>
+    </div>
+
+  </div>
+</header><!-- End Header -->
+        <div id="year-topbar">
+        <a href="#year-2025" class="year-link" style="color: white !important;">2025</a>
+        <a href="#year-2024" class="year-link" style="color: white !important;">2024</a>
+        <a href="#year-2023" class="year-link" style="color: white !important;">2023</a>
+        <a href="#year-2022" class="year-link" style="color: white !important;">2022</a>
+        <a href="#year-2021" class="year-link" style="color: white !important;">2021</a>
+        <a href="#year-2020" class="year-link" style="color: white !important;">2020</a>
+        <a href="#year-2019" class="year-link" style="color: white !important;">2019</a>
+        <a href="#year-2018" class="year-link" style="color: white !important;">2018</a>
+        <a href="#year-2017" class="year-link" style="color: white !important;">2017</a>
+        <a href="#year-2016" class="year-link" style="color: white !important;">2016</a>
       </div>
       <script>
         document.addEventListener("DOMContentLoaded", function() {
@@ -269,16 +295,30 @@ body.page-loaded {
         </select>
       </div>
 </div>  
-      <button type="button" class="mobile-nav-toggle d-xl-none"><i class="icofont-navigation-menu"></i></button>
+  <script>
+  const toggle = document.getElementById('theme-toggle');
+  const pageBody = document.body;
 
-      <!-- Day/Night Toggle Button -->
+  // Check local storage on load
+  if (localStorage.getItem('theme') === 'light') {
+    pageBody.classList.add('light');
+    toggle.checked = true;
+  }
 
-    </div>
-  </header><!-- End Header -->
+  toggle.addEventListener('change', () => {
+    if (toggle.checked) {
+      pageBody.classList.add('light');
+      localStorage.setItem('theme', 'light');
+    } else {
+      pageBody.classList.remove('light');
+      localStorage.setItem('theme', 'dark');
+    }
+  });
+</script>
   <!-- ======= Hero Section ======= -->
   <section id="hero"  class="d-flex flex-column justify-content-center align-items-center">
     <div class="hero-container" data-aos="fade-in">
-      <h1>Shamit Ahmed</h1>
+      <h1>Shamit Ahmed Portfolio</h1>
       <h3>Game Programmer</h3>
 
       <!-- <p>I'm a <span class="typed" data-typed-items="Game Developer, Graphic Designer, Creative Art Enthusiast, Freelancer, Cyclist, Cartoonist, Gamer, Traveler"></span></p> -->
@@ -337,27 +377,29 @@ body.page-loaded {
                 100% { transform: translateY(0); }
               }
             </style>
-            <script>
-              const text = "✦ All ✦ Projects ✦ All ✦ Projects ✦ All ✦ Projects ✦ All ✦ Projects ✦ All ✦ Projects ✦ All ✦ Projects ";
-              const container = document.getElementById("waveText");
-          
-              const makeWaveSpans = (str, offset = 0) => {
-                const frag = document.createDocumentFragment();
-                for (let i = 0; i < str.length; i++) {
-                  const span = document.createElement("span");
-                  span.textContent = str[i];
-                  span.className = "char";
-                  // negative delay starts animation already "in motion"
-                  span.style.animationDelay = `${-(i + offset) * 0.05}s`;
-                  frag.appendChild(span);
-                }
-                return frag;
-              };
-          
-              // Add two copies of the text for seamless scroll
-              container.appendChild(makeWaveSpans(text, 0));
-              container.appendChild(makeWaveSpans(text, text.length));
-            </script>
+              <div id="waveText"></div>
+
+              <script>
+                const text = "✦ All ✦ Projects ✦ All ✦ Projects ✦ All ✦ Projects ✦ All ✦ Projects ✦ All ✦ Projects ✦ All ✦ Projects ✦ All ✦ Projects";
+                const container = document.getElementById("waveText");
+
+                const makeWaveSpans = (str, offset = 0) => {
+                  const p = document.createElement("p"); // create a <p> element
+                  for (let i = 0; i < str.length; i++) {
+                    const span = document.createElement("span");
+                    span.textContent = str[i];
+                    span.className = "char";
+                    span.style.animationDelay = `${-(i + offset) * 0.05}s`;
+                    p.appendChild(span); // append spans to <p>
+                  }
+                  return p;
+                };
+
+                // Add two copies of the text for seamless scroll
+                container.appendChild(makeWaveSpans(text, 0));
+                container.appendChild(makeWaveSpans(text, text.length));
+              </script>
+
             <br><br>
              
     <div id="year-2025" class="year-section">
