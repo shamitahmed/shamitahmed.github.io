@@ -121,15 +121,20 @@ body.light #resume .resume {
 body.light #header{
   /* background-color: #eaf1f9; */
 }
-
+#resume .container{
+  width: 100%;
+  padding-right: 10%px;
+  padding-left: 10%px;
+  margin-right: auto;
+  margin-left: auto;
+}
 body.light .site-footer
 {
-  background-color:#eaf1f9;
+  background-color:#10199d;
 }
 body.light .acquiredSkills-container{
   display: inline-flex !important;
 }
-
 .acquiredSkills-container{
   display: inline-flex !important;
   flex-wrap: wrap;
@@ -292,7 +297,7 @@ h2 {
 
 .back-to-top:hover {
   color: #fff;
-  background: yellow;
+  background: #1a93fd;
   transition: background 0.2s ease-in-out;
 }
 /* education timeline */
@@ -331,7 +336,7 @@ h2 {
   width: calc(100% + 7px);
   height: 2px;
   top: calc(100% + 5px);
-  background: #FFF;
+  background: #717171;
   content: "";
   left: -7px;
   border-radius: 5px;
@@ -343,7 +348,7 @@ h2 {
   height: 25px;
   top: calc(100% + 5px);
   left: calc(50% - 10px);
-  background: #FFF;
+  background: #717171;
   content: "";
 }
 .timeline-period {
@@ -772,7 +777,9 @@ section {
   padding-bottom: 0px;
 }
 #resume{
-  display: inline-flex;
+  display: flex;
+  justify-content: center; /* horizontal centering */
+  
 }
 .portfolio-item iframe{
   border-radius: 5px;
@@ -974,7 +981,7 @@ border: none;
 .resume .resume-item {
   padding: 0 0 20px 20px;
   margin-top: -2px;
-  border-left: 2px solid #1f5297;
+  border-left: 0px solid #1f5297;
   position: relative;
 }
 
@@ -1019,8 +1026,8 @@ border: none;
   border-radius: 50px;
   left: -9px;
   top: 0;
-  background: #fff;
-  border: 2px solid #1f5297;
+  background: #00d0ff00;
+  border: 2px solid #1f519700;
 }
 
 /*--------------------------------------------------------------
@@ -1953,7 +1960,7 @@ padding-bottom:50px;
   bottom: 0;
   width: 300px;
   z-index: 9999;
-  background: #0e0e11;
+  background: #10199d;
 }
 
 #footer .copyright {
@@ -2011,7 +2018,7 @@ border: 0px !important;
 }
 .site-footer
 {
-  background-color:black;
+  background-color:#10199d;
   padding:20px 20px;
   font-size:15px;
   line-height:24px;
