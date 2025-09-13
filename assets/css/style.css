@@ -85,7 +85,8 @@ body.light h5,
 body.light h6,
 body.light ul,
 body.light a,
-body.light p {
+body.light p,
+body.light .project-number-badge {
   color: #212121 !important;
 }
 
@@ -176,7 +177,8 @@ h3,
 h4,
 h5,
 h6,
-a {
+a,
+body.light {
   font-family: 'Raleway', sans-serif;
   /* color: #fdc576 !important; */
   color: white !important;
