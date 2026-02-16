@@ -206,6 +206,7 @@ body.page-loaded {
       
     </div>
           <div id="year-topbar" style="justify-content: center; align-items: center;flex-wrap: wrap;">
+        <a href="#year-2016" class="year-link" style="color: white !important;">2026</a>
         <a href="#year-2025" class="year-link" style="color: white !important;">2025</a>
         <a href="#year-2024" class="year-link" style="color: white !important;">2024</a>
         <a href="#year-2023" class="year-link" style="color: white !important;">2023</a>
@@ -216,6 +217,7 @@ body.page-loaded {
         <a href="#year-2018" class="year-link" style="color: white !important;">2018</a>
         <a href="#year-2017" class="year-link" style="color: white !important;">2017</a>
         <a href="#year-2016" class="year-link" style="color: white !important;">2016</a>
+        <a href="#year-2016" class="year-link" style="color: white !important;">2015</a>
       </div>
   </div>
 
@@ -269,6 +271,7 @@ body.page-loaded {
           </style>
       <div id="year-dropdown" style="display: none; margin: 10px;">
         <select id="year-select" style="padding: 8px; border-radius: 5px; background: #111; color: white;">
+          <option value="#year-2025">2026</option>
           <option value="#year-2025">2025</option>
           <option value="#year-2024">2024</option>
           <option value="#year-2023">2023</option>
@@ -279,6 +282,7 @@ body.page-loaded {
           <option value="#year-2018">2018</option>
           <option value="#year-2017">2017</option>
           <option value="#year-2016">2016</option>
+          <option value="#year-2025">2015</option>
         </select>
       </div>
 </div>  
@@ -376,7 +380,7 @@ body.page-loaded {
                     const span = document.createElement("span");
                     span.textContent = str[i];
                     span.className = "char";
-                    span.style.animationDelay = `${-(i + offset) * 0.05}s`;
+                    span.style.animationDelay = `${-(i + offset) * 0.01}s`;
                     p.appendChild(span); // append spans to <p>
                   }
                   return p;
