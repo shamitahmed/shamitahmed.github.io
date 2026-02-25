@@ -214,23 +214,39 @@ body.page-loaded {
             <model-viewer camera-controls alt="Model" src="https://modelviewer.dev/shared-assets/models/shishkebab.glb">
             </model-viewer>
         </div> -->
-          <p style="color: white !important;">A <strong>multidisciplinary programmer</strong> based in Helsinki, Finland 🇫🇮 with <strong>5 years of game industry experience.</strong> <br><br> Recently completed my MSc degree with honours at <strong><a href="https://www.aalto.fi/en" style="color: white !important;">Aalto University</a></strong>,
+          <p style="color: white !important;">A <strong>multidisciplinary programmer</strong> based in Helsinki, Finland 🇫🇮 with <strong>5 years of game industry experience.</strong> <br><br> Recently completed my Master of Science degree in Computer, Communication and Information Scieces (CCIS) with honours at <strong><a href="https://www.aalto.fi/en" style="color: white !important;">Aalto University</a></strong>,
            majoring in <strong><a href="https://www.aalto.fi/en/study-options/game-design-and-development-computer-communication-and-information-sciences-master-of-science" style="color: white !important;">Game Design and Development</strong></a> and minoring in <strong><a href="https://www.aalto.fi/en/minors/building-virtual-worlds-minor" style="color: white !important;">Virtual Reality</strong></a>. 
             <br>
             <br>
             Engaging video games, immersive-interactive multimedia and breathtaking art of various forms have always been my motivation to achieve more.
-            I am currently focusing on <strong>Virtual Reality and Computer Vision-based Locomotion and Interaction Design.</strong>
+            I am currently focusing on <strong>Extended Reality (XR) and Computer Vision-based Locomotion and Interaction Design.</strong>
             <!-- I am also working on Exergames that require Physical Movement. -->
           </p>
 
           <h5 style="color: rgb(255, 234, 0) !important;margin-bottom: 3px;text-align: center !important;">✦Showreel✦</h5>
           <div style="display: flex; justify-content: center; align-items: center;">
         <a href="https://youtu.be/bik10KQDCn4" target="_blank" rel="noopener noreferrer" style="display: inline-block; text-decoration: none;">
-    <img src="assets/img/showreel.gif" 
-         style="width: 450px !important; height: 250px !important; cursor: pointer; transition: transform 0.3s ease;" 
-         onmouseover="this.style.transform='scale(1.05)';" 
-         onmouseout="this.style.transform='scale(1)';"
-         alt="Showreel GIF">
+        <div class="video-container" 
+            style="position: relative; width: 450px; height: 250px; cursor: pointer; transition: transform 0.3s ease;"
+            onmouseover="this.style.transform='scale(1.05)';" 
+            onmouseout="this.style.transform='scale(1)';"
+            onclick="console.log('Video clicked!');">
+            
+            <img src="assets/img/showreel.gif" 
+                alt="Showreel GIF"
+                style="width: 100%; height: 100%; display: block; border-radius: 8px;">
+
+            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+                        width: 60px; height: 60px; background: rgba(0, 0, 0, 0.6); 
+                        border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                <div style="width: 0; height: 0; 
+                            border-top: 12px solid transparent;
+                            border-bottom: 12px solid transparent;
+                            border-left: 20px solid white;
+                            margin-left: 5px;">
+                </div>
+            </div>
+        </div>
 </a> 
 <!-- <iframe width="460" height="250" src="https://www.youtube.com/embed/GTHPUJtnczI?autoplay=1&mute=1&loop=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
           </div>
@@ -983,7 +999,7 @@ marqueeInner.appendChild(makeWaveSpans(text, text.length));
               <span class="skill">C#
             </div>
             <div class="progress">
-              <span class="skill">Blueprint
+              <span class="skill">Unreal Blueprint
             </div>
             <div class="progress">
               <span class="skill">C++
@@ -1009,41 +1025,6 @@ marqueeInner.appendChild(makeWaveSpans(text, text.length));
 
           </div>
 <hr>
-
- <!-- <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-<h3>Hobbies </h3>
-            <div class="progress">
-              <span class="skill">🎨Digital Art
-            </div>
-            <div class="progress">
-              <span class="skill">🖨️3D Printing
-            </div>
- <div class="progress">
-              <span class="skill">🕹️Gaming
-            </div>
-
-            <div class="progress">
-              <span class="skill">📷Photography
-            </div>
-            <div class="progress">
-              <span class="skill">🚲Cycling
-            </div>
-            <div class="progress">
-              <span class="skill">👟Running
-            </div>
-            <div class="progress">
-              <span class="skill">🏓Table Tennis
-            </div>
-            <div class="progress">
-              <span class="skill">🏐Volleyball
-            </div>
-            <div class="progress">
-              <span class="skill">🏸Badminton
-            </div>
-            <div class="progress">
-              <span class="skill">🏏Cricket
-            </div>
-          </div> -->
 
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
             <h3>Languages</h3>
@@ -1074,84 +1055,97 @@ marqueeInner.appendChild(makeWaveSpans(text, text.length));
 
 
     </section><!-- End Skills Section -->
-    <section id="tools" class="tools section-bg section-bg-tools">
-      <div class="container" style="margin-top: 15px;">
-        <!-- <h6>level 07</h6> -->
-        <div class="section-title">
-          <h2>🔧Tools</h2>
-       
-        </div>
-  
-        <div class="row">
-          <div class="col-lg-12" data-aos="fade-up">
-            <!-- <h3 class="resume-title">Summary</h3> -->
-            <div class="resume-item" style="display: inline-block;height: 200px;width: 100px;margin: 5%;padding-left: 50px;">
-              <img src="assets/img/unity.png" alt="Unity" width="70" height="70">
-              <h4 style="margin-top:10px;text-align: left;">Unity Engine
-                <p style="text-align: left;font-size: small;width: 200px;">Primary game engine used to create over 50+ games and prototypes since 2016. So far I have developed for platforms such as: PC, Android, iOS, Web, Playable Ads and Meta Quest.</p>
-            </div>
-            <div class="resume-item" style="display: inline-block;height: 200px;width: 100px;margin: 5%;padding-left: 50px;">
-                      <img src="assets/img/unreal.png" alt="Unreal" width="70" height="70">
-              <h4 style="margin-top:10px;text-align: left;">Unreal Engine
-                <p style="text-align: left;font-size: small;width: 200px;">Basic understanding of the UE editor and its visual scripting tool, blueprints. I have successfully implemented many game mechanics, backend and UI of our Game Project 2, "Thoughts Out" using Unreal 5.</p>
-            </div>
-            <div class="resume-item" style="display: inline-block;height: 200px;width: 100px;margin: 5%;padding-left: 50px;">
-          <img src="assets/img/godot.png" alt="Godot" width="70" height="70">
-              <h4 style="margin-top:10px;text-align: left;">Godot Engine
-                <p style="text-align: left;font-size: small;width: 200px;">Currently learning the engine specifics by rapid prototyping 2D and 3D projects. Also familiar with GDScript syntax due to prior experience with Python.</p>
-            </div>
-            <div class="resume-item" style="display: inline-block;height: 200px;width: 100px;margin: 5%;padding-left: 50px;">
-                      <img src="assets/img/blender.png" alt="Blender" width="80" height="70">
-              <h4 style="margin-top:10px;text-align: left;">Blender 3D
-                <p style="text-align: left;font-size: small;width: 200px;">I love using blender for creating simple low-poly 3D game assets. I sometimes end up 3D printing them too!</p>
-            </div>
-            <div class="resume-item" style="display: inline-block;height: 200px;width: 100px;margin: 5%;padding-left: 50px;">
-                      <img src="assets/img/adobe.png" alt="Adobe" width="70" height="70">
-              <h4 style="margin-top:10px;text-align: left;">Adobe illustrator
-                <p style="text-align: left;font-size: small;width: 200px;">I have been using illustrator since 2016 for creating 2D assets, textures, UI elements and promotional elements etc. It has also served as my primary tool during freelance logo design, banner design, 2D flat-illustration and cartoon character art.</p>
-            </div>
-  
-            </div>
+   <section id="tools" class="tools section-bg section-bg-tools">
+  <div class="container" style="margin-top: 15px;">
+    <div class="section-title">
+      <h2>🔧 Tools</h2>
+    </div>
+
+    <div class="row d-flex align-items-stretch">
+      
+      <div class="col-lg-3 col-md-4 col-sm-6 mb-5" data-aos="fade-up">
+        <div class="resume-item text-center">
+          <div class="tool-logo-container" style="height: 80px; display: flex; align-items: center; justify-content: center;">
+            <img src="assets/img/unity.png" alt="Unity" width="70">
           </div>
-  
-          <div class="row">
-            <div class="col-lg-12" data-aos="fade-up">
-              <!-- <h3 class="resume-title">Summary</h3> -->
-              <div class="resume-item" style="display: inline-block;height: 200px;width: 100px;margin: 5%;padding-left: 50px;">
-                <img src="assets/img/vs.png" alt="Visual Studio" width="70" height="70">
-                <h4 style="margin-top:10px;text-align: left;">Visual Studio
-                  <p style="text-align: left;font-size: small;width: 200px;">Primary IDE for programming in C#. I also use VS Code depending on the project.</p>
-              </div>
-              <div class="resume-item" style="display: inline-block;height: 200px;width: 100px;margin: 5%;padding-left: 50px;">
-                <img src="assets/img/jup.png" alt="Jupyter" width="70" height="75">
-       <h4 style="margin-top:10px;text-align: left;">Jupyter Notebook
-        <p style="text-align: left;font-size: small;width: 200px;">IDE for programming in python. Depending on the project, I also use Google Colab.</p>
+          <h4 style="margin-top:15px; font-size: 1.1rem;">Unity Engine</h4>
+          <p style="font-size: 0.85rem; color: #b5b5b5; margin-top: 10px;">Primary engine used for 50+ projects since 2016. Platforms: PC, Mobile, Web, and Meta Quest.</p>
+        </div>
       </div>
-                <div class="resume-item" style="display: inline-block;height: 200px;width: 100px;margin: 5%;padding-left: 50px;">
-                    <img src="assets/img/github.png" alt="Github" width="80" height="80">
-            <h4 style="margin-top:10px;text-align: left;">Github
-            <p style="text-align: left;font-size: small;width: 200px;">Being able to preserve my projects in github repositories has been a blessing. I use Github Desktop and SourceTree for version control, cloud hosting and collaboration. Also familiar to using git commands.</p>
-              </div>
-              <div class="resume-item" style="display: inline-block;height: 200px;width: 100px;margin: 5%;padding-left: 50px;">
-                        <img src="assets/img/slack.png" alt="Slack" width="70" height="70">
-                <h4 style="margin-top:10px;text-align: left;">Slack
-                  <p style="text-align: left;font-size: small;width: 200px;">I also use Skype, Discord, Teams, Zoom for Communication depending on the project.</p>
-              </div>
-              <div class="resume-item" style="display: inline-block;height: 200px;width: 100px;margin: 5%;padding-left: 50px;">
-                        <img src="assets/img/jira.png" alt="Jira" width="70" height="70">
-                <h4 style="margin-top:10px;text-align: left;">Jira
-                  <p style="text-align: left;font-size: small;width: 200px;">I also use Trello, Miro for Task Management depending on the project.</p>
-              </div>
-              <!-- <div class="resume-item" style="display: inline-block;height: 200px;width: 100px;margin: 5%;padding-left: 50px;">
-                <img src="assets/img/notion.png" alt="Notion" width="90" height="90">
-        <h4 style="margin-top:10px;text-align: left;">Wwise
-          <p style="text-align: left;font-size: small;width: 200px;">For Project Documentation, Task Management.</p>
-      </div> -->
-  
-  
-              </div>
-            </div>
-          </section>
+
+      <div class="col-lg-3 col-md-4 col-sm-6 mb-5" data-aos="fade-up" data-aos-delay="100">
+        <div class="resume-item text-center">
+          <div class="tool-logo-container" style="height: 80px; display: flex; align-items: center; justify-content: center;">
+            <img src="assets/img/unreal.png" alt="Unreal" width="70">
+          </div>
+          <h4 style="margin-top:15px; font-size: 1.1rem;">Unreal Engine</h4>
+          <p style="font-size: 0.85rem; color: #b5b5b5; margin-top: 10px;">Visual scripting (Blueprints) and UI implementation using Unreal Engine 5.</p>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-4 col-sm-6 mb-5" data-aos="fade-up" data-aos-delay="200">
+        <div class="resume-item text-center">
+          <div class="tool-logo-container" style="height: 80px; display: flex; align-items: center; justify-content: center;">
+            <img src="assets/img/godot.png" alt="Godot" width="70">
+          </div>
+          <h4 style="margin-top:15px; font-size: 1.1rem;">Godot Engine</h4>
+          <p style="font-size: 0.85rem; color: #b5b5b5; margin-top: 10px;">Prototyping 2D/3D projects using GDScript and Python-based logic.</p>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-4 col-sm-6 mb-5" data-aos="fade-up" data-aos-delay="300">
+        <div class="resume-item text-center">
+          <div class="tool-logo-container" style="height: 80px; display: flex; align-items: center; justify-content: center;">
+            <img src="assets/img/vs.png" alt="Visual Studio" width="70">
+          </div>
+          <h4 style="margin-top:15px; font-size: 1.1rem;">Visual Studio</h4>
+          <p style="font-size: 0.85rem; color: #b5b5b5; margin-top: 10px;">Primary IDE for C# development and VS Code for lightweight scripting.</p>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-4 col-sm-6 mb-5" data-aos="fade-up">
+        <div class="resume-item text-center">
+          <div class="tool-logo-container" style="height: 80px; display: flex; align-items: center; justify-content: center;">
+            <img src="assets/img/blender.png" alt="Blender" width="80">
+          </div>
+          <h4 style="margin-top:15px; font-size: 1.1rem;">Blender 3D</h4>
+          <p style="font-size: 0.85rem; color: #b5b5b5; margin-top: 10px;">Low-poly asset creation and 3D printing preparation.</p>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-4 col-sm-6 mb-5" data-aos="fade-up" data-aos-delay="100">
+        <div class="resume-item text-center">
+          <div class="tool-logo-container" style="height: 80px; display: flex; align-items: center; justify-content: center;">
+            <img src="assets/img/github.png" alt="Github" width="70">
+          </div>
+          <h4 style="margin-top:15px; font-size: 1.1rem;">Github</h4>
+          <p style="font-size: 0.85rem; color: #b5b5b5; margin-top: 10px;">Version control and collaboration using Git commands and Desktop apps.</p>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-4 col-sm-6 mb-5" data-aos="fade-up" data-aos-delay="200">
+        <div class="resume-item text-center">
+          <div class="tool-logo-container" style="height: 80px; display: flex; align-items: center; justify-content: center;">
+            <img src="assets/img/figma.png" alt="Figma" width="70">
+          </div>
+          <h4 style="margin-top:15px; font-size: 1.1rem;">Figma</h4>
+          <p style="font-size: 0.85rem; color: #b5b5b5; margin-top: 10px;">Primary tool for UI/UX design and 2D asset planning.</p>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-4 col-sm-6 mb-5" data-aos="fade-up" data-aos-delay="300">
+        <div class="resume-item text-center">
+          <div class="tool-logo-container" style="height: 80px; display: flex; align-items: center; justify-content: center;">
+            <img src="assets/img/adobe.png" alt="Adobe" width="70">
+          </div>
+          <h4 style="margin-top:15px; font-size: 1.1rem;">Illustrator</h4>
+          <p style="font-size: 0.85rem; color: #b5b5b5; margin-top: 10px;">Vector asset design, textures, and promotional cartoon character art.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
     <!-- Art Section -->
     <section id="art" class="art">
       <div class="container">
