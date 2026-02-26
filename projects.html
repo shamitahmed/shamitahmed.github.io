@@ -44,19 +44,18 @@
 /* New Topbar Style */
 #year-topbar {
   position: fixed;
-  top: 60px; /* directly under the main header */
+  top: 60px;
   left: 0;
   width: 100%;
   background: #101a9d;
   z-index: 9996;
-  /* display: flex; */
-  justify-content: center;
+  display: flex;             /* Ensure display: flex is active */
+  justify-content: flex-start; /* Aligns items to the left */
   flex-wrap: wrap;
   padding: 10px 0;
   margin-left: 0%;
-  padding-left: 30%;
+  padding-left: 5%;         /* Reduced from 30% to shift it left */
   gap: 10px;
-  /* border-bottom: 1px solid #333; */
 }
 
 #year-topbar .year-link {
@@ -65,7 +64,7 @@
   padding: 8px 16px;
   border-radius: 5px;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 18px;
   opacity: 0;
   transform: translateY(-10px);
   animation: slideDown 0.5s forwards;
@@ -81,7 +80,15 @@
   transform: scale(1.1);
 }
 
-#year-topbar .year-link:nth-child(1) { animation-delay: 0.1s; }
+.year-heading {
+  margin-left: -200px; /* Aligns it with the edge of the project images */
+  margin-top: 50px;
+  margin-bottom: 30px;
+  font-weight: normal;
+  font-size: 80px !important;
+}
+
+/* #year-topbar .year-link:nth-child(1) { animation-delay: 0.1s; }
 #year-topbar .year-link:nth-child(2) { animation-delay: 0.2s; }
 #year-topbar .year-link:nth-child(3) { animation-delay: 0.3s; }
 #year-topbar .year-link:nth-child(4) { animation-delay: 0.4s; }
@@ -90,7 +97,7 @@
 #year-topbar .year-link:nth-child(7) { animation-delay: 0.7s; }
 #year-topbar .year-link:nth-child(8) { animation-delay: 0.8s; }
 #year-topbar .year-link:nth-child(9) { animation-delay: 0.9s; }
-#year-topbar .year-link:nth-child(10) { animation-delay: 1s; }
+#year-topbar .year-link:nth-child(10) { animation-delay: 1s; } */
 
 @keyframes slideDown {
   to {
