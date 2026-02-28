@@ -99,7 +99,7 @@ body.light .projectheader{
   color: rgb(0, 0, 0) !important;
 }
 body.light #about{
-   background: #eaf1f9;
+   background: #ffffff;
 }
 body.light #portfolio .description ul{
   transform: translateX(-35px);
@@ -107,16 +107,16 @@ body.light #portfolio .description ul{
   color: #000;
 }
 body.light .section-bg-portfolio{
-  background-color:  #eaf1f9;
+  background-color:  #ffffff;
 }
 body.light .section-bg-skills {
-  background: #eaf1f9;
+  background: #ffffff;
 }
 body.light .section-bg-tools {
-  background: #eaf1f9; 
+  background: #ffffff; 
 }
 body.light #resume .resume {
-  background: #eaf1f9; 
+  background: #ffffff; 
 
 }
 body.light #header{
