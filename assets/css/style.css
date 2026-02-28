@@ -71,7 +71,7 @@ body {
 }
 
 body.light {
-  background: #e0e9f3 !important;
+  background: #ffffff !important;
   color: #1d1c1c;
   transition: background 0.5s, color 0.5s;
 }
