@@ -238,7 +238,7 @@ h2 {
   display: none; 
   position: fixed; 
   z-index: 1000; 
-  padding-top: 120px; 
+  padding-top: 100px; 
   left: 0;
   top: 0;
   width: 100%; 
@@ -256,27 +256,34 @@ h2 {
   animation: zoomOut 0.3s ease-in forwards;
 }
 
+/* Base styling for the image in the modal */
 .modal-content {
   margin: auto;
   display: block;
-  
-  /* The "Secret Sauce": Let the image decide its own proportions */
-  width: auto !important;
-  height: auto !important;
-  
-  /* Limits: Ensure it doesn't get bigger than the screen */
-  max-width: 90%;
-  max-height: 85vh; 
-  
-  /* Smooth zoom animation */
   animation: zoomIn 0.3s ease-out forwards;
 }
+/* Landscape Forced Size */
+.landscape-size {
+  width: 1000px !important;
+  height: 600px !important;
+  /*object-fit: contain;  Prevents stretching if the file isn't exactly 1300x800 */
+  max-width: 95%;
+  max-height: 85vh;
+}
 
+/* Portrait Forced Size */
+.portrait-size {
+  width: 400px !important;
+  height: 600px !important;
+  /*object-fit: contain;*/
+  max-width: 95%;
+  max-height: 90vh;
+}
 /* The Close Button */
 .close-btn {
   position: absolute;
   top: 80px;      /* Distance from top */
-  right: 150px;    /* Distance from right */
+  right: 250px;    /* Distance from right */
   color: white;   /* Make it bright */
   font-size: 60px; /* Make it big */
   font-weight: bold;

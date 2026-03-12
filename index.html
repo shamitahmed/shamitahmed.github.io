@@ -353,11 +353,21 @@ marqueeInner.appendChild(makeWaveSpans(text, text.length));
 </div>
 
 <script>
-function openModal(src) {
+function openModal(src, orientation) {
     const modal = document.getElementById("imageModal");
     const modalImg = document.getElementById("fullImage");
     
-    modal.classList.remove("closing"); // Reset any closing state
+    // Reset classes so they don't stack
+    modalImg.className = "modal-content"; 
+    
+    // Add the specific size class based on what you passed
+    if (orientation === 'portrait') {
+        modalImg.classList.add("portrait-size");
+    } else {
+        modalImg.classList.add("landscape-size");
+    }
+
+    modal.classList.remove("closing");
     modal.style.display = "block";
     modalImg.src = src;
 }
@@ -461,10 +471,10 @@ document.addEventListener('keydown', function(event) {
                         <br><img class="activegif img-fluid" src="assets/img/projects/bark.gif" alt="Bark No More" style="height: 170px  !important; width: 300px !important;">
                         <br><br>
                         <div class="screenshot-container">
-                            <img src="assets/img/projects/bark.jpg" class="img-fluid" style="height: 80px; width: 145px; margin: 0.5%;cursor: pointer;"onclick="openModal(this.src)">
-                            <img src="assets/img/screenshots/bark1.png" class="img-fluid" style="height: 80px; width: 145px; margin: 0%;cursor: pointer;"onclick="openModal(this.src)">
-                            <img src="assets/img/screenshots/bark3.png" class="img-fluid" style="height: 80px; width: 145px; margin: 0.5%;cursor: pointer;"onclick="openModal(this.src)">
-                            <img src="assets/img/screenshots/bark4.png" class="img-fluid" style="height: 80px; width: 145px; margin: 0%;cursor: pointer;"onclick="openModal(this.src)">
+                            <img src="assets/img/projects/bark.jpg" class="img-fluid" style="height: 80px; width: 145px; margin: 0.5%;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
+                            <img src="assets/img/screenshots/bark1.png" class="img-fluid" style="height: 80px; width: 145px; margin: 0%;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
+                            <img src="assets/img/screenshots/bark3.png" class="img-fluid" style="height: 80px; width: 145px; margin: 0.5%;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
+                            <img src="assets/img/screenshots/bark4.png" class="img-fluid" style="height: 80px; width: 145px; margin: 0%;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
                         </div>
                     </div>
                     <!-- Content on the right -->
@@ -497,10 +507,10 @@ document.addEventListener('keydown', function(event) {
                       <br><img class="activegif img-fluid" src="assets/img/projects/monster.gif" alt="Monster Cleaning Inc.">
                       <br><br>
                       <div class="screenshot-container">
-                        <img src="assets/img/screenshots/mc3.png" class="img-fluid" style="height: 80px; width: 145px; margin: 0.5%;cursor: pointer;"onclick="openModal(this.src)">
-                        <img src="assets/img/screenshots/mc4.png" class="img-fluid" style="height: 80px; width: 145px;margin: 0%;cursor: pointer;"onclick="openModal(this.src)">
-                        <img src="assets/img/screenshots/mc1.png" class="img-fluid" style="height: 80px; width: 145px;margin: 0.5%;cursor: pointer;"onclick="openModal(this.src)">
-                        <img src="assets/img/screenshots/mc2.png" class="img-fluid" style="height: 80px; width: 145px;margin: 0%;cursor: pointer;"onclick="openModal(this.src)">
+                        <img src="assets/img/screenshots/mc3.png" class="img-fluid" style="height: 80px; width: 145px; margin: 0.5%;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
+                        <img src="assets/img/screenshots/mc4.png" class="img-fluid" style="height: 80px; width: 145px;margin: 0%;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
+                        <img src="assets/img/screenshots/mc1.png" class="img-fluid" style="height: 80px; width: 145px;margin: 0.5%;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
+                        <img src="assets/img/screenshots/mc2.png" class="img-fluid" style="height: 80px; width: 145px;margin: 0%;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
                      </div>
                    </div>
                    <!-- Content on the right -->
@@ -534,10 +544,10 @@ document.addEventListener('keydown', function(event) {
                       <br><img class="activegif img-fluid" src="assets/img/projects/unreality.gif" alt="Unreality VR" style="height: 170px  !important; width: 300px !important;">
                       <br><br>
                       <div class="screenshot-container">
-                          <img src="assets/img/screenshots/un1.png" class="img-fluid" style="height: 80px; width: 145px; margin: 0.5%;cursor: pointer;"onclick="openModal(this.src)">
-                          <img src="assets/img/screenshots/un2.png" class="img-fluid" style="height: 80px; width: 145px; margin: 0%;cursor: pointer;"onclick="openModal(this.src)">
-                          <img src="assets/img/screenshots/un3.png" class="img-fluid" style="height: 80px; width: 145px; margin: 0.5%;cursor: pointer;"onclick="openModal(this.src)">
-                          <img src="assets/img/screenshots/un4.png" class="img-fluid" style="height: 80px; width: 145px; margin: 0%;cursor: pointer;"onclick="openModal(this.src)">
+                          <img src="assets/img/screenshots/un1.png" class="img-fluid" style="height: 80px; width: 145px; margin: 0.5%;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
+                          <img src="assets/img/screenshots/un2.png" class="img-fluid" style="height: 80px; width: 145px; margin: 0%;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
+                          <img src="assets/img/screenshots/un3.png" class="img-fluid" style="height: 80px; width: 145px; margin: 0.5%;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
+                          <img src="assets/img/screenshots/un4.png" class="img-fluid" style="height: 80px; width: 145px; margin: 0%;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
                       </div>
                   </div>
                   <!-- Content on the right -->
@@ -578,10 +588,10 @@ document.addEventListener('keydown', function(event) {
             <br><br>
             Besides programming the gameplay, UI and backends, I have also worked on Ad integration and monetization.
             <br><br>
-            <img src="assets/img/screenshots/sl4.jpg" style = "height: 80px; width: 145px;cursor: pointer;"onclick="openModal(this.src)">
-            <img src="assets/img/screenshots/sl1.png" style = "height: 80px; width: 145px;cursor: pointer;"onclick="openModal(this.src)">
-            <img src="assets/img/screenshots/sl3.jpg" style = "height: 80px; width: 145px;cursor: pointer;"onclick="openModal(this.src)">
-            <img src="assets/img/screenshots/s6.jpg" style = "height: 80px; width: 145px;cursor: pointer;"onclick="openModal(this.src)">
+            <img src="assets/img/screenshots/sl4.jpg" style = "height: 80px; width: 145px;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
+            <img src="assets/img/screenshots/sl1.png" style = "height: 80px; width: 145px;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
+            <img src="assets/img/screenshots/sl3.jpg" style = "height: 80px; width: 145px;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
+            <img src="assets/img/screenshots/s6.jpg" style = "height: 80px; width: 145px;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
             <br><br>
             <strong>Genre:</strong> Topdown, Survival
              <br><strong>Role:</strong> Programmer, Level Designer<br>
@@ -609,8 +619,8 @@ document.addEventListener('keydown', function(event) {
                   Play as an intergalactic sous-chef on the lookout for exotic missing ingredients, as they embark on a culinary journey to Earth.
                   <p style="font-size: small; text-align: left;">Uniqueness: <br>1. FPS Cooking Game <br>2. Game Environment Generated using Geospatial 3D Data</p>
                   <img src="assets/img/screenshots/gg1.png" style = "height: 80px; width: 145px;cursor: pointer;object-fit: cover; object-position: center;"onclick="openModal(this.src)">
-                  <img src="assets/img/screenshots/gg2.png" style = "height: 80px; width: 145px;cursor: pointer;"onclick="openModal(this.src)">
-                  <img src="assets/img/screenshots/gg3.png" style = "height: 80px; width: 145px;cursor: pointer;"onclick="openModal(this.src)">
+                  <img src="assets/img/screenshots/gg2.png" style = "height: 80px; width: 145px;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
+                  <img src="assets/img/screenshots/gg3.png" style = "height: 80px; width: 145px;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
                   <br><br>
                   <strong>Genre:</strong> FPS, Retro
                   <br><strong>Role:</strong> Programmer, Game Designer, Artist<br>
@@ -637,9 +647,9 @@ document.addEventListener('keydown', function(event) {
             <ul>
               A topdown 3D game where your primary objective is to clean the sea by collecting different types of trash. Unlock new items, explore new areas and upgrade your ship while at it!
               <br><br>
-              <img src="assets/img/screenshots/sc1.png" style = "height: 140px; width: 80px;cursor: pointer;object-fit: cover; object-position: center;"onclick="openModal(this.src)">
-              <img src="assets/img/screenshots/sc2.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src)">
-              <img src="assets/img/screenshots/sc3.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src)">
+              <img src="assets/img/screenshots/sc1.png" style = "height: 140px; width: 80px;cursor: pointer;object-fit: cover; object-position: center;"onclick="openModal(this.src, 'portrait')">
+              <img src="assets/img/screenshots/sc2.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+              <img src="assets/img/screenshots/sc3.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
               <br><br><strong>Genre:</strong> Idle Arcade
               <br><strong>Role:</strong> Programmer, Game Designer <br>
               
