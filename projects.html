@@ -165,6 +165,63 @@ body.page-loaded {
       });
     });
     </script>
+
+    <div id="imageModal" class="modal">
+  <span class="close-btn" onclick="closeModal()">&times;</span>
+  <img class="modal-content" id="fullImage">
+</div>
+
+<script>
+function openModal(src, orientation) {
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("fullImage");
+    
+    // Reset classes so they don't stack
+    modalImg.className = "modal-content"; 
+    
+    // Add the specific size class based on what you passed
+    if (orientation === 'portrait') {
+        modalImg.classList.add("portrait-size");
+    } else {
+        modalImg.classList.add("landscape-size");
+    }
+
+    modal.classList.remove("closing");
+    modal.style.display = "block";
+    modalImg.src = src;
+}
+
+function closeModal() {
+    const modal = document.getElementById("imageModal");
+    
+    // Start the closing animation
+    modal.classList.add("closing");
+
+    // Wait 300ms (matching the CSS animation) then hide
+    setTimeout(() => {
+        modal.style.display = "none";
+    }, 300); 
+}
+
+// 1. Close when clicking the dark background overlay
+window.onclick = function(event) {
+    let modal = document.getElementById("imageModal");
+    if (event.target == modal) {
+        closeModal();
+    }
+}
+
+// 2. NEW: Close when pressing the "Escape" key
+document.addEventListener('keydown', function(event) {
+    // Check if the Escape key was pressed AND the modal is currently visible
+    if (event.key === "Escape" || event.keyCode === 27) {
+        const modal = document.getElementById("imageModal");
+        if (modal.style.display === "block") {
+            closeModal();
+        }
+    }
+});
+</script>
   <!-- ======= Mobile nav toggle button ======= -->
   <button type="button" class="mobile-nav-toggle d-xl-none"><i class="icofont-navigation-menu"></i></button>
 
@@ -414,8 +471,8 @@ body.page-loaded {
                   <ul>
                   My Master’s thesis project introduces a novel human quadruped exergame where players control a virtual tiger through supine, bicycle-crunch-style movements tracked by a computer vision-based sensor. Designed for controller-free use in commercial activity parks, the system extends embodied interaction to non-human locomotion while effectively converging full-body exertion and gameplay immersion.
                   <br> <br>
-                  <img src="assets/img/screenshots/tiger1.png" style="height: 80px; width: 145px; margin: 0.5%;">
-                  <img src="assets/img/screenshots/tiger2.png" style="height: 80px; width: 145px; margin: 0%;">
+                  <img src="assets/img/screenshots/tiger1.png" style="height: 80px; width: 145px; margin: 0.5%;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
+                  <img src="assets/img/screenshots/tiger2.png" style="height: 80px; width: 145px; margin: 0%;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
                   <!-- <img src="assets/img/screenshots/cc3.png" style="height: 80px; width: 145px; margin: 0.5%;">
                   <img src="assets/img/screenshots/cc5.png" style="height: 80px; width: 145px; margin: 0%;"> -->
                   <br><br>
@@ -451,10 +508,10 @@ body.page-loaded {
                   <ul>
                   You are a comic artist with zero drawing skill but an insane deadline. Your demanding boss expects brilliant work, and you've got nothing but shaky doodles. The Solution? An emergency AI-powered assistant! 
                   <br> <br>
-                  <img src="assets/img/screenshots/cc1.png" style="height: 80px; width: 145px; margin: 0.5%;">
-                  <img src="assets/img/screenshots/cc4.png" style="height: 80px; width: 145px; margin: 0%;">
-                  <img src="assets/img/screenshots/cc3.png" style="height: 80px; width: 145px; margin: 0.5%;">
-                  <img src="assets/img/screenshots/cc5.png" style="height: 80px; width: 145px; margin: 0%;">
+                  <img src="assets/img/screenshots/cc1.png" style="height: 80px; width: 145px; margin: 0.5%;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
+                  <img src="assets/img/screenshots/cc4.png" style="height: 80px; width: 145px; margin: 0%;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
+                  <img src="assets/img/screenshots/cc3.png" style="height: 80px; width: 145px; margin: 0.5%;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
+                  <img src="assets/img/screenshots/cc5.png" style="height: 80px; width: 145px; margin: 0%;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
                   <br><br>
                   <strong>Genre:</strong> Cozy, Drawing, Doodling
                   <br><strong>Role:</strong> Programmer, Designer
@@ -481,10 +538,10 @@ body.page-loaded {
                   <ul>
                     Care for your adorable pets in a peaceful, interactive world. Feed, play, and bond with them through fun mini-games, from fixing their little messes to showering them with affection. Your pets may even surprise you with special gifts you can collect in your personal memory book. Relax, explore, and build lasting friendships in your own cozy pet sanctuary!
                   <br><br>
-                  <img src="assets/img/screenshots/wg1.png" style="height: 80px; width: 145px; margin: 0.5%;">
-                  <img src="assets/img/screenshots/wg2.png" style="height: 80px; width: 145px; margin: 0%;">
-                  <img src="assets/img/screenshots/wg3.png" style="height: 80px; width: 145px; margin: 0.5%;">
-                  <img src="assets/img/screenshots/wg4.png" style="height: 80px; width: 145px; margin: 0%;">
+                  <img src="assets/img/screenshots/wg1.png" style="height: 80px; width: 145px; margin: 0.5%;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
+                  <img src="assets/img/screenshots/wg2.png" style="height: 80px; width: 145px; margin: 0%;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
+                  <img src="assets/img/screenshots/wg3.png" style="height: 80px; width: 145px; margin: 0.5%;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
+                  <img src="assets/img/screenshots/wg4.png" style="height: 80px; width: 145px; margin: 0%;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
                   <br><br>
                   <strong>Genre:</strong> Cozy, Simulation
                   <br><strong>Role:</strong> Solo
@@ -511,10 +568,10 @@ body.page-loaded {
                   <ul>
                     Bark no More is a mixed reality (MR) tower defense game that reimagines your everyday surroundings as an interactive battlefield. By leveraging spatial mapping and depth sensing, the game blends virtual elements with the physical world. The core gameplay centers on intuitive, embodied interaction.
                   <br><br>
-                  <img src="assets/img/projects/bark.jpg" style="height: 80px; width: 145px; margin: 0.5%;">
-                  <img src="assets/img/screenshots/bark1.png" style="height: 80px; width: 145px; margin: 0%;">
-                  <img src="assets/img/screenshots/bark3.png" style="height: 80px; width: 145px; margin: 0.5%;">
-                  <img src="assets/img/screenshots/bark4.png" style="height: 80px; width: 145px; margin: 0%;">
+                  <img src="assets/img/projects/bark.jpg" style="height: 80px; width: 145px; margin: 0.5%;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
+                  <img src="assets/img/screenshots/bark1.png" style="height: 80px; width: 145px; margin: 0%;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
+                  <img src="assets/img/screenshots/bark3.png" style="height: 80px; width: 145px; margin: 0.5%;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
+                  <img src="assets/img/screenshots/bark4.png" style="height: 80px; width: 145px; margin: 0%;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
                   <br><br>
                   <strong>Genre:</strong> Tower Defense 
                   <br><strong>Role:</strong> Programmer, Game Designer
@@ -542,10 +599,10 @@ body.page-loaded {
                 <ul>
                   Welcome to Monster Cleaning Inc., located in the heart of an RPG world! After nasty battles, these monsters need a good scrub. You need to use the right-sized sponge to clean it. Your cleaning skills will be judged by the monsters themselves, and their ratings will determine your success.
                 <br><br>
-                <img src="assets/img/screenshots/mc3.png" class="img-fluid" style="height: 80px; width: 145px; margin: 0.5%;">
-                <img src="assets/img/screenshots/mc4.png" class="img-fluid" style="height: 80px; width: 145px;margin: 0%;">
-                <img src="assets/img/screenshots/mc1.png" class="img-fluid" style="height: 80px; width: 145px;margin: 0.5%;">
-                <img src="assets/img/screenshots/mc2.png" class="img-fluid" style="height: 80px; width: 145px;margin: 0%;">
+                <img src="assets/img/screenshots/mc3.png" class="img-fluid" style="height: 80px; width: 145px; margin: 0.5%;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
+                <img src="assets/img/screenshots/mc4.png" class="img-fluid" style="height: 80px; width: 145px;margin: 0%;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
+                <img src="assets/img/screenshots/mc1.png" class="img-fluid" style="height: 80px; width: 145px;margin: 0.5%;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
+                <img src="assets/img/screenshots/mc2.png" class="img-fluid" style="height: 80px; width: 145px;margin: 0%;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
                 <br><br>
                 <strong>Genre:</strong> Survival, Clicker
                 <br><strong>Role:</strong> Programmer, Game Designer
@@ -577,8 +634,8 @@ Are there patterns in the way players describe their experiences? Can we trace a
 This project is a proof of concept (POC) where we explore whether <strong>psychological player experience questionnaires</strong>—like Corgis, Player Experience Inventory, Aesthemos—<strong>along with the help of LLMs</strong>, can help us better understand PX as expressed in reviews.
 <br><br>Developed for the <a href="https://eu.junctionplatform.com/projects/gamejam-2025/view/682971cacaba096fa9facb35">Supercell AI Hackathon 2025.</a>
                 <br><br>
-                <img src="assets/img/projects/vibe.png" style = "height: 80px; width: 145px;">
-                <img src="assets/img/screenshots/vc2.png" style = "height: 80px; width: 145px;">
+                <img src="assets/img/projects/vibe.png" style = "height: 80px; width: 145px;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
+                <img src="assets/img/screenshots/vc2.png" style = "height: 80px; width: 145px;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
                 <br><br>
                 <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px; padding: 0.85%;">Data Visualization</p>
                 <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px; padding: 0.85%;">Interactive Dashboard</p>
@@ -606,10 +663,10 @@ This project is a proof of concept (POC) where we explore whether <strong>psycho
 
 <br><br>Use your flashlight and fists to subdue criminals, ration precious batteries, and make hard choices with your ever-draining stamina. Investigate mysterious power cults, and bring justice to the shadows — or fall victim to them. 
               <br><br>
-              <img src="assets/img/projects/nn.png" class="img-fluid" style="height: 80px; width: 145px; margin: 0.5%;">
-              <img src="assets/img/screenshots/nn1.png" class="img-fluid" style="height: 80px; width: 145px;margin: 0%;">
-              <img src="assets/img/screenshots/nn2.png" class="img-fluid" style="height: 80px; width: 145px;margin: 0.5%;">
-              <img src="assets/img/screenshots/nn3.png" class="img-fluid" style="height: 80px; width: 145px;margin: 0%;">
+              <img src="assets/img/projects/nn.png" class="img-fluid" style="height: 80px; width: 145px; margin: 0.5%;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
+              <img src="assets/img/screenshots/nn1.png" class="img-fluid" style="height: 80px; width: 145px;margin: 0%;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
+              <img src="assets/img/screenshots/nn2.png" class="img-fluid" style="height: 80px; width: 145px;margin: 0.5%;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
+              <img src="assets/img/screenshots/nn3.png" class="img-fluid" style="height: 80px; width: 145px;margin: 0%;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
               <br><br>
               <strong>Genre:</strong> Action, Open-World
               <br><strong>Role:</strong> Solo Project<br>
@@ -634,8 +691,8 @@ This project is a proof of concept (POC) where we explore whether <strong>psycho
               <ul>
                 Squat Games is a <strong>gestural interaction based exergame </strong>prototype I developed using Unity and Kinect. <br><br> Player can embody a pogostick by controlling it with their gestures. Raising hands in specific direction changes the direction of the pogostick and squatting moves it forward.
                 <br><br>
-                <img src="assets/img/screenshots/squat1.png" style = "height: 80px; width: 145px;">
-                <img src="assets/img/screenshots/squat2.png" style = "height: 80px; width: 145px;">
+                <img src="assets/img/screenshots/squat1.png" style = "height: 80px; width: 145px;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
+                <img src="assets/img/screenshots/squat2.png" style = "height: 80px; width: 145px;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
                 <br><br>
                 <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px; padding: 0.85%;">Embodied Interaction</p>
                 <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px; padding: 0.85%;">Kinect</p>
@@ -666,10 +723,10 @@ This project is a proof of concept (POC) where we explore whether <strong>psycho
               <ul>
                 Unreality is a VR experience exploring the boundary between real and virtual spaces, evoking distinct emotions through interactive environments. <br><br>The project blends architecture and game design to challenge perceptions of reality.
               <br><br>
-              <img src="assets/img/screenshots/un1.png" style="height: 80px; width: 145px; margin: 0.5%;">
-              <img src="assets/img/screenshots/un2.png" style="height: 80px; width: 145px; margin: 0%;">
-              <img src="assets/img/screenshots/un3.png" style="height: 80px; width: 145px; margin: 0.5%;">
-              <img src="assets/img/screenshots/un4.png" style="height: 80px; width: 145px; margin: 0%;">
+              <img src="assets/img/screenshots/un1.png" style="height: 80px; width: 145px; margin: 0.5%;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
+              <img src="assets/img/screenshots/un2.png" style="height: 80px; width: 145px; margin: 0%;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
+              <img src="assets/img/screenshots/un3.png" style="height: 80px; width: 145px; margin: 0.5%;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
+              <img src="assets/img/screenshots/un4.png" style="height: 80px; width: 145px; margin: 0%;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
               <br><br>
               <strong>Genre:</strong> Walking Simulator, Adventure
               <br><strong>Role:</strong> Programmer, Game Designer
@@ -694,10 +751,10 @@ This project is a proof of concept (POC) where we explore whether <strong>psycho
           <div class="description" style="color: white;">
             <ul>
               Thoughts Out! is set in a dreamlike world where your everyday office troubles morph into an annoying dragon. This dragon can alter the surrounding environment, making your adventure either easier or more challenging. How can you drive it out of your daydream and reclaim your peace of mind?
-              <br><br> <img src="assets/img/projects/thought.png" style="height: 80px; width: 145px; margin: 0.5%;">
-              <img src="assets/img/screenshots/to1.png" style="height: 80px; width: 145px; margin: 0%;">
-              <img src="assets/img/screenshots/to2.png" style="height: 80px; width: 145px; margin: 0.5%;">
-              <img src="assets/img/screenshots/to4.png" style="height: 80px; width: 145px; margin: 0%;">
+              <br><br> <img src="assets/img/projects/thought.png" style="height: 80px; width: 145px; margin: 0.5%;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
+              <img src="assets/img/screenshots/to1.png" style="height: 80px; width: 145px; margin: 0%;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
+              <img src="assets/img/screenshots/to2.png" style="height: 80px; width: 145px; margin: 0.5%;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
+              <img src="assets/img/screenshots/to4.png" style="height: 80px; width: 145px; margin: 0%;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
               <br><br>
               <strong>Genre:</strong> Puzzle, Platformer
               <br><strong>Role:</strong> Programmer, Level Designer
@@ -725,8 +782,8 @@ This project is a proof of concept (POC) where we explore whether <strong>psycho
             The game features satisfying cube cutting with lightsabers, controller haptics and many visual effects that facilitate immersion and improve user experience.  
             Made with Unity using the Meta Quest 3 Headset.</li>                    
             <br><br>
-            <img src="assets/img/screenshots/beats1.png" style = "height: 120px; width: 120px;">
-            <img src="assets/img/screenshots/beats2.png" style = "height: 120px; width: 120px;">
+            <img src="assets/img/screenshots/beats1.png" style = "height: 120px; width: 120px;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
+            <img src="assets/img/screenshots/beats2.png" style = "height: 120px; width: 120px;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
             <br><br>
             <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px; padding: 0.85%;">Coding Virtual Worlds</p>
             <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px; padding: 0.85%;">VR</p>
@@ -751,7 +808,7 @@ This project is a proof of concept (POC) where we explore whether <strong>psycho
             VR Escape Room game featuring multiple <strong>interaction</strong> techniques including socket interactors, grab interactables, drawers, doors, switches, UI etc.
             </li>                    
             <br><br>
-            <img src="assets/img/screenshots/se1.png" style = "height: 80px; width: 145px;">
+            <img src="assets/img/screenshots/se1.png" style = "height: 80px; width: 145px;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
             <br><br>
             <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px; padding: 0.85%;">Coding Virtual Worlds</p>
             <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px; padding: 0.85%;">VR</p>
@@ -776,7 +833,7 @@ This project is a proof of concept (POC) where we explore whether <strong>psycho
             VR Bowling Simulator game for improving your bowling skills!
             The game features avatar customization, multiple bowling lanes and bowling pin types. The design features multiple <strong>locomotion</strong> techniques including teleportation, snap turn and free movement. Made with Unity using the Meta Quest 3 Headset.</li>                    
             <br><br>
-            <img src="assets/img/screenshots/bs1.png" style = "height: 120px; width: 120px;">
+            <img src="assets/img/screenshots/bs1.png" style = "height: 120px; width: 120px;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
             <br><br>
             <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px; padding: 0.85%;">Coding Virtual Worlds</p>
             <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px; padding: 0.85%;">VR</p>
@@ -800,9 +857,9 @@ This project is a proof of concept (POC) where we explore whether <strong>psycho
           <ul>
             A fart-tastic game where you try to hold in your fart to avoid unimmaginable consequences. Making this game was technically challenging yet well-scoped considering it was developed in 48 hours.</li>
             <br><br>
-            <img src="assets/img/screenshots/hi1.png" style = "height: 80px; width: 145px;">
-            <img src="assets/img/screenshots/hi2.png" style = "height: 80px; width: 145px;">
-            <img src="assets/img/screenshots/hi3.png" style = "height: 80px; width: 145px;">
+            <img src="assets/img/screenshots/hi1.png" style = "height: 80px; width: 145px;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
+            <img src="assets/img/screenshots/hi2.png" style = "height: 80px; width: 145px;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
+            <img src="assets/img/screenshots/hi3.png" style = "height: 80px; width: 145px;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
             <br><br>
             <strong>Genre:</strong> Casual
             <br><strong>Role:</strong> Programmer, Game Designer<br>
@@ -826,9 +883,9 @@ This project is a proof of concept (POC) where we explore whether <strong>psycho
           <ul>
             An augmented reality application designed to teach about native musical instruments from different regions of Uganda 🇺🇬. This technical demonstration was a component of an Aalto University MA in New Media student's master's thesis.</li>                    
             <br><br>
-            <img src="assets/img/screenshots/uar3.png" style = "height: 140px; width: 80px;">
-            <img src="assets/img/screenshots/uar1.png" style = "height: 140px; width: 80px;">
-            <img src="assets/img/screenshots/uar2.png" style = "height: 140px; width: 80px;">
+            <img src="assets/img/screenshots/uar3.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+            <img src="assets/img/screenshots/uar1.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+            <img src="assets/img/screenshots/uar2.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
             <br><br>
             Role: Thesis Collaborator, Programmer, Designer</a>
             <br><p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px; padding: 0.85%;">AR</p>
@@ -957,9 +1014,9 @@ This project is a proof of concept (POC) where we explore whether <strong>psycho
             <ul>
               You and a bunch of ducklings are chasing after the coolest duck around, the Queen of Ducks. Find your way through three stages that are packed with obstacles and points to score – but remember to move to the rhythm!</li>
               <br><br>
-              <img src="assets/img/screenshots/mp1.png" style = "height: 140px; width: 80px;">
-              <img src="assets/img/screenshots/mp2.png" style = "height: 140px; width: 80px;">
-              <img src="assets/img/screenshots/mp3.png" style = "height: 140px; width: 80px;">
+              <img src="assets/img/screenshots/mp1.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+              <img src="assets/img/screenshots/mp2.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+              <img src="assets/img/screenshots/mp3.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
               <br><br><strong>Genre:</strong> Rhythm, Runner
               <br><strong>Role:</strong> Programmer<br>
               <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Aalto Orientation Jam 2023</p> 
@@ -1005,9 +1062,9 @@ This project is a proof of concept (POC) where we explore whether <strong>psycho
               <ul>
                 Cleaners have decided to protest against mass littering by littering. Hence their roles have reversed! Survive from the cops for as long as you can and reach higher scores by littering all around!</li>
                 <br><br>
-                <img src="assets/img/screenshots/rr1.png" style = "height: 140px; width: 80px;">
-                <img src="assets/img/screenshots/rr2.png" style = "height: 140px; width: 80px;">
-                <img src="assets/img/screenshots/rr3.png" style = "height: 140px; width: 80px;">
+                <img src="assets/img/screenshots/rr1.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+                <img src="assets/img/screenshots/rr2.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+                <img src="assets/img/screenshots/rr3.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
                 <br><br>
                 <strong>Genre:</strong> Racing, Survival<br>
                 <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">GMTK 2023</p> 
@@ -1089,9 +1146,9 @@ This project is a proof of concept (POC) where we explore whether <strong>psycho
             <ul>
               A topdown 3D game where your primary objective is to clean the sea by collecting different types of trash. Unlock new items, explore new areas and upgrade your ship while at it!
               <br><br>
-              <img src="assets/img/screenshots/sc1.png" style = "height: 140px; width: 80px;">
-              <img src="assets/img/screenshots/sc2.png" style = "height: 140px; width: 80px;">
-              <img src="assets/img/screenshots/sc3.png" style = "height: 140px; width: 80px;">
+              <img src="assets/img/screenshots/sc1.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+              <img src="assets/img/screenshots/sc2.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+              <img src="assets/img/screenshots/sc3.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
               <br><br><strong>Genre:</strong> Idle Arcade
               <br><strong>Role:</strong> Programmer, Game Designer <br>
               
@@ -1112,9 +1169,9 @@ This project is a proof of concept (POC) where we explore whether <strong>psycho
             <ul>
               Idle tower defense/clicker game with a diverse upgrade system, stunning visuals and solid gameloop.
               <br><br>
-              <img src="assets/img/screenshots/td1.png" style = "height: 140px; width: 80px;">
-              <img src="assets/img/screenshots/td2.jpg" style = "height: 140px; width: 80px;">
-              <img src="assets/img/screenshots/td3.jpg" style = "height: 140px; width: 80px;">
+              <img src="assets/img/screenshots/td1.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+              <img src="assets/img/screenshots/td2.jpg" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+              <img src="assets/img/screenshots/td3.jpg" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
               <br><br>
               <strong>Genre:</strong> Idle Defense, Survival
               <br><strong>Role:</strong> Programmer, Designer<br>
@@ -1163,9 +1220,9 @@ This project is a proof of concept (POC) where we explore whether <strong>psycho
                   <ul>
                     I have worked on the shop system + minigames such as: Road Chase, highway Chase, Catch Thief, Supercop, Prison Break etc.
                     <br><br>
-                    <img src="assets/img/screenshots/pt2.jpg" style = "height: 140px; width: 80px;">
-                    <img src="assets/img/screenshots/pt3.jpg" style = "height: 140px; width: 80px;">
-                    <img src="assets/img/screenshots/pt4.jpg" style = "height: 140px; width: 80px;">
+                    <img src="assets/img/screenshots/pt2.jpg" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+                    <img src="assets/img/screenshots/pt3.jpg" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+                    <img src="assets/img/screenshots/pt4.jpg" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
                     <br><br>
                     <strong>Genre:</strong> Racing, Action
                     <br><p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Mobile</p>
@@ -1186,9 +1243,9 @@ This project is a proof of concept (POC) where we explore whether <strong>psycho
                     A hypercasual prototype that I created in 4 days for a technical assignment as part of a recruitment process.<br>
                     <p style="font-size: small; text-align: left;">Features: <br>1. Spline-based Level Design, <br>2. Smooth Player Controls <br>3. Intelligent Enemy AI</p>
                     
-                    <img src="assets/img/screenshots/sr1.png" style = "height: 140px; width: 80px;">
-                    <img src="assets/img/screenshots/sr2.png" style = "height: 140px; width: 80px;">
-                    <img src="assets/img/screenshots/sr3.png" style = "height: 140px; width: 80px;">
+                    <img src="assets/img/screenshots/sr1.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+                    <img src="assets/img/screenshots/sr2.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+                    <img src="assets/img/screenshots/sr3.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
                     <br><br>
                     <strong>Genre:</strong> Runner<br>
                     <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Mobile</p>
@@ -1212,9 +1269,9 @@ This project is a proof of concept (POC) where we explore whether <strong>psycho
                     <!-- <li>A fun shark battle game where I enjoyed working on gameplay, lighting and overall polishing.</li> -->
                     Aquatic Park management game that features relaxing fishing, progressive gameplay and seafoods! I was responsible for features such as: game design, player controls, fish movement, catching and storage, level up system, upgrade system and overall look and feel of the game.</li>
                     <br><br>
-                    <img src="assets/img/screenshots/aqua3.png" style = "height: 140px; width: 80px;">
-                    <img src="assets/img/screenshots/aqua2.png" style = "height: 140px; width: 80px;">
-                    <img src="assets/img/screenshots/aqua1.png" style = "height: 140px; width: 80px;">
+                    <img src="assets/img/screenshots/aqua3.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+                    <img src="assets/img/screenshots/aqua2.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+                    <img src="assets/img/screenshots/aqua1.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
                     <br><br>
                     <strong>Genre:</strong> Hybrid-Casual, Idle Arcade<br>
                     <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Mobile</p>
@@ -1234,9 +1291,9 @@ This project is a proof of concept (POC) where we explore whether <strong>psycho
                   <ul>
                     My immense love for cycling encouraged me to work on this project, which I envision, will motivate people to use bicycles, educate them about road safety and will be adored by all cyclists! Players have to jump, switch lanes and balance their way to victory!
                     <br><br>
-                    <img src="assets/img/screenshots/hs2.png" style = "height: 140px; width: 80px;">
-                    <img src="assets/img/screenshots/hs3.png" style = "height: 140px; width: 80px;">
-                    <img src="assets/img/screenshots/hs1.png" style = "height: 140px; width: 80px;">
+                    <img src="assets/img/screenshots/hs2.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+                    <img src="assets/img/screenshots/hs3.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+                    <img src="assets/img/screenshots/hs1.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
                     <br><br>
                     <strong>Genre: </strong>Casual, Platformer<br>
                     <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Mobile</p>
@@ -1257,9 +1314,9 @@ This project is a proof of concept (POC) where we explore whether <strong>psycho
                     <!-- <li>A fun shark battle game where I enjoyed working on gameplay, lighting and overall polishing.</li> -->
                     Quick prototype with multiple levels and player progression system.
                     <br><br>
-                    <img src="assets/img/screenshots/ar1.jpg" style = "height: 140px; width: 80px;">
-                    <img src="assets/img/screenshots/ar2.jpg" style = "height: 140px; width: 80px;">
-                    <img src="assets/img/screenshots/ar3.jpg" style = "height: 140px; width: 80px;">
+                    <img src="assets/img/screenshots/ar1.jpg" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+                    <img src="assets/img/screenshots/ar2.jpg" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+                    <img src="assets/img/screenshots/ar3.jpg" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
                     <br><br>
                     <strong>Genre:</strong> Runner, Survival<br>
                     <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Mobile</p>
@@ -1279,9 +1336,9 @@ This project is a proof of concept (POC) where we explore whether <strong>psycho
                   <ul>
                     Get ready to make the ultimate theft! Rope Theft is here, where you can show how to grab the prize of diamonds by using all your tricks in hand. Use ropes to hold back obstacles from falling on the thief. It’s not that easy to use the ropes- use your tricks and skills to find the perfect solution to hold back the obstacles, make the theft a success!
                     <br><br>
-                    <img src="assets/img/screenshots/rope1.png" style = "height: 140px; width: 80px;">
-                    <img src="assets/img/screenshots/rope2.png" style = "height: 140px; width: 80px;">
-                    <img src="assets/img/screenshots/rope3.png" style = "height: 140px; width: 80px;">
+                    <img src="assets/img/screenshots/rope1.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+                    <img src="assets/img/screenshots/rope2.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+                    <img src="assets/img/screenshots/rope3.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
                     <br><br>
                     <strong>Genre: </strong>Casual, Puzzle<br>
                     <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Mobile</p>
@@ -1301,9 +1358,9 @@ This project is a proof of concept (POC) where we explore whether <strong>psycho
                   <ul>
                     Forge Run is an exciting and thrilling game that combines strategic thinking, quick reflexes, and expert craftsmanship. In this game, the player must navigate through a series of gates, each presenting a unique challenge that must be overcome to proceed to the next stage.
                     <br><br>
-                    <img src="assets/img/screenshots/fr1.png" style = "height: 140px; width: 80px;">
-                    <img src="assets/img/screenshots/fr2.png" style = "height: 140px; width: 80px;">
-                    <img src="assets/img/screenshots/fr3.png" style = "height: 140px; width: 80px;">
+                    <img src="assets/img/screenshots/fr1.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+                    <img src="assets/img/screenshots/fr2.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+                    <img src="assets/img/screenshots/fr3.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
                     <br><br>
                     <strong>Genre: </strong>Casual<br>
                     <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Mobile</p>
@@ -1322,9 +1379,9 @@ This project is a proof of concept (POC) where we explore whether <strong>psycho
                   <ul>
                     A collection of 2D mini games such as shape matching, line matching, rotating puzzle, memory puzzle etc.
                     <br><br>
-                    <img src="assets/img/screenshots/fruit1.png" style = "height: 140px; width: 80px;">
-                    <img src="assets/img/screenshots/fruit2.png" style = "height: 140px; width: 80px;">
-                    <img src="assets/img/screenshots/fruit3.png" style = "height: 140px; width: 80px;">
+                    <img src="assets/img/screenshots/fruit1.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+                    <img src="assets/img/screenshots/fruit2.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+                    <img src="assets/img/screenshots/fruit3.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
                     <br><br>
                     <strong>Genre: </strong>Educational<br>
                     <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Mobile</p>
@@ -1345,9 +1402,9 @@ This project is a proof of concept (POC) where we explore whether <strong>psycho
                   <ul>
                     A cozy cinematic I created alongside my spouse celebrating the festivities and wishing a happy Eid to everyone!
                     <br><br>
-                    <img src="assets/img/screenshots/eid1.png" style = "height: 140px; width: 80px;">
-                    <img src="assets/img/screenshots/eid2.png" style = "height: 140px; width: 80px;">
-                    <img src="assets/img/screenshots/eid3.png" style = "height: 140px; width: 80px;">
+                    <img src="assets/img/screenshots/eid1.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+                    <img src="assets/img/screenshots/eid2.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+                    <img src="assets/img/screenshots/eid3.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
                     <br><br>Rendering Pipeline: Unity HDRP<br>              
                     <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px; padding: 0.85%;">Cinematic</p>
                     <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">2 People</p> 
@@ -1407,12 +1464,12 @@ This project is a proof of concept (POC) where we explore whether <strong>psycho
         <ul>
           A relaxing fishing game that features multiple customizations, upgrades, novel level selection system and many more unique features.
           <br><br>
-          <img src="assets/img/screenshots/fs1.jpg" style = "height: 140px; width: 80px;">
-          <img src="assets/img/screenshots/fs2.jpg" style = "height: 140px; width: 80px;">
-          <img src="assets/img/screenshots/fs3.jpg" style = "height: 140px; width: 80px;">
-          <img src="assets/img/screenshots/fs4.jpg" style = "height: 140px; width: 80px;">
-          <img src="assets/img/screenshots/fs5.jpg" style = "height: 140px; width: 80px;">
-          <img src="assets/img/screenshots/fs6.jpg" style = "height: 140px; width: 80px;">
+          <img src="assets/img/screenshots/fs1.jpg" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+          <img src="assets/img/screenshots/fs2.jpg" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+          <img src="assets/img/screenshots/fs3.jpg" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+          <img src="assets/img/screenshots/fs4.jpg" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+          <img src="assets/img/screenshots/fs5.jpg" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+          <img src="assets/img/screenshots/fs6.jpg" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
           <br><br>
           <strong>Genre:</strong> Idle Arcade, Fishing<br>
           <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Mobile</p>
@@ -1458,9 +1515,9 @@ This project is a proof of concept (POC) where we explore whether <strong>psycho
                   <ul>
                     Action-idle-arcade game featuring procedurally generated levels, base building, trading, combat, pet companionship, etc.
                     <br><br>
-                    <img src="assets/img/screenshots/mf1.png" style = "height: 140px; width: 80px;">
-                    <img src="assets/img/screenshots/mf2.png" style = "height: 140px; width: 80px;">
-                    <img src="assets/img/screenshots/mf3.png" style = "height: 140px; width: 80px;">
+                    <img src="assets/img/screenshots/mf1.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+                    <img src="assets/img/screenshots/mf2.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+                    <img src="assets/img/screenshots/mf3.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
                     <br><br>
                     <strong>Genre:</strong> Idle-arcade, Action<br>
                     <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Mobile</p>
@@ -1481,9 +1538,9 @@ This project is a proof of concept (POC) where we explore whether <strong>psycho
                   <ul>
                     Infinite runner where the primary objective is to catch the runaway cow while avoiding chaos in the streets! Another minigame turns the table and lets the player be in the cow's shoes!
                     <br><br>
-                    <img src="assets/img/screenshots/hr1.png" style = "height: 140px; width: 80px;">
-                    <img src="assets/img/screenshots/hr2.png" style = "height: 140px; width: 80px;">
-                    <img src="assets/img/screenshots/hr3.png" style = "height: 140px; width: 80px;">
+                    <img src="assets/img/screenshots/hr1.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+                    <img src="assets/img/screenshots/hr2.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+                    <img src="assets/img/screenshots/hr3.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
                     <br><br>
                     <strong>Genre:</strong> Runner<br>
                     <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Mobile</p>
@@ -1504,9 +1561,9 @@ This project is a proof of concept (POC) where we explore whether <strong>psycho
                   <ul>
                     2.5D Infinite Sidescroller game featuring unique customization, powerups and upgrades. Special Game Modes all around the year including spooky Halloween and snowy Winter!
                     <br><br>
-                    <img src="assets/img/screenshots/sf1.png" style = "height: 140px; width: 80px;">
-                    <img src="assets/img/screenshots/sf2.png" style = "height: 140px; width: 80px;">
-                    <img src="assets/img/screenshots/sf3.png" style = "height: 140px; width: 80px;">
+                    <img src="assets/img/screenshots/sf1.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+                    <img src="assets/img/screenshots/sf2.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+                    <img src="assets/img/screenshots/sf3.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
                     <br><br>
                     <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Mobile</p>
                     <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Solo</p> 
@@ -1525,9 +1582,9 @@ This project is a proof of concept (POC) where we explore whether <strong>psycho
                   <ul>
                     Merge your dragons and attack the enemies.
                     <br><br>
-                    <img src="assets/img/screenshots/mergeatk1.png" style = "height: 140px; width: 80px;">
-                    <img src="assets/img/screenshots/mergeatk2.png" style = "height: 140px; width: 80px;">
-                    <img src="assets/img/screenshots/mergeatk3.png" style = "height: 140px; width: 80px;">
+                    <img src="assets/img/screenshots/mergeatk1.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+                    <img src="assets/img/screenshots/mergeatk2.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+                    <img src="assets/img/screenshots/mergeatk3.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
                     <br><br>
                     <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Mobile</p>
                     <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Solo</p> 
@@ -1546,9 +1603,9 @@ This project is a proof of concept (POC) where we explore whether <strong>psycho
                   <ul>
                     Deliver parcels across lands and seas.
                     <br><br>
-                    <img src="assets/img/screenshots/deliver1.png" style = "height: 140px; width: 80px;">
-                    <img src="assets/img/screenshots/deliver2.png" style = "height: 140px; width: 80px;">
-                    <img src="assets/img/screenshots/deliver3.png" style = "height: 140px; width: 80px;">
+                    <img src="assets/img/screenshots/deliver1.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+                    <img src="assets/img/screenshots/deliver2.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+                    <img src="assets/img/screenshots/deliver3.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
                     <br><br>
                     <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Mobile</p>
                     <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Solo</p> 
@@ -1571,8 +1628,8 @@ This project is a proof of concept (POC) where we explore whether <strong>psycho
                   <ul>
                     You are stuck in a retro loop and only solution is to type your way out!<br>     
                     <br>
-                    <img src="assets/img/screenshots/rs1.png" style = "height: 140px; width: 80px;">
-                    <img src="assets/img/screenshots/rs2.png" style = "height: 140px; width: 80px;">
+                    <img src="assets/img/screenshots/rs1.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+                    <img src="assets/img/screenshots/rs2.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
                     <br><br>           
                     <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Ludum Dare 47</p>
                     <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Web</p>
@@ -1596,9 +1653,9 @@ This project is a proof of concept (POC) where we explore whether <strong>psycho
                         <ul>
                           I have worked on the core backend, cinematics, playable ads and several minigames.
                           <br><br>
-                          <img src="assets/img/screenshots/ss1.jpg" style = "height: 140px; width: 80px;">
-                          <img src="assets/img/screenshots/ss2.jpg" style = "height: 140px; width: 80px;">
-                          <img src="assets/img/screenshots/ss3.jpg" style = "height: 140px; width: 80px;">
+                          <img src="assets/img/screenshots/ss1.jpg" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+                          <img src="assets/img/screenshots/ss2.jpg" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+                          <img src="assets/img/screenshots/ss3.jpg" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
                           <br><br>
                           <strong>Genre:</strong>Action
                           <br><p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Mobile</p>
@@ -1617,9 +1674,9 @@ This project is a proof of concept (POC) where we explore whether <strong>psycho
                   <ul>
                     Deploy cars on the race tracks, merge them to upgrade and manage your resources!
                     <br><br>
-                    <img src="assets/img/screenshots/mergecar1.png" style = "height: 140px; width: 80px;">
-                    <img src="assets/img/screenshots/mergecar2.png" style = "height: 140px; width: 80px;">
-                    <img src="assets/img/screenshots/mergecar3.png" style = "height: 140px; width: 80px;">
+                    <img src="assets/img/screenshots/mergecar1.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+                    <img src="assets/img/screenshots/mergecar2.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+                    <img src="assets/img/screenshots/mergecar3.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
                     <br><br>
                     <strong>Genre:</strong> Idle Clicker, Merge<br> 
                     <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Mobile</p>
@@ -1639,7 +1696,7 @@ This project is a proof of concept (POC) where we explore whether <strong>psycho
                   <ul>
                     Switch colors to survive!
                     <br><br>
-                    <img src="assets/img/screenshots/c1.png" style = "height: 140px; width: 80px;">
+                    <img src="assets/img/screenshots/c1.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
                     <br><br>
                     <strong>Genre:</strong> Casual, Survival<br>
                     <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Mix and Game Jam 2020</p> 
@@ -1660,9 +1717,9 @@ This project is a proof of concept (POC) where we explore whether <strong>psycho
                   <ul>
                     Repair faulty electronics in this point and click game.
                     <br><br>
-                    <img src="assets/img/screenshots/repair1.png" style = "height: 140px; width: 80px;">
-                    <img src="assets/img/screenshots/repair2.png" style = "height: 140px; width: 80px;">
-                    <img src="assets/img/screenshots/repair3.png" style = "height: 140px; width: 80px;">
+                    <img src="assets/img/screenshots/repair1.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+                    <img src="assets/img/screenshots/repair2.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+                    <img src="assets/img/screenshots/repair3.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
                     <br><br>
                     <strong>Genre:</strong> Casual, Point and click<br>
                     <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Mobile</p>
@@ -1682,9 +1739,9 @@ This project is a proof of concept (POC) where we explore whether <strong>psycho
                   <ul>
                     Used mesh deformation technique to create the effect of rolling ice cream.
                     <br><br>
-                    <img src="assets/img/screenshots/iceroll1.png" style = "height: 140px; width: 80px;">
-                    <img src="assets/img/screenshots/iceroll3.png" style = "height: 140px; width: 80px;">
-                    <img src="assets/img/screenshots/iceroll2.png" style = "height: 140px; width: 80px;">
+                    <img src="assets/img/screenshots/iceroll1.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+                    <img src="assets/img/screenshots/iceroll3.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+                    <img src="assets/img/screenshots/iceroll2.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
                     <br><br>
                     <strong>Genre:</strong> Cooking<br>
                     <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Mobile</p>
@@ -1770,9 +1827,9 @@ This project is a proof of concept (POC) where we explore whether <strong>psycho
                         <ul>
                           I started working on this prototype as a solo developer. Through iterative improvements, the game has turned into a huge success with 500K+ downloads. It features multiple engaging game modes and tons of character customization.</li>
                           <br><br>
-                          <img src="assets/img/screenshots/dino1.jpg" style = "height: 140px; width: 80px;">
-                          <img src="assets/img/screenshots/dino2.png" style = "height: 140px; width: 80px;">
-                          <img src="assets/img/screenshots/dino3.png" style = "height: 140px; width: 80px;">
+                          <img src="assets/img/screenshots/dino1.jpg" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+                          <img src="assets/img/screenshots/dino2.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+                          <img src="assets/img/screenshots/dino3.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
                           <br><br>
                           <strong>Genre:</strong> Topdown, Action
                           <br><strong>Role:</strong> Programmer, Designer<br>
@@ -1797,9 +1854,9 @@ This project is a proof of concept (POC) where we explore whether <strong>psycho
 The beach is full of innocent people. Attack them when they are unaware and watch out for other hungry sharks.
 Swipe your finger on screen to move your Shark. Make your Shark stronger and bigger by eating the most people as well as other sharks.</li>
                           <br><br>
-                          <img src="assets/img/screenshots/shark3.png" style = "height: 140px; width: 80px;">
-                          <img src="assets/img/screenshots/shark1.png" style = "height: 140px; width: 80px;">
-                          <img src="assets/img/screenshots/shark2.png" style = "height: 140px; width: 80px;">
+                          <img src="assets/img/screenshots/shark3.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+                          <img src="assets/img/screenshots/shark1.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+                          <img src="assets/img/screenshots/shark2.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
                           <br><br>
                           <strong>Genre:</strong> Topdown, Action
                           <br><strong>Role:</strong> Programmer, Designer<br>
@@ -1821,9 +1878,9 @@ Swipe your finger on screen to move your Shark. Make your Shark stronger and big
                         <ul>
                           Turn-based shark battler prototype.</li>
                           <br><br>
-                          <img src="assets/img/screenshots/slap1.png" style = "height: 140px; width: 80px;">
-                          <img src="assets/img/screenshots/slap2.png" style = "height: 140px; width: 80px;">
-                          <img src="assets/img/screenshots/slap3.png" style = "height: 140px; width: 80px;">
+                          <img src="assets/img/screenshots/slap1.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+                          <img src="assets/img/screenshots/slap2.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+                          <img src="assets/img/screenshots/slap3.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
                           <br><br>
                           <strong>Genre:</strong> Turn-based, Action
                           <br><strong>Role:</strong> Programmer, Designer<br>
@@ -1843,9 +1900,9 @@ Swipe your finger on screen to move your Shark. Make your Shark stronger and big
                         <ul>
                           Find the unusual and make it perfect.</li>
                           <br><br>
-                          <img src="assets/img/screenshots/perfect1.png" style = "height: 140px; width: 80px;">
-                          <img src="assets/img/screenshots/perfect2.png" style = "height: 140px; width: 80px;">
-                          <img src="assets/img/screenshots/perfect3.png" style = "height: 140px; width: 80px;">
+                          <img src="assets/img/screenshots/perfect1.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+                          <img src="assets/img/screenshots/perfect2.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+                          <img src="assets/img/screenshots/perfect3.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
                           <br><br>
                           <strong>Genre:</strong> Clicker
                           <br><strong>Role:</strong> Programmer, Designer<br>
@@ -1866,9 +1923,9 @@ Swipe your finger on screen to move your Shark. Make your Shark stronger and big
                   <ul>
                     Addictive clicker game where you TAP to shoot targets while avoiding cheeky obstacles.
                     <br><br>
-                    <img src="assets/img/screenshots/t1.png" style = "height: 140px; width: 80px;">
-                    <img src="assets/img/screenshots/t2.png" style = "height: 140px; width: 80px;">
-                    <img src="assets/img/screenshots/t3.png" style = "height: 140px; width: 80px;">
+                    <img src="assets/img/screenshots/t1.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+                    <img src="assets/img/screenshots/t2.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+                    <img src="assets/img/screenshots/t3.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
                     <br><br>
                     <strong>Genre:</strong> Arcade<br>
                     <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Mobile</p>
@@ -1890,9 +1947,9 @@ Swipe your finger on screen to move your Shark. Make your Shark stronger and big
                   <ul>
                     Break colorful blocks by firing cannon balls!
                     <br><br>
-                    <img src="assets/img/screenshots/cannon1.png" style = "height: 140px; width: 80px;">
-                    <img src="assets/img/screenshots/cannon2.png" style = "height: 140px; width: 80px;">
-                    <img src="assets/img/screenshots/cannon3.png" style = "height: 140px; width: 80px;">
+                    <img src="assets/img/screenshots/cannon1.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+                    <img src="assets/img/screenshots/cannon2.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+                    <img src="assets/img/screenshots/cannon3.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
                     <br><br>
                     <strong>Genre:</strong> Arcade<br>
                     <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Mobile</p>
@@ -1983,9 +2040,9 @@ Swipe your finger on screen to move your Shark. Make your Shark stronger and big
                   <ul>
                The goal of Cryo Quest is to raise awareness of the serious effects that global warming has on the cryosphere. 
                     <br><br>
-                    <img src="assets/img/screenshots/nasa1.png" style = "height: 140px; width: 80px;">
-                    <img src="assets/img/screenshots/nasa2.png" style = "height: 140px; width: 80px;">
-                    <img src="assets/img/screenshots/nasa3.png" style = "height: 140px; width: 80px;">
+                    <img src="assets/img/screenshots/nasa1.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+                    <img src="assets/img/screenshots/nasa2.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+                    <img src="assets/img/screenshots/nasa3.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
                     <br><br>
                     <strong>Genre:</strong> Educational, Awareness-raising<br>
                     <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Mobile</p>

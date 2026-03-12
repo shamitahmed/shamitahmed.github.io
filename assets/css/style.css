@@ -238,12 +238,12 @@ h2 {
   display: none; 
   position: fixed; 
   z-index: 1000; 
-  padding-top: 100px; 
+  padding-top: 150px; 
   left: 0;
   top: 0;
   width: 100%; 
   height: 100%; 
-  background-color: rgba(0, 0, 0, 0.499);
+  background-color: rgba(0, 0, 0, 0.688);
   transition: opacity 0.3s ease;
 }
 
@@ -264,8 +264,8 @@ h2 {
 }
 /* Landscape Forced Size */
 .landscape-size {
-  width: 1000px !important;
-  height: 600px !important;
+  width: 900px !important;
+  height: 550px !important;
   /*object-fit: contain;  Prevents stretching if the file isn't exactly 1300x800 */
   max-width: 95%;
   max-height: 85vh;
@@ -273,8 +273,8 @@ h2 {
 
 /* Portrait Forced Size */
 .portrait-size {
-  width: 400px !important;
-  height: 600px !important;
+  width: 350px !important;
+  height: 500px !important;
   /*object-fit: contain;*/
   max-width: 95%;
   max-height: 90vh;
@@ -282,8 +282,8 @@ h2 {
 /* The Close Button */
 .close-btn {
   position: absolute;
-  top: 80px;      /* Distance from top */
-  right: 250px;    /* Distance from right */
+  top: 150px;      /* Distance from top */
+  right: 350px;    /* Distance from right */
   color: white;   /* Make it bright */
   font-size: 60px; /* Make it big */
   font-weight: bold;
