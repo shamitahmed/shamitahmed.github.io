@@ -144,6 +144,7 @@ body.light .acquiredSkills-container{
 .matha p{
 display: inline-block;
 width: 80%;
+padding-left: 50px;
 margin: 0% !important;
 
 }
