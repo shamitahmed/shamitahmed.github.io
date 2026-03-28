@@ -4,8 +4,15 @@
 }
 body {
   font-family: 'Inter', sans-serif !important;
-  color: rgb(221, 220, 220) !important;
-  background-color: black !important;
+
+    min-height: 100vh;
+  background:
+    radial-gradient(ellipse 50% 80% at 0% 50%,   rgb(0, 0, 0)  0%, transparent 100%),
+    radial-gradient(ellipse 50% 80% at 100% 50%,  rgba(26, 32, 48, 0.25)  0%, transparent 70%),
+    radial-gradient(ellipse 40% 60% at 30% 50%,  rgba(82, 52, 116, 0.2)  0%, transparent 70%),
+    radial-gradient(ellipse 40% 60% at 70% 50%,  rgba(0, 0, 0, 0.3)  0%, transparent 100%),
+    linear-gradient(90deg, #0a0a12 0%, #141a22 50%, #0a0f1e 100%) !important;
+
 
   /* background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(29,32,56,1) 78%);  */
   /* background-image: linear-gradient(210deg, blue, black) !important; */
@@ -64,16 +71,16 @@ body {
   transition: transform 0.3s ease;
 }
 
-
-
 .theme-toggle:checked + .toggle-label .ball {
   transform: translateX(30px);
 }
 
 body.light {
-  background: #ffffff !important;
-  color: #1d1c1c;
-  transition: background 0.5s, color 0.5s;
+    min-height: 100vh;
+  background:
+    radial-gradient(ellipse 50% 100% at 0% 50%,   rgba(180, 220, 255, 0.7)  0%, transparent 70%),
+    radial-gradient(ellipse 50% 100% at 100% 50%,  rgba(180, 220, 255, 0.7)  0%, transparent 70%),
+    linear-gradient(90deg, #daeeff 0%, #ffffff 50%, #daeeff 100%) !important;
 }
 
 body.light .title,
@@ -99,7 +106,11 @@ body.light .projectheader{
   color: rgb(0, 0, 0) !important;
 }
 body.light #about{
-   background: #ffffff;
+      min-height: 100vh;
+  background:
+    radial-gradient(ellipse 50% 100% at 0% 50%,   rgba(180, 220, 255, 0.7)  0%, transparent 70%),
+    radial-gradient(ellipse 50% 100% at 100% 50%,  rgba(180, 220, 255, 0.7)  0%, transparent 70%),
+    linear-gradient(90deg, #daeeff 0%, #ffffff 50%, #daeeff 100%);
 }
 body.light #portfolio .description ul{
   transform: translateX(-35px);
@@ -107,16 +118,32 @@ body.light #portfolio .description ul{
   color: #000;
 }
 body.light .section-bg-portfolio{
-  background-color:  #ffffff;
+      min-height: 100vh;
+  background:
+    radial-gradient(ellipse 50% 100% at 0% 50%,   rgba(180, 220, 255, 0.7)  0%, transparent 70%),
+    radial-gradient(ellipse 50% 100% at 100% 50%,  rgba(180, 220, 255, 0.7)  0%, transparent 70%),
+    linear-gradient(90deg, #daeeff 0%, #ffffff 50%, #daeeff 100%);
 }
 body.light .section-bg-skills {
-  background: #ffffff;
+      min-height: 100vh;
+  background:
+    radial-gradient(ellipse 50% 100% at 0% 50%,   rgba(180, 220, 255, 0.7)  0%, transparent 70%),
+    radial-gradient(ellipse 50% 100% at 100% 50%,  rgba(180, 220, 255, 0.7)  0%, transparent 70%),
+    linear-gradient(90deg, #daeeff 0%, #ffffff 50%, #daeeff 100%);
 }
 body.light .section-bg-tools {
-  background: #ffffff; 
+      min-height: 100vh;
+  background:
+    radial-gradient(ellipse 50% 100% at 0% 50%,   rgba(180, 220, 255, 0.7)  0%, transparent 70%),
+    radial-gradient(ellipse 50% 100% at 100% 50%,  rgba(180, 220, 255, 0.7)  0%, transparent 70%),
+    linear-gradient(90deg, #daeeff 0%, #ffffff 50%, #daeeff 100%);
 }
 body.light #resume .resume {
-  background: #ffffff; 
+      min-height: 100vh;
+  background:
+    radial-gradient(ellipse 50% 100% at 0% 50%,   rgba(180, 220, 255, 0.7)  0%, transparent 70%),
+    radial-gradient(ellipse 50% 100% at 100% 50%,  rgba(180, 220, 255, 0.7)  0%, transparent 70%),
+    linear-gradient(90deg, #daeeff 0%, #ffffff 50%, #daeeff 100%);
 
 }
 body.light #header{
@@ -531,7 +558,7 @@ animation: bg-animation 15s infinite;
 #header .profile h1 a:hover {
   /* color: #fff; */
   text-decoration: none;
-  font-size: 35px;
+  font-size: 30px;
   /* margin-top: -50px; */
 }
 
