@@ -642,6 +642,18 @@ body.light #portfolio .descriptionFeatured ul{
   text-decoration: none;
 }
 
+/* Target the links inside the social-links container */
+.social-links a {
+  display: inline-block;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Add the lift, scale, and white glow on hover */
+.social-links a:hover {
+  transform: translateY(-3px) scale(1.05);
+  filter: drop-shadow(0px 4px 8px rgba(0, 234, 255, 0.8));
+}
+
 #main {
   margin-left: 0px;
 }
@@ -752,6 +764,17 @@ body.light #portfolio .descriptionFeatured ul{
 .nav-menu .active > a i,
 .nav-menu li:hover > a i {
   color: yellow !important;
+}
+
+.nav-menu ul li a {
+  display: inline-block;
+  padding: 5px 10px;
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+.nav-menu ul li a:hover {
+  transform: translateY(-3px) scale(1.05);
+  text-shadow: 0px 4px 10px rgba(0, 234, 255, 0.8);
 }
 
 /* Mobile Navigation */

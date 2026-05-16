@@ -64,19 +64,16 @@
   font-weight: 500;
   font-size: 18px;
   opacity: 0;
-  transform: translateY(-10px);
+   transition: transform 0.3s ease, text-shadow 0.3s ease, background-color 0.3s ease;
   animation: slideDown 0.5s forwards;
 }
 
+/* Add the lift, scale, and text glow on hover (No box shadow!) */
 #year-topbar .year-link:hover {
-  background-color: #232dc0;
+  transform: translateY(-3px) scale(1.05) !important;
+  text-shadow: 0px 4px 10px rgba(0, 208, 255, 0.8);
 }
 
-#year-topbar .year-link.active {
-  background-color: #007bff;
-  font-weight: bold;
-  transform: scale(1.1);
-}
 
 .year-heading {
   margin-left: -200px; /* Aligns it with the edge of the project images */
@@ -86,7 +83,7 @@
   font-size: 80px !important;
 }
 
-/* #year-topbar .year-link:nth-child(1) { animation-delay: 0.1s; }
+#year-topbar .year-link:nth-child(1) { animation-delay: 0.1s; }
 #year-topbar .year-link:nth-child(2) { animation-delay: 0.2s; }
 #year-topbar .year-link:nth-child(3) { animation-delay: 0.3s; }
 #year-topbar .year-link:nth-child(4) { animation-delay: 0.4s; }
@@ -95,7 +92,8 @@
 #year-topbar .year-link:nth-child(7) { animation-delay: 0.7s; }
 #year-topbar .year-link:nth-child(8) { animation-delay: 0.8s; }
 #year-topbar .year-link:nth-child(9) { animation-delay: 0.9s; }
-#year-topbar .year-link:nth-child(10) { animation-delay: 1s; } */
+#year-topbar .year-link:nth-child(10) { animation-delay: 1s; }
+#year-topbar .year-link:nth-child(11) { animation-delay: 1.1s; }
 
 @keyframes slideDown {
   to {
@@ -109,13 +107,7 @@ html {
   scroll-padding-top: 120px;
 }
 
-    .year-link.active {
-      background-color: #007bff;
-      font-weight: bold;
-      font-size: xx-large;
-      transform: scale(1.1);
-    }
-    .year-link:hover { background-color: #20202d; }
+
     #portfolio-content { margin-left: 120px; flex: 1; }
     .year-section { margin-bottom: 150px;}
     
@@ -280,11 +272,7 @@ document.addEventListener('keydown', function(event) {
         <a href="#year-2018" class="year-link" style="color: white !important;">2018</a>
         <a href="#year-2017" class="year-link" style="color: white !important;">2017</a>
         <a href="#year-2016" class="year-link" style="color: white !important;">2016</a>
-        
-        <!-- <div style="flex-basis: 100%; height: 1px;"></div>
-        
-        <a href="xr-projects.html" class="year-link" style="font-weight: bold;">XR</a> -->
-      </div>
+</div>
 
        
         
