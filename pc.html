@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta http-equiv="x-ua-compatible" content="IE=edge">
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+  <title>Shamit Ahmed's PC Portfolio</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <link href="assets/img/profile-img.PNG" rel="icon">
+  <link href="assets/img/profile-img.PNG" rel="apple-touch-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
+  <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.0/css/fontawesome.css" rel="stylesheet" media="all">
+  
+  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/style2.css" rel="stylesheet">
+
+  <meta property='og:title' content='PC Portfolio'/>
+  <meta property='og:image' content='https://shamitfpgl.github.io/Portfolio/assets/img/portfolio.jpg'/>
+  <meta property='og:description' content='PC portfolio of Shamit Ahmed'/>
+  <meta property='og:url' content='https://shamitfpgl.github.io/Portfolio/'/>
+
+  <link rel="icon" href="assets/img/icon.png">
+  <style>
+    html { scroll-behavior: smooth; }
+    body { zoom: 0.9; display:block; gap: 0px; background-color: #000; color: #fff; }
+
+    #portfolio-content { margin-left: 120px; flex: 1; }
+
+    /* --- Right Category Sidebar Styles --- */
+    #category-sidebar {
+      position: fixed;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      z-index: 9999;
+    }
+
+    .category-btn {
+      background: #10199d; 
+      color: white !important;
+      text-decoration: none;
+      padding: 7px 13px;
+      border-radius: 8px;
+      font-weight: 600;
+      text-align: center;
+      font-size: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(5px);
+      transition: all 0.3s ease;
+    }
+
+    /* Remove underline from all links on hover */
+    a:hover {
+      text-decoration: none !important;
+    }
+
+    /* Hover effect: Slides slightly to the left, glows, and changes to your neon green */
+    .category-btn:hover {
+      transform: translateX(-5px) scale(1.05);
+      background: #09ee96; 
+      box-shadow: 0px 4px 15px rgba(9, 238, 150, 0.6);
+      border-color: #09ee96;
+    }
+
+    /* Make the active page button stand out permanently */
+    .category-btn.active-cat {
+      background: linear-gradient(270deg, #31f8ff, #09ee96, #3191ff);
+      background-size: 600% 600%;
+      animation: gradientMove 6s ease infinite;
+      border: none;
+    }
+
+    /* Responsive adjustments for mobile */
+    @media (max-width: 768px) {
+      #category-sidebar {
+        right: 5px;
+        gap: 10px;
+        transform: translateY(-50%) scale(0.85); 
+      }
+      .category-btn {
+        padding: 10px 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="imageModal" class="modal">
+    <span class="close-btn" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="fullImage">
+  </div>
+
+  <script>
+    function openModal(src, orientation) {
+        const modal = document.getElementById("imageModal");
+        const modalImg = document.getElementById("fullImage");
+        
+        modalImg.className = "modal-content"; 
+        
+        if (orientation === 'portrait') {
+            modalImg.classList.add("portrait-size");
+        } else {
+            modalImg.classList.add("landscape-size");
+        }
+
+        modal.classList.remove("closing");
+        modal.style.display = "block";
+        modalImg.src = src;
+    }
+
+    function closeModal() {
+        const modal = document.getElementById("imageModal");
+        modal.classList.add("closing");
+        setTimeout(() => {
+            modal.style.display = "none";
+        }, 300); 
+    }
+
+    window.onclick = function(event) {
+        let modal = document.getElementById("imageModal");
+        if (event.target == modal) {
+            closeModal();
+        }
+    }
+
+    document.addEventListener('keydown', function(event) {
+        if (event.key === "Escape" || event.keyCode === 27) {
+            const modal = document.getElementById("imageModal");
+            if (modal.style.display === "block") {
+                closeModal();
+            }
+        }
+    });
+  </script>
+
+  <button type="button" class="mobile-nav-toggle d-xl-none"><i class="icofont-navigation-menu"></i></button>
+
+  <header id="header">
+    <div class="d-flex align-items-center justify-content-between" style="padding: 0px 0px;">
+      <div class="profile d-flex align-items-center">
+        <h1 style="margin:0; font-style: normal; color: white;">
+          <a href="index.html" style="font-weight:bold;
+            background: linear-gradient(270deg, #31f8ff, #09ee96, #3191ff);
+            background: white;
+            background-size: 600% 600%;
+            animation: gradientMove 6s ease infinite;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;">◀HOME</a>
+        </h1>
+        <style>
+          @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+          }
+        </style>
+      </div>
+
+      <div class="social-links d-flex align-items-center">
+        <div class="theme-toggle-container">
+          <input type="checkbox" id="theme-toggle" class="theme-toggle">
+          <label for="theme-toggle" class="toggle-label">
+            <img src="assets/img/moon.png" style="height:15px;">
+            <img src="assets/img/sun.png" style="height:18.5px;">
+            <div class="ball"></div>
+          </label>
+        </div>
+        <a href="https://www.linkedin.com/in/shamitahmed/" target="_blank" style="margin-right:10px;"><img src="assets/img/li.png" style="height:25px;"></a>
+        <a href="https://shamitahmed.itch.io/" target="_blank" style="margin-right:10px;"><img src="assets/img/itch-io-brands.png" style="height:27px;"></a>
+        <a href="https://github.com/shamitahmed" target="_blank" style="margin-right:10px;"><img src="assets/img/githubW.png" style="height:34px;"></a>
+        <a href="https://www.youtube.com/@shamitahmed/videos" target="_blank" style="margin-right:50px;"><img src="assets/img/youtube.png" style="height:30px;"></a>
+      </div>
+    </div>
+  </header><script>
+    const toggle = document.getElementById('theme-toggle');
+    const pageBody = document.body;
+
+    if (localStorage.getItem('theme') === 'light') {
+      pageBody.classList.add('light');
+      toggle.checked = true;
+    }
+
+    toggle.addEventListener('change', () => {
+      if (toggle.checked) {
+        pageBody.classList.add('light');
+        localStorage.setItem('theme', 'light');
+      } else {
+        pageBody.classList.remove('light');
+        localStorage.setItem('theme', 'dark');
+      }
+    });
+  </script>
+
+  <div id="category-sidebar">
+    <a href="projects.html" class="category-btn">All Works</a>
+    <a href="xr.html" class="category-btn">XR</a>
+    <a href="mobile.html" class="category-btn">Mobile</a>
+    <a href="web.html" class="category-btn">Web</a>
+    <a href="pc.html" class="category-btn active-cat">PC</a>
+  </div>
+
+  <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
+    <div class="hero-container" data-aos="fade-in">
+      <h1>PC Portfolio</h1>
+      <h3>Desktop & PC Game Projects</h3>
+    </div>
+  </section><main id="main">
+    <section id="portfolio" class="portfolio section-bg section-bg-portfolio">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Portfolio</h2>
+        </div><br><br><br><br><br><br>
+        
+        <div class="marquee-container">
+          <div class="marquee" id="waveText"></div>
+        </div>
+        
+        <style>
+          body {
+            margin: 0;
+            background: #111;
+            color: white;
+            font-family: sans-serif;
+          }
+          .marquee-container {
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+            height: 40px;
+          }
+          .marquee {
+            display: inline-block;
+            white-space: nowrap;
+            animation: scroll 30s linear infinite; 
+            font-size: 25px;
+          }
+          @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+          }
+          .char {
+            display: inline-block;
+            animation: wave 2s infinite ease-in-out;
+          }
+          @keyframes wave {
+            0%   { transform: translateY(0); }
+            25%  { transform: translateY(-4px); }
+            50%  { transform: translateY(0); }
+            75%  { transform: translateY(4px); }
+            100% { transform: translateY(0); }
+          }
+        </style>
+        
+        <div id="waveText"></div>
+        <h3 style="color: white; text-align: center;font-size: 45px;">✦ PC PROJECTS ✦</h3>
+
+        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app" > 
+            <img class="activegif" src="assets/img/projects/compadre.gif">
+            <p><a class="projectheader" href="https://www.youtube.com/watch?v=7aKqKEL-yXk" target="_blank" style="font-weight: bold;">🐥Compadre - Agentic Companion</a> </p>
+            <div class="description" style="color: white;">
+              <ul>
+              Compadre is a real-time, multimodal AI system that generates a fully interactive, reactive stream audience for single-player games. Leveraging vision models to analyze live gameplay and speech-to-text to process player audio, a custom Python backend orchestrates a diverse cast of LLM-driven personas. These agents dynamically respond to the game state with contextual chat, TTS audio, and simulated donations, all rendered through a low-latency WebSocket overlay built in Electron.
+              <br> <br>
+              <img src="assets/img/screenshots/top4.png" style="height: 80px; width: 145px; margin: 0.5%;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
+              <img src="assets/img/screenshots/SS6.png" style="height: 80px; width: 145px; margin: 0%;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
+              <br><br>
+              <strong>Genre:</strong> AI Companionship
+              <br><strong>Role:</strong> Design, Programming
+              <br><br><p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Supercell X Florent Agentic Frontier Hackathon 2026</p> 
+              <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Desktop</p> 
+              <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">4 People</p> 
+              <a href="https://www.youtube.com/watch?v=7aKqKEL-yXk" target="_blank" style="background-color: rgb(199, 55, 39); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: normal; color: white !important ; padding: 1%;">Video</a> 
+              <img class="engineLogo" src="assets/img/tools/electron.png" width="50px" height="50px">
+              <div class="project-number-badge"></div>
+              </ul>
+            </div>
+         </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app" >
+            <img class="activegif" src="assets/img/projects/thought.gif">
+            <p><a class="projectheader" href="https://ssssand.itch.io/thoughts-out" target="_blank" style="font-weight: bold;">🐲Thoughts Out!</a> </p>
+            <div class="description" style="color: white;">
+              <ul>
+                Thoughts Out! is set in a dreamlike world where your everyday office troubles morph into an annoying dragon. This dragon can alter the surrounding environment, making your adventure either easier or more challenging. How can you drive it out of your daydream and reclaim your peace of mind?
+                <br><br> <img src="assets/img/projects/thought.png" style="height: 80px; width: 145px; margin: 0.5%;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
+                <img src="assets/img/screenshots/to1.png" style="height: 80px; width: 145px; margin: 0%;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
+                <img src="assets/img/screenshots/to2.png" style="height: 80px; width: 145px; margin: 0.5%;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
+                <img src="assets/img/screenshots/to4.png" style="height: 80px; width: 145px; margin: 0%;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
+                <br><br>
+                <strong>Genre:</strong> Puzzle, Platformer
+                <br><strong>Role:</strong> Programmer, Level Designer
+                <br><strong>Contributions:</strong> Gameplay, UI Programming, Dialogue System, Game Design
+                <br><p style="color: cyan;">Made with Unreal Engine 5.3</p>
+                <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Game Project 2 at Aalto</p> 
+                <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">PC</p> 
+                <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">9 People</p> 
+                <a class="gradientButton" href="https://ssssand.itch.io/thoughts-out" target="_blank" style="background-color: rgb(5, 154, 62); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: normal; color: white !important ; padding: 1%;">Itch.io</a>
+                <a href="https://www.youtube.com/embed/owJ9X8U2Ads" target="_blank" style="background-color: rgb(199, 55, 39); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: normal; color: white !important ; padding: 1%;">Trailer</a>
+                <img class="engineLogo" src="assets/img/unreal.png" width="50px" height="50px">
+                <div class="project-number-badge"></div>
+              </ul>
+            </div>
+         </div>
+
+         <div class="col-lg-4 col-md-6 portfolio-item filter-app" >
+            <img class="activegif" src="assets/img/projects/gg.gif">
+            <p><a class="projectheader" href="https://shamitahmed.itch.io/galacticgourmet" target="_blank" style="font-weight: bold;">🥐Galactic Gourmet</a> </p>
+            <div class="description" style="color: white;">
+              <ul>
+                Play as an intergalactic sous-chef on the lookout for exotic missing ingredients, as they embark on a culinary journey to Earth.
+                <p style="font-size: small; text-align: left;">Uniqueness: <br>1. FPS Cooking Game <br>2. Game Environment Generated using Geospatial 3D Data</p>
+                <img src="assets/img/screenshots/gg1.png" style = "height: 80px; width: 145px;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
+                <img src="assets/img/screenshots/gg2.png" style = "height: 80px; width: 145px;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
+                <img src="assets/img/screenshots/gg3.png" style = "height: 80px; width: 145px;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
+                <br><br>
+                <strong>Genre:</strong> FPS, Retro
+                <br><strong>Role:</strong> Programmer, Game Designer, Artist<br>
+                <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">GN! Autumn 2023 Jam</p> 
+                <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">PC</p> 
+                <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">2 People</p> 
+                <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">2023</p> 
+                <a class="gradientButton" href="https://shamitahmed.itch.io/galacticgourmet" target="_blank" style="background-color: rgb(5, 154, 62); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: normal; color: white !important ; padding: 1%;">Itch.io</a>
+                <a href="https://www.youtube.com/embed/hALWidnnZcU" target="_blank" style="background-color: rgb(199, 55, 39); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: normal; color: white !important ; padding: 1%;">Youtube</a>
+                <img class="engineLogo" src="assets/img/unity.png" width="50px" height="50px">
+                <div class="project-number-badge"></div>
+              </ul>
+            </div>
+         </div>
+
+         <div class="col-lg-4 col-md-6 portfolio-item filter-app" > 
+          <img class="activegif" src="assets/img/projects/ds.gif">
+          <p><a class="projectheader" href="https://shamitahmed.itch.io/dimeshift" target="_blank" style="font-weight: bold;">🔄Dime Shift</a> </p>
+          <div class="description" style="color: white;">
+            <ul>
+              Dime Shift is a perspective-shifting puzzle platformer. Play as a tiny 2D robot who tries to become sentient.
+              <br><br>
+              In the game, you play as an ordinary factory robot whose only objective is to push boxes. One day, it finds out it is capable of more than pushing boxes. During its journey through the robot factory, it learns from the environment, gradually gaining consciousness and trying to find itself. <br><br>
+              <img src="assets/img/screenshots/ds1.png" style = "height: 80px; width: 145px;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
+              <img src="assets/img/screenshots/ds2.png" style = "height: 80px; width: 145px;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
+              <img src="assets/img/screenshots/ds3.png" style = "height: 80px; width: 145px;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
+              <br><br>
+              <strong>Genre:</strong> Puzzle, Platformer
+              <br><strong>Role:</strong> Programmer, Game Designer, Producer, Vision Holder
+              <br><p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px; padding: 0.85%;"> Game Project 1 at Aalto</p>
+              <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">PC</p> 
+              <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">6 People</p> 
+              <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">2023</p> 
+              <br>
+              <a class="gradientButton" href="https://shamitahmed.itch.io/dimeshift" target="_blank" style="background-color: rgb(5, 154, 62); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: normal; color: white !important ; padding: 1%;">Itch.io</a>
+              <a href="https://www.youtube.com/embed/PcFMgseAXCM" target="_blank" style="background-color: rgb(199, 55, 39); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: normal; color: white !important ; padding: 1%;">Youtube</a>
+              <img class="engineLogo" src="assets/img/unity.png" width="50px" height="50px">
+              <div class="project-number-badge"></div>
+            </ul>
+          </div>
+       </div>
+
+       <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+        <img class="activegif" src="assets/img/projects/cr.gif">
+        <p><a class="projectheader" href="https://roboshamit.itch.io/catroot" target="_blank" style="font-weight: bold;">🥕Cat Root</a> </p>
+        <div class="description" style="color: white;">
+          <ul>
+            A cute side-scrolling platformer where a farmer's cat has to find water sources to grow the vegetables.
+            <br><br>
+            <img src="assets/img/screenshots/cr1.png" style = "height: 80px; width: 145px;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
+            <img src="assets/img/screenshots/cr2.png" style = "height: 80px; width: 145px;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
+            <img src="assets/img/screenshots/cr3.png" style = "height: 80px; width: 145px;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
+            <br><br>
+            <strong>Genre:</strong> Platformer<br>
+            <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">GGJ 2023</p> 
+            <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">PC</p>
+            <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Solo</p> 
+            <a class="gradientButton" href="https://roboshamit.itch.io/catroot" target="_blank" style="background-color: rgb(5, 154, 62); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: normal; color: white !important ; padding: 1%;">Itch.io</a> 
+            <img class="engineLogo" src="assets/img/unity.png" width="50px" height="50px">
+            <div class="project-number-badge"></div>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+          <img class="activegif" src="assets/img/projects/rashed.jpg">
+          <p><a class="projectheader" href="https://www.youtube.com/embed/nP-DmMv7dZ8" target="_blank" style="font-weight: bold;">🇧🇩 My Friend Rashed</a> </p>
+          <div class="description" style="color: white;">
+              <ul>
+                  A 2D platformer based on real incidents during the Liberation War of Bangladesh in 1971. Use tactics, solve puzzles and fight your way to victory while assisting the freedom fighters.
+                  <br>
+                  <br>
+                  <img src="assets/img/screenshots/rashed1.jpg" style="height: 80px; width: 145px;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
+                  <img src="assets/img/screenshots/rashed2.jpg" style="height: 80px; width: 145px;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
+                  <br>
+                  <br>
+                  <strong>Genre:</strong> Action, Platformer
+                  <br>
+                  <strong>Role:</strong> Programmer, Artist, Team Lead</a>
+                  <br>
+                  <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Mobile</p>
+                  <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">PC</p>
+                  <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">5 People</p>
+                  <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">2018</p>
+                  <br>
+                  <a href="https://www.youtube.com/embed/nP-DmMv7dZ8" target="_blank" style="background-color: rgb(199, 55, 39); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: normal; color: white !important ; padding: 1%;">Gameplay</a>
+                  <img class="engineLogo" src="assets/img/unity.png" width="50px" height="50px">
+                  <div class="project-number-badge"></div>
+              </ul>
+          </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+        <img class="activegif" src="assets/img/projects/zombrain.gif">
+        <p><a class="projectheader" href="https://www.youtube.com/embed/PO9nuQd07eg"  target="_blank"style="font-weight: bold;">🧟Zombrain</a> </p>
+        <div class="description" style="color: white;">
+          <ul>               
+            Zombies have stolen the brains of extraordinary scientists in pursuit to dominate the world. Retrieve their brains and save humanity!<br>
+            My 1st game made in unity that also won the 1st place in IUT ICT Fest 2016! Making a 2D platformer for the first time and winning a Competition as a cherry on top has kept me hooked into making games ever since!</a>
+            <br>
+            <br>
+            <img src="assets/img/screenshots/zb1.png" style="height: 80px; width: 145px;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
+            <img src="assets/img/screenshots/zb2.png" style="height: 80px; width: 145px;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
+            <br>
+            <br><strong>Genre:</strong> Action, Platformer<br>
+            <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">First Unity Project</p>
+            <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">PC</p>
+            <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Solo</p> 
+            <a href="https://www.youtube.com/embed/PO9nuQd07eg" target="_blank" style="background-color: rgb(199, 55, 39); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: normal; color: white !important ; padding: 1%;">Youtube</a> 
+            <img class="engineLogo" src="assets/img/unity.png" width="50px" height="50px">
+            <div class="project-number-badge"></div>
+          </ul>
+        </div>
+      </div>
+
+        </div>
+      </div>
+    </section><script>
+      document.addEventListener("DOMContentLoaded", function() {
+        const projects = document.querySelectorAll('.portfolio-item');
+        const totalProjects = projects.length;
+
+        projects.forEach((item, index) => {
+          const projectNumber = totalProjects - index;
+          const badge = item.querySelector('.project-number-badge');
+          if (badge) {
+            badge.textContent = `#${projectNumber}`;
+          }
+        });
+      });
+    </script>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container" style="text-align: center;">
+      <div class="row">
+        <div class="col-md-8 col-sm-6 col-xs-12">
+          <form class="debug" style="padding: 0em 0em;" action="mailto:shamitaditta380@gmail.com" method="POST" enctype="text/plain">
+            <fieldset style="border: 0; padding: 0em 0 0 0; margin: 0; min-width: 0;">
+              <br>
+              <ol style="list-style: none;translate: -10%;">
+                <legend style="text-align: left; color: white;">
+                  <p style="color: white !important;">Come say Hi!👋</p>
+                  <a href="mailto:shamitaditta380@gmail.com" style="display: inline-block; border-radius: 4px; font-size: 70px; font-weight: bold; padding: 1%;align-items: left;"><i class="bx bx-envelope"></i></a>
+                  <a href="https://www.linkedin.com/in/shamitahmed/" style="display: inline-block;border-radius: 4px; font-size: 70px; font-weight: bold;padding: 1%;align-items: left;"><i class="bx bxl-linkedin"></i></a>
+                  <a href="https://github.com/shamitahmed" style="display: inline-block;border-radius: 4px; font-size: 70px; font-weight: bold;padding: 1%;align-items: left;"><i class="bx bxl-github"></i></a>
+                  <br><br><a href="assets/files/CV_Shamit_Ahmed.pdf" download class="btn-download">Download CV</a>
+                </legend>
+                <br><br>
+                <br><br><br>
+
+                <style>
+                  footer .btn-download {
+                    display: inline-block;
+                    margin-top: 10px;
+                    padding: 10px 20px;
+                    background-color: #4CAF50;
+                    color: white;
+                    text-decoration: none;
+                    font-weight: bold;
+                    border-radius: 5px;
+                    transition: background-color 0.3s ease;
+                  }
+
+                  footer .btn-download:hover {
+                    background-color: #45a049;
+                  }
+                </style>
+
+                <p class="copyright-text" style="text-align: left; color:white !important">© 2026 Shamit Ahmed. All rights reserved.</p>
+              </ol>
+            </fieldset>
+          </form>
+        </div>
+        <img class="footerimg" src="assets/img/Group 39.png" style="width: 300px;height: 300px;translate: 100px;">
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

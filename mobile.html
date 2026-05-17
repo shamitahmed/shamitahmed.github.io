@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta http-equiv="x-ua-compatible" content="IE=edge">
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+  <title>Shamit Ahmed's Mobile Portfolio</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <link href="assets/img/profile-img.PNG" rel="icon">
+  <link href="assets/img/profile-img.PNG" rel="apple-touch-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
+  <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.0/css/fontawesome.css" rel="stylesheet" media="all">
+  
+  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/style2.css" rel="stylesheet">
+
+  <meta property='og:title' content='Mobile Portfolio'/>
+  <meta property='og:image' content='https://shamitfpgl.github.io/Portfolio/assets/img/portfolio.jpg'/>
+  <meta property='og:description' content='Mobile portfolio of Shamit Ahmed'/>
+  <meta property='og:url' content='https://shamitfpgl.github.io/Portfolio/'/>
+
+  <link rel="icon" href="assets/img/icon.png">
+  <style>
+    html { scroll-behavior: smooth; }
+    body { zoom: 0.9; display:block; gap: 0px; background-color: #000; color: #fff; }
+
+    #portfolio-content { margin-left: 120px; flex: 1; }
+
+    /* --- Right Category Sidebar Styles --- */
+    #category-sidebar {
+      position: fixed;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      z-index: 9999;
+    }
+
+    .category-btn {
+      background: #10199d; 
+      color: white !important;
+      text-decoration: none;
+      padding: 7px 13px;
+      border-radius: 8px;
+      font-weight: 600;
+      text-align: center;
+      font-size: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(5px);
+      transition: all 0.3s ease;
+    }
+
+    /* Remove underline from all links on hover */
+    a:hover {
+      text-decoration: none !important;
+    }
+
+    /* Hover effect: Slides slightly to the left, glows, and changes to your neon green */
+    .category-btn:hover {
+      transform: translateX(-5px) scale(1.05);
+      background: #09ee96; 
+      box-shadow: 0px 4px 15px rgba(9, 238, 150, 0.6);
+      border-color: #09ee96;
+    }
+
+    /* Make the active page button stand out permanently */
+    .category-btn.active-cat {
+      background: linear-gradient(270deg, #31f8ff, #09ee96, #3191ff);
+      background-size: 600% 600%;
+      animation: gradientMove 6s ease infinite;
+      border: none;
+    }
+
+    /* Responsive adjustments for mobile */
+    @media (max-width: 768px) {
+      #category-sidebar {
+        right: 5px;
+        gap: 10px;
+        transform: translateY(-50%) scale(0.85); 
+      }
+      .category-btn {
+        padding: 10px 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="imageModal" class="modal">
+    <span class="close-btn" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="fullImage">
+  </div>
+
+  <script>
+    function openModal(src, orientation) {
+        const modal = document.getElementById("imageModal");
+        const modalImg = document.getElementById("fullImage");
+        
+        modalImg.className = "modal-content"; 
+        
+        if (orientation === 'portrait') {
+            modalImg.classList.add("portrait-size");
+        } else {
+            modalImg.classList.add("landscape-size");
+        }
+
+        modal.classList.remove("closing");
+        modal.style.display = "block";
+        modalImg.src = src;
+    }
+
+    function closeModal() {
+        const modal = document.getElementById("imageModal");
+        modal.classList.add("closing");
+        setTimeout(() => {
+            modal.style.display = "none";
+        }, 300); 
+    }
+
+    window.onclick = function(event) {
+        let modal = document.getElementById("imageModal");
+        if (event.target == modal) {
+            closeModal();
+        }
+    }
+
+    document.addEventListener('keydown', function(event) {
+        if (event.key === "Escape" || event.keyCode === 27) {
+            const modal = document.getElementById("imageModal");
+            if (modal.style.display === "block") {
+                closeModal();
+            }
+        }
+    });
+  </script>
+
+  <button type="button" class="mobile-nav-toggle d-xl-none"><i class="icofont-navigation-menu"></i></button>
+
+  <header id="header">
+    <div class="d-flex align-items-center justify-content-between" style="padding: 0px 0px;">
+      <div class="profile d-flex align-items-center">
+        <h1 style="margin:0; font-style: normal; color: white;">
+          <a href="index.html" style="font-weight:bold;
+            background: linear-gradient(270deg, #31f8ff, #09ee96, #3191ff);
+            background: white;
+            background-size: 600% 600%;
+            animation: gradientMove 6s ease infinite;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;">◀HOME</a>
+        </h1>
+        <style>
+          @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+          }
+        </style>
+      </div>
+
+      <div class="social-links d-flex align-items-center">
+        <div class="theme-toggle-container">
+          <input type="checkbox" id="theme-toggle" class="theme-toggle">
+          <label for="theme-toggle" class="toggle-label">
+            <img src="assets/img/moon.png" style="height:15px;">
+            <img src="assets/img/sun.png" style="height:18.5px;">
+            <div class="ball"></div>
+          </label>
+        </div>
+        <a href="https://www.linkedin.com/in/shamitahmed/" target="_blank" style="margin-right:10px;"><img src="assets/img/li.png" style="height:25px;"></a>
+        <a href="https://shamitahmed.itch.io/" target="_blank" style="margin-right:10px;"><img src="assets/img/itch-io-brands.png" style="height:27px;"></a>
+        <a href="https://github.com/shamitahmed" target="_blank" style="margin-right:10px;"><img src="assets/img/githubW.png" style="height:34px;"></a>
+        <a href="https://www.youtube.com/@shamitahmed/videos" target="_blank" style="margin-right:50px;"><img src="assets/img/youtube.png" style="height:30px;"></a>
+      </div>
+    </div>
+  </header><script>
+    const toggle = document.getElementById('theme-toggle');
+    const pageBody = document.body;
+
+    if (localStorage.getItem('theme') === 'light') {
+      pageBody.classList.add('light');
+      toggle.checked = true;
+    }
+
+    toggle.addEventListener('change', () => {
+      if (toggle.checked) {
+        pageBody.classList.add('light');
+        localStorage.setItem('theme', 'light');
+      } else {
+        pageBody.classList.remove('light');
+        localStorage.setItem('theme', 'dark');
+      }
+    });
+  </script>
+
+  <div id="category-sidebar">
+    <a href="projects.html" class="category-btn">All Works</a>
+    <a href="xr.html" class="category-btn">XR</a>
+    <a href="mobile.html" class="category-btn active-cat">Mobile</a>
+    <a href="web.html" class="category-btn">Web</a>
+    <a href="pc.html" class="category-btn">PC</a>
+  </div>
+
+  <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
+    <div class="hero-container" data-aos="fade-in">
+      <h1>Mobile Portfolio</h1>
+      <h3>Mobile Game Projects</h3>
+    </div>
+  </section><main id="main">
+    <section id="portfolio" class="portfolio section-bg section-bg-portfolio">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Portfolio</h2>
+        </div><br><br><br><br><br><br>
+        
+        <div class="marquee-container">
+          <div class="marquee" id="waveText"></div>
+        </div>
+        
+        <style>
+          body {
+            margin: 0;
+            background: #111;
+            color: white;
+            font-family: sans-serif;
+          }
+          .marquee-container {
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+            height: 40px;
+          }
+          .marquee {
+            display: inline-block;
+            white-space: nowrap;
+            animation: scroll 30s linear infinite; 
+            font-size: 25px;
+          }
+          @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+          }
+          .char {
+            display: inline-block;
+            animation: wave 2s infinite ease-in-out;
+          }
+          @keyframes wave {
+            0%   { transform: translateY(0); }
+            25%  { transform: translateY(-4px); }
+            50%  { transform: translateY(0); }
+            75%  { transform: translateY(4px); }
+            100% { transform: translateY(0); }
+          }
+        </style>
+        
+        <div id="waveText"></div>
+        <h3 style="color: white; text-align: center;font-size: 45px;">✦ MOBILE PROJECTS ✦</h3>
+
+        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <img class="activegif" src="assets/img/projects/rev.gif">
+            <p><a class="projectheader" href="https://play.google.com/store/apps/details?id=com.hypersomniacgames.revrecycle" target="_blank" style="font-weight: bold;">♻️Rev-Recycle</a> </p>
+            <div class="description" style="color: white;">
+              <ul>
+                Cleaners have decided to protest against mass littering by littering. Hence their roles have reversed! Survive from the cops for as long as you can and reach higher scores by littering all around!</li>
+                <br><br>
+                <img src="assets/img/screenshots/rr1.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+                <img src="assets/img/screenshots/rr2.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+                <img src="assets/img/screenshots/rr3.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+                <br><br>
+                <strong>Genre:</strong> Racing, Survival<br>
+                <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">GMTK 2023</p> 
+                <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Web</p> 
+                <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Solo</p> 
+                <a class="gradientButton" href="https://play.google.com/store/apps/details?id=com.hypersomniacgames.revrecycle" target="_blank" style="background-color: rgb(5, 154, 62); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: bold; color: white !important ; padding: 1%;">Itch.io</a>
+                <img class="engineLogo" src="assets/img/unity.png" width="50px" height="50px">
+                <div class="project-number-badge"></div>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <img class="activegif" src="assets/img/projects/isc.gif" style="height: 250px; width: 230px;">
+            <p><a class="projectheader" href="https://play.google.com/store/apps/details?id=idle.sea.cleaner" target="_blank" style="font-weight: bold;">🛥️Idle Sea Cleaner</a> </p>
+            <div class="description" style="color: white;">
+              <ul>
+                A topdown 3D game where your primary objective is to clean the sea by collecting different types of trash. Unlock new items, explore new areas and upgrade your ship while at it!
+                <br><br>
+                <img src="assets/img/screenshots/sc1.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+                <img src="assets/img/screenshots/sc2.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+                <img src="assets/img/screenshots/sc3.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+                <br><br><strong>Genre:</strong> Idle Arcade
+                <br><strong>Role:</strong> Programmer, Game Designer <br>
+                <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Mobile</p>
+                <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">6 People</p> 
+                <a class="gradientButton" href="https://play.google.com/store/apps/details?id=idle.sea.cleaner" target="_blank" style="background-color: rgb(5, 154, 62); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: normal; color: white !important ; padding: 1%;">Play</a>
+                <img class="engineLogo" src="assets/img/unity.png" width="50px" height="50px">
+             <div class="project-number-badge"></div>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <img class="activegif" src="assets/img/projects/tower.gif" style="width: 160px;height: 240px;">
+            <p><a class="projectheader" href="https://play.google.com/store/apps/details?id=battle.field.military.defence.td&hl=en"  target="_blank" style="font-weight: bold;">🪖Tower Hero Idle: Army Rush 3D</a> </p>
+            <div class="description" style="color: white;">
+              <ul>
+                Idle tower defense/clicker game with a diverse upgrade system, stunning visuals and solid gameloop.
+                <br><br>
+                <img src="assets/img/screenshots/td1.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+                <img src="assets/img/screenshots/td2.jpg" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+                <img src="assets/img/screenshots/td3.jpg" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+                <br><br>
+                <strong>Genre:</strong> Idle Defense, Survival
+                <br><strong>Role:</strong> Programmer, Designer<br>
+                <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Mobile</p>
+                <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">6 People</p> 
+                <a class="gradientButton" href="https://play.google.com/store/apps/details?id=battle.field.military.defence.td&hl=en" target="_blank" style="background-color: rgb(5, 154, 62); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: normal; color: white !important ; padding: 1%;">Play</a>
+                <img class="engineLogo" src="assets/img/unity.png" width="50px" height="50px">
+             <div class="project-number-badge"></div>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <img class="activegif" src="assets/img/projects/slab.png">
+            <p><a class="projectheader" href="https://www.youtube.com/embed/6U5HbPwynCQ" target="_blank" style="font-weight: bold;">🧪Shark Lab</a> </p>
+            <div class="description" style="color: white;">
+              <ul>
+                A 2D platformer where player has to capture injured sharks and treat them in the lab. 
+                <br><br>
+                <img src="assets/img/screenshots/slab1.png" style = "height: 80px; width: 145px;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
+                <img src="assets/img/screenshots/slab2.png" style = "height: 80px; width: 145px;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
+                <img src="assets/img/screenshots/slab3.png" style = "height: 80px; width: 145px;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
+                <br><br>
+                <strong>Genre:</strong> Platformer<br>
+                <strong>Role:</strong> Programmer, Game Designer<br>
+                <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Unreleased</p> 
+                <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Mobile</p> 
+                <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">2 People</p>
+                <br> 
+                <a href="https://www.youtube.com/embed/6U5HbPwynCQ" target="_blank" style="background-color: rgb(199, 55, 39); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: normal; color: white !important ; padding: 1%;">Youtube</a>
+                <img class="engineLogo" src="assets/img/unity.png" width="50px" height="50px">
+              <div class="project-number-badge"></div>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <img class="activegif" src="assets/img/screenshots/pt1.jpg" style="width: 180px;height: 240px;">
+            <p><a class="projectheader" href="https://www.youtube.com/embed/UCb8fbDmiuk" target="_blank" style="font-weight: bold;">🚨Police vs Thief</a> </p>
+            <div class="description" style="color: white;">
+              <ul>
+                I have worked on the shop system + minigames such as: Road Chase, highway Chase, Catch Thief, Supercop, Prison Break etc.
+                <br><br>
+                <img src="assets/img/screenshots/pt2.jpg" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+                <img src="assets/img/screenshots/pt3.jpg" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+                <img src="assets/img/screenshots/pt4.jpg" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+                <br><br>
+                <strong>Genre:</strong> Racing, Action
+                <br><p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Mobile</p>
+                <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">9 People</p> 
+                <a href="https://apps.apple.com/us/app/police-vs-thief-3d-car-race/id1542502766" target="_blank" style="background-color: rgb(5, 154, 62); display: inline-block; border-radius: 4px; font-size: 18px; font-weight: bold; color: white !important ; padding: 1%;">Play</a>
+                <img class="engineLogo" src="assets/img/unity.png" width="50px" height="50px">
+             <div class="project-number-badge"></div>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <img class="activegif" src="assets/img/projects/shortcut.gif" style="width: 180px;height: 240px;">
+            <p><a class="projectheader" href="https://play.google.com/store/apps/details?id=com.HypersomniacGames.ShortCircuit3DRunner" target="_blank" style="font-weight: bold;">🏃‍♀️Short Circuit: 3D Runner</a> </p>
+            <div class="description" style="color: white;">
+              <ul>
+                A hypercasual prototype that I created in 4 days for a technical assignment as part of a recruitment process.<br>
+                <p style="font-size: small; text-align: left;">Features: <br>1. Spline-based Level Design, <br>2. Smooth Player Controls <br>3. Intelligent Enemy AI</p>
+                
+                <img src="assets/img/screenshots/sr1.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+                <img src="assets/img/screenshots/sr2.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+                <img src="assets/img/screenshots/sr3.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+                <br><br>
+                <strong>Genre:</strong> Runner<br>
+                <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Mobile</p>
+                <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Solo</p> 
+                <a class="gradientButton" href="https://play.google.com/store/apps/details?id=com.HypersomniacGames.ShortCircuit3DRunner" target="_blank" style="background-color: rgb(5, 154, 62); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: normal; color: white !important ; padding: 1%;">Play</a>
+                <a href="https://github.com/shamitahmed/ShortcutRun" target="_blank" style="background-color: rgb(94, 5, 154); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: normal; color: white !important ; padding: 1%;">Github</a>
+                <a href="https://www.youtube.com/embed/wGJNtnq4th0" target="_blank" style="background-color: rgb(199, 55, 39); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: normal; color: white !important ; padding: 1%;">Youtube</a>
+                <img class="engineLogo" src="assets/img/unity.png" width="50px" height="50px">
+            <div class="project-number-badge"></div>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <img class="activegif" src="assets/img/projects/aqua.gif" style="height: 250px; width: 180px;">
+            <p><a class="projectheader" href="https://www.youtube.com/watch?v=6Ep_N9nU8qI" target="_blank" style="font-weight: bold;">🐠Aquarium Island</a> </p>
+            <div class="description" style="color: white;">
+              <ul>
+                Aquatic Park management game that features relaxing fishing, progressive gameplay and seafoods! I was responsible for features such as: game design, player controls, fish movement, catching and storage, level up system, upgrade system and overall look and feel of the game.</li>
+                <br><br>
+                <img src="assets/img/screenshots/aqua3.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+                <img src="assets/img/screenshots/aqua2.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+                <img src="assets/img/screenshots/aqua1.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+                <br><br>
+                <strong>Genre:</strong> Hybrid-Casual, Idle Arcade<br>
+                <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Mobile</p>
+                <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">3 People</p> 
+                <a href="https://www.youtube.com/watch?v=6Ep_N9nU8qI" target="_blank" style="background-color: rgb(199, 55, 39); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: normal; color: white !important ; padding: 1%;">Youtube</a> 
+                <img class="engineLogo" src="assets/img/unity.png" width="50px" height="50px">
+              <div class="project-number-badge"></div>
+              </ul>
+            </div>
+          </div>   
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <img class="activegif" src="assets/img/projects/hyper.png" style="height: 250px; width: 180px;">
+            <p><a class="projectheader" href="https://www.youtube.com/embed/JI-wq-5XKNw" target="_blank" style="font-weight: bold;">🚲Hyper Cyclist</a> </p>
+            <div class="description" style="color: white;">
+              <ul>
+                My immense love for cycling encouraged me to work on this project, which I envision, will motivate people to use bicycles, educate them about road safety and will be adored by all cyclists! Players have to jump, switch lanes and balance their way to victory!
+                <br><br>
+                <img src="assets/img/screenshots/hs2.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+                <img src="assets/img/screenshots/hs3.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+                <img src="assets/img/screenshots/hs1.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+                <br><br>
+                <strong>Genre: </strong>Casual, Platformer<br>
+                <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Mobile</p>
+                <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Solo</p>  
+                <a href="https://play.google.com/store/apps/details?id=com.hypersomniacGames.HyperCyclist" target="_blank" style="background-color: rgb(5, 154, 62); display: inline-block; border-radius: 4px; font-size: 18px; font-weight: bold; color: white !important ; padding: 1%;">Play</a>
+                <img class="engineLogo" src="assets/img/unity.png" width="50px" height="50px">
+              <div class="project-number-badge"></div>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <img class="activegif" src="assets/img/projects/ar.gif" style="height: 250px; width: 180px;">
+            <p><a class="projectheader" href="https://www.youtube.com/watch?v=RnfETDWrUvk" target="_blank" style="font-weight: bold;">🏹Archers VS Million Zombies</a> </p>
+            <div class="description" style="color: white;">
+              <ul>
+                Quick prototype with multiple levels and player progression system.
+                <br><br>
+                <img src="assets/img/screenshots/ar1.jpg" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+                <img src="assets/img/screenshots/ar2.jpg" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+                <img src="assets/img/screenshots/ar3.jpg" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+                <br><br>
+                <strong>Genre:</strong> Runner, Survival<br>
+                <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Mobile</p>
+                <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">3 People</p> 
+                <a href="https://www.youtube.com/watch?v=RnfETDWrUvk" target="_blank" style="background-color: rgb(199, 55, 39); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: normal; color: white !important ; padding: 1%;">Gameplay</a> 
+                <img class="engineLogo" src="assets/img/unity.png" width="50px" height="50px">
+             <div class="project-number-badge"></div>
+              </ul>
+            </div>
+          </div> 
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <img class="activegif" src="assets/img/projects/rope.png" style="height: 250px; width: 180px;">
+            <p><a class="projectheader" href="https://play.google.com/store/apps/details?id=playense.rope.theft&hl=en" target="_blank" style="font-weight: bold;">💎Rope Theft</a> </p>
+            <div class="description" style="color: white;">
+              <ul>
+                Get ready to make the ultimate theft! Rope Theft is here, where you can show how to grab the prize of diamonds by using all your tricks in hand. Use ropes to hold back obstacles from falling on the thief. It’s not that easy to use the ropes- use your tricks and skills to find the perfect solution to hold back the obstacles, make the theft a success!
+                <br><br>
+                <img src="assets/img/screenshots/rope1.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+                <img src="assets/img/screenshots/rope2.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+                <img src="assets/img/screenshots/rope3.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+                <br><br>
+                <strong>Genre: </strong>Casual, Puzzle<br>
+                <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Mobile</p>
+                <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Solo</p> 
+                <a href="https://play.google.com/store/apps/details?id=playense.rope.theft&hl=en" target="_blank" style="background-color: rgb(5, 154, 62); display: inline-block; border-radius: 4px; font-size: 18px; font-weight: bold; color: white !important ; padding: 1%;">Play</a>
+                <img class="engineLogo" src="assets/img/unity.png" width="50px" height="50px">
+            <div class="project-number-badge"></div>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <img class="activegif" src="assets/img/projects/fr.png" style="height: 250px; width: 180px;">
+            <p><a class="projectheader" href="https://play.google.com/store/apps/details?id=playense.forge.run&hl=en" target="_blank" style="font-weight: bold;">⚔️Forge Run</a> </p>
+            <div class="description" style="color: white;">
+              <ul>
+                Forge Run is an exciting and thrilling game that combines strategic thinking, quick reflexes, and expert craftsmanship. In this game, the player must navigate through a series of gates, each presenting a unique challenge that must be overcome to proceed to the next stage.
+                <br><br>
+                <img src="assets/img/screenshots/fr1.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+                <img src="assets/img/screenshots/fr2.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+                <img src="assets/img/screenshots/fr3.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+                <br><br>
+                <strong>Genre: </strong>Casual<br>
+                <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Mobile</p>
+                <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Solo</p>  
+                <a href="https://play.google.com/store/apps/details?id=playense.forge.run&hl=en" target="_blank" style="background-color: rgb(5, 154, 62); display: inline-block; border-radius: 4px; font-size: 18px; font-weight: bold; color: white !important ; padding: 1%;">Play</a>
+                <img class="engineLogo" src="assets/img/unity.png" width="50px" height="50px">
+              <div class="project-number-badge"></div>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <img class="activegif" src="assets/img/projects/fruit.png" style="height: 250px; width: 180px;">
+            <p><a class="projectheader" href="https://play.google.com/store/apps/details?id=playense.forge.run&hl=en" target="_blank" style="font-weight: bold;">🍎Fruit Games 2D</a> </p>
+            <div class="description" style="color: white;">
+              <ul>
+                A collection of 2D mini games such as shape matching, line matching, rotating puzzle, memory puzzle etc.
+                <br><br>
+                <img src="assets/img/screenshots/fruit1.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+                <img src="assets/img/screenshots/fruit2.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+                <img src="assets/img/screenshots/fruit3.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+                <br><br>
+                <strong>Genre: </strong>Educational<br>
+                <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Mobile</p>
+                <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Solo</p>  
+                <a href="https://www.youtube.com/watch?v=GSB1CJtr6WQ" target="_blank" style="background-color: rgb(199, 55, 39); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: normal; color: white !important ; padding: 1%;">Gameplay</a> 
+                <img class="engineLogo" src="assets/img/unity.png" width="50px" height="50px">
+              <div class="project-number-badge"></div>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app" > 
+            <img class="activegif" src="assets/img/projects/sl.gif">
+            <p><a class="projectheader" href="https://shamitahmed.itch.io/spookyland" target="_blank" style="font-weight: bold;">👻Spooky Land</a> </p>
+            <div class="description" style="color: white;">
+              <ul>
+              Guarding a graveyard, you have to use your flashlight to keep ghosts at bay and survive the night!👻 
+              <br><br>
+              The game features multiple challenging levels, goal-based progression system, boss fights and character upgrades!
+              <br><br>
+              Besides programming the gameplay, UI and backends, I have also worked on Ad integration and monetization.
+              <br><br>
+              <img src="assets/img/screenshots/sl4.jpg" style = "height: 80px; width: 145px;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
+              <img src="assets/img/screenshots/sl1.png" style = "height: 80px; width: 145px;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
+              <img src="assets/img/screenshots/sl3.jpg" style = "height: 80px; width: 145px;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
+              <img src="assets/img/screenshots/s6.jpg" style = "height: 80px; width: 145px;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
+              <br><br>
+              <strong>Genre:</strong> Topdown, Survival
+               <br><strong>Role:</strong> Programmer, Level Designer<br>
+                <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Mobile</p> 
+                <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">2 People</p> 
+                <a class="gradientButton" href="https://shamitahmed.itch.io/spookyland" target="_blank" style="background-color: rgb(5, 154, 62); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: normal; color: white !important ; padding: 1%;">Itch.io</a>
+                <a href="https://www.youtube.com/embed/GTHPUJtnczI" target="_blank" style="background-color: rgb(199, 55, 39); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: normal; color: white !important ; padding: 1%;">Youtube</a>
+                <img class="engineLogo" src="assets/img/unity.png" width="50px" height="50px">
+             <div class="project-number-badge"></div>
+              </ul>
+            </div>
+         </div>
+
+         <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+          <img class="activegif" src="assets/img/projects/fs.gif" style="width: 160px;height: 240px;">
+          <p><a class="projectheader" href="https://play.google.com/store/apps/details?id=com.funvai.fishingsurvival&hl=en_US&gl=US" style="font-weight: bold;">🐟Fishing Survival</a> </p>
+          <div class="description" style="color: white;">
+            <ul>
+              A relaxing fishing game that features multiple customizations, upgrades, novel level selection system and many more unique features.
+              <br><br>
+              <img src="assets/img/screenshots/fs1.jpg" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+              <img src="assets/img/screenshots/fs2.jpg" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+              <img src="assets/img/screenshots/fs3.jpg" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+              <img src="assets/img/screenshots/fs4.jpg" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+              <img src="assets/img/screenshots/fs5.jpg" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+              <img src="assets/img/screenshots/fs6.jpg" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+              <br><br>
+              <strong>Genre:</strong> Idle Arcade, Fishing<br>
+              <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Mobile</p>
+              <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">6 People</p> 
+              <a href="https://play.google.com/store/apps/details?id=com.funvai.fishingsurvival&hl=en_US&gl=US"  style="background-color: rgb(5, 154, 62); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: normal; color: white !important ; padding: 1%;">Play</a>
+              <a href="https://www.youtube.com/embed/Cr12jAI3ml4" style="background-color: rgb(199, 55, 39); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: normal; color: white !important ; padding: 1%;">Youtube</a>
+              <img class="engineLogo" src="assets/img/unity.png" width="50px" height="50px">
+           <div class="project-number-badge"></div>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+          <img class="activegif" src="assets/img/projects/mf.gif" style="height: 250px; width: 180px;">
+          <p><a class="projectheader" href="https://www.youtube.com/watch?v=YfRX3jugIdE" target="_blank" style="font-weight: bold;">🌳Monster Forest 3D</a> </p>
+          <div class="description" style="color: white;">
+            <ul>
+              Action-idle-arcade game featuring procedurally generated levels, base building, trading, combat, pet companionship, etc.
+              <br><br>
+              <img src="assets/img/screenshots/mf1.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+              <img src="assets/img/screenshots/mf2.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+              <img src="assets/img/screenshots/mf3.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+              <br><br>
+              <strong>Genre:</strong> Idle-arcade, Action<br>
+              <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Mobile</p>
+              <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">3 People</p> 
+              <a href="https://www.youtube.com/watch?v=YfRX3jugIdE" target="_blank" style="background-color: rgb(199, 55, 39); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: normal; color: white !important ; padding: 1%;">Gameplay</a>
+              <img class="engineLogo" src="assets/img/unity.png" width="50px" height="50px">
+            <div class="project-number-badge"></div>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+          <img class="activegif" src="assets/img/projects/hamba.gif" style="width: 180px;height: 250px;">
+            <p><a class="projectheader" href="https://play.google.com/store/apps/details?id=com.HypersomniacGames.HAMBAAA" target="_blank" style="font-weight: bold;">🐮Hambaaa Run</a> </p>
+          <div class="description" style="color: white;">
+            <ul>
+              Infinite runner where the primary objective is to catch the runaway cow while avoiding chaos in the streets! Another minigame turns the table and lets the player be in the cow's shoes!
+              <br><br>
+              <img src="assets/img/screenshots/hr1.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+              <img src="assets/img/screenshots/hr2.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+              <img src="assets/img/screenshots/hr3.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+              <br><br>
+              <strong>Genre:</strong> Runner<br>
+              <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Mobile</p>
+              <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Solo</p> 
+            <a class="gradientButton" href="https://play.google.com/store/apps/details?id=com.HypersomniacGames.HAMBAAA" target="_blank" style="background-color: rgb(5, 154, 62); display: inline-block; border-radius: 4px; font-size: 18px; font-weight: normal; color: white !important ; padding: 1%;">Play</a>
+            <a href="https://www.youtube.com/embed/thRxVod3Fcg" target="_blank" style="background-color: rgb(199, 55, 39); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: normal; color: white !important ; padding: 1%;">Youtube</a> 
+            <img class="engineLogo" src="assets/img/unity.png" width="50px" height="50px">
+          <div class="project-number-badge"></div>
+          </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+          <img class="activegif" src="assets/img/projects/flappy.gif" style="height: 250px; width: 180px;">
+          <p><a class="projectheader" href="https://play.google.com/store/apps/details?id=com.HypersomniacGames.SuperFlappyChickenGame" target="_blank" style="font-weight: bold;">🐔Super Flappy Chicken Game</a> </p>
+          <div class="description" style="color: white;">
+            <ul>
+              2.5D Infinite Sidescroller game featuring unique customization, powerups and upgrades. Special Game Modes all around the year including spooky Halloween and snowy Winter!
+              <br><br>
+              <img src="assets/img/screenshots/sf1.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+              <img src="assets/img/screenshots/sf2.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+              <img src="assets/img/screenshots/sf3.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+              <br><br>
+              <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Mobile</p>
+              <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Solo</p> 
+              <a href="https://play.google.com/store/apps/details?id=com.HypersomniacGames.SuperFlappyChickenGame" target="_blank" style="background-color: rgb(5, 154, 62); display: inline-block; border-radius: 4px; font-size: 18px; font-weight: normal; color: white !important ; padding: 1%;">Play</a>
+              <img class="engineLogo" src="assets/img/unity.png" width="50px" height="50px">
+            <div class="project-number-badge"></div>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+          <img class="activegif" src="assets/img/projects/mergeatk.gif" style="height: 250px; width: 180px;">
+          <p><a class="projectheader" href="https://www.youtube.com/shorts/8YXCy7gx3j0" target="_blank" style="font-weight: bold;">🧬Merge Attack</a> </p>
+          <div class="description" style="color: white;">
+            <ul>
+              Merge your dragons and attack the enemies.
+              <br><br>
+              <img src="assets/img/screenshots/mergeatk1.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+              <img src="assets/img/screenshots/mergeatk2.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+              <img src="assets/img/screenshots/mergeatk3.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+              <br><br>
+              <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Mobile</p>
+              <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Solo</p> 
+              <a href="https://www.youtube.com/shorts/8YXCy7gx3j0" target="_blank" style="background-color: rgb(199, 55, 39); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: normal; color: white !important ; padding: 1%;">Gameplay</a>
+              <img class="engineLogo" src="assets/img/unity.png" width="50px" height="50px">
+            <div class="project-number-badge"></div>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+          <img class="activegif" src="assets/img/projects/deliver.gif" style="height: 250px; width: 180px;">
+          <p><a class="projectheader" href="https://www.youtube.com/shorts/_-ouHbntRbU" target="_blank" style="font-weight: bold;">🚚Deliver 3D</a> </p>
+          <div class="description" style="color: white;">
+            <ul>
+              Deliver parcels across lands and seas.
+              <br><br>
+              <img src="assets/img/screenshots/deliver1.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+              <img src="assets/img/screenshots/deliver2.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+              <img src="assets/img/screenshots/deliver3.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+              <br><br>
+              <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Mobile</p>
+              <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Solo</p> 
+              <a href="https://www.youtube.com/shorts/_-ouHbntRbU" target="_blank" style="background-color: rgb(199, 55, 39); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: normal; color: white !important ; padding: 1%;">Gameplay</a>
+              <img class="engineLogo" src="assets/img/unity.png" width="50px" height="50px">
+            <div class="project-number-badge"></div>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+          <img class="activegif" src="assets/img/screenshots/js1.jpg" style="width: 180px;height: 240px;">
+          <p><a class="projectheader" href="https://play.google.com/store/apps/details?id=com.tappocket.squishyfishy&hl=en&gl=US" target="_blank" style="font-weight: bold;">🔫Jurassic Sniper 3D</a> </p>
+          <div class="description" style="color: white;">
+            <ul>
+               A free, casual mobile game where you hunt prehistoric ocean dinosaurs and feed on sea creatures using a variety of modern weapons. Features 3D visuals, offline play, and a wide selection of Jurassic-era sea creatures. <strong>Rated 4.3★ with 1M+ downloads</strong>.
+  I have worked on the core backend, cinematics, playable ads and several gameplay features.
+              <br><br>
+              <img src="assets/img/screenshots/ss1.jpg" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+              <img src="assets/img/screenshots/ss2.jpg" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+              <img src="assets/img/screenshots/ss3.jpg" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+              <br><br>
+              <strong>Genre:</strong>Action
+              <br><p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Mobile</p>
+              <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">7 People</p> 
+              <a href="https://play.google.com/store/apps/details?id=com.tappocket.squishyfishy&hl=en&gl=US" target="_blank" style="background-color: rgb(5, 154, 62); display: inline-block; border-radius: 4px; font-size: 18px; font-weight: bold; color: white !important ; padding: 1%;">PLAY</a>
+              <a href="https://www.youtube.com/shorts/39dm1lB_6yI" target="_blank" style="background-color: rgb(199, 55, 39); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: normal; color: white !important ; padding: 1%;">Gameplay</a>   
+            <div class="project-number-badge"></div>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+          <img class="activegif" src="assets/img/projects/mergecars.gif" style="width: 180px;height: 240px;">
+          <p><a class="projectheader" href="https://www.youtube.com/watch?v=Moy7IPqSm3s" target="_blank" style="font-weight: bold;">🧬Merge Cars</a> </p>
+          <div class="description" style="color: white;">
+            <ul>
+              Deploy cars on the race tracks, merge them to upgrade and manage your resources!
+              <br><br>
+              <img src="assets/img/screenshots/mergecar1.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+              <img src="assets/img/screenshots/mergecar2.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+              <img src="assets/img/screenshots/mergecar3.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+              <br><br>
+              <strong>Genre:</strong> Idle Clicker, Merge<br> 
+              <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Mobile</p>
+              <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Solo</p> 
+                                  <a href="https://www.youtube.com/watch?v=Moy7IPqSm3s" target="_blank" style="background-color: rgb(199, 55, 39); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: normal; color: white !important ; padding: 1%;">Gameplay</a>      
+              <img class="engineLogo" src="assets/img/unity.png" width="50px" height="50px">
+           <div class="project-number-badge"></div>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+          <img class="activegif" src="assets/img/projects/cubi.gif" style="width: 180px;height: 240px;">
+          <p><a class="projectheader" href="https://shamitahmed.itch.io/cubi" target="_blank" style="font-weight: bold;">🧊Cubi</a> </p>
+          <div class="description" style="color: white;">
+            <ul>
+              Switch colors to survive!
+              <br><br>
+              <img src="assets/img/screenshots/c1.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+              <br><br>
+              <strong>Genre:</strong> Casual, Survival<br>
+              <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Mix and Game Jam 2020</p> 
+              <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Mobile</p>
+              <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Web</p>
+              <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Solo</p> 
+              <a class="gradientButton" href="https://shamitahmed.itch.io/cubi" target="_blank" style="background-color: rgb(5, 154, 62); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: normal; color: white !important ; padding: 1%;">Itch.io</a>
+              <img class="engineLogo" src="assets/img/unity.png" width="50px" height="50px">
+           <div class="project-number-badge"></div>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+          <img class="activegif" src="assets/img/projects/repair.gif" style="width: 180px;height: 250px;">
+          <p><a class="projectheader" href="https://www.youtube.com/shorts/2U66W__DJLI" target="_blank" style="font-weight: bold;">🪛Repair Shop 3D</a> </p>
+          <div class="description" style="color: white;">
+            <ul>
+              Repair faulty electronics in this point and click game.
+              <br><br>
+              <img src="assets/img/screenshots/repair1.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+              <img src="assets/img/screenshots/repair2.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+              <img src="assets/img/screenshots/repair3.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+              <br><br>
+              <strong>Genre:</strong> Casual, Point and click<br>
+              <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Mobile</p>
+              <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Solo</p> 
+              <a href="https://www.youtube.com/shorts/2U66W__DJLI" target="_blank" style="background-color: rgb(199, 55, 39); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: normal; color: white !important ; padding: 1%;">Gameplay</a> 
+              <img class="engineLogo" src="assets/img/unity.png" width="50px" height="50px">
+           <div class="project-number-badge"></div>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+          <img class="activegif" src="assets/img/projects/iceroll.gif" style="height: 250px; width: 180px;">
+          <p><a class="projectheader" href="https://www.youtube.com/shorts/68_CfJ1tHvI" target="_blank" style="font-weight: bold;">🍨Ice Cream Roll</a> </p>
+          <div class="description" style="color: white;">
+            <ul>
+              Used mesh deformation technique to create the effect of rolling ice cream.
+              <br><br>
+              <img src="assets/img/screenshots/iceroll1.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+              <img src="assets/img/screenshots/iceroll3.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+              <img src="assets/img/screenshots/iceroll2.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+              <br><br>
+              <strong>Genre:</strong> Cooking<br>
+              <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Mobile</p>
+              <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Solo</p> 
+              <a href="https://www.youtube.com/shorts/68_CfJ1tHvI" target="_blank" style="background-color: rgb(199, 55, 39); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: normal; color: white !important ; padding: 1%;">Gameplay</a>
+              <img class="engineLogo" src="assets/img/unity.png" width="50px" height="50px">
+            <div class="project-number-badge"></div>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+          <img class="activegif" src="assets/img/projects/covid.gif" target="_blank" style="height: 250px; width: 180px;">
+          <p><a class="projectheader" href="https://www.youtube.com/embed/84vSJtvDYec" target="_blank" style="font-weight: bold;">📈Daily Covid-19 Updater</a> </p>
+          <div class="description" style="color: white;">
+            <ul>
+              A COVID-19 app that uses API to fetch real-time global data and gives regular region specific updates.    
+              <br><br><strong>Role:</strong> Design, API integration, UI/UX 
+              <br><p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px; padding: 0.85%;">Mobile Application</p>  
+              <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">2 People</p> 
+              <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">2020</p>             
+              <br> <a href="https://www.youtube.com/embed/84vSJtvDYec" target="_blank" style="background-color: rgb(199, 55, 39); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: normal; color: white !important ; padding: 1%;">Demo</a> 
+              <img class="engineLogo" src="assets/img/unity.png" width="50px" height="50px">
+            <div class="project-number-badge"></div>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-app" >
+          <img class="activegif" src="assets/img/projects/dino.jpg" style="height: 250px; width: 200px;">
+          <p><a class="projectheader" href="https://apps.apple.com/us/app/jurassic-dinosaur-attack/id1487918860" target="_blank" style="font-weight: bold;">🦖Dinosaur Attack Simulator 3D</a> </p>
+          <div class="description" style="color: white;">
+            <ul>
+              I started working on this prototype as a solo developer. Through iterative improvements, the game has turned into a huge success with 500K+ downloads. It features multiple engaging game modes and tons of character customization.</li>
+              <br><br>
+              <img src="assets/img/screenshots/dino1.jpg" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+              <img src="assets/img/screenshots/dino2.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+              <img src="assets/img/screenshots/dino3.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+              <br><br>
+              <strong>Genre:</strong> Topdown, Action
+              <br><strong>Role:</strong> Programmer, Designer<br>
+      
+              <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Mobile</p> 
+              <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">7 People</p> 
+            
+              <a href="https://apps.apple.com/us/app/jurassic-dinosaur-attack/id1487918860" target="_blank" style="background-color: rgb(5, 154, 62); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: normal; color: white !important ; padding: 1%;">Play</a> 
+              <a href="https://www.youtube.com/watch?v=jw2Ax8giLTI&t=334s" target="_blank" style="background-color: rgb(199, 55, 39); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: normal; color: white !important ; padding: 1%;">Gameplay</a> 
+            <div class="project-number-badge"></div>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-app" >
+          <img class="activegif" src="assets/img/projects/shark.jpg" style="height: 250px; width: 200px;">
+          <p><a class="projectheader" href="https://apps.apple.com/us/app/shark-island-3d/id1566101110" target="_blank" style="font-weight: bold;">🦈Shark Attack 3D</a> </p>
+          <div class="description" style="color: white;">
+            <ul>
+              Take control of the killer shark of the seas and feast on scared humans!
+The beach is full of innocent people. Attack them when they are unaware and watch out for other hungry sharks.
+Swipe your finger on screen to move your Shark. Make your Shark stronger and bigger by eating the most people as well as other sharks.</li>
+              <br><br>
+              <img src="assets/img/screenshots/shark3.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+              <img src="assets/img/screenshots/shark1.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+              <img src="assets/img/screenshots/shark2.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+              <br><br>
+              <strong>Genre:</strong> Topdown, Action
+              <br><strong>Role:</strong> Programmer, Designer<br>
+      
+              <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Mobile</p> 
+              <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">6 People</p> 
+             
+              <a href="https://apps.apple.com/us/app/shark-island-3d/id1566101110" target="_blank" style="background-color: rgb(5, 154, 62); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: normal; color: white !important ; padding: 1%;">Play</a> 
+              <a href="https://www.youtube.com/watch?v=n7s_CBmGfG0" target="_blank" style="background-color: rgb(199, 55, 39); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: normal; color: white !important ; padding: 1%;">Gameplay</a> 
+            <div class="project-number-badge"></div>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-app" >
+          <img class="activegif" src="assets/img/projects/sharkslap.gif" style="height: 250px; width: 200px;">
+          <p><a class="projectheader" href="https://www.youtube.com/watch?v=Gx4SjAtTEkY" style="font-weight: bold;">🦈Shark Slap</a> </p>
+          <div class="description" style="color: white;">
+            <ul>
+              Turn-based shark battler prototype.</li>
+              <br><br>
+              <img src="assets/img/screenshots/slap1.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+              <img src="assets/img/screenshots/slap2.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+              <img src="assets/img/screenshots/slap3.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+              <br><br>
+              <strong>Genre:</strong> Turn-based, Action
+              <br><strong>Role:</strong> Programmer, Designer<br>
+      
+              <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Mobile</p> 
+              <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">2 People</p>    
+              <a href="https://www.youtube.com/watch?v=Gx4SjAtTEkY" target="_blank" style="background-color: rgb(199, 55, 39); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: normal; color: white !important ; padding: 1%;">Gameplay</a> 
+            <div class="project-number-badge"></div>
+            </ul>
+          </div>
+        </div>      
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-app" >
+          <img class="activegif" src="assets/img/projects/perfect.gif" style="height: 250px; width: 200px;">
+          <p><a class="projectheader" href="https://www.youtube.com/watch?v=YHW4p4D9gh0" style="font-weight: bold;">✨Make it Perfect</a> </p>
+          <div class="description" style="color: white;">
+            <ul>
+              Find the unusual and make it perfect.</li>
+              <br><br>
+              <img src="assets/img/screenshots/perfect1.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+              <img src="assets/img/screenshots/perfect2.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+              <img src="assets/img/screenshots/perfect3.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+              <br><br>
+              <strong>Genre:</strong> Clicker
+              <br><strong>Role:</strong> Programmer, Designer<br>
+      
+              <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Mobile</p> 
+              <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Solo</p>    
+              <a href="https://www.youtube.com/watch?v=YHW4p4D9gh0" target="_blank" style="background-color: rgb(199, 55, 39); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: normal; color: white !important ; padding: 1%;">Gameplay</a> 
+            <div class="project-number-badge"></div>
+            </ul>
+          </div>
+        </div>  
+        
+        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+          <img class="activegif" src="assets/img/projects/thorn.gif" style="width: 200px;height: 240px;">
+          <p><a class="projectheader" href="https://shamitahmed.itch.io/thorn" target="_blank" style="font-weight: bold;">🌹Thorn</a> </p>
+          <div class="description" style="color: white;">
+            <ul>
+              Addictive clicker game where you TAP to shoot targets while avoiding cheeky obstacles.
+              <br><br>
+              <img src="assets/img/screenshots/t1.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+              <img src="assets/img/screenshots/t2.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+              <img src="assets/img/screenshots/t3.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+              <br><br>
+              <strong>Genre:</strong> Arcade<br>
+              <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Mobile</p>
+              <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Web</p>
+              <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Solo</p> 
+              <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">2019</p> 
+              <a class="gradientButton" href="https://shamitahmed.itch.io/thorn" target="_blank" style="background-color: rgb(5, 154, 62); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: normal; color: white !important ; padding: 1%;">Itch.io</a>
+              <img class="engineLogo" src="assets/img/unity.png" width="50px" height="50px">
+              <div class="project-number-badge"></div>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+          <img class="activegif" src="assets/img/projects/cannon.gif" style="width: 200px;height: 240px;">
+          <p><a class="projectheader" href="https://www.youtube.com/watch?v=DGwvOr-NXhI" target="_blank" style="font-weight: bold;">💣Cannon Paint 3D</a> </p>
+          <div class="description" style="color: white;">
+            <ul>
+              Break colorful blocks by firing cannon balls!
+              <br><br>
+              <img src="assets/img/screenshots/cannon1.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+              <img src="assets/img/screenshots/cannon2.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+              <img src="assets/img/screenshots/cannon3.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+              <br><br>
+              <strong>Genre:</strong> Arcade<br>
+              <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Mobile</p>
+              <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Solo</p> 
+              <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">2019</p> 
+<a href="https://www.youtube.com/watch?v=DGwvOr-NXhI" target="_blank" style="background-color: rgb(199, 55, 39); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: normal; color: white !important ; padding: 1%;">Gameplay</a>     
+              <img class="engineLogo" src="assets/img/unity.png" width="50px" height="50px">
+              <div class="project-number-badge"></div>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+          <img class="activegif" src="assets/img/projects/plat.jpg" style="width: 200px;height: 240px;">
+          <p><a class="projectheader" href="https://www.youtube.com/watch?v=YhReQLgaDcw" target="_blank" style="font-weight: bold;">💥Unnamed 2D Platformer</a> </p>
+          <div class="description" style="color: white;">
+            <ul>
+              Unpublished female protagonist based action platformer that focuses on safety on the streets.
+              <br><br>
+              <img src="assets/img/screenshots/plat1.png" style = "height: 80px; width: 145px;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
+              <img src="assets/img/screenshots/plat2.png" style = "height: 80px; width: 145px;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
+              <br><br>
+              <strong>Genre:</strong> Action, Awareness-raising<br>
+              <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Mobile</p>
+              <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Solo</p> 
+              <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">2019</p> 
+<a href="https://www.youtube.com/watch?v=YhReQLgaDcw" target="_blank" style="background-color: rgb(199, 55, 39); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: normal; color: white !important ; padding: 1%;">Gameplay</a>     
+              <img class="engineLogo" src="assets/img/unity.png" width="50px" height="50px">
+              <div class="project-number-badge"></div>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <img class="activegif" src="assets/img/projects/rashed.jpg">
+            <p><a class="projectheader" href="https://www.youtube.com/embed/nP-DmMv7dZ8" target="_blank" style="font-weight: bold;">🇧🇩 My Friend Rashed</a> </p>
+            <div class="description" style="color: white;">
+                <ul>
+                    A 2D platformer based on real incidents during the Liberation War of Bangladesh in 1971. Use tactics, solve puzzles and fight your way to victory while assisting the freedom fighters.
+                    <br>
+                    <br>
+                    <img src="assets/img/screenshots/rashed1.jpg" style="height: 80px; width: 145px;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
+                    <img src="assets/img/screenshots/rashed2.jpg" style="height: 80px; width: 145px;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
+                    <br>
+                    <br>
+                    <strong>Genre:</strong> Action, Platformer
+                    <br>
+                    <strong>Role:</strong> Programmer, Artist, Team Lead</a>
+                    <br>
+                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Mobile</p>
+                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">PC</p>
+                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">5 People</p>
+                    <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">2018</p>
+                    <br>
+                    <a href="https://www.youtube.com/embed/nP-DmMv7dZ8" target="_blank" style="background-color: rgb(199, 55, 39); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: normal; color: white !important ; padding: 1%;">Gameplay</a>
+                    <img class="engineLogo" src="assets/img/unity.png" width="50px" height="50px">
+                    <div class="project-number-badge"></div>
+                </ul>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+          <img class="activegif" src="assets/img/projects/cryo.png" style="width: 200px;height: 240px;">
+          <p><a class="projectheader" href="https://www.youtube.com/watch?v=AvBYpdG5pew" target="_blank" style="font-weight: bold;">❄️Cryo Quest</a> </p>
+          <div class="description" style="color: white;">
+            <ul>
+         The goal of Cryo Quest is to raise awareness of the serious effects that global warming has on the cryosphere. 
+              <br><br>
+              <img src="assets/img/screenshots/nasa1.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+              <img src="assets/img/screenshots/nasa2.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+              <img src="assets/img/screenshots/nasa3.png" style = "height: 140px; width: 80px;cursor: pointer;"onclick="openModal(this.src, 'portrait')">
+              <br><br>
+              <strong>Genre:</strong> Educational, Awareness-raising<br>
+              <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Mobile</p>
+              <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">4 People</p> 
+              <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">2018</p> 
+              <a href="https://www.youtube.com/watch?v=AvBYpdG5pew" target="_blank" style="background-color: rgb(199, 55, 39); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: normal; color: white !important ; padding: 1%;">Gameplay</a>     
+              <img class="engineLogo" src="assets/img/unity.png" width="50px" height="50px">
+              <div class="project-number-badge"></div>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+          <img class="activegif" src="assets/img/projects/surfers.gif">
+          <p><a class="projectheader" href="https://www.youtube.com/embed/0U3uozcWkoc" target="_blank" style="font-weight: bold;">🌊Bangla Surfers</a> </p>
+          <div class="description" style="color: white;">
+            <ul>
+              A 2D platformer created to promote surfing in Bangladesh and to raise awareness against environmental pollution.
+            <br>
+            <br>
+            <img src="assets/img/screenshots/surf1.png" style="height: 80px; width: 145px;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
+            <img src="assets/img/screenshots/surf2.png" style="height: 80px; width: 145px;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
+            <br>
+            <br>
+            <strong>Genre:</strong> Surfing, Platformer
+            <br>
+            <strong>Role:</strong> Programmer, Artist</a>
+              <br><p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px; padding: 0.85%;">Mobile</p>
+              <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Solo</p> 
+              <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">2017</p> 
+              <a href="https://www.youtube.com/embed/0U3uozcWkoc" target="_blank" style="background-color: rgb(199, 55, 39); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: normal; color: white !important ; padding: 1%;">Youtube</a>           
+              <img class="engineLogo" src="assets/img/unity.png" width="50px" height="50px">
+              <div class="project-number-badge"></div>
+            </ul>
+          </div>
+        </div>
+
+        </div>
+      </div>
+    </section><script>
+      document.addEventListener("DOMContentLoaded", function() {
+        const projects = document.querySelectorAll('.portfolio-item');
+        const totalProjects = projects.length;
+
+        projects.forEach((item, index) => {
+          const projectNumber = totalProjects - index;
+          const badge = item.querySelector('.project-number-badge');
+          if (badge) {
+            badge.textContent = `#${projectNumber}`;
+          }
+        });
+      });
+    </script>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container" style="text-align: center;">
+      <div class="row">
+        <div class="col-md-8 col-sm-6 col-xs-12">
+          <form class="debug" style="padding: 0em 0em;" action="mailto:shamitaditta380@gmail.com" method="POST" enctype="text/plain">
+            <fieldset style="border: 0; padding: 0em 0 0 0; margin: 0; min-width: 0;">
+              <br>
+              <ol style="list-style: none;translate: -10%;">
+                <legend style="text-align: left; color: white;">
+                  <p style="color: white !important;">Come say Hi!👋</p>
+                  <a href="mailto:shamitaditta380@gmail.com" style="display: inline-block; border-radius: 4px; font-size: 70px; font-weight: bold; padding: 1%;align-items: left;"><i class="bx bx-envelope"></i></a>
+                  <a href="https://www.linkedin.com/in/shamitahmed/" style="display: inline-block;border-radius: 4px; font-size: 70px; font-weight: bold;padding: 1%;align-items: left;"><i class="bx bxl-linkedin"></i></a>
+                  <a href="https://github.com/shamitahmed" style="display: inline-block;border-radius: 4px; font-size: 70px; font-weight: bold;padding: 1%;align-items: left;"><i class="bx bxl-github"></i></a>
+                  <br><br><a href="assets/files/CV_Shamit_Ahmed.pdf" download class="btn-download">Download CV</a>
+                </legend>
+                <br><br>
+                <br><br><br>
+
+                <style>
+                  footer .btn-download {
+                    display: inline-block;
+                    margin-top: 10px;
+                    padding: 10px 20px;
+                    background-color: #4CAF50;
+                    color: white;
+                    text-decoration: none;
+                    font-weight: bold;
+                    border-radius: 5px;
+                    transition: background-color 0.3s ease;
+                  }
+
+                  footer .btn-download:hover {
+                    background-color: #45a049;
+                  }
+                </style>
+
+                <p class="copyright-text" style="text-align: left; color:white !important">© 2026 Shamit Ahmed. All rights reserved.</p>
+              </ol>
+            </fieldset>
+          </form>
+        </div>
+        <img class="footerimg" src="assets/img/Group 39.png" style="width: 300px;height: 300px;translate: 100px;">
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
