@@ -111,6 +111,68 @@ html {
     #portfolio-content { margin-left: 120px; flex: 1; }
     .year-section { margin-bottom: 150px;}
     
+
+    /* --- Right Category Sidebar Styles --- */
+#category-sidebar {
+  position: fixed;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 9999;
+}
+
+.category-btn {
+  background: #10199d; /* Matches your year-topbar blue */
+  color: white !important;
+  text-decoration: none;
+  padding: 7px 13px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-align: center;
+  font-size: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
+}
+
+/* Remove underline from all links on hover */
+a:hover {
+  text-decoration: none !important;
+}
+
+/* Hover effect: Slides slightly to the left, glows, and changes to your neon green */
+.category-btn:hover {
+  transform: translateX(-5px) scale(1.05);
+  background: #09ee96; 
+
+  box-shadow: 0px 4px 15px rgba(9, 238, 150, 0.6);
+  border-color: #09ee96;
+}
+
+/* Make the active page button stand out permanently */
+.category-btn.active-cat {
+  background: linear-gradient(270deg, #31f8ff, #09ee96, #3191ff);
+  background-size: 600% 600%;
+  animation: gradientMove 6s ease infinite;
+
+  border: none;
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 768px) {
+  #category-sidebar {
+    right: 5px;
+    gap: 10px;
+    transform: translateY(-50%) scale(0.85); /* Scales down slightly to save space */
+  }
+  .category-btn {
+    padding: 10px 15px;
+  }
+}
   </style>
   <!-- <style>
   /* Fade animation */
@@ -124,6 +186,8 @@ body.page-loaded {
   opacity: 1;
 }
   </style> -->
+
+  
 </head>
 
 <body>
@@ -363,6 +427,15 @@ document.addEventListener('keydown', function(event) {
     }
   });
 </script>
+
+<div id="category-sidebar">
+    <a href="projects.html" class="category-btn active-cat">All Works</a>
+    <a href="xr.html" class="category-btn">XR</a>
+    <a href="mobile.html" class="category-btn">Mobile</a>
+    <a href="web.html" class="category-btn">Web</a>
+    <a href="pc.html" class="category-btn">PC</a>
+  </div>
+
   <!-- ======= Hero Section ======= -->
   <section id="hero"  class="d-flex flex-column justify-content-center align-items-center">
     <div class="hero-container" data-aos="fade-in">
