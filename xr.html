@@ -40,7 +40,67 @@
     html { scroll-behavior: smooth; }
     body { zoom: 0.9; display:block; gap: 0px; background-color: #000; color: #fff; }
 
-    #portfolio-content { flex: 1; }
+    #portfolio-content { flex: 1; margin-left: 120px; }
+
+    /* --- Right Category Sidebar Styles --- */
+    #category-sidebar {
+      position: fixed;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      z-index: 9999;
+    }
+
+    .category-btn {
+      background: #10199d; 
+      color: white !important;
+      text-decoration: none;
+      padding: 7px 13px;
+      border-radius: 8px;
+      font-weight: 600;
+      text-align: center;
+      font-size: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(5px);
+      transition: all 0.3s ease;
+    }
+
+    /* Remove underline from all links on hover */
+    a:hover {
+      text-decoration: none !important;
+    }
+
+    /* Hover effect: Slides slightly to the left, glows, and changes to your neon green */
+    .category-btn:hover {
+      transform: translateX(-5px) scale(1.05);
+      background: #09ee96; 
+      box-shadow: 0px 4px 15px rgba(9, 238, 150, 0.6);
+      border-color: #09ee96;
+    }
+
+    /* Make the active page button stand out permanently */
+    .category-btn.active-cat {
+      background: linear-gradient(270deg, #31f8ff, #09ee96, #3191ff);
+      background-size: 600% 600%;
+      animation: gradientMove 6s ease infinite;
+      border: none;
+    }
+
+    /* Responsive adjustments for mobile */
+    @media (max-width: 768px) {
+      #category-sidebar {
+        right: 5px;
+        gap: 10px;
+        transform: translateY(-50%) scale(0.85); 
+      }
+      .category-btn {
+        padding: 10px 15px;
+      }
+    }
   </style>
 </head>
 
@@ -153,6 +213,14 @@
     });
   </script>
 
+  <div id="category-sidebar">
+    <a href="projects.html" class="category-btn">All Works</a>
+    <a href="xr.html" class="category-btn active-cat">XR</a>
+    <a href="mobile.html" class="category-btn">Mobile</a>
+    <a href="web.html" class="category-btn">Web</a>
+    <a href="pc.html" class="category-btn">PC</a>
+  </div>
+
   <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
     <div class="hero-container" data-aos="fade-in">
       <h1>XR Portfolio</h1>
@@ -213,11 +281,7 @@
 <br>
         <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
 
-              <div class="col-lg-4 col-md-6 portfolio-item filter-app" > <!--priority  third-prior -->
-    
-                <!-- <iframe src="https://www.youtube.com/embed/GTHPUJtnczI?autoplay=1&mute=1&loop=1">
-                </iframe> -->
-                <img class="activegif" src="assets/img/projects/tigergif.gif">
+              <div class="col-lg-4 col-md-6 portfolio-item filter-app" > <img class="activegif" src="assets/img/projects/tigergif.gif">
                 <p><a class="projectheader" href="https://urn.fi/URN:NBN:fi:aalto-202601221840" target="_blank" style="font-weight: bold;">🐯Human Quadruped Locomotion for Exergames</a> </p>
                 <div class="description" style="color: white;">
                   <ul>
@@ -225,17 +289,10 @@
                   <br> <br>
                   <img src="assets/img/screenshots/tiger1.png" style="height: 80px; width: 145px; margin: 0.5%;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
                   <img src="assets/img/screenshots/tiger2.png" style="height: 80px; width: 145px; margin: 0%;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
-                  <!-- <img src="assets/img/screenshots/cc3.png" style="height: 80px; width: 145px; margin: 0.5%;">
-                  <img src="assets/img/screenshots/cc5.png" style="height: 80px; width: 145px; margin: 0%;"> -->
                   <br><br>
                   <strong>Genre:</strong> Exergame, Platformer
                   <br><strong>Role:</strong> Master´s Thesis Project
                   <br><strong>Supervisor:</strong> Prof. Perttu Hämäläinen
-                  <!-- <br><br><p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Junction 2025 Hackathon</p> 
-                  <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">Web</p> 
-                  <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">2 People</p>  -->
-                  <!-- <p style="border-color: white; border-style: solid; border-width: 1px; display: inline-block; border-radius: 5px; font-size: 12px;padding: 0.85%;">2024</p>  -->
-                  <!-- <a class="gradientButton" href="https://shamitahmed.itch.io/comicchaos" target="_blank" style="background-color: rgb(5, 154, 62); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: normal; color: white !important ; padding: 1%;">Itch.io</a> -->
                   <a href="https://www.youtube.com/watch?v=JySZ26HEqd4" target="_blank" style="background-color: rgb(199, 55, 39); display: inline-block; border-radius: 4px; font-size: 16px; font-weight: normal; color: white !important ; padding: 1%;">Gameplay</a> 
                   <img class="engineLogo" src="assets/img/unity.png" width="50px" height="50px">
                   <div class="project-number-badge"></div>
