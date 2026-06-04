@@ -178,6 +178,91 @@ body.page-loaded {
   .nav-menu ul li a:hover {
     color: #09ee96;
   }
+
+  /* 3D Tilt Card Base Styles */
+  .profile-card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border-radius: 15px; /* Rounds the corners */
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    transform-style: preserve-3d;
+    transition: transform 0.4s ease-out, box-shadow 0.4s ease-out;
+    will-change: transform;
+  }
+
+  /* The Glare Overlay */
+  .profile-card .glare {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      125deg, 
+      rgba(255,255,255, 0.4) 0%, 
+      rgba(255,255,255, 0) 40%
+    );
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.4s ease-out;
+  }
+
+  /* Show glare on hover */
+  .profile-tilt:hover .glare {
+    opacity: 1;
+  }
+
+  /* Flexible Container for Project Images */
+  .project-tilt {
+    perspective: 1000px;
+    width: 100%;
+    margin-bottom: 15px; /* Adds a little breathing room below the GIF */
+  }
+
+  .project-card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border-radius: 8px; /* Slightly sharper corners for screenshots */
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transform-style: preserve-3d;
+    transition: transform 0.4s ease-out, box-shadow 0.4s ease-out;
+    will-change: transform;
+  }
+
+  /* Ensure the GIF fills the card properly */
+  .project-card img {
+    display: block;
+  height: 200px;
+  width: 350px;
+    object-fit: cover;
+    pointer-events: none; /* Crucial for the mouse tracking to work */
+  }
+
+  /* The Glare Overlay */
+  .project-card .glare {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      125deg, 
+      rgba(255,255,255, 0.4) 0%, 
+      rgba(255,255,255, 0) 40%
+    );
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.4s ease-out;
+  }
+
+  .project-tilt:hover .glare {
+    opacity: 1;
+  }
+
 </style>
 
 
@@ -212,8 +297,14 @@ body.page-loaded {
       <div class="matha"> 
 
 <div style="display: flex; align-items: center; justify-content: center; gap: 20px; width: 100%;">
-  
-  <img src="assets/img/me.png" alt="Profile" style="width: 240px; height: 300px; object-fit: cover;" />
+
+<!-- 3D Profile Image Container -->
+<div class="tilt-container profile-tilt" style="width: 240px; height: 300px; margin: 0; flex-shrink: 0; perspective: 1000px;">
+  <div class="tilt-card profile-card">
+    <img src="assets/img/me.png" alt="Profile" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" />
+    <div class="glare"></div>
+  </div>
+</div>
 
   <p style="font-size: 14px; width: 40%; margin: 0;">
     Hey, I am Shamit! A <strong>multidisciplinary programmer</strong> with <strong>4 years of game industry experience</strong> from Bangladesh, currently based in Finland.
@@ -440,9 +531,14 @@ document.addEventListener('keydown', function(event) {
                   <!-- GIF on the left -->
                   <div class="col-md-4">
                       <br><a href="https://www.youtube.com/watch?v=owJ9X8U2Ads" target="_blank" rel="noopener noreferrer">
-    <img class="activegif img-fluid" src="assets/img/projects/thought.gif" alt="Thoughts Out!">
+        <div class="tilt-container project-tilt">
+        <div class="tilt-card project-card">
+            <img class="activegif img-fluid" src="assets/img/projects/thought.gif" alt="Thoughts Out!" style="pointer-events: none;">
+            <div class="glare"></div>
+        </div>
+    </div>
 </a>
-                      <br><br>
+                      
                       <div class="screenshot-container">
                           <img src="assets/img/projects/thought.png" class="img-fluid" style="height: 80px; width: 145px; margin: 0.5%; cursor: pointer;"onclick="openModal(this.src, 'landscape')">
                           <img src="assets/img/screenshots/to1.png" class="img-fluid" style="height: 80px; width: 145px; margin: 0%;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
@@ -477,10 +573,15 @@ document.addEventListener('keydown', function(event) {
                 <div class="row" style="background-color: rgba(13, 14, 24, 0); padding: 20px; border-radius: 10px;">
                     <!-- GIF on the left -->
                     <div class="col-md-4">
-                        <br><a href="https://www.youtube.com/watch?v=-lfP-QiiHZw" target="_blank" rel="noopener noreferrer">
-    <img class="activegif img-fluid" src="assets/img/projects/bark.gif" alt="Bark No MR">
+                        <br><a href="https://www.youtube.com/watch?v=-lfP-QiiHZw" target="_blank" rel="noopener noreferrer" style="display: block;">
+    <div class="tilt-container project-tilt">
+        <div class="tilt-card project-card">
+            <img class="activegif img-fluid" src="assets/img/projects/bark.gif" alt="Bark No MR" style="pointer-events: none;">
+            <div class="glare"></div>
+        </div>
+    </div>
 </a>
-                        <br><br>
+                    
                         <div class="screenshot-container">
                             <img src="assets/img/projects/bark.jpg" class="img-fluid" style="height: 80px; width: 145px; margin: 0.5%;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
                             <img src="assets/img/screenshots/bark1.png" class="img-fluid" style="height: 80px; width: 145px; margin: 0%;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
@@ -516,9 +617,14 @@ document.addEventListener('keydown', function(event) {
                    <!-- GIF on the left -->
                    <div class="col-md-4">
                       <br><a href="https://www.youtube.com/watch?v=LKyk2vuDwnc" target="_blank" rel="noopener noreferrer">
-    <img class="activegif img-fluid" src="assets/img/projects/monster.gif" alt="Monster Cleaning Inc.">
+            <div class="tilt-container project-tilt">
+        <div class="tilt-card project-card">
+            <img class="activegif img-fluid" src="assets/img/projects/monster.gif" alt="Monster Cleaning Inc." style="pointer-events: none;">
+            <div class="glare"></div>
+        </div>
+    </div>
 </a>
-                      <br><br>
+                    
                       <div class="screenshot-container">
                         <img src="assets/img/screenshots/mc3.png" class="img-fluid" style="height: 80px; width: 145px; margin: 0.5%;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
                         <img src="assets/img/screenshots/mc4.png" class="img-fluid" style="height: 80px; width: 145px;margin: 0%;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
@@ -555,9 +661,14 @@ document.addEventListener('keydown', function(event) {
                   <!-- GIF on the left -->
                   <div class="col-md-4">
                       <br><a href="https://youtu.be/1k7vV8V_ejE" target="_blank" rel="noopener noreferrer">
-    <img class="activegif img-fluid" src="assets/img/projects/unreality.gif" style="width: 300px !important;height: 170px !important;" alt="Unreality VR">
+            <div class="tilt-container project-tilt">
+        <div class="tilt-card project-card">
+            <img class="activegif img-fluid" src="assets/img/projects/unreality.gif" alt="Unreality VR" style="pointer-events: none;">
+            <div class="glare"></div>
+        </div>
+    </div>
 </a>
-                      <br><br>
+                  
                       <div class="screenshot-container">
                           <img src="assets/img/screenshots/un1.png" class="img-fluid" style="height: 80px; width: 145px; margin: 0.5%;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
                           <img src="assets/img/screenshots/un2.png" class="img-fluid" style="height: 80px; width: 145px; margin: 0%;cursor: pointer;"onclick="openModal(this.src, 'landscape')">
@@ -594,7 +705,12 @@ document.addEventListener('keydown', function(event) {
           <!-- <iframe src="https://www.youtube.com/embed/GTHPUJtnczI?autoplay=1&mute=1&loop=1">
           </iframe> -->
           <a href="https://www.youtube.com/watch?v=GTHPUJtnczI" target="_blank" rel="noopener noreferrer">
-    <img class="activegif img-fluid" src="assets/img/projects/sl.gif" style="width: 300px !important;height: 200px !important;" alt="Spooky Land">
+            <div class="tilt-container project-tilt">
+        <div class="tilt-card project-card">
+            <img class="activegif img-fluid" src="assets/img/projects/sl.gif" alt="Spooky Land" style="pointer-events: none;">
+            <div class="glare"></div>
+        </div>
+    </div>
 </a>
           <p><a class="projectheader" href="https://shamitahmed.itch.io/spookyland" target="_blank" style="font-weight: bold;">Spooky Land</a> </p>
           <div class="description" style="color: white;">
@@ -629,7 +745,12 @@ document.addEventListener('keydown', function(event) {
              <div class="col-lg-4 col-md-6 portfolio-item filter-app" ><!--priority  mid-prior -->
 
           <a href="https://www.youtube.com/watch?v=hALWidnnZcU" target="_blank" rel="noopener noreferrer">
-    <img class="activegif img-fluid" src="assets/img/projects/gg.gif" style="width: 300px !important;height: 200px !important;" alt="Galactic Gourmet">
+           <div class="tilt-container project-tilt">
+        <div class="tilt-card project-card">
+            <img class="activegif img-fluid" src="assets/img/projects/gg.gif" alt="Galactic Gourmet" style="pointer-events: none;">
+            <div class="glare"></div>
+        </div>
+    </div>
 </a>
       
               <p><a class="projectheader" href="https://shamitahmed.itch.io/galacticgourmet" target="_blank" style="font-weight: bold;">Galactic Gourmet</a> </p>
@@ -661,7 +782,12 @@ document.addEventListener('keydown', function(event) {
                 <li>A topdown 3D game where you, a security ">
           </iframe> -->
           <a href="https://www.youtube.com/watch?v=851XQkQdt3o" target="_blank" rel="noopener noreferrer">
-    <img class="activegif img-fluid" src="assets/img/projects/isc.gif" style="width: 230px !important;height: 250px !important;" alt="Idle Sea Cleaner">
+            <div class="tilt-container project-tilt">
+        <div class="tilt-card project-card">
+            <img class="activegif img-fluid" src="assets/img/projects/isc.gif" alt="Idle Sea Cleaner" style="pointer-events: none;">
+            <div class="glare"></div>
+        </div>
+    </div>
 </a>
           <p><a class="projectheader" href="https://play.google.com/store/apps/details?id=idle.sea.cleaner" target="_blank" style="font-weight: bold;">Idle Sea Cleaner</a> </p>
           <div class="description" style="color: white;">
@@ -1787,6 +1913,43 @@ document.querySelectorAll('a').forEach(link => {
 });
 </script> -->
 
+<script>
+  // Select ALL elements with the class 'tilt-container'
+  const tiltContainers = document.querySelectorAll('.tilt-container');
+  
+  // Set the intensity of the tilt
+  const maxTilt = 15; 
+
+  // Loop through each container and apply the effect independently
+  tiltContainers.forEach(container => {
+    const card = container.querySelector('.tilt-card');
+    
+    if(!card) return; // Safety check in case a container is missing a card
+
+    container.addEventListener('mousemove', (e) => {
+      const rect = container.getBoundingClientRect();
+      const x = e.clientX - rect.left; 
+      const y = e.clientY - rect.top;  
+      
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+
+      const rotateX = ((y - centerY) / centerY) * -maxTilt; 
+      const rotateY = ((x - centerX) / centerX) * maxTilt;
+
+      card.style.transition = 'none';
+      // Pop out slightly on hover (scale 1.03)
+      card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.03, 1.03, 1.03)`;
+      card.style.boxShadow = `${-rotateY}px ${rotateX}px 20px rgba(0, 0, 0, 0.5)`;
+    });
+
+    container.addEventListener('mouseleave', () => {
+      card.style.transition = 'transform 0.5s ease-out, box-shadow 0.5s ease-out';
+      card.style.transform = `rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+      card.style.boxShadow = `0 10px 30px rgba(0, 0, 0, 0.3)`;
+    });
+  });
+</script>
 
 </body>
   <!-- Site footer -->
