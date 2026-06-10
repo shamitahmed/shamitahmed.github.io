@@ -2318,4 +2318,18 @@ border: 0px !important;
   }
 }
 
+/* Screenshot Hover Effect */
+img[onclick^="openModal"] {
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), filter 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  will-change: transform;
+}
+
+img[onclick^="openModal"]:hover {
+  transform: scale(1.08);
+  filter: brightness(1.1);
+  box-shadow: 0 10px 25px rgba(49, 248, 255, 0.35); /* Subtle neon cyan/blue glow shadow */
+  z-index: 5;
+}
+
 
