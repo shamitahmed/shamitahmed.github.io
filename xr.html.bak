@@ -281,12 +281,7 @@
 <br>
         <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
 
-              <div class="col-lg-4 col-md-6 portfolio-item filter-app" > <div class="tilt-container project-tilt">
-  <div class="tilt-card project-card">
-    <img class="activegif" src="assets/img/projects/tigergif.gif" style="pointer-events: none;">
-    <div class="glare"></div>
-  </div>
-</div>
+              <div class="col-lg-4 col-md-6 portfolio-item filter-app" > <img class="activegif" src="assets/img/projects/tigergif.gif">
                 <p><a class="projectheader" href="https://urn.fi/URN:NBN:fi:aalto-202601221840" target="_blank" style="font-weight: bold;">🐯Human Quadruped Locomotion for Exergames</a> </p>
                 <div class="description" style="color: white;">
                   <ul>
@@ -307,12 +302,7 @@
              </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-app"> 
-            <div class="tilt-container project-tilt">
-  <div class="tilt-card project-card">
-    <img class="activegif" src="assets/img/projects/bark.gif" style="pointer-events: none;">
-    <div class="glare"></div>
-  </div>
-</div>
+            <img class="activegif" src="assets/img/projects/bark.gif">
             <p><a class="projectheader" href="https://shamitahmed.itch.io/barknomore" target="_blank" style="font-weight: bold;">🛠️Bark No More</a> </p>
             <div class="description" style="color: white;">
               <ul>
@@ -338,12 +328,7 @@
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="tilt-container project-tilt">
-  <div class="tilt-card project-card">
-    <img class="activegif" src="assets/img/projects/unreality.gif" style="pointer-events: none;">
-    <div class="glare"></div>
-  </div>
-</div>
+            <img class="activegif" src="assets/img/projects/unreality.gif">
             <p><a class="projectheader" href="https://shamitahmed.itch.io/unreality" target="_blank" style="font-weight: bold;">🌀(Un)Reality VR</a> </p>
             <div class="description" style="color: white;">
               <ul>
@@ -369,12 +354,7 @@
           </div>
 
                     <div class="col-lg-4 col-md-6 portfolio-item filter-xr">
-            <div class="tilt-container project-tilt">
-  <div class="tilt-card project-card">
-    <img class="activegif" src="assets/img/projects/escape.gif" style="pointer-events: none;">
-    <div class="glare"></div>
-  </div>
-</div>
+            <img class="activegif" src="assets/img/projects/escape.gif">
             <p><a class="projectheader" href="https://shamitahmed.itch.io/vrsewerescape?secret=2oTy6LNxlOOO1Wqr9kruPi34Pw" target="_blank" style="font-weight: bold;">🔐VR Sewer Escape</a> </p>
             <div class="description" style="color: white;">
               <ul>
@@ -396,12 +376,7 @@
           </div>
 
                     <div class="col-lg-4 col-md-6 portfolio-item filter-xr">
-            <div class="tilt-container project-tilt">
-  <div class="tilt-card project-card">
-    <img class="activegif" src="assets/img/projects/squatgames.gif" style="pointer-events: none;">
-    <div class="glare"></div>
-  </div>
-</div>
+            <img class="activegif" src="assets/img/projects/squatgames.gif">
             <p><a class="projectheader" href="https://shamitahmed.itch.io/squat-games-kinect" target="_blank" style="font-weight: bold;">🦵Squat Games - Kinect</a> </p>
             <div class="description" style="color: white;">
               <ul>
@@ -423,12 +398,7 @@
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-xr">
-            <div class="tilt-container project-tilt">
-  <div class="tilt-card project-card">
-    <img class="activegif" src="assets/img/projects/beat.gif" style="pointer-events: none;">
-    <div class="glare"></div>
-  </div>
-</div>
+            <img class="activegif" src="assets/img/projects/beat.gif">
             <p><a class="projectheader" href="https://shamitahmed.itch.io/rhythmslicevr" target="_blank" style="font-weight: bold;">🧊Rhythm Slicer VR</a> </p>
             <div class="description" style="color: white;">
               <ul>
@@ -451,12 +421,7 @@
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-xr">
-            <div class="tilt-container project-tilt">
-  <div class="tilt-card project-card">
-    <img class="activegif" src="assets/img/projects/bowl.gif" style="pointer-events: none;">
-    <div class="glare"></div>
-  </div>
-</div>
+            <img class="activegif" src="assets/img/projects/bowl.gif">
             <p><a class="projectheader" href="https://shamitahmed.itch.io/vrbowlingsim" target="_blank" style="font-weight: bold;">🎳VR Bowling Simulator</a> </p>
             <div class="description" style="color: white;">
               <ul>
@@ -478,12 +443,7 @@
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-xr">
-            <div class="tilt-container project-tilt">
-  <div class="tilt-card project-card">
-    <img class="activegif" src="assets/img/projects/uganda.gif" style="pointer-events: none; width: 220px;height: 240px;">
-    <div class="glare"></div>
-  </div>
-</div>
+            <img class="activegif" src="assets/img/projects/uganda.gif" style="width: 220px;height: 240px;">
             <p><a class="projectheader" href="https://www.youtube.com/embed/sPJw7607Njo" target="_blank" style="font-weight: bold;">🥁AR Ugandan Musical Instruments🥁</a> </p>
             <div class="description" style="color: white;">
               <ul>
@@ -505,12 +465,7 @@
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-app">             
-            <div class="tilt-container project-tilt">
-  <div class="tilt-card project-card">
-    <img class="activegif" src="assets/img/projects/mh.png" style="pointer-events: none;">
-    <div class="glare"></div>
-  </div>
-</div>
+            <img class="activegif" src="assets/img/projects/mh.png">
             <p><a class="projectheader" href="https://shinyninja.itch.io/mining-hazard" target="_blank" style="font-weight: bold;">🔫Mining Hazard VR</a> </p>
             <div class="description" target="_blank" style="color: white;">
               <ul>
@@ -533,12 +488,7 @@
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-xr">
-            <div class="tilt-container project-tilt">
-  <div class="tilt-card project-card">
-    <img class="activegif" src="assets/img/projects/drone.gif" style="pointer-events: none;">
-    <div class="glare"></div>
-  </div>
-</div>
+            <img class="activegif" src="assets/img/projects/drone.gif">
             <p><a class="projectheader" href="https://www.youtube.com/watch?v=31kDyzSwjJE" target="_blank" style="font-weight: bold;">🚁AR Outdoor Navigation Assistant</a> </p>
             <div class="description" style="color: white;">
               <ul>
@@ -616,6 +566,5 @@
     </div>
   </footer>
 
-<script src="assets/js/tilt.js"></script>
 </body>
 </html>

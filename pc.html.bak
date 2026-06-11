@@ -283,12 +283,7 @@
         <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-app" > 
-            <div class="tilt-container project-tilt">
-  <div class="tilt-card project-card">
-    <img class="activegif" src="assets/img/projects/compadre.gif" style="pointer-events: none;">
-    <div class="glare"></div>
-  </div>
-</div>
+            <img class="activegif" src="assets/img/projects/compadre.gif">
             <p><a class="projectheader" href="https://www.youtube.com/watch?v=7aKqKEL-yXk" target="_blank" style="font-weight: bold;">🐥Compadre - Agentic Companion</a> </p>
             <div class="description" style="color: white;">
               <ul>
@@ -310,12 +305,7 @@
          </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-app" >
-            <div class="tilt-container project-tilt">
-  <div class="tilt-card project-card">
-    <img class="activegif" src="assets/img/projects/thought.gif" style="pointer-events: none;">
-    <div class="glare"></div>
-  </div>
-</div>
+            <img class="activegif" src="assets/img/projects/thought.gif">
             <p><a class="projectheader" href="https://ssssand.itch.io/thoughts-out" target="_blank" style="font-weight: bold;">🐲Thoughts Out!</a> </p>
             <div class="description" style="color: white;">
               <ul>
@@ -341,12 +331,7 @@
          </div>
 
          <div class="col-lg-4 col-md-6 portfolio-item filter-app" >
-            <div class="tilt-container project-tilt">
-  <div class="tilt-card project-card">
-    <img class="activegif" src="assets/img/projects/gg.gif" style="pointer-events: none;">
-    <div class="glare"></div>
-  </div>
-</div>
+            <img class="activegif" src="assets/img/projects/gg.gif">
             <p><a class="projectheader" href="https://shamitahmed.itch.io/galacticgourmet" target="_blank" style="font-weight: bold;">🥐Galactic Gourmet</a> </p>
             <div class="description" style="color: white;">
               <ul>
@@ -371,12 +356,7 @@
          </div>
 
          <div class="col-lg-4 col-md-6 portfolio-item filter-app" > 
-          <div class="tilt-container project-tilt">
-  <div class="tilt-card project-card">
-    <img class="activegif" src="assets/img/projects/ds.gif" style="pointer-events: none;">
-    <div class="glare"></div>
-  </div>
-</div>
+          <img class="activegif" src="assets/img/projects/ds.gif">
           <p><a class="projectheader" href="https://shamitahmed.itch.io/dimeshift" target="_blank" style="font-weight: bold;">🔄Dime Shift</a> </p>
           <div class="description" style="color: white;">
             <ul>
@@ -403,12 +383,7 @@
        </div>
 
        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-        <div class="tilt-container project-tilt">
-  <div class="tilt-card project-card">
-    <img class="activegif" src="assets/img/projects/cr.gif" style="pointer-events: none;">
-    <div class="glare"></div>
-  </div>
-</div>
+        <img class="activegif" src="assets/img/projects/cr.gif">
         <p><a class="projectheader" href="https://roboshamit.itch.io/catroot" target="_blank" style="font-weight: bold;">🥕Cat Root</a> </p>
         <div class="description" style="color: white;">
           <ul>
@@ -430,12 +405,7 @@
       </div>
 
       <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-          <div class="tilt-container project-tilt">
-  <div class="tilt-card project-card">
-    <img class="activegif" src="assets/img/projects/rashed.jpg" style="pointer-events: none;">
-    <div class="glare"></div>
-  </div>
-</div>
+          <img class="activegif" src="assets/img/projects/rashed.jpg">
           <p><a class="projectheader" href="https://www.youtube.com/embed/nP-DmMv7dZ8" target="_blank" style="font-weight: bold;">🇧🇩 My Friend Rashed</a> </p>
           <div class="description" style="color: white;">
               <ul>
@@ -463,12 +433,7 @@
       </div>
 
       <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-        <div class="tilt-container project-tilt">
-  <div class="tilt-card project-card">
-    <img class="activegif" src="assets/img/projects/zombrain.gif" style="pointer-events: none;">
-    <div class="glare"></div>
-  </div>
-</div>
+        <img class="activegif" src="assets/img/projects/zombrain.gif">
         <p><a class="projectheader" href="https://www.youtube.com/embed/PO9nuQd07eg"  target="_blank"style="font-weight: bold;">🧟Zombrain</a> </p>
         <div class="description" style="color: white;">
           <ul>               
@@ -554,6 +519,5 @@
     </div>
   </footer>
 
-<script src="assets/js/tilt.js"></script>
 </body>
 </html>
