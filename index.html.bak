@@ -850,12 +850,7 @@ document.addEventListener('keydown', function(event) {
                    <div class="row acquiredSkills-item filter-db mb-4 align-items-start">
         <div class="col-lg-3 col-md-4">
           <a href="https://dl.acm.org/doi/10.1145/3772318.3790760" target="_blank">
-            <div class="tilt-container publication-tilt">
-  <div class="tilt-card publication-card">
-    <img src="assets/img/publications/mining.png" class="img-fluid rounded" alt="Mining" style="pointer-events: none;">
-    <div class="glare"></div>
-  </div>
-</div>
+            <img src="assets/img/publications/mining.png" class="img-fluid rounded" alt="Mining">
           </a>
         </div>
         <div class="col-lg-9 col-md-8">
@@ -869,12 +864,7 @@ document.addEventListener('keydown', function(event) {
         <div class="row acquiredSkills-item filter-db mb-4 align-items-start">
         <div class="col-lg-3 col-md-4">
           <a href="https://arxiv.org/abs/2603.15428" target="_blank">
-            <div class="tilt-container publication-tilt">
-  <div class="tilt-card publication-card">
-    <img src="assets/img/publications/tiger.png" class="img-fluid rounded" alt="Tiger Paper" style="pointer-events: none;">
-    <div class="glare"></div>
-  </div>
-</div>
+            <img src="assets/img/publications/tiger.png" class="img-fluid rounded" alt="Tiger Paper">
           </a>
         </div>
         <div class="col-lg-9 col-md-8">
@@ -888,12 +878,7 @@ document.addEventListener('keydown', function(event) {
                   <div class="row acquiredSkills-item filter-db mb-4 align-items-start">
         <div class="col-lg-3 col-md-4">
           <a href="" target="_blank">
-            <div class="tilt-container publication-tilt">
-  <div class="tilt-card publication-card">
-    <img src="assets/img/publications/eldenvr.png" class="img-fluid rounded" alt="EldenVR" style="pointer-events: none;">
-    <div class="glare"></div>
-  </div>
-</div>
+            <img src="assets/img/publications/eldenvr.png" class="img-fluid rounded" alt="EldenVR">
           </a>
         </div>
         <div class="col-lg-9 col-md-8">
@@ -906,12 +891,7 @@ document.addEventListener('keydown', function(event) {
             <div class="row acquiredSkills-item filter-db mb-4 align-items-start">
         <div class="col-lg-3 col-md-4">
           <a href="https://doi.org/10.48550/arXiv.2602.12887" target="_blank">
-            <div class="tilt-container publication-tilt">
-  <div class="tilt-card publication-card">
-    <img src="assets/img/publications/rda.png" class="img-fluid rounded" alt="RDA" style="pointer-events: none;">
-    <div class="glare"></div>
-  </div>
-</div>
+            <img src="assets/img/publications/rda.png" class="img-fluid rounded" alt="RDA">
           </a>
         </div>
         <div class="col-lg-9 col-md-8">
@@ -926,12 +906,7 @@ document.addEventListener('keydown', function(event) {
            <div class="row acquiredSkills-item filter-db mb-4 align-items-start">
         <div class="col-lg-3 col-md-4">
           <a href="https://urn.fi/URN:NBN:fi:aalto-202601221840" target="_blank">
-            <div class="tilt-container publication-tilt">
-  <div class="tilt-card publication-card">
-    <img src="assets/img/publications/mscthesis.png" class="img-fluid rounded" alt="MSc Thesis" style="pointer-events: none;">
-    <div class="glare"></div>
-  </div>
-</div>
+            <img src="assets/img/publications/mscthesis.png" class="img-fluid rounded" alt="MSc Thesis">
           </a>
         </div>
         <div class="col-lg-9 col-md-8">
@@ -946,12 +921,7 @@ document.addEventListener('keydown', function(event) {
            <div class="row acquiredSkills-item filter-db mb-4 align-items-start">
         <div class="col-lg-3 col-md-4">
           <a href="https://doi.org/10.1145/3697789.3697804" target="_blank">
-            <div class="tilt-container publication-tilt">
-  <div class="tilt-card publication-card">
-    <img src="assets/img/publications/icgj24.png" class="img-fluid rounded" alt="ICGJ 24" style="pointer-events: none;">
-    <div class="glare"></div>
-  </div>
-</div>
+            <img src="assets/img/publications/icgj24.png" class="img-fluid rounded" alt="ICGJ 24">
           </a>
         </div>
         <div class="col-lg-9 col-md-8">
@@ -964,12 +934,7 @@ document.addEventListener('keydown', function(event) {
        <div class="row acquiredSkills-item filter-db mb-4 align-items-start">
         <div class="col-lg-3 col-md-4">
           <a href="https://aaltodoc.aalto.fi/server/api/core/bitstreams/d5e20324-7c96-4c4f-b6af-056743fc7808/content" target="_blank">
-            <div class="tilt-container publication-tilt">
-  <div class="tilt-card publication-card">
-    <img src="assets/img/publications/ugandaar.png" class="img-fluid rounded" alt="BSc Thesis" style="pointer-events: none;">
-    <div class="glare"></div>
-  </div>
-</div>
+            <img src="assets/img/publications/ugandaar.png" class="img-fluid rounded" alt="BSc Thesis">
           </a>
         </div>
         <div class="col-lg-9 col-md-8">
@@ -984,12 +949,7 @@ cultural heritage of Indigenous Musical Instruments in Uganda.</p>
             <div class="row acquiredSkills-item filter-db mb-4 align-items-start">
         <div class="col-lg-3 col-md-4">
           <a href="UndergradThesis.html" target="_blank">
-            <div class="tilt-container publication-tilt">
-  <div class="tilt-card publication-card">
-    <img src="assets/img/publications/thesis.png" class="img-fluid rounded" alt="BSc Thesis" style="pointer-events: none;">
-    <div class="glare"></div>
-  </div>
-</div>
+            <img src="assets/img/publications/thesis.png" class="img-fluid rounded" alt="BSc Thesis">
           </a>
         </div>
         <div class="col-lg-9 col-md-8">
@@ -1011,12 +971,7 @@ cultural heritage of Indigenous Musical Instruments in Uganda.</p>
             <div class="row acquiredSkills-item filter-db mb-5 align-items-start">
         <div class="col-lg-3 col-md-4">
           <a href="Balancing-Clash-Royale.html" target="_blank">
-            <div class="tilt-container publication-tilt">
-  <div class="tilt-card publication-card">
-    <img src="assets/img/clashbalance.png" class="img-fluid rounded" alt="Clash Royale" style="pointer-events: none;">
-    <div class="glare"></div>
-  </div>
-</div>
+            <img src="assets/img/clashbalance.png" class="img-fluid rounded" alt="Clash Royale">
           </a>
         </div>
         <div class="col-lg-9 col-md-8">
@@ -1031,12 +986,7 @@ cultural heritage of Indigenous Musical Instruments in Uganda.</p>
       <div class="row acquiredSkills-item filter-db mb-4 align-items-start">
         <div class="col-lg-3 col-md-4">
           <a href="https://drive.google.com/file/d/10vu7HyCQjx_-XTTwEz0GGQomZPynV6Gs/view?usp=sharing" target="_blank">
-            <div class="tilt-container publication-tilt">
-  <div class="tilt-card publication-card">
-    <img src="assets/img/gd.jpg" class="img-fluid rounded" alt="Workshop" style="pointer-events: none;">
-    <div class="glare"></div>
-  </div>
-</div>
+            <img src="assets/img/gd.jpg" class="img-fluid rounded" alt="Workshop">
           </a>
         </div>
         <div class="col-lg-9 col-md-8">
@@ -1052,12 +1002,7 @@ cultural heritage of Indigenous Musical Instruments in Uganda.</p>
       <div class="row acquiredSkills-item filter-db mb-4 align-items-start">
         <div class="col-lg-3 col-md-4">
           <a href="CampSajek.html" target="_blank">
-            <div class="tilt-container publication-tilt">
-  <div class="tilt-card publication-card">
-    <img src="assets/img/campsajek.png" class="img-fluid rounded" alt="Camp Sajek" style="pointer-events: none;">
-    <div class="glare"></div>
-  </div>
-</div>
+            <img src="assets/img/campsajek.png" class="img-fluid rounded" alt="Camp Sajek">
           </a>
         </div>
         <div class="col-lg-9 col-md-8">
@@ -1072,12 +1017,7 @@ cultural heritage of Indigenous Musical Instruments in Uganda.</p>
       <div class="row acquiredSkills-item filter-db mb-4 align-items-start">
         <div class="col-lg-3 col-md-4">
           <a href="TidalQuest.html" target="_blank">
-            <div class="tilt-container publication-tilt">
-  <div class="tilt-card publication-card">
-    <img src="assets/img/tidal.png" class="img-fluid rounded" alt="Tidal Quest" style="pointer-events: none;">
-    <div class="glare"></div>
-  </div>
-</div>
+            <img src="assets/img/tidal.png" class="img-fluid rounded" alt="Tidal Quest">
           </a>
         </div>
         <div class="col-lg-9 col-md-8">
