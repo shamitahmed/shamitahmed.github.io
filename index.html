@@ -188,8 +188,17 @@ body.page-loaded {
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     transform-style: preserve-3d;
-    transition: transform 0.4s ease-out, box-shadow 0.4s ease-out;
+    transition: transform 0.4s ease-out, box-shadow 0.4s ease-out, border-color 0.4s ease-out;
     will-change: transform;
+    border: 3px solid rgba(255, 255, 255, 0.1); /* Subtle border by default */
+  }
+
+  /* card glow on hover */
+  .profile-tilt:hover .profile-card {
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.4), 
+                0 0 30px rgba(255, 105, 180, 0.3), 
+                0 10px 35px rgba(0, 0, 0, 0.8);
   }
 
   /* The Glare Overlay */
@@ -207,11 +216,263 @@ body.page-loaded {
     pointer-events: none;
     opacity: 0;
     transition: opacity 0.4s ease-out;
+    z-index: 5; /* Place glare on top of details */
   }
 
   /* Show glare on hover */
   .profile-tilt:hover .glare {
     opacity: 1;
+  }
+
+  /* Holographic/Shiny Effect for Profile Pic */
+  .profile-card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 105, 180, 0.4) 20%,
+      rgba(100, 255, 255, 0.6) 50%,
+      rgba(255, 255, 100, 0.4) 80%,
+      transparent 100%
+    );
+    filter: blur(12px);
+    mix-blend-mode: overlay;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease-out;
+    z-index: 6; /* Overlays card content */
+  }
+
+  /* Sparkle overlay like classic Pokemon Holo card */
+  .profile-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+      radial-gradient(circle, rgba(255, 255, 255, 0.8) 1px, transparent 1px),
+      radial-gradient(circle, rgba(255, 255, 255, 0.9) 1.5px, transparent 1.5px),
+      radial-gradient(circle, rgba(255, 255, 255, 0.7) 1px, transparent 1px);
+    background-size: 35px 35px, 50px 50px, 65px 65px;
+    background-position: 0 0, 15px 25px, 30px 10px;
+    mix-blend-mode: color-dodge;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease-out;
+    z-index: 7; /* On very top */
+  }
+
+  .profile-tilt:hover .profile-card::after {
+    opacity: 1;
+    animation: holoSweep 4s ease-in-out infinite;
+  }
+
+  .profile-tilt:hover .profile-card::before {
+    opacity: 0.65;
+    animation: sparkleMove 5s linear infinite;
+  }
+
+  @keyframes sparkleMove {
+    0% { background-position: 0 0, 15px 25px, 30px 10px; }
+    100% { background-position: 35px 35px, 65px 75px, 95px 75px; }
+  }
+
+  /* Pokémon Card Styling */
+  .profile-card.pokemon-style {
+    position: relative;
+    background: #1e2124;
+    border: none; /* Removed border */
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    color: #f1f1f1;
+    overflow: hidden;
+  }
+  
+  .profile-tilt:hover .profile-card.pokemon-style {
+    border-color: transparent;
+  }
+
+  /* Full background image */
+  .poke-bg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 15%; /* Keep face visible */
+    z-index: 1;
+    transition: filter 0.4s ease-out;
+  }
+
+  /* Soft dim picture on hover (not too dark) */
+  .profile-tilt:hover .poke-bg-img {
+    filter: brightness(0.6) blur(0.5px);
+  }
+
+  /* Overlay text container (fades in on hover) */
+  .poke-info-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 4;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px 8px; /* More compact padding */
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, 0);
+    opacity: 0;
+    transition: opacity 0.4s ease-out, background-color 0.4s ease-out;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9); /* Enhanced text shadow for readability */
+  }
+
+  .profile-tilt:hover .poke-info-overlay {
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.45); /* Soft backplate for contrast */
+  }
+
+  .card-header-poke {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 800;
+    font-size: 11px; /* More compact font size */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 2px;
+  }
+
+  .poke-name {
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    color: #09ee96; /* Neon green accent */
+  }
+
+  .poke-hp {
+    font-size: 10px; /* More compact font size */
+    color: #ff6b6b;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+  }
+
+  .poke-info-bar {
+    background: linear-gradient(90deg, #3d424b, #2a2d32);
+    font-size: 7px; /* More compact font size */
+    text-align: center;
+    font-style: italic;
+    padding: 1px 0;
+    border-radius: 3px;
+    color: #ccc;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    text-shadow: none;
+  }
+
+  .poke-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px; /* More compact gap */
+  }
+
+  .poke-attack {
+    position: relative;
+    padding-left: 28px; /* Adjusted to fit styled energy icons */
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.15);
+    padding-bottom: 2px;
+  }
+  .poke-attack:last-child {
+    border-bottom: none;
+  }
+
+  .attack-cost {
+    position: absolute;
+    left: 0;
+    top: 2px;
+    display: flex;
+    gap: 2px;
+  }
+
+  /* Custom Styled Energy Icons */
+  .energy-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 11px; /* More compact width */
+    height: 11px; /* More compact height */
+    border-radius: 50%;
+    font-size: 6px; /* More compact font size */
+    color: #fff;
+    font-weight: bold;
+    text-shadow: none;
+  }
+  .energy-fire {
+    background: #ff5f1f;
+    box-shadow: 0 0 3px rgba(255, 95, 31, 0.6);
+  }
+  .energy-water {
+    background: #31f8ff;
+    color: #111;
+    box-shadow: 0 0 3px rgba(49, 248, 255, 0.6);
+  }
+  .energy-code {
+    background: #09ee96;
+    color: #111;
+  }
+  .energy-brain {
+    background: #d031ff;
+  }
+  .energy-colorless {
+    background: #777;
+    font-size: 5px;
+  }
+
+  .attack-name {
+    font-weight: 700;
+    font-size: 10px; /* More compact font size */
+    color: #fff;
+  }
+
+  .attack-damage {
+    float: right;
+    font-weight: 800;
+    font-size: 10px; /* More compact font size */
+    color: #09ee96;
+  }
+
+  .attack-desc {
+    font-size: 8px; /* More compact font size */
+    color: #ddd;
+    line-height: 1.2;
+    margin-top: 1px;
+  }
+
+  .poke-footer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 7px; /* More compact font size */
+    color: #bbb;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 4px;
+    text-transform: uppercase;
+    text-shadow: none;
+  }
+
+  .poke-footer .stat {
+    display: flex;
+    align-items: center;
+    gap: 2px;
   }
 
   /* Flexible Container for Project Images */
@@ -335,9 +596,55 @@ body.page-loaded {
 <div style="display: flex; align-items: center; justify-content: center; gap: 20px; width: 100%;">
 
 <!-- 3D Profile Image Container -->
-<div class="tilt-container profile-tilt" style="width: 240px; height: 300px; margin: 0; flex-shrink: 0; perspective: 1000px;">
-  <div class="tilt-card profile-card">
-    <img src="assets/img/me.png" alt="Profile" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" />
+<div class="tilt-container profile-tilt" style="width: 220px; height: 300px; margin: 0; flex-shrink: 0; perspective: 1000px;">
+  <div class="tilt-card profile-card pokemon-style">
+    <!-- Full Background Photo -->
+    <img class="poke-bg-img" src="assets/img/me.png" alt="Profile" style="pointer-events: none;" />
+    
+    <!-- Hover Text Overlay -->
+    <div class="poke-info-overlay">
+      <!-- Card Header -->
+      <div class="card-header-poke">
+        <span class="poke-name">Shamit Ahmed</span>
+        <span class="poke-hp">180 HP <span class="energy-icon energy-fire"><i class="fas fa-fire"></i></span></span>
+      </div>
+      
+      <!-- Species/Info Bar -->
+      <div class="poke-info-bar">
+        NO. 001 Game Programmer HT: 5'11" WT: 155 lbs.
+      </div>
+      
+      <!-- Card Body (Attacks) -->
+      <div class="poke-body">
+        <div class="poke-attack">
+          <span class="attack-cost">
+            <span class="energy-icon energy-fire"><i class="fas fa-fire"></i></span>
+            <span class="energy-icon energy-code"><i class="fas fa-code"></i></span>
+          </span>
+          <span class="attack-name">Rapid Prototype</span>
+          <span class="attack-damage">50+</span>
+          <div class="attack-desc">Builds playable builds in Unity/UE. Deals +30 if caffeine is active.</div>
+        </div>
+        
+        <div class="poke-attack">
+          <span class="attack-cost">
+            <span class="energy-icon energy-fire"><i class="fas fa-fire"></i></span>
+            <span class="energy-icon energy-brain"><i class="fas fa-brain"></i></span>
+          </span>
+          <span class="attack-name">HCI Research</span>
+          <span class="attack-damage">80</span>
+          <div class="attack-desc">Analyzes game UX, exergames & XR designs with scientific precision.</div>
+        </div>
+      </div>
+      
+      <!-- Card Footer -->
+      <div class="poke-footer">
+        <div class="stat">weakness <span class="energy-icon energy-water"><i class="fas fa-tint"></i></span> x2</div>
+        <div class="stat">resistance <span class="energy-icon energy-code"><i class="fas fa-bug"></i></span> -30</div>
+        <div class="stat">retreat <span class="energy-icon energy-colorless"><i class="fas fa-circle"></i></span></div>
+      </div>
+    </div>
+    
     <div class="glare"></div>
   </div>
 </div>
