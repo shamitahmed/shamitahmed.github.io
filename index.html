@@ -480,7 +480,8 @@ body.page-loaded {
   .project-tilt {
     perspective: 1000px;
     width: 100%;
-    margin-bottom: 15px; /* Adds a little breathing room below the GIF */
+    max-width: 350px; /* Constrain size on larger screens */
+    margin: 0 auto 15px auto; /* Centered layout for responsive stack */
   }
 
   .project-card {
@@ -499,7 +500,8 @@ body.page-loaded {
   .project-card img {
     display: block;
     height: 200px;
-    width: 350px;
+    width: 100%; /* Spans 100% of parent container */
+    max-width: 350px; /* Constraints maximum width */
     object-fit: cover;
     pointer-events: none; /* Crucial for the mouse tracking to work */
   }
@@ -594,7 +596,7 @@ body.page-loaded {
        
       <div class="matha"> 
 
-<div style="display: flex; align-items: center; justify-content: center; gap: 20px; width: 100%;">
+<div class="about-flex" style="display: flex; align-items: center; justify-content: center; gap: 20px; width: 100%;">
 
 <!-- 3D Profile Image Container -->
 <div class="tilt-container profile-tilt" style="width: 220px; height: 300px; margin: 0; flex-shrink: 0; perspective: 1000px;">
