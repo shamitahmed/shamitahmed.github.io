@@ -2529,6 +2529,26 @@ img[onclick^="openModal"]:hover {
   opacity: 1;
 }
 
+.pub-tag {
+  position: absolute;
+  top: 8px;
+  left: 0;
+  background-color: #0c399b; /* Deep blue background */
+  color: #ffffff !important;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 0 4px 4px 0;
+  z-index: 5;
+  font-family: 'Inter', sans-serif !important;
+  pointer-events: none;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.pub-tag.in-review {
+  background-color: #ff7a00; /* Vibrant orange background for in-review */
+}
+
 /* Responsive Mobile Adjustments */
 @media (max-width: 991px) {
   /* Footer Image centering on mobile */
