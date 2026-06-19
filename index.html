@@ -77,9 +77,23 @@ body.page-loaded {
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           background-clip: text;
-          color: transparent;">✦SHAMIT AHMED</a>
+          color: transparent;"><span class="rotating-star">✦</span>SHAMIT AHMED</a>
       </h1>
       <style>
+        .rotating-star {
+          display: inline-block;
+          animation: spinStar 6s linear infinite;
+          transform-origin: center;
+          color: white;
+          -webkit-text-fill-color: white;
+          vertical-align: 0.0em;
+          margin-right: 3px;
+          line-height: 1;
+        }
+        @keyframes spinStar {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
         @keyframes gradientMove {
           0% { background-position: 0% 50%; }
           50% { background-position: 100% 50%; }
