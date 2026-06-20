@@ -81,6 +81,7 @@ body.light {
     radial-gradient(ellipse 50% 100% at 0% 50%,   rgba(180, 220, 255, 0.7)  0%, transparent 70%),
     radial-gradient(ellipse 50% 100% at 100% 50%,  rgba(180, 220, 255, 0.7)  0%, transparent 70%),
     linear-gradient(90deg, #daeeff 0%, #ffffff 50%, #daeeff 100%) !important;
+  color: #212121 !important;
 }
 
 body.light .title,
@@ -93,13 +94,63 @@ body.light h6,
 body.light ul,
 body.light a,
 body.light p,
-body.light .project-number-badge {
+body.light .project-number-badge,
+body.light .description {
   color: #212121 !important;
 }
 
-/* body.light a {
-  color: #0800ff !important;
-} */
+/* Custom theme overrides for specific elements in light mode */
+body.light .category-btn {
+  color: white !important;
+}
+
+body.light .site-footer a,
+body.light .site-footer p,
+body.light .site-footer .btn-download {
+  color: white !important;
+}
+
+body.light .site-footer a:hover,
+body.light .site-footer i:hover,
+body.light .site-footer span:hover {
+  color: yellow !important;
+}
+
+body.light .acquiredSkills-item span:not(.pub-tag),
+body.light #resume span,
+body.light .news-timeline span {
+  color: #212121 !important;
+  border-color: rgba(33, 33, 33, 0.3) !important;
+}
+
+body.light .acquiredSkills-item h4 a {
+  color: #10199d !important;
+}
+
+body.light .news-content a {
+  color: #ff7a00 !important;
+}
+
+body.light .news-item {
+  background: rgba(0, 0, 0, 0.03) !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+body.light .news-item:hover {
+  background: rgba(0, 0, 0, 0.05) !important;
+  border-color: rgba(255, 122, 0, 0.5) !important;
+}
+
+body.light a:hover,
+body.light span:not(.rotating-star):not(.pub-tag):hover,
+body.light i:hover {
+  color: #1a93fd !important;
+}
+
+body.light .nav-menu a:hover,
+body.light .nav-menu li:hover > a {
+  color: yellow !important;
+}
 
 body.light .projectheader{
   background-color: rgba(255, 255, 255, 0);
@@ -206,7 +257,7 @@ h4,
 h5,
 h6,
 a,
-body.light {
+body {
   font-family: 'Raleway', sans-serif;
   /* color: #fdc576 !important; */
   color: white !important;
