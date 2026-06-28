@@ -50,7 +50,7 @@
     .featured-project {
       opacity: 0;
       will-change: transform, opacity;
-      transition: transform 1.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 1.8s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: transform 3.2s cubic-bezier(0.05, 0.7, 0.1, 1.0), opacity 3.2s cubic-bezier(0.05, 0.7, 0.1, 1.0);
     }
     .featured-project-left {
       transform: translate3d(-150px, 0, 0);
@@ -2522,13 +2522,16 @@ document.querySelectorAll('a').forEach(link => {
     });
     
     featuredProjects.forEach((project, index) => {
-      project.classList.add('featured-project');
-      if (index % 2 === 0) {
-        project.classList.add('featured-project-left');
-      } else {
-        project.classList.add('featured-project-right');
+      const innerRow = project.querySelector('.row');
+      if (innerRow) {
+        innerRow.classList.add('featured-project');
+        if (index % 2 === 0) {
+          innerRow.classList.add('featured-project-left');
+        } else {
+          innerRow.classList.add('featured-project-right');
+        }
+        observer.observe(innerRow);
       }
-      observer.observe(project);
     });
   });
 </script>
