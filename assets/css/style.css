@@ -2443,7 +2443,7 @@ img[onclick^="openModal"] {
 }
 
 img[onclick^="openModal"]:hover {
-  transform: scale(1.08);
+  transform: scale(1.08) rotate(-2deg);
   filter: brightness(1.1);
   box-shadow: 0 10px 25px rgba(49, 248, 255, 0.35); /* Subtle neon cyan/blue glow shadow */
   z-index: 5;
