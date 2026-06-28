@@ -42,6 +42,34 @@
     body { zoom: 0.9; }
     .box {display:flex;}
     mode-viewer {width: 800px; height: 500px; margin:0, auto}
+
+    /* Featured Projects side scrolling animation */
+    #portfolio {
+      overflow-x: hidden;
+    }
+    .featured-project {
+      opacity: 0;
+      will-change: transform, opacity;
+      transition: transform 1.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 1.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .featured-project-left {
+      transform: translate3d(-150px, 0, 0);
+    }
+    .featured-project-right {
+      transform: translate3d(150px, 0, 0);
+    }
+    .featured-project.show-on-scroll {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+    @media (max-width: 768px) {
+      .featured-project-left {
+        transform: translate3d(-40px, 0, 0);
+      }
+      .featured-project-right {
+        transform: translate3d(40px, 0, 0);
+      }
+    }
   </style>
   <!-- <style>
   /* Fade animation */
@@ -668,7 +696,7 @@ body.page-loaded {
 </div>
 
   <p style="font-size: 14px; width: 40%; margin: 0;">
-    Hey, I am Shamit! A multidisciplinary programmer and researcher with <strong>4 years of game industry experience</strong> currently based in Finland.
+    Hey, I am Shamit! A multidisciplinary programmer and HCI researcher with <strong>4 years of game industry experience</strong> currently based in Finland.
     <br><br>
     I recently completed my <strong style="color: rgb(232, 166, 0) !important">Master of Science</strong> degree in Computer, Communication and Information Sciences (CCIS) <strong><a href="https://www.aalto.fi/en" style="color: rgb(232, 166, 0) !important"> with honours at 
     Aalto University</a></strong>,
@@ -2472,6 +2500,35 @@ document.querySelectorAll('a').forEach(link => {
       card.style.transition = 'transform 0.5s ease-out, box-shadow 0.5s ease-out';
       card.style.transform = `rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
       card.style.boxShadow = `0 10px 30px rgba(0, 0, 0, 0.3)`;
+    });
+  });
+</script>
+
+<script>
+  // Featured Projects Scroll Animation
+  document.addEventListener("DOMContentLoaded", function() {
+    const featuredProjects = document.querySelectorAll('.portfolio-container > .col-12.portfolio-item');
+    
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show-on-scroll');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: "0px 0px -50px 0px"
+    });
+    
+    featuredProjects.forEach((project, index) => {
+      project.classList.add('featured-project');
+      if (index % 2 === 0) {
+        project.classList.add('featured-project-left');
+      } else {
+        project.classList.add('featured-project-right');
+      }
+      observer.observe(project);
     });
   });
 </script>
