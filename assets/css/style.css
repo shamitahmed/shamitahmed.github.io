@@ -34,7 +34,7 @@ body {
 .toggle-label {
   width: 60px;
   height: 30px;
-  background: #0d016e;
+  background: #12488a;
   border-radius: 50px;
   display: flex;
   align-items: center;
@@ -124,7 +124,7 @@ body.light .news-timeline span {
 }
 
 body.light .acquiredSkills-item h4 a {
-  color: #10199d !important;
+  color: #1a73e8 !important;
 }
 
 body.light .news-content a {
@@ -209,7 +209,7 @@ body.light #header{
 }
 body.light .site-footer
 {
-  background-color:#10199d;
+  background-color:#1a73e8;
 }
 body.light .acquiredSkills-container{
   display: inline-flex !important;
@@ -267,7 +267,7 @@ body {
   height: 24px !important;
 } */
 h2 {
-  color: #31f8ff !important;
+  color: #3399ff !important;
 }
 .ss:hover{
   height: 200%;
@@ -423,7 +423,7 @@ h2 {
   border-radius: 50px;
   right: 15px;
   bottom: 15px;
-  background: #10199d;
+  background: #1a73e8;
   /*background: linear-gradient(0deg,  rgb(53, 56, 59) 0%, rgb(82, 91, 155) 78%); */
   color: #fff;
   transition: display 0.5s ease-in-out;
@@ -568,7 +568,7 @@ width: 100%;
 height: 60px;      /* adjust as needed for top bar */
 padding: 0 20px;   /* horizontal padding */
 z-index: 9999;
-background: #10199d;
+background: #1a73e8;
 display: flex;
 flex-direction: column;
 animation: bg-animation 15s infinite;
@@ -2212,7 +2212,7 @@ padding-bottom:50px;
   bottom: 0;
   width: 300px;
   z-index: 9999;
-  background: #10199d;
+  background: #1a73e8;
 }
 
 #footer .copyright {
@@ -2270,7 +2270,7 @@ border: 0px !important;
 }
 .site-footer
 {
-  background-color:#10199d;
+  background-color:#1a73e8;
   padding:20px 20px;
   font-size:15px;
   line-height:24px;
