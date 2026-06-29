@@ -380,6 +380,14 @@ h2 {
   max-width: 95%;
   max-height: 90vh;
 }
+
+/* Portrait Large Forced Size */
+.portrait-large {
+  width: 550px !important;
+  height: 785px !important;
+  max-width: 95%;
+  max-height: 90vh;
+}
 /* The Close Button */
 .close-btn {
   position: absolute;
