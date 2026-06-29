@@ -2752,3 +2752,16 @@ img[onclick^="openModal"]:hover {
   background: linear-gradient(135deg, #5e059a 0%, #9b30ff 100%) !important;
 }
 
+
+@media (max-width: 992px) {
+  .about-arrow {
+    display: none !important;
+  }
+  #header .social-links a {
+    display: none !important;
+  }
+  #header .social-links {
+    margin-right: 40px !important;
+  }
+}
+
