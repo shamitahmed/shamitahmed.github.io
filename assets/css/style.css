@@ -99,6 +99,13 @@ body.light .description {
   color: #212121 !important;
 }
 
+body.light h2 {
+  background: none;
+  -webkit-background-clip: initial;
+  -webkit-text-fill-color: #212121;
+  animation: none;
+}
+
 /* Custom theme overrides for specific elements in light mode */
 body.light .category-btn {
   color: white !important;
@@ -267,7 +274,22 @@ body {
   height: 24px !important;
 } */
 h2 {
-  color: #3399ff !important;
+  background: linear-gradient(to right, #3399ff 0%, #3399ff 45%, #00e5ff 50%, #3399ff 55%, #3399ff 100%);
+  background-size: 200% auto;
+  color: transparent !important;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: blueGradientAnim 4s linear infinite;
+}
+
+@keyframes blueGradientAnim {
+  0% {
+    background-position: 200% center;
+  }
+  100% {
+    background-position: 0% center;
+  }
 }
 .ss:hover{
   height: 200%;
