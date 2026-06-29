@@ -2724,3 +2724,31 @@ img[onclick^="openModal"]:hover {
 
 
 
+
+.btn-pill {
+  display: inline-block;
+  border-radius: 20px !important;
+  color: white !important;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+  border: none;
+  padding: 6px 14px;
+  font-size: 14px;
+}
+.btn-pill:hover {
+  transform: scale(1.05) !important;
+}
+.btn-pill-green {
+  background: linear-gradient(135deg, #059a3e 0%, #16b850 100%) !important;
+}
+.btn-pill-red {
+  background: linear-gradient(135deg, #c73727 0%, #ff5e4d 100%) !important;
+}
+
+
+.btn-pill-purple {
+  background: linear-gradient(135deg, #5e059a 0%, #9b30ff 100%) !important;
+}
+
