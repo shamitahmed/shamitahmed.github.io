@@ -697,12 +697,39 @@ body.page-loaded {
 
   <p style="font-size: 14px; width: 40%; margin: 0;">
     <span style="font-size: 28px; font-weight: bold; position: relative; display: inline-block; margin-bottom: 8px;">
-      Hey, I am Shamit!
+      <span id="dynamic-greeting" style="display: inline-block;">Hello! I am Shamit</span>
       <svg class="about-arrow" width="80" height="80" viewBox="0 0 100 100" style="position: absolute; left: -90px; top: 10px; pointer-events: none; overflow: visible;">
         <path d="M 10 90 Q 40 50 90 20" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" />
         <path d="M 65 15 L 90 20 L 80 45" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
     </span>
+    <script>
+      (function() {
+        const greetings = [
+          "Hello! I am Shamit",
+          "Moi! Olen Shamit",
+          "হ্যালো! আমি শামিত"
+        ];
+        let index = 0;
+        const greetingEl = document.getElementById("dynamic-greeting");
+        if (greetingEl) {
+          greetingEl.style.transition = "opacity 0.4s ease, transform 0.4s ease";
+          setInterval(() => {
+            greetingEl.style.opacity = "0";
+            greetingEl.style.transform = "translateY(-6px)";
+            setTimeout(() => {
+              index = (index + 1) % greetings.length;
+              greetingEl.textContent = greetings[index];
+              greetingEl.style.transform = "translateY(6px)";
+              setTimeout(() => {
+                greetingEl.style.opacity = "1";
+                greetingEl.style.transform = "translateY(0px)";
+              }, 50);
+            }, 400);
+          }, 3000);
+        }
+      })();
+    </script>
     <br>A multidisciplinary programmer and HCI researcher with <strong>4 years of game industry experience</strong> currently based in Finland.
     <br><br>
     I recently completed my <strong style="color: rgb(232, 166, 0) !important">Master of Science</strong> degree in Computer, Communication and Information Sciences (CCIS) <strong><a href="https://www.aalto.fi/en" style="color: rgb(232, 166, 0) !important"> with honours at 
@@ -1242,7 +1269,7 @@ document.addEventListener('keydown', function(event) {
     
 <div class="section-title" style="margin-bottom: 30px;">
       <h2 style="font-weight: bold; margin-bottom: 12px;">✦PUBLICATIONS</h2>
-      <a href="https://scholar.google.com/citations?user=oVsW5eUAAAAJ&hl=en" target="_blank" style="display: inline-flex; align-items: center; background-color: #fff; border: 1px solid #dadce0; color: black !important; padding: 8px 16px; border-radius: 24px; text-decoration: none !important; font-size: 0.95rem; font-weight: 500; box-shadow: 0 1px 2px rgba(0,0,0,0.05); transition: background-color 0.2s, box-shadow 0.2s;" onmouseover="this.style.backgroundColor='#f8f9fa'; this.style.boxShadow='0 1px 3px rgba(0,0,0,0.1)';" onmouseout="this.style.backgroundColor='#fff'; this.style.boxShadow='0 1px 2px rgba(0,0,0,0.05)';">
+      <a href="https://scholar.google.com/citations?user=oVsW5eUAAAAJ&hl=en" target="_blank" style="display: inline-flex; align-items: center; background-color: #fff; border: 1px solid #dadce0; color: black !important; padding: 8px 16px; border-radius: 24px; text-decoration: none !important; font-size: 0.95rem; font-weight: 500; box-shadow: 0 1px 2px rgba(0,0,0,0.05); transition: background-color 0.2s, box-shadow 0.2s, transform 0.2s;" onmouseover="this.style.backgroundColor='#f8f9fa'; this.style.boxShadow='0 1px 3px rgba(0,0,0,0.1)'; this.style.transform='scale(1.05)';" onmouseout="this.style.backgroundColor='#fff'; this.style.boxShadow='0 1px 2px rgba(0,0,0,0.05)'; this.style.transform='scale(1)';">
         <svg viewBox="0 0 24 24" width="20" height="20" style="margin-right: 8px;" fill="#4285F4">
           <path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5z"/>
         </svg>
