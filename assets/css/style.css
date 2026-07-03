@@ -2765,3 +2765,8 @@ img[onclick^="openModal"]:hover {
   }
 }
 
+
+.pub-tag.accepted, .pub-tag.green {
+  background: linear-gradient(135deg, #059a3e 0%, #16b850 100%) !important;
+}
+
