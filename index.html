@@ -1675,6 +1675,19 @@ cultural heritage of Indigenous Musical Instruments in Uganda.</p>
   <div class="col-lg-12" data-aos="fade-up">
 
         <div class="resume-item" style="display: flex; align-items: flex-start; margin-bottom: 25px;">
+      <div style="width: 110px; flex-shrink: 0; margin-right: 20px; text-align: center;">
+        <a style="cursor: pointer;" onclick="openModal('assets/img/certs/hygiene_passport.png', 'portrait-large')">
+          <img src="assets/img/certs/hygiene_passport.png" alt="Hygiene Passport" style="max-width: 80px; height: auto; border-radius: 4px; border: 1px solid rgba(255,255,255,0.1);">
+        </a>
+      </div>
+      <div>
+        <h4 style="margin: 0; line-height: 1.2;"><strong>Finnish Food Authority (Ruokavirasto)</strong></h4>
+        <p style="margin: 5px 0 0 0; color: #fff700;">Hygieniapassi / Hygiene Passport Certificate — Score: 40/40</p>
+        <span style="border: 1px solid #ccc; display: inline-block; border-radius: 5px; font-size: 12px; padding: 2px 8px; color: #ffffff;">2026</span>
+      </div>
+    </div>
+
+        <div class="resume-item" style="display: flex; align-items: flex-start; margin-bottom: 25px;">
       <div style="width: 110px; flex-shrink: 0; margin-right: 20px;">
         <a href="assets/img/certs/chibpa.png" target="_blank">
           <img src="assets/img/certs/chibpa.png" alt="CHI BPA 2026" style="max-width: 100%; height: auto; border-radius: 4px;">
@@ -2361,6 +2374,28 @@ cultural heritage of Indigenous Musical Instruments in Uganda.</p>
       <div class="news-timeline" data-aos="fade-up">
         <!-- News Item 1 -->
         <div class="news-item">
+          <div class="news-date">July 2026</div>
+          <div class="news-content">
+            <h4>🎉 Two Co-Authored Papers Accepted at CHI PLAY 2026</h4>
+            <p>
+              Two co-authored papers: 1. "<strong>Elden VR: Strictly Vectionless Virtual Reality Melee Combat</strong>" and 2. "<strong>Reflection at Design Actualization (RDA) : A Tool and Process For Research Through Game Design</strong>" accepted at CHI PLAY 2026.
+            </p>
+          </div>
+        </div>
+
+        <!-- News Item 2 -->
+        <div class="news-item">
+          <div class="news-date">July 2026</div>
+          <div class="news-content">
+            <h4>📝 Passed Finnish Hygiene Passport Exam with 40/40 Score</h4>
+            <p>
+              Successfully passed the Finnish Food Authority (<a href="https://hygieniapassi.fi/" target="_blank" style="color: #ff7a00; font-weight: 600; text-decoration: underline;">Hygieniapassi</a>) basic food hygiene proficiency exam with a perfect score of <strong>40/40</strong>! <a style="color: #34d374; font-weight: 600; cursor: pointer; text-decoration: underline;" onclick="openModal('assets/img/certs/hygiene_passport.png', 'portrait-large')">View Certificate 📄</a>
+            </p>
+          </div>
+        </div>
+
+        <!-- News Item 3 -->
+        <div class="news-item">
           <div class="news-date">May 2026</div>
           <div class="news-content">
             <h4>🔬 User Studies Conducted for 2 HCI Projects</h4>
@@ -2426,6 +2461,66 @@ cultural heritage of Indigenous Musical Instruments in Uganda.</p>
         </div>
 
       </div>
+
+      <div style="text-align: center; margin-top: 25px;">
+        <button id="viewMoreNewsBtn" class="btn-pill btn-pill-green" style="font-size: 15px; padding: 10px 24px; border: none; cursor: pointer;">
+          View More ⬇
+        </button>
+        <button id="viewLessNewsBtn" class="btn-pill btn-pill-purple" style="font-size: 15px; padding: 10px 24px; border: none; cursor: pointer; display: none; margin-left: 10px;">
+          View Less ⬆
+        </button>
+      </div>
+      <script>
+        document.addEventListener("DOMContentLoaded", function() {
+          const newsItems = document.querySelectorAll('.news-timeline .news-item');
+          const viewMoreBtn = document.getElementById('viewMoreNewsBtn');
+          const viewLessBtn = document.getElementById('viewLessNewsBtn');
+          let visibleCount = 5;
+
+          function updateNewsVisibility() {
+            newsItems.forEach((item, index) => {
+              if (index < visibleCount) {
+                item.style.display = '';
+              } else {
+                item.style.display = 'none';
+              }
+            });
+
+            if (viewMoreBtn) {
+              if (visibleCount >= newsItems.length) {
+                viewMoreBtn.style.display = 'none';
+              } else {
+                viewMoreBtn.style.display = 'inline-block';
+              }
+            }
+
+            if (viewLessBtn) {
+              if (visibleCount <= 5) {
+                viewLessBtn.style.display = 'none';
+              } else {
+                viewLessBtn.style.display = 'inline-block';
+              }
+            }
+          }
+
+          updateNewsVisibility();
+
+          if (viewMoreBtn) {
+            viewMoreBtn.addEventListener('click', function() {
+              visibleCount += 5;
+              updateNewsVisibility();
+            });
+          }
+
+          if (viewLessBtn) {
+            viewLessBtn.addEventListener('click', function() {
+              visibleCount = Math.max(5, visibleCount - 5);
+              updateNewsVisibility();
+              document.getElementById('news').scrollIntoView({ behavior: 'smooth' });
+            });
+          }
+        });
+      </script>
     </div>
   </section>
   </main>         
