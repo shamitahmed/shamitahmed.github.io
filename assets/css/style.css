@@ -626,7 +626,7 @@ animation: bg-animation 15s infinite;
 #header .profile h1 {
   font-size: 24px;
   margin: 0;
-  margin-top: 20px !important;
+  margin-top: 8px !important;
   padding: 0;
   font-weight: 600;
   -moz-text-align-last: left;
