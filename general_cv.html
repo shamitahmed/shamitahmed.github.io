@@ -1,0 +1,1307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <!-- SEO Best Practices -->
+  <title>Shamit Ahmed — Curriculum Vitae | Operations & Technical Professional</title>
+  <meta name="description" content="One-page professional CV for Shamit Ahmed. Holds a Finnish Hygiene Passport (40/40 score), eligible for Helsinki Benefit, with an MSc from Aalto University, 4+ years of precision technical experience, and strong interest in supply chain management and cooking.">
+  <meta name="keywords" content="Shamit Ahmed, CV, Resume, Supply Chain Management, Cooking, Hygiene Passport, Hygieniapassi, Helsinki Benefit, Operations, Logistics, Aalto University, Finland">
+  <meta name="author" content="Shamit Ahmed">
+
+  <!-- Favicons -->
+  <link href="assets/img/profile-img.PNG" rel="icon">
+  <link href="assets/img/profile-img.PNG" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    /* ==========================================================================
+       DESIGN SYSTEM & CSS TOKENS (Vanilla CSS - Premium Light Mode w/ Darker Green)
+       ========================================================================== */
+    :root {
+      /* Colors - Arctic Clean with Refined Darker Green Accents */
+      --bg-gradient: linear-gradient(135deg, #f3f6f9 0%, #eef2f6 50%, #e5ebf1 100%);
+      --bg-card: rgba(255, 255, 255, 0.92);
+      --bg-card-hover: rgba(255, 255, 255, 1);
+      --border-color: rgba(0, 0, 0, 0.08);
+      --border-highlight: rgba(20, 108, 67, 0.35);
+      
+      --text-main: #1f2328;
+      --text-muted: #656d76;
+      --text-light: #424a53;
+      
+      --accent-green: #146c43; /* Darker, executive forest/emerald green */
+      --accent-cyan: #0f5132;  /* Deep pine green (replaces colorful blue/purple items) */
+      --accent-gold: #996515;  /* Deep bronze/gold for medal accent */
+      
+      --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+      --glow-green: 0 0 20px rgba(20, 108, 67, 0.12);
+      --glow-gold: 0 0 20px rgba(153, 101, 21, 0.12);
+      
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --radius-full: 9999px;
+      
+      --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-gradient);
+      color: var(--text-main);
+      min-height: 100vh;
+      line-height: 1.6;
+      padding: 30px 20px;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, .font-heading {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    a {
+      color: var(--accent-green);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    a:hover {
+      color: var(--accent-cyan);
+      text-shadow: 0 0 8px rgba(20, 108, 67, 0.2);
+    }
+
+    /* ==========================================================================
+       EXTERNAL PRINT / PDF TOOLBAR (Outside CV, Hidden when printing)
+       ========================================================================== */
+    .print-toolbar {
+      max-width: 1050px;
+      margin: 0 auto 18px auto;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    .print-pdf-btn {
+      background: var(--accent-green);
+      color: #ffffff;
+      border: none;
+      padding: 10px 22px;
+      border-radius: var(--radius-full);
+      font-family: 'Outfit', sans-serif;
+      font-weight: 600;
+      font-size: 0.96rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 4px 15px rgba(20, 108, 67, 0.25);
+      transition: var(--transition);
+    }
+
+    .print-pdf-btn:hover {
+      background: var(--accent-cyan);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(20, 108, 67, 0.38);
+    }
+
+    .print-pdf-btn i {
+      font-size: 1.2rem;
+    }
+
+    .container {
+      max-width: 1050px;
+      margin: 0 auto;
+    }
+
+    /* ==========================================================================
+       HERO & EXECUTIVE HEADER
+       ========================================================================== */
+    .hero-card {
+      background: var(--bg-card);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 35px;
+      margin-bottom: 25px;
+      box-shadow: var(--card-shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, #0a3622, #0f5132, #146c43, #198754);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 140px 1fr auto;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .profile-avatar-wrap {
+      position: relative;
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      padding: 4px;
+      background: linear-gradient(135deg, var(--accent-cyan), var(--accent-green));
+      box-shadow: var(--glow-green);
+      overflow: hidden; /* Ensure zoomed-in photo stays clipped cleanly */
+    }
+
+    /* Increased zoom to focus more directly on the face */
+    .profile-avatar {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center 20%;
+      transform: scale(2.1);
+      transform-origin: center 22%;
+      background: #ffffff;
+      border: 3px solid #ffffff;
+      transition: transform 0.3s ease;
+    }
+
+    .profile-avatar-wrap:hover .profile-avatar {
+      transform: scale(2.2);
+    }
+
+    .hero-info h1 {
+      font-size: 2.4rem;
+      line-height: 1.1;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .hero-info .subtitle {
+      font-size: 1.15rem;
+      color: var(--accent-green);
+      font-weight: 600;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .hero-meta span, .hero-meta a {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--text-light);
+    }
+
+    /* Key Highlights Boxes (Hygiene Passport & Helsinki Benefit) */
+    .hero-highlights {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      min-width: 250px;
+    }
+
+    .highlight-card {
+      background: rgba(20, 108, 67, 0.06);
+      border: 1px solid var(--border-highlight);
+      border-radius: var(--radius-md);
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      transition: var(--transition);
+      box-shadow: var(--glow-green);
+      cursor: pointer;
+    }
+
+    .highlight-card:hover {
+      transform: translateY(-3px) scale(1.02);
+      background: rgba(20, 108, 67, 0.12);
+      border-color: var(--accent-green);
+      box-shadow: 0 8px 25px rgba(20, 108, 67, 0.2);
+    }
+
+    .highlight-card.gold {
+      background: rgba(153, 101, 21, 0.06);
+      border-color: rgba(153, 101, 21, 0.35);
+      box-shadow: var(--glow-gold);
+    }
+
+    .highlight-card.gold:hover {
+      background: rgba(153, 101, 21, 0.12);
+      border-color: var(--accent-gold);
+      box-shadow: 0 8px 25px rgba(153, 101, 21, 0.2);
+    }
+
+    .highlight-icon {
+      font-size: 1.8rem;
+      flex-shrink: 0;
+    }
+
+    .highlight-text h4 {
+      font-size: 0.95rem;
+      color: var(--text-main);
+      margin-bottom: 2px;
+      line-height: 1.2;
+    }
+
+    .highlight-text p {
+      font-size: 0.78rem;
+      color: var(--text-light);
+      line-height: 1.2;
+    }
+
+    /* ==========================================================================
+       MAIN GRID LAYOUT (Equal-Height Column Alignment)
+       ========================================================================== */
+    .cv-grid {
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 25px;
+      align-items: stretch; /* Guarantees both columns stretch to identical total height */
+    }
+
+    .left-col, .right-col {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .card {
+      background: var(--bg-card);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      margin-bottom: 22px;
+      box-shadow: var(--card-shadow);
+      transition: var(--transition);
+    }
+
+    /* Forces Professional Work Experience and Core Competencies to end at exact same bottom height */
+    .left-col .card:last-child,
+    .right-col .card:last-child {
+      flex: 1;
+      margin-bottom: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card:hover {
+      border-color: rgba(0, 0, 0, 0.15);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .section-header i {
+      font-size: 1.15rem;
+      color: var(--accent-green);
+      background: rgba(20, 108, 67, 0.1);
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .section-header h2 {
+      font-size: 1.25rem;
+      color: var(--text-main);
+    }
+
+    /* Executive Summary Text */
+    .summary-text {
+      font-size: 0.96rem;
+      color: var(--text-light);
+      line-height: 1.65;
+    }
+
+    .summary-text strong {
+      color: var(--text-main);
+      font-weight: 600;
+    }
+
+    .summary-text .badge-inline {
+      background: rgba(20, 108, 67, 0.1);
+      color: var(--accent-green);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 0.85em;
+      font-weight: 600;
+      border: 1px solid rgba(20, 108, 67, 0.3);
+      display: inline-block;
+    }
+
+    /* Timeline / Work Experience */
+    .timeline-item {
+      position: relative;
+      padding-left: 26px;
+      margin-bottom: 22px;
+    }
+
+    .timeline-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: 6px;
+      top: 6px;
+      bottom: -22px;
+      width: 2px;
+      background: var(--border-color);
+    }
+
+    .timeline-item:last-child::before {
+      display: none;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: 0;
+      top: 5px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--accent-green);
+      border: 3px solid var(--bg-card);
+      box-shadow: 0 0 10px rgba(20, 108, 67, 0.3);
+    }
+
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 4px;
+    }
+
+    .job-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .job-company {
+      color: var(--accent-green);
+      font-weight: 600;
+      font-size: 0.92rem;
+    }
+
+    .job-date {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      background: rgba(0, 0, 0, 0.04);
+      padding: 2px 10px;
+      border-radius: var(--radius-full);
+      border: 1px solid var(--border-color);
+    }
+
+    .job-desc {
+      font-size: 0.88rem;
+      color: var(--text-light);
+      margin-top: 6px;
+    }
+
+    .job-desc ul {
+      list-style-type: none;
+      padding-left: 0;
+      margin-top: 4px;
+    }
+
+    .job-desc li {
+      position: relative;
+      padding-left: 18px;
+      margin-bottom: 5px;
+      line-height: 1.45;
+    }
+
+    .job-desc li::before {
+      content: "▸";
+      position: absolute;
+      left: 0;
+      color: var(--accent-green);
+      font-weight: bold;
+    }
+
+    /* Skills & Competencies Bars (Compact Spacing) */
+    .skill-group {
+      margin-bottom: 12px;
+    }
+
+    .skill-group:last-child {
+      margin-bottom: 0;
+    }
+
+    .skill-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 4px;
+      font-size: 0.84rem;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .skill-bar-bg {
+      width: 100%;
+      height: 7px;
+      background: rgba(0, 0, 0, 0.08);
+      border-radius: var(--radius-full);
+      overflow: hidden;
+    }
+
+    .skill-bar-fill {
+      height: 100%;
+      border-radius: var(--radius-full);
+      background: linear-gradient(90deg, var(--accent-cyan), var(--accent-green));
+      transition: width 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .skill-bar-fill.gold {
+      background: linear-gradient(90deg, #996515, #b45309);
+    }
+
+    /* Tag Grids (Side-by-side to save vertical height) */
+    .tag-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+      margin-top: 6px;
+    }
+
+    .tag-grid-3 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 6px;
+      margin-top: 6px;
+    }
+
+    .tag-pill {
+      background: #f8f9fa;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      color: var(--text-light);
+      padding: 4px 8px;
+      border-radius: var(--radius-sm);
+      font-size: 0.75rem;
+      font-weight: 500;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .tag-pill:hover {
+      background: rgba(20, 108, 67, 0.1);
+      border-color: var(--accent-green);
+      color: var(--text-main);
+      transform: translateY(-2px);
+    }
+
+    .tag-pill i {
+      color: var(--accent-green);
+      font-size: 0.85em;
+      flex-shrink: 0;
+    }
+
+    /* Education Item (Compact Spacing) */
+    .edu-item {
+      margin-bottom: 12px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .edu-item:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+
+    .edu-degree {
+      font-size: 0.94rem;
+      font-weight: 700;
+      color: var(--text-main);
+      line-height: 1.25;
+    }
+
+    .edu-school {
+      color: var(--accent-green);
+      font-size: 0.84rem;
+      font-weight: 600;
+      margin-top: 2px;
+    }
+
+    .edu-meta {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      margin-top: 3px;
+    }
+
+    /* Modal for Certificate Preview */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 100000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .modal.show {
+      display: flex;
+      opacity: 1;
+    }
+
+    .modal-content {
+      max-width: 90%;
+      max-height: 85vh;
+      border-radius: var(--radius-md);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+      border: 2px solid var(--border-color);
+      transform: scale(0.9);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .modal.show .modal-content {
+      transform: scale(1);
+    }
+
+    .close-modal {
+      position: absolute;
+      top: 25px;
+      right: 35px;
+      color: #fff;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: var(--transition);
+      z-index: 100001;
+    }
+
+    .close-modal:hover {
+      color: var(--accent-green);
+      transform: scale(1.1);
+    }
+
+    /* ==========================================================================
+       RESPONSIVE BREAKPOINTS (Web)
+       ========================================================================== */
+    @media (max-width: 900px) {
+      .cv-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      
+      .profile-avatar-wrap {
+        margin: 0 auto;
+      }
+      
+      .hero-info h1, .hero-info .subtitle {
+        justify-content: center;
+      }
+      
+      .hero-meta {
+        justify-content: center;
+      }
+      
+      .hero-highlights {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 15px 10px;
+      }
+      
+      .hero-card, .card {
+        padding: 20px;
+      }
+      
+      .job-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    /* ==========================================================================
+       PRINT / 1-PAGE PDF STYLES (@media print)
+       CRITICAL: Formats the entire CV onto exactly ONE physical A4 / Letter page!
+       ========================================================================== */
+    @media print {
+      @page {
+        size: A4 portrait;
+        margin: 10mm 12mm; /* Ultra tight margins to guarantee 1-page fit */
+      }
+
+      body {
+        background: #ffffff !important;
+        color: #1a1a1a !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        font-family: 'Inter', Helvetica, Arial, sans-serif !important;
+        font-size: 9.5pt !important;
+        line-height: 1.35 !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+
+      /* Hide Web UI Elements & External Toolbar */
+      .modal,
+      .no-print {
+        display: none !important;
+      }
+
+      .container {
+        max-width: 100% !important;
+        width: 100% !important;
+        margin: 0 !important;
+      }
+
+      /* Flatten Hero Header */
+      .hero-card {
+        background: #f8f9fa !important;
+        border: 1px solid #d1d5db !important;
+        border-radius: 6px !important;
+        padding: 12px 16px !important;
+        margin-bottom: 12px !important;
+        box-shadow: none !important;
+      }
+
+      .hero-card::before {
+        height: 3px !important;
+        background: #146c43 !important;
+      }
+
+      .hero-grid {
+        grid-template-columns: 80px 1fr 200px !important;
+        gap: 15px !important;
+        align-items: center !important;
+      }
+
+      .profile-avatar-wrap {
+        width: 80px !important;
+        height: 80px !important;
+        padding: 2px !important;
+        background: #146c43 !important;
+        box-shadow: none !important;
+        overflow: hidden !important;
+      }
+
+      /* Increased zoom on face in print view as well */
+      .profile-avatar {
+        transform: scale(2.1) !important;
+        transform-origin: center 22% !important;
+        object-position: center 20% !important;
+        border: 2px solid #fff !important;
+      }
+
+      .hero-info h1 {
+        font-size: 18pt !important;
+        color: #111827 !important;
+        margin-bottom: 2px !important;
+      }
+
+      .hero-info .subtitle {
+        font-size: 10.5pt !important;
+        color: #146c43 !important;
+        margin-bottom: 6px !important;
+      }
+
+      .hero-meta {
+        font-size: 8.5pt !important;
+        gap: 10px !important;
+        color: #4b5563 !important;
+      }
+
+      .hero-meta span, .hero-meta a {
+        color: #374151 !important;
+      }
+
+      /* Print Highlights (Hygiene Passport & Benefit) */
+      .hero-highlights {
+        gap: 6px !important;
+        min-width: 190px !important;
+      }
+
+      .highlight-card {
+        background: #f0fdf4 !important;
+        border: 1px solid #146c43 !important;
+        padding: 6px 10px !important;
+        border-radius: 4px !important;
+        box-shadow: none !important;
+      }
+
+      .highlight-card.gold {
+        background: #fffbeb !important;
+        border-color: #996515 !important;
+      }
+
+      .highlight-icon {
+        font-size: 14pt !important;
+      }
+
+      .highlight-text h4 {
+        font-size: 8.5pt !important;
+        color: #111827 !important;
+      }
+
+      .highlight-text p {
+        font-size: 7.5pt !important;
+        color: #4b5563 !important;
+      }
+
+      /* 2-Column Print Layout */
+      .cv-grid {
+        display: grid !important;
+        grid-template-columns: 1fr 240px !important;
+        gap: 15px !important;
+        align-items: stretch !important;
+      }
+
+      .left-col, .right-col {
+        display: flex !important;
+        flex-direction: column !important;
+        height: 100% !important;
+      }
+
+      .card {
+        background: transparent !important;
+        border: none !important;
+        padding: 0 !important;
+        margin-bottom: 12px !important;
+        box-shadow: none !important;
+      }
+
+      .left-col .card:last-child,
+      .right-col .card:last-child {
+        flex: 1 !important;
+        margin-bottom: 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+      }
+
+      .section-header {
+        margin-bottom: 8px !important;
+        padding-bottom: 4px !important;
+        border-bottom: 1.5px solid #111827 !important;
+        gap: 6px !important;
+      }
+
+      .section-header i {
+        font-size: 10pt !important;
+        width: 22px !important;
+        height: 22px !important;
+        background: #f0fdf4 !important;
+        color: #146c43 !important;
+        border-radius: 4px !important;
+      }
+
+      .section-header h2 {
+        font-size: 11.5pt !important;
+        color: #111827 !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.5px !important;
+      }
+
+      .summary-text {
+        font-size: 9pt !important;
+        color: #374151 !important;
+        line-height: 1.4 !important;
+      }
+
+      .summary-text .badge-inline {
+        background: #f0fdf4 !important;
+        color: #146c43 !important;
+        border: 1px solid #146c43 !important;
+        padding: 1px 4px !important;
+      }
+
+      /* Work Experience Print */
+      .timeline-item {
+        padding-left: 16px !important;
+        margin-bottom: 10px !important;
+      }
+
+      .timeline-item::before {
+        left: 3px !important;
+        top: 4px !important;
+        bottom: -10px !important;
+        background: #d1d5db !important;
+      }
+
+      .timeline-dot {
+        left: 0 !important;
+        top: 3px !important;
+        width: 8px !important;
+        height: 8px !important;
+        background: #146c43 !important;
+        border: 1px solid #fff !important;
+        box-shadow: none !important;
+      }
+
+      .job-header {
+        margin-bottom: 2px !important;
+      }
+
+      .job-title {
+        font-size: 9.5pt !important;
+        color: #111827 !important;
+      }
+
+      .job-company {
+        font-size: 9pt !important;
+        color: #146c43 !important;
+      }
+
+      .job-date {
+        font-size: 8pt !important;
+        color: #4b5563 !important;
+        background: transparent !important;
+        padding: 0 !important;
+        border: none !important;
+      }
+
+      .job-desc {
+        font-size: 8.5pt !important;
+        color: #374151 !important;
+        margin-top: 3px !important;
+      }
+
+      .job-desc li {
+        padding-left: 12px !important;
+        margin-bottom: 2px !important;
+        line-height: 1.3 !important;
+      }
+
+      /* Sidebar Print (Skills, Edu, Achievements) */
+      .skill-group {
+        margin-bottom: 8px !important;
+      }
+
+      .skill-header {
+        font-size: 8.5pt !important;
+        margin-bottom: 2px !important;
+        color: #111827 !important;
+      }
+
+      .skill-bar-bg {
+        height: 5px !important;
+        background: #e5e7eb !important;
+      }
+
+      .skill-bar-fill {
+        background: #146c43 !important;
+      }
+
+      .skill-bar-fill.gold {
+        background: #996515 !important;
+      }
+
+      /* Tag Grids in Print */
+      .tag-grid-2 {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 4px !important;
+        margin-top: 4px !important;
+      }
+
+      .tag-grid-3 {
+        grid-template-columns: 1fr 1fr 1fr !important;
+        gap: 4px !important;
+        margin-top: 4px !important;
+      }
+
+      .tag-pill {
+        background: #f3f4f6 !important;
+        border: 1px solid #d1d5db !important;
+        color: #1f2328 !important;
+        padding: 2px 4px !important;
+        font-size: 7.2pt !important;
+        border-radius: 4px !important;
+      }
+
+      .edu-item {
+        margin-bottom: 8px !important;
+        padding-bottom: 8px !important;
+        border-bottom: 1px solid #e5e7eb !important;
+      }
+
+      .edu-degree {
+        font-size: 9pt !important;
+        color: #111827 !important;
+      }
+
+      .edu-school {
+        font-size: 8.5pt !important;
+        color: #146c43 !important;
+      }
+
+      .edu-meta {
+        font-size: 7.5pt !important;
+        color: #656d76 !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ==========================================================================
+       EXTERNAL PRINT / PDF TOOLBAR (Sits outside CV, hides when printing)
+       ========================================================================== -->
+  <div class="no-print print-toolbar">
+    <button onclick="window.print()" class="print-pdf-btn" title="Save as 1-Page PDF or Print">
+      <i class="fa-solid fa-file-pdf"></i> Download / Print 1-Page PDF
+    </button>
+  </div>
+
+  <!-- ==========================================================================
+       MAIN CV CONTAINER
+       ========================================================================== -->
+  <div class="container">
+
+    <!-- HERO HEADER -->
+    <header class="hero-card">
+      <div class="hero-grid">
+        <!-- Profile Avatar (Zoomed in directly on face) -->
+        <div class="profile-avatar-wrap" title="Shamit Ahmed">
+          <img class="profile-avatar" src="assets/img/me.png" alt="Shamit Ahmed Profile">
+        </div>
+
+        <!-- Bio & Contact Info -->
+        <div class="hero-info">
+          <h1>Shamit Ahmed</h1>
+          <div class="subtitle">
+            <i class="fa-solid fa-briefcase"></i> Operations, Production & Technical Professional
+          </div>
+          <div class="hero-meta">
+            <span><i class="fa-solid fa-location-dot"></i> Helsinki, Finland (Eligible to work)</span>
+            <a href="mailto:shamitaditta380@gmail.com"><i class="fa-solid fa-envelope"></i> shamitaditta380@gmail.com</a>
+            <a href="https://www.linkedin.com/in/shamitahmed/" target="_blank"><i class="fa-brands fa-linkedin"></i> linkedin.com/in/shamitahmed</a>
+            <a href="https://github.com/shamitahmed" target="_blank"><i class="fa-brands fa-github"></i> github.com/shamitahmed</a>
+          </div>
+        </div>
+
+        <!-- Key Qualifications Highlights (Hygiene & Benefit) -->
+        <div class="hero-highlights">
+          <!-- Hygiene Passport Badge -->
+          <div class="highlight-card gold" onclick="openCertModal('assets/img/certs/hygiene_passport.png')" title="Click to view official certificate">
+            <div class="highlight-icon">🏆</div>
+            <div class="highlight-text">
+              <h4>Hygiene Passport: 40/40</h4>
+              <p>Finnish Food Authority (Ruokavirasto) <br><strong style="color: var(--accent-gold);">Perfect Score (2026)</strong></p>
+            </div>
+          </div>
+
+          <!-- Helsinki Benefit Badge -->
+          <div class="highlight-card" onclick="openCertModal('assets/img/helsinki_benefit_card.png')" title="Click to view benefit eligibility">
+            <div class="highlight-icon">💶</div>
+            <div class="highlight-text">
+              <h4>Helsinki Benefit Eligible</h4>
+              <p>Employer qualifies for financial <br>hiring subsidy (Helsinki-lisä)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- 2-COLUMN MODULAR GRID -->
+    <div class="cv-grid">
+
+      <!-- LEFT COLUMN: PROFILE & PROFESSIONAL EXPERIENCE -->
+      <main class="left-col">
+
+        <!-- ABOUT ME -->
+        <section class="card">
+          <div class="section-header">
+            <i class="fa-solid fa-user-check"></i>
+            <h2>About Me</h2>
+          </div>
+          <p class="summary-text">
+            I am a reliable, high-energy, and precision-oriented professional with a <strong>Master of Science with Honours from Aalto University</strong> and over <strong>4 years of professional work experience</strong> in fast-paced research, technical, and collaborative team environments. 
+            <br><br>
+            I hold an official <strong>Finnish Food Authority Hygiene Passport with a perfect 40/40 score</strong> and am <span class="badge-inline">Eligible for the Helsinki Benefit</span>. I have a genuine passion for <strong>cooking</strong>, <strong>food production</strong>, and <strong>supply chain management</strong>, combined with strict adherence to quality assurance, safety standards, and operational efficiency. As an avid marathon runner and long-distance cyclist, I bring high physical stamina, strong discipline, and a proactive, hands-on work ethic to general operations, logistics, and production roles.
+          </p>
+        </section>
+
+        <!-- WORK EXPERIENCE -->
+        <section class="card">
+          <div class="section-header">
+            <i class="fa-solid fa-history"></i>
+            <h2>Professional Work Experience</h2>
+          </div>
+
+          <div class="timeline">
+
+            <!-- Aalto University -->
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="job-header">
+                <div>
+                  <span class="job-title">Research Assistant & Student Tutor</span>
+                  <span class="job-company">@ Aalto University (Espoo, Finland)</span>
+                </div>
+                <span class="job-date">Mar 2024 – Dec 2025</span>
+              </div>
+              <div class="job-desc">
+                <ul>
+                  <li><strong>Precision Quality Control & Research:</strong> Conducted rigorous user studies, data collection, and system testing across 4 independent projects in high-paced research teams, resulting in publications at top international conferences (CHI 2026 Best Paper Award).</li>
+                  <li><strong>Team Leadership & Cross-Cultural Communication:</strong> Tutored, guided, and onboarded 15 international exchange students during Autumn 2024, ensuring smooth integration, clear instructions, and collaborative problem-solving.</li>
+                  <li><strong>Process Optimization:</strong> Managed strict documentation, project timelines, and technical equipment setups with zero error tolerance.</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Playense -->
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="job-header">
+                <div>
+                  <span class="job-title">Senior Software / Game Developer</span>
+                  <span class="job-company">@ Playense</span>
+                </div>
+                <span class="job-date">Sep 2022 – Jun 2023</span>
+              </div>
+              <div class="job-desc">
+                <ul>
+                  <li><strong>High-Stakes Technical Execution:</strong> Successfully developed and shipped 5+ commercial software projects under tight production deadlines while maintaining exceptional code reliability and system performance.</li>
+                  <li><strong>Multidisciplinary Teamwork:</strong> Collaborated daily with product managers, designers, and quality assurance specialists to troubleshoot bottlenecks, streamline production pipelines, and ensure seamless product delivery.</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Free Pixel Games -->
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="job-header">
+                <div>
+                  <span class="job-title">Software / Game Developer</span>
+                  <span class="job-company">@ Free Pixel Games Ltd.</span>
+                </div>
+                <span class="job-date">Sep 2019 – Aug 2022</span>
+              </div>
+              <div class="job-desc">
+                <ul>
+                  <li><strong>End-to-End Production Management:</strong> Delivered 20+ completed projects and 10+ shipped commercial titles, managing system resources, memory optimization, and dynamic problem solving.</li>
+                  <li><strong>Operational Reliability:</strong> Consistently met production quotas and maintained high standards of system stability and user experience across diverse technical platforms.</li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+      </main>
+
+      <!-- RIGHT COLUMN: EDUCATION & SKILLS -->
+      <aside class="right-col">
+
+        <!-- EDUCATION & CERTIFICATION -->
+        <section class="card">
+          <div class="section-header">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <h2>Education & Certification</h2>
+          </div>
+
+          <div class="edu-item">
+            <div class="edu-degree">Hygiene Passport (Hygieniapassi)</div>
+            <div class="edu-school" style="color: var(--accent-gold);">Finnish Food Authority (Ruokavirasto)</div>
+            <div class="edu-meta"><strong>Score: 40 / 40 (Perfect Score)</strong> | Awarded 2026</div>
+          </div>
+
+          <div class="edu-item">
+            <div class="edu-degree">Master of Science (MSc) in CCIS</div>
+            <div class="edu-school">Aalto University, Finland</div>
+            <div class="edu-meta">
+              Graduated <strong>with Honours</strong> (2023 – 2025)<br>
+              <em>Awards: Finland Scholarship, Dean's Award</em><br>
+              Major: Game Design | Minor: Virtual Reality
+            </div>
+          </div>
+
+          <div class="edu-item">
+            <div class="edu-degree">Bachelor of Science (BSc) in CSE</div>
+            <div class="edu-school">Ahsanullah Univ. of Science & Tech.</div>
+            <div class="edu-meta">Computer Science & Engineering (2015 – 2019)</div>
+          </div>
+        </section>
+
+        <!-- CORE COMPETENCIES & TRANSFERABLE SKILLS -->
+        <section class="card">
+          <div class="section-header">
+            <i class="fa-solid fa-sliders"></i>
+            <h2>Core Competencies</h2>
+          </div>
+
+          <div class="skill-group">
+            <div class="skill-header">
+              <span>Food Hygiene & Safety Compliance</span>
+              <span style="color: var(--accent-gold);">40/40 (100%)</span>
+            </div>
+            <div class="skill-bar-bg">
+              <div class="skill-bar-fill gold" style="width: 100%;"></div>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <div class="skill-header">
+              <span>Supply Chain & Operations Efficiency</span>
+              <span>Advanced</span>
+            </div>
+            <div class="skill-bar-bg">
+              <div class="skill-bar-fill" style="width: 92%;"></div>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <div class="skill-header">
+              <span>Precision & Quality Assurance</span>
+              <span>Expert</span>
+            </div>
+            <div class="skill-bar-bg">
+              <div class="skill-bar-fill" style="width: 95%;"></div>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <div class="skill-header">
+              <span>Physical Stamina & Work Ethic</span>
+              <span>High Endurance</span>
+            </div>
+            <div class="skill-bar-bg">
+              <div class="skill-bar-fill" style="width: 95%;"></div>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <div class="skill-header">
+              <span>Teamwork & Multilingual Communication</span>
+              <span>Advanced</span>
+            </div>
+            <div class="skill-bar-bg">
+              <div class="skill-bar-fill" style="width: 90%;"></div>
+            </div>
+          </div>
+
+          <!-- Transferable Tag Grid (Side by side in 2 columns) -->
+          <h4 style="font-size: 0.82rem; color: var(--text-muted); margin-top: 14px; margin-bottom: 6px; text-transform: uppercase;">Key Transferable Strengths</h4>
+          <div class="tag-grid-2">
+            <span class="tag-pill"><i class="fa-solid fa-clock"></i> Punctual & Reliable</span>
+            <span class="tag-pill"><i class="fa-solid fa-utensils"></i> Cooking & Culinary</span>
+            <span class="tag-pill"><i class="fa-solid fa-arrows-rotate"></i> Process Optimization</span>
+            <span class="tag-pill"><i class="fa-solid fa-people-group"></i> Team Collaboration</span>
+            <span class="tag-pill"><i class="fa-solid fa-bolt"></i> Fast Tech Learner</span>
+            <span class="tag-pill"><i class="fa-solid fa-check-double"></i> Detail-Oriented</span>
+          </div>
+
+          <!-- Language Proficiency (Fitted dynamically at bottom of card) -->
+          <div class="languages-section" style="margin-top: auto; padding-top: 14px;">
+            <h4 style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 6px; text-transform: uppercase;">Languages</h4>
+            <div class="tag-grid-3">
+              <span class="tag-pill" style="border-color: var(--accent-green); justify-content: center;"><strong>English:</strong>&nbsp;Fluent</span>
+              <span class="tag-pill" style="border-color: var(--accent-green); justify-content: center;"><strong>Finnish:</strong>&nbsp;A1</span>
+              <span class="tag-pill" style="border-color: var(--accent-green); justify-content: center;"><strong>Bengali:</strong>&nbsp;Native</span>
+            </div>
+          </div>
+        </section>
+
+      </aside>
+
+    </div>
+
+  </div>
+
+  <!-- ==========================================================================
+       MODAL FOR CERTIFICATE PREVIEW
+       ========================================================================== -->
+  <div id="certModal" class="modal" onclick="closeCertModal(event)">
+    <span class="close-modal">&times;</span>
+    <img class="modal-content" id="certModalImg" alt="Certificate Preview">
+  </div>
+
+  <!-- ==========================================================================
+       JAVASCRIPT LOGIC
+       ========================================================================== -->
+  <script>
+    // Modal Preview Logic
+    function openCertModal(imageSrc) {
+      const modal = document.getElementById('certModal');
+      const modalImg = document.getElementById('certModalImg');
+      modalImg.src = imageSrc;
+      modal.classList.add('show');
+    }
+
+    function closeCertModal(event) {
+      if (event.target.id === 'certModal' || event.target.className === 'close-modal') {
+        document.getElementById('certModal').classList.remove('show');
+      }
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        document.getElementById('certModal').classList.remove('show');
+      }
+    });
+  </script>
+
+</body>
+</html>
