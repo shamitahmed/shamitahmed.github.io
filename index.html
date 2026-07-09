@@ -384,6 +384,28 @@ body.page-loaded {
     color: #09ee96;
   }
 
+  /* Idle float and sway animation for the profile tilt container */
+  @keyframes floatAndSway {
+    0% {
+      transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-5px) rotate(0deg);
+    }
+    100% {
+      transform: translateY(0px) rotate(0deg);
+    }
+  }
+
+  .profile-tilt {
+    animation: floatAndSway 4.5s ease-in-out infinite;
+    transition: transform 0.3s ease-out;
+  }
+
+  .profile-tilt:hover {
+    animation-play-state: paused;
+  }
+
   /* 3D Tilt Card Base Styles */
   .profile-card {
     width: 100%;
