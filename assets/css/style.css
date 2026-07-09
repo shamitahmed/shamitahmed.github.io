@@ -2770,3 +2770,7 @@ img[onclick^="openModal"]:hover {
   background: linear-gradient(135deg, #059a3e 0%, #16b850 100%) !important;
 }
 
+.achievements-volunteering .resume-item h4 {
+  font-size: 1.15rem !important;
+}
+
