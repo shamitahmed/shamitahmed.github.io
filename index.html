@@ -196,8 +196,8 @@ body.page-loaded {
         .work-card:hover {
           transform: translateY(-8px);
           background: rgba(255, 255, 255, 0.06);
-          border-color: rgba(49, 248, 255, 0.4);
-          box-shadow: 0 15px 35px 0 rgba(49, 248, 255, 0.15), 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+          border-color: rgba(20, 157, 221, 0.4);
+          box-shadow: 0 15px 35px 0 rgba(20, 157, 221, 0.15), 0 8px 32px 0 rgba(0, 0, 0, 0.4);
         }
         .work-card-header {
           display: flex;
@@ -223,20 +223,37 @@ body.page-loaded {
           margin: 0;
         }
         .work-card-period {
-          background: rgba(49, 248, 255, 0.1);
-          border: 1px solid rgba(49, 248, 255, 0.3);
-          color: #31f8ff;
+          background: rgba(20, 157, 221, 0.1);
+          border: 1px solid rgba(20, 157, 221, 0.3);
+          color: #149ddd;
           font-size: 0.72rem;
           font-weight: 600;
           padding: 4px 10px;
           border-radius: 20px;
           white-space: nowrap;
-          text-shadow: 0 0 5px rgba(49, 248, 255, 0.2);
+          text-shadow: 0 0 5px rgba(20, 157, 221, 0.2);
         }
         .work-card-body {
           font-size: 0.82rem;
           line-height: 1.5;
           color: #ddd;
+        }
+        .work-card-body a {
+          color: #149ddd !important;
+          text-decoration: none;
+          font-weight: bold;
+          transition: all 0.3s ease;
+        }
+        .work-card-body a:hover {
+          text-decoration: underline !important;
+          color: #149ddd !important;
+          opacity: 0.85;
+        }
+        body.light .work-card-body a {
+          color: #1a93fd !important;
+        }
+        body.light .work-card-body a:hover {
+          color: #1a93fd !important;
         }
         .work-card-body p {
           margin: 0;
@@ -291,17 +308,292 @@ body.page-loaded {
           color: #b45309 !important;
         }
 
-        .achievements-volunteering .resume-item span {
-          border: 1px solid #ccc;
-          display: inline-block;
-          border-radius: 5px;
-          font-size: 12px;
-          padding: 2px 8px;
-          color: #ffffff;
-        }
         body.light .achievements-volunteering .resume-item span {
           border-color: rgba(0, 0, 0, 0.15) !important;
           color: #374151 !important;
+        }
+
+        /* 3D Coverflow Achievements Carousel */
+        .achievements-carousel-section {
+          position: relative;
+          width: 100%;
+          padding: 30px 60px;
+          overflow: hidden;
+        }
+        .carousel-container {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: relative;
+          width: 100%;
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 0 80px;
+        }
+        .carousel-track-wrapper {
+          position: relative;
+          width: 100%;
+          max-width: 600px;
+          height: 440px;
+          perspective: 1000px;
+          overflow: visible;
+        }
+        .carousel-track {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          transform-style: preserve-3d;
+        }
+        .achievement-slide {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 480px;
+          max-width: 80vw;
+          transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.6s ease, z-index 0.6s;
+          transform-style: preserve-3d;
+          cursor: pointer;
+        }
+        .achievement-card {
+          display: flex;
+          flex-direction: column;
+          align-items: stretch;
+          background: rgba(255, 255, 255, 0.03);
+          backdrop-filter: blur(10px);
+          -webkit-backdrop-filter: blur(10px);
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          border-radius: 16px;
+          padding: 16px 20px;
+          width: 100%;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+          transition: all 0.3s ease;
+        }
+        .achievement-card:hover {
+          background: rgba(255, 255, 255, 0.06);
+          border-color: rgba(20, 157, 221, 0.4);
+          box-shadow: 0 15px 35px rgba(20, 157, 221, 0.15), 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+        .achievement-img-wrapper {
+          width: 100%;
+          height: 280px;
+          flex-shrink: 0;
+          margin-bottom: 16px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          overflow: hidden;
+          border-radius: 8px;
+          background: rgba(0, 0, 0, 0.2);
+          border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .achievement-img-wrapper a {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          height: 100%;
+        }
+        .achievement-img-wrapper img {
+          width: auto !important;
+          height: auto !important;
+          max-width: 100% !important;
+          max-height: 100% !important;
+          object-fit: contain !important;
+          transition: transform 0.3s ease;
+        }
+        .achievement-card:hover .achievement-img-wrapper img {
+          transform: scale(1.05) !important;
+        }
+        .achievement-info {
+          flex-grow: 1;
+          min-width: 0;
+        }
+        .achievement-info h4 {
+          font-size: 1.05rem;
+          font-weight: 700;
+          margin: 0 0 4px 0;
+          line-height: 1.3;
+          color: #fff !important;
+        }
+        .achievement-info .org {
+          font-size: 0.85rem;
+          color: #cccccc !important;
+          margin: 0 0 6px 0;
+          line-height: 1.3;
+        }
+        .achievement-info .year {
+          font-size: 0.72rem;
+          font-weight: 600;
+          color: #149ddd;
+          background: rgba(20, 157, 221, 0.1);
+          border: 1px solid rgba(20, 157, 221, 0.3);
+          padding: 2px 8px;
+          border-radius: 4px;
+          display: inline-block;
+          text-shadow: 0 0 5px rgba(20, 157, 221, 0.2);
+        }
+
+        /* Active slide fully opaque background overrides */
+        .achievement-slide.active .achievement-card {
+          background: #111422 !important;
+          border-color: rgba(20, 157, 221, 0.3) !important;
+          box-shadow: 0 15px 35px rgba(20, 157, 221, 0.15), 0 10px 30px rgba(0, 0, 0, 0.6) !important;
+        }
+
+        /* Light mode overrides for achievements carousel */
+        body.light .achievement-card {
+          background: rgba(0, 0, 0, 0.02);
+          border: 1px solid rgba(0, 0, 0, 0.08);
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+        body.light .achievement-slide.active .achievement-card {
+          background: #ffffff !important;
+          border-color: rgba(26, 147, 253, 0.3) !important;
+          box-shadow: 0 15px 35px rgba(26, 147, 253, 0.1), 0 10px 30px rgba(0, 0, 0, 0.08) !important;
+        }
+        body.light .achievement-card:hover {
+          background: rgba(0, 0, 0, 0.04);
+          border-color: rgba(26, 147, 253, 0.4);
+          box-shadow: 0 15px 35px rgba(26, 147, 253, 0.1), 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+        body.light .achievement-info h4 {
+          color: #0e0e11 !important;
+        }
+        body.light .achievement-info .org {
+          color: #4b5563 !important;
+        }
+        body.light .achievement-info .year {
+          background: rgba(26, 147, 253, 0.1);
+          border: 1px solid rgba(26, 147, 253, 0.3);
+          color: #1a93fd;
+          text-shadow: none;
+        }
+
+        /* Navigation Buttons */
+        .carousel-btn {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          background: rgba(255, 255, 255, 0.03);
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          color: #fff;
+          width: 45px;
+          height: 45px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          z-index: 15;
+          transition: all 0.3s ease;
+          backdrop-filter: blur(5px);
+          -webkit-backdrop-filter: blur(5px);
+        }
+        .carousel-btn:hover {
+          background: rgba(20, 157, 221, 0.2);
+          border-color: #149ddd;
+          box-shadow: 0 0 15px rgba(20, 157, 221, 0.4);
+          transform: translateY(-50%) scale(1.1);
+        }
+        .carousel-btn i {
+          font-size: 20px;
+        }
+        .prev-btn {
+          left: -20px;
+        }
+        .next-btn {
+          right: -20px;
+        }
+
+        body.light .carousel-btn {
+          background: rgba(0, 0, 0, 0.02);
+          border: 1px solid rgba(0, 0, 0, 0.08);
+          color: #333;
+        }
+        body.light .carousel-btn:hover {
+          background: rgba(26, 147, 253, 0.2);
+          border-color: #1a93fd;
+          color: #1a93fd;
+          box-shadow: 0 0 15px rgba(26, 147, 253, 0.4);
+        }
+
+        /* Carousel Dots */
+        .carousel-dots {
+          display: flex;
+          justify-content: center;
+          gap: 8px;
+          margin-top: 25px;
+        }
+        .carousel-dot {
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          background: rgba(255, 255, 255, 0.2);
+          border: none;
+          padding: 0;
+          cursor: pointer;
+          transition: all 0.3s ease;
+        }
+        .carousel-dot.active {
+          background: #149ddd;
+          transform: scale(1.3);
+          box-shadow: 0 0 8px rgba(20, 157, 221, 0.6);
+        }
+        body.light .carousel-dot {
+          background: rgba(0, 0, 0, 0.15);
+        }
+        body.light .carousel-dot.active {
+          background: #1a93fd;
+          box-shadow: 0 0 8px rgba(26, 147, 253, 0.6);
+        }
+
+        /* Mobile specific style adjustments */
+        @media (max-width: 768px) {
+          .achievements-carousel-section {
+            padding: 20px 10px;
+          }
+          .carousel-container {
+            padding: 0 45px;
+          }
+          .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 36px;
+            height: 36px;
+          }
+          .carousel-btn:hover {
+            transform: translateY(-50%) scale(1.1);
+          }
+          .prev-btn {
+            left: 5px;
+          }
+          .next-btn {
+            right: 5px;
+          }
+          .carousel-track-wrapper {
+            max-height: 380px;
+            height: 380px;
+          }
+          .achievement-card {
+            padding: 12px;
+          }
+          .achievement-img-wrapper {
+            width: 100%;
+            height: 200px;
+            margin-right: 0;
+            margin-bottom: 12px;
+          }
+          .achievement-info h4 {
+            font-size: 0.95rem;
+          }
+          .achievement-info .org {
+            font-size: 0.8rem;
+          }
+          .achievement-info .year {
+            font-size: 0.68rem;
+          }
         }
       </style>
     </div>
@@ -1935,216 +2227,310 @@ document.addEventListener('keydown', function(event) {
     <section id="achievements-volunteering" class="achievements-volunteering" style="padding-top: 0;">
       <div class="container">
 
-        <div class="row">
-          <div class="col-lg-6 col-md-12" data-aos="fade-up">
+        <!-- Achievements Carousel Row -->
+        <div class="row mb-5">
+          <div class="col-12" data-aos="fade-up">
             <div class="section-title">
               <h2 style="margin-top:20px;">✦ACHIEVEMENTS</h2>
             </div>
 
-        <div class="resume-item" style="display: flex; align-items: flex-start; margin-bottom: 25px;">
-      <div style="width: 110px; flex-shrink: 0; margin-right: 20px; text-align: center;">
-        <a style="cursor: pointer;" onclick="openModal('assets/img/certs/hygiene_passport.png', 'portrait-large')">
-          <img src="assets/img/certs/hygiene_passport.png" alt="Hygiene Passport" style="max-width: 80px; height: auto; border-radius: 4px; border: 1px solid rgba(255,255,255,0.1);">
-        </a>
-      </div>
-      <div>
-        <h4 style="margin: 0; line-height: 1.2;"><strong>Hygieniapassi / Hygiene Passport Certificate — Score: 40/40</strong></h4>
-        <p style="margin: 5px 0 0 0; color: #ffffff;">Finnish Food Authority (Ruokavirasto)</p>
-        <span>2026</span>
-      </div>
-    </div>
+            <div class="achievements-carousel-section">
+              <div class="carousel-container">
+                <button class="carousel-btn prev-btn" aria-label="Previous Achievement">
+                  <i class="bx bx-chevron-left"></i>
+                </button>
+                
+                <div class="carousel-track-wrapper">
+                  <div class="carousel-track">
+                    
+                    <!-- Slide 1: Hygieniapassi -->
+                    <div class="achievement-slide">
+                      <div class="achievement-card">
+                        <div class="achievement-img-wrapper">
+                          <img src="assets/img/certs/hygiene_passport.png" alt="Hygiene Passport" onclick="openModal('assets/img/certs/hygiene_passport.png', 'portrait-large')" style="cursor: pointer;">
+                        </div>
+                        <div class="achievement-info">
+                          <h4>Hygieniapassi / Hygiene Passport Certificate — Score: 40/40</h4>
+                          <p class="org">Finnish Food Authority (Ruokavirasto)</p>
+                          <span class="year">2026</span>
+                        </div>
+                      </div>
+                    </div>
 
-        <div class="resume-item" style="display: flex; align-items: flex-start; margin-bottom: 25px;">
-      <div style="width: 110px; flex-shrink: 0; margin-right: 20px;">
-        <a href="assets/img/certs/chibpa.png" target="_blank">
-          <img src="assets/img/certs/chibpa.png" alt="CHI BPA 2026" style="max-width: 100%; height: auto; border-radius: 4px;">
-        </a>
-      </div>
-      <div>
-        <h4 style="margin: 0; line-height: 1.2;"><strong>Best Paper Award</strong></h4>
-        <p style="margin: 5px 0 0 0; color: #ffffff;">CHI 2026</p>
-        <span>2026</span>
-      </div>
-    </div>
+                    <!-- Slide 2: Best Paper Award -->
+                    <div class="achievement-slide">
+                      <div class="achievement-card">
+                        <div class="achievement-img-wrapper">
+                          <a href="assets/img/certs/chibpa.png" target="_blank">
+                            <img src="assets/img/certs/chibpa.png" alt="CHI BPA 2026">
+                          </a>
+                        </div>
+                        <div class="achievement-info">
+                          <h4>Best Paper Award</h4>
+                          <p class="org">CHI 2026</p>
+                          <span class="year">2026</span>
+                        </div>
+                      </div>
+                    </div>
 
-            <div class="resume-item" style="display: flex; align-items: flex-start; margin-bottom: 25px;">
-      <div style="width: 110px; flex-shrink: 0; margin-right: 20px;">
-        <a href="assets/img/certs/compadre.png" target="_blank">
-          <img src="assets/img/certs/compadre.png" alt="Compadre Top 4" style="max-width: 100%; height: auto; border-radius: 4px;">
-        </a>
-      </div>
-      <div>
-        <h4 style="margin: 0; line-height: 1.2;"><strong>Top 4 (Finalist)</strong></h4>
-        <p style="margin: 5px 0 0 0; color: #ffffff;">Supercell X Florent Agentic Frontier Hackathon 2026</p>
-        <span>2026</span>
-      </div>
-    </div>
+                    <!-- Slide 3: Top 4 (Finalist) -->
+                    <div class="achievement-slide">
+                      <div class="achievement-card">
+                        <div class="achievement-img-wrapper">
+                          <a href="assets/img/certs/compadre.png" target="_blank">
+                            <img src="assets/img/certs/compadre.png" alt="Compadre Top 4">
+                          </a>
+                        </div>
+                        <div class="achievement-info">
+                          <h4>Top 4 (Finalist)</h4>
+                          <p class="org">Supercell X Florent Agentic Frontier Hackathon 2026</p>
+                          <span class="year">2026</span>
+                        </div>
+                      </div>
+                    </div>
 
-    <div class="resume-item" style="display: flex; align-items: flex-start; margin-bottom: 25px;">
-      <div style="width: 110px; flex-shrink: 0; margin-right: 20px;">
-        <a href="assets/img/certs/iut.jpg" target="_blank">
-          <img src="assets/img/certs/iut.jpg" alt="IUT Certificate" style="max-width: 100%; height: auto; border-radius: 4px;">
-        </a>
-      </div>
-      <div>
-        <h4 style="margin: 0; line-height: 1.2;"><strong>Champion - Game Development</strong></h4>
-        <p style="margin: 5px 0 0 0; color: #ffffff;">IUT ICT FEST 2016</p>
-        <span>2016</span>
-      </div>
-    </div>
+                    <!-- Slide 4: Champion - Game Development -->
+                    <div class="achievement-slide">
+                      <div class="achievement-card">
+                        <div class="achievement-img-wrapper">
+                          <a href="assets/img/certs/iut.jpg" target="_blank">
+                            <img src="assets/img/certs/iut.jpg" alt="IUT Certificate">
+                          </a>
+                        </div>
+                        <div class="achievement-info">
+                          <h4>Champion - Game Development</h4>
+                          <p class="org">IUT ICT FEST 2016</p>
+                          <span class="year">2016</span>
+                        </div>
+                      </div>
+                    </div>
 
-    <div class="resume-item" style="display: flex; align-items: flex-start; margin-bottom: 25px;">
-      <div style="width: 110px; flex-shrink: 0; margin-right: 20px; text-align: center;">
-        <a href="assets/img/certs/aust.jpg" target="_blank">
-          <img src="assets/img/certs/aust.jpg" alt="AUST Certificate" style="max-width: 70px; height: auto; border-radius: 4px;">
-        </a>
-      </div>
-      <div>
-        <h4 style="margin: 0; line-height: 1.2;"><strong>Champion - Software</strong></h4>
-        <p style="margin: 5px 0 0 0; color: #ffffff;">Intra AUST Technomania 2018</p>
-        <span>2018</span>
-      </div>
-    </div>
+                    <!-- Slide 5: Champion - Software -->
+                    <div class="achievement-slide">
+                      <div class="achievement-card">
+                        <div class="achievement-img-wrapper">
+                          <a href="assets/img/certs/aust.jpg" target="_blank">
+                            <img src="assets/img/certs/aust.jpg" alt="AUST Certificate">
+                          </a>
+                        </div>
+                        <div class="achievement-info">
+                          <h4>Champion - Software</h4>
+                          <p class="org">Intra AUST Technomania 2018</p>
+                          <span class="year">2018</span>
+                        </div>
+                      </div>
+                    </div>
 
-    <div class="resume-item" style="display: flex; align-items: flex-start; margin-bottom: 25px;">
-      <div style="width: 110px; flex-shrink: 0; margin-right: 20px; text-align: center;">
-        <a href="assets/img/certs/nrf.jpg" target="_blank">
-          <img src="assets/img/certs/nrf.jpg" alt="NRF Certificate" style="max-width: 70px; height: auto; border-radius: 4px;">
-        </a>
-      </div>
-      <div>
-        <h4 style="margin: 0; line-height: 1.2;"><strong>Champion - Game Development</strong></h4>
-        <p style="margin: 5px 0 0 0; color: #ffffff;">National RoboTech Fest 2017</p>
-        <span>2017</span>
-      </div>
-    </div>
+                    <!-- Slide 6: Champion - Game Development -->
+                    <div class="achievement-slide">
+                      <div class="achievement-card">
+                        <div class="achievement-img-wrapper">
+                          <a href="assets/img/certs/nrf.jpg" target="_blank">
+                            <img src="assets/img/certs/nrf.jpg" alt="NRF Certificate">
+                          </a>
+                        </div>
+                        <div class="achievement-info">
+                          <h4>Champion - Game Development</h4>
+                          <p class="org">National RoboTech Fest 2017</p>
+                          <span class="year">2017</span>
+                        </div>
+                      </div>
+                    </div>
 
-    <div class="resume-item" style="display: flex; align-items: flex-start; margin-bottom: 25px;">
-      <div style="width: 110px; flex-shrink: 0; margin-right: 20px;">
-        <a href="assets/img/certs/ew.jpg" target="_blank">
-          <img src="assets/img/certs/ew.jpg" alt="Telco Warfare" style="max-width: 100%; height: auto; border-radius: 4px;">
-        </a>
-      </div>
-      <div>
-        <h4 style="margin: 0; line-height: 1.2;"><strong>1st Runner Up in Networking War</strong></h4>
-        <p style="margin: 5px 0 0 0; color: #ffffff;">International Telco Warfare 2018</p>
-        <span>2018</span>
-      </div>
-    </div>
+                    <!-- Slide 7: 1st Runner Up in Networking War -->
+                    <div class="achievement-slide">
+                      <div class="achievement-card">
+                        <div class="achievement-img-wrapper">
+                          <a href="assets/img/certs/ew.jpg" target="_blank">
+                            <img src="assets/img/certs/ew.jpg" alt="Telco Warfare">
+                          </a>
+                        </div>
+                        <div class="achievement-info">
+                          <h4>1st Runner Up in Networking War</h4>
+                          <p class="org">International Telco Warfare 2018</p>
+                          <span class="year">2018</span>
+                        </div>
+                      </div>
+                    </div>
 
-    <div class="resume-item" style="display: flex; align-items: flex-start; margin-bottom: 25px;">
-      <div style="width: 110px; flex-shrink: 0; margin-right: 20px;">
-        <a href="assets/img/certs/gp.jpg" target="_blank">
-          <img src="assets/img/certs/gp.jpg" alt="GP Game Jam" style="max-width: 100%; height: auto; border-radius: 4px;">
-        </a>
-      </div>
-      <div>
-        <h4 style="margin: 0; line-height: 1.2;"><strong>Top 27</strong></h4>
-        <p style="margin: 5px 0 0 0; color: #ffffff;">Grameenphone Game Jam 2017</p>
-        <span>2017</span>
-      </div>
-    </div>
+                    <!-- Slide 8: Top 27 -->
+                    <div class="achievement-slide">
+                      <div class="achievement-card">
+                        <div class="achievement-img-wrapper">
+                          <a href="assets/img/certs/gp.jpg" target="_blank">
+                            <img src="assets/img/certs/gp.jpg" alt="GP Game Jam">
+                          </a>
+                        </div>
+                        <div class="achievement-info">
+                          <h4>Top 27</h4>
+                          <p class="org">Grameenphone Game Jam 2017</p>
+                          <span class="year">2017</span>
+                        </div>
+                      </div>
+                    </div>
 
-          </div> <!-- End Achievements col-lg-6 -->
+                  </div>
+                </div>
 
-          <!-- Volunteering Column -->
-          <div class="col-lg-6 col-md-12" data-aos="fade-up">
+                <button class="carousel-btn next-btn" aria-label="Next Achievement">
+                  <i class="bx bx-chevron-right"></i>
+                </button>
+              </div>
+              
+              <!-- Carousel Dots -->
+              <div class="carousel-dots"></div>
+            </div>
+            
+          </div>
+        </div>
+
+        <!-- Volunteering Row -->
+        <div class="row">
+          <div class="col-12" data-aos="fade-up">
             <div class="section-title">
               <h2 style="margin-top:20px;">✦VOLUNTEERING</h2>
             </div>
+            
+            <div class="row" style="margin-top: 20px;">
+              
+              <!-- Reviewer -->
+              <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up">
+                <div class="work-card h-100">
+                  <div class="work-card-header">
+                    <div class="work-card-brand">
+                      <img src="assets/img/reviewer_icon.png" alt="Reviewer" width="45" height="45">
+                      <h5 class="work-card-title">Reviewer</h5>
+                    </div>
+                    <span class="work-card-period">2025 - Present</span>
+                  </div>
+                  <div class="work-card-body">
+                    International Conferences (CHI PLAY, FDG, Academic Mindtrek, etc.)
+                  </div>
+                </div>
+              </div>
 
-    <div class="resume-item" style="display: flex; align-items: flex-start; margin-bottom: 25px;">
-      <img src="assets/img/reviewer_icon.png" alt="Reviewer" width="55" height="55" style="flex-shrink: 0; margin-right: 15px; border-radius: 4px;">
-      <div>
-        <h4 style="margin: 0; line-height: 1.2;">
-          <strong>Reviewer</strong>
-        </h4>
-        <p style="margin: 5px 0 8px 0; color: #ffffff;">International Conferences (CHI PLAY, FDG, Academic Mindtrek, etc.)</p>
-        <span>2025-Present</span>
+              <!-- Games Now -->
+              <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up">
+                <div class="work-card h-100">
+                  <div class="work-card-header">
+                    <div class="work-card-brand">
+                      <img src="assets/img/gnow.jpg" alt="Games Now" width="45" height="45">
+                      <h5 class="work-card-title" style="font-size: 1rem;">Event Organizer & Manager</h5>
+                    </div>
+                    <span class="work-card-period">2023 - 2024</span>
+                  </div>
+                  <div class="work-card-body">
+                    <a href="https://gamesnow.aalto.fi/" target="_blank">"Games Now!" by Aalto University</a><br>
+                    Event Organizer and Community Manager for the academic lecture series.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Shilpanudan -->
+              <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up">
+                <div class="work-card h-100">
+                  <div class="work-card-header">
+                    <div class="work-card-brand">
+                      <img src="assets/img/shilp.jpg" alt="Shilpanudan" width="45" height="45">
+                      <h5 class="work-card-title">Co-Founder, Artist</h5>
+                    </div>
+                    <span class="work-card-period">2020</span>
+                  </div>
+                  <div class="work-card-body">
+                    <a href="https://www.facebook.com/shilpanudan" target="_blank">Shilpanudan (শিল্পানুদান)</a><br>
+                    Co-founded art and charity initiative.
+                  </div>
+                </div>
+              </div>
+
+              <!-- MindSparks -->
+              <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up">
+                <div class="work-card h-100">
+                  <div class="work-card-header">
+                    <div class="work-card-brand">
+                      <img src="assets/img/mind.jpg" alt="MindSparks" width="45" height="45">
+                      <h5 class="work-card-title" style="font-size: 1rem;">Event Organizer</h5>
+                    </div>
+                    <span class="work-card-period">2019</span>
+                  </div>
+                  <div class="work-card-body">
+                    <a href="https://www.facebook.com/mindsparksidc" target="_blank">MindSparks 19</a><br>
+                    Event Organizer, Segment Coordinator & Graphic Designer.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Unity Instructor -->
+              <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up">
+                <div class="work-card h-100">
+                  <div class="work-card-header">
+                    <div class="work-card-brand">
+                      <img src="assets/img/idc-logo.png" alt="AUST IDC" width="45" height="45">
+                      <h5 class="work-card-title">Instructor (Unity)</h5>
+                    </div>
+                    <span class="work-card-period">2024</span>
+                  </div>
+                  <div class="work-card-body">
+                    <a href="https://www.facebook.com/events/2414224025452134/" target="_blank">AUST IDC: Game Design & Development Workshop</a><br>
+                    Instructed the Game Design & Development Workshop.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Graphic Design Instructor -->
+              <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up">
+                <div class="work-card h-100">
+                  <div class="work-card-header">
+                    <div class="work-card-brand">
+                      <img src="assets/img/idc-logo.png" alt="AUST IDC" width="45" height="45">
+                      <h5 class="work-card-title" style="font-size: 0.95rem;">Instructor (Design)</h5>
+                    </div>
+                    <span class="work-card-period">2019</span>
+                  </div>
+                  <div class="work-card-body">
+                    <a href="https://www.facebook.com/events/432724837229393/" target="_blank">AUST IDC: Graphic Design Workshop</a><br>
+                    Instructed the Graphic Design Workshop (Illustrator/Photoshop).
+                  </div>
+                </div>
+              </div>
+
+              <!-- Unity Pulse -->
+              <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up">
+                <div class="work-card h-100">
+                  <div class="work-card-header">
+                    <div class="work-card-brand">
+                      <img src="assets/img/unity.png" alt="Unity" width="45" height="45">
+                      <h5 class="work-card-title">Community Member</h5>
+                    </div>
+                    <span class="work-card-period">2021 - 2025</span>
+                  </div>
+                  <div class="work-card-body">
+                    <a href="https://unity.com/unity-pulse" target="_blank">Unity Pulse</a><br>
+                    Panel Research Community Member.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Google App Dev Insights -->
+              <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up">
+                <div class="work-card h-100">
+                  <div class="work-card-header">
+                    <div class="work-card-brand">
+                      <img src="assets/img/google_insights.png" alt="Google App Dev Insights" width="45" height="45">
+                      <h5 class="work-card-title" style="font-size: 0.95rem;">Research Participant</h5>
+                    </div>
+                    <span class="work-card-period">2024 - Present</span>
+                  </div>
+                  <div class="work-card-body">
+                    Google App Dev Insights Community Member.
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-
-    <div class="resume-item" style="display: flex; align-items: flex-start; margin-bottom: 25px;">
-      <img src="assets/img/gnow.jpg" alt="Games Now" width="55" height="55" style="flex-shrink: 0; margin-right: 15px; border-radius: 4px;">
-      <div>
-        <h4 style="margin: 0; line-height: 1.2;">
-          <strong>Event Organizer and Community Manager</strong>
-        </h4>
-        <p style="margin: 5px 0 8px 0; color: #ffffff;"><a href="https://gamesnow.aalto.fi/" target="_blank" style="color: inherit; text-decoration: none;">"Games Now!" by Aalto University</a></p>
-        <span>2023-2024</span>
-      </div>
-    </div>
-
-    <div class="resume-item" style="display: flex; align-items: flex-start; margin-bottom: 25px;">
-      <img src="assets/img/shilp.jpg" alt="Shilpanudan" width="55" height="55" style="flex-shrink: 0; margin-right: 15px; border-radius: 4px;">
-      <div>
-        <h4 style="margin: 0; line-height: 1.2;">
-          <strong>Co-Founder, Artist</strong>
-        </h4>
-        <p style="margin: 5px 0 8px 0; color: #ffffff;"><a href="https://www.facebook.com/shilpanudan" target="_blank" style="color: inherit; text-decoration: none;">Shilpanudan (শিল্পানুদান)</a></p>
-        <span>2020</span>
-      </div>
-    </div>
-
-    <div class="resume-item" style="display: flex; align-items: flex-start; margin-bottom: 25px;">
-      <img src="assets/img/mind.jpg" alt="MindSparks" width="55" height="55" style="flex-shrink: 0; margin-right: 15px; border-radius: 4px;">
-      <div>
-        <h4 style="margin: 0; line-height: 1.2;">
-          <strong>Event Organizer, Segment Coordinator & Graphic Designer</strong>
-        </h4>
-        <p style="margin: 5px 0 8px 0; color: #ffffff;"><a href="https://www.facebook.com/mindsparksidc" target="_blank" style="color: inherit; text-decoration: none;">MindSparks 19</a></p>
-        <span>2019</span>
-      </div>
-    </div>
-
-    <div class="resume-item" style="display: flex; align-items: flex-start; margin-bottom: 25px;">
-      <img src="assets/img/idc-logo.png" alt="AUST IDC" width="55" height="55" style="flex-shrink: 0; margin-right: 15px;">
-      <div>
-        <h4 style="margin: 0; line-height: 1.2;">
-          <strong>Instructor (Unity)</strong>
-        </h4>
-        <p style="margin: 5px 0 8px 0; color: #ffffff;"><a href="https://www.facebook.com/events/2414224025452134/" target="_blank" style="color: inherit; text-decoration: none;">AUST IDC: Game Design & Development Workshop</a></p>
-        <span>2024</span>
-      </div>
-    </div>
-
-    <div class="resume-item" style="display: flex; align-items: flex-start; margin-bottom: 25px;">
-      <img src="assets/img/idc-logo.png" alt="AUST IDC" width="55" height="55" style="flex-shrink: 0; margin-right: 15px;">
-      <div>
-        <h4 style="margin: 0; line-height: 1.2;">
-          <strong>Instructor (Illustrator and Photoshop)</strong>
-        </h4>
-        <p style="margin: 5px 0 8px 0; color: #ffffff;"><a href="https://www.facebook.com/events/432724837229393/" target="_blank" style="color: inherit; text-decoration: none;">AUST IDC: Graphic Design Workshop</a></p>
-        <span>2019</span>
-      </div>
-    </div>
-
-    <div class="resume-item" style="display: flex; align-items: flex-start; margin-bottom: 25px;">
-      <img src="assets/img/unity.png" alt="Unity" width="55" height="55" style="flex-shrink: 0; margin-right: 15px;">
-      <div>
-        <h4 style="margin: 0; line-height: 1.2;">
-          <strong>Panel Research Community Member</strong>
-        </h4>
-        <p style="margin: 5px 0 8px 0; color: #ffffff;"><a href="https://unity.com/unity-pulse" target="_blank" style="color: inherit; text-decoration: none;">Unity Pulse</a></p>
-        <span>2021-2025</span>
-      </div>
-    </div>
-
-    <div class="resume-item" style="display: flex; align-items: flex-start; margin-bottom: 25px;">
-      <img src="assets/img/google_insights.png" alt="Google App Dev Insights" width="55" height="55" style="flex-shrink: 0; margin-right: 15px; border-radius: 4px;">
-      <div>
-        <h4 style="margin: 0; line-height: 1.2;">
-          <strong>Community Member / Research Participant</strong>
-        </h4>
-        <p style="margin: 5px 0 8px 0; color: #ffffff;">Google App Dev Insights</p>
-        <span>2024-Present</span>
-      </div>
-    </div>
-
-          </div> <!-- End Volunteering col-lg-6 -->
-
-        </div> <!-- End row -->
-      </div> <!-- End container -->
     </section><!-- End Achievements and Volunteering Section -->
 
     
@@ -2923,7 +3309,195 @@ document.querySelectorAll('a').forEach(link => {
         }
         observer.observe(innerRow);
       }
+  });
+</script>
+
+<script>
+  // Achievements 3D Coverflow Carousel Logic
+  document.addEventListener("DOMContentLoaded", function() {
+    const track = document.querySelector('.carousel-track');
+    const slides = Array.from(document.querySelectorAll('.achievement-slide'));
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+    const dotsContainer = document.querySelector('.carousel-dots');
+    
+    if (!track || slides.length === 0) return;
+    
+    let activeIndex = 0;
+    const totalSlides = slides.length;
+    let autoRotateInterval;
+    const autoRotateDelay = 2500;
+    
+    // Create indicators/dots
+    slides.forEach((_, idx) => {
+      const dot = document.createElement('button');
+      dot.classList.add('carousel-dot');
+      if (idx === 0) dot.classList.add('active');
+      dot.addEventListener('click', () => {
+        activeIndex = idx;
+        updateCarousel();
+        resetAutoRotate();
+      });
+      dotsContainer.appendChild(dot);
     });
+    
+    const dots = Array.from(document.querySelectorAll('.carousel-dot'));
+    
+    function updateCarousel() {
+      const isMobile = window.innerWidth < 768;
+      const isSmallMobile = window.innerWidth < 480;
+      
+      // Translation offset factor (spacing between cards in percentage of card width)
+      const translateFactor = isSmallMobile ? 40 : (isMobile ? 52 : 68);
+      
+      slides.forEach((slide, idx) => {
+        let offset = idx - activeIndex;
+        
+        // Handle wrapping/looping correctly (circular behavior)
+        if (offset > totalSlides / 2) {
+          offset -= totalSlides;
+        } else if (offset < -totalSlides / 2) {
+          offset += totalSlides;
+        }
+        
+        const absOffset = Math.abs(offset);
+        
+        // Hide items that are too far away to keep rendering performance high and layout clean
+        if (absOffset > 2) {
+          slide.style.opacity = '0';
+          slide.style.visibility = 'hidden';
+          slide.style.pointerEvents = 'none';
+          slide.style.transform = `translate(-50%, -50%) translateX(${offset * translateFactor}%) scale(0.6)`;
+          slide.style.zIndex = '-1';
+          return;
+        }
+        
+        slide.style.visibility = 'visible';
+        slide.style.pointerEvents = 'auto';
+        
+        // Set opacity: active is 1, immediately adjacent is 0.75 (or 0.55 on mobile), further out is 0.2
+        const activeOpacity = '1';
+        const sideOpacity = isMobile ? '0.55' : '0.75';
+        const farOpacity = '0.2';
+        
+        slide.style.opacity = absOffset === 0 ? activeOpacity : (absOffset === 1 ? sideOpacity : farOpacity);
+        
+        // 3D transform variables
+        const translateXVal = offset * translateFactor;
+        const scale = absOffset === 0 ? 1 : (absOffset === 1 ? 0.82 : 0.65);
+        const rotateY = offset * -25;
+        const translateZ = absOffset * -100;
+        
+        slide.style.transform = `translate(-50%, -50%) translateX(${translateXVal}%) scale(${scale}) rotateY(${rotateY}deg) translateZ(${translateZ}px)`;
+        slide.style.zIndex = 10 - absOffset;
+        
+        if (absOffset === 0) {
+          slide.classList.add('active');
+        } else {
+          slide.classList.remove('active');
+        }
+      });
+      
+      // Update dot states
+      dots.forEach((dot, idx) => {
+        if (idx === activeIndex) {
+          dot.classList.add('active');
+        } else {
+          dot.classList.remove('active');
+        }
+      });
+    }
+    
+    // Navigation functions
+    function nextSlide() {
+      activeIndex = (activeIndex + 1) % totalSlides;
+      updateCarousel();
+    }
+    
+    function prevSlide() {
+      activeIndex = (activeIndex - 1 + totalSlides) % totalSlides;
+      updateCarousel();
+    }
+    
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => {
+        nextSlide();
+        resetAutoRotate();
+      });
+    }
+    
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => {
+        prevSlide();
+        resetAutoRotate();
+      });
+    }
+    
+    // Intercept clicks on non-active slides to focus them first
+    slides.forEach((slide, idx) => {
+      slide.addEventListener('click', (e) => {
+        if (idx !== activeIndex) {
+          e.preventDefault();
+          e.stopPropagation();
+          activeIndex = idx;
+          updateCarousel();
+          resetAutoRotate();
+        }
+      }, true); // Capture phase to prevent <a> links trigger on side slides
+    });
+    
+    // Mobile Touch Gesture Support
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    track.addEventListener('touchstart', e => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+    
+    track.addEventListener('touchend', e => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    }, { passive: true });
+    
+    function handleSwipe() {
+      const swipeThreshold = 50;
+      if (touchStartX - touchEndX > swipeThreshold) {
+        nextSlide();
+        resetAutoRotate();
+      } else if (touchEndX - touchStartX > swipeThreshold) {
+        prevSlide();
+        resetAutoRotate();
+      }
+    }
+    
+    // Auto Rotation Management
+    function startAutoRotate() {
+      stopAutoRotate();
+      autoRotateInterval = setInterval(nextSlide, autoRotateDelay);
+    }
+    
+    function stopAutoRotate() {
+      if (autoRotateInterval) clearInterval(autoRotateInterval);
+    }
+    
+    function resetAutoRotate() {
+      stopAutoRotate();
+      startAutoRotate();
+    }
+    
+    // Hover interactions
+    const carouselContainer = document.querySelector('.achievements-carousel-section');
+    if (carouselContainer) {
+      carouselContainer.addEventListener('mouseenter', stopAutoRotate);
+      carouselContainer.addEventListener('mouseleave', startAutoRotate);
+    }
+    
+    // Update responsive layout on window resize
+    window.addEventListener('resize', updateCarousel);
+    
+    // Init values
+    updateCarousel();
+    startAutoRotate();
   });
 </script>
 
