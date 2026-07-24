@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <!-- SEO Best Practices -->
+  <title>Shamit Ahmed — Sports & Games Volunteer Profile</title>
+  <meta name="description" content="Clean, sporty volunteer profile for Shamit Ahmed, themed after the ICC Men's T20 World Cup 2026.">
+  <meta name="author" content="Shamit Ahmed">
+
+  <!-- Favicons -->
+  <link href="assets/img/profile-img.PNG" rel="icon">
+  <link href="assets/img/profile-img.PNG" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;800;900&family=Plus+Jakarta+Sans:wght@400;700;800&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    /* ==========================================================================
+       DESIGN SYSTEM (T20 World Cup 2026 - Electric Purple, Pink, Orange & Yellow)
+       ========================================================================== */
+    :root {
+      /* T20 World Cup 2026 Colors */
+      --bg-gradient: linear-gradient(135deg, #060320 0%, #0d083b 50%, #120b4e 100%);
+      --card-bg: rgba(22, 16, 70, 0.85); /* Deep translucent purple card background */
+      --border-color: rgba(165, 180, 252, 0.15);
+      --border-highlight: rgba(255, 106, 0, 0.4);
+      
+      --text-main: #ffffff;
+      --text-muted: #cbd5e1; /* Lighter slate-grey/white for better contrast */
+      --text-light: #f1f5f9; /* Clean off-white for high text visibility */
+      
+      --accent-purple: #1e1160;  /* Deep purple */
+      --accent-orange: #ff6a00;  /* Electric Orange */
+      --accent-pink: #ec4899;    /* Electric Pink / Magenta */
+      --accent-yellow: #ffd200;  /* Trophy Gold / Yellow */
+      
+      --card-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
+      --glow-orange: 0 0 20px rgba(255, 106, 0, 0.22);
+      
+      --radius-sm: 6px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --radius-full: 9999px;
+      
+      --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: var(--bg-gradient);
+      background-attachment: fixed;
+      color: var(--text-main);
+      min-height: 100vh;
+      line-height: 1.5;
+      padding: 30px 20px;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Ambient Glow spheres to mimic T20 WC 2026 lighting */
+    body::before {
+      content: "";
+      position: fixed;
+      top: -200px;
+      right: -200px;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(236, 72, 153, 0.18) 0%, transparent 70%);
+      z-index: -1;
+      pointer-events: none;
+    }
+    body::after {
+      content: "";
+      position: fixed;
+      bottom: -200px;
+      left: -200px;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(255, 106, 0, 0.14) 0%, transparent 70%);
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
+
+    a {
+      color: var(--accent-orange);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    a:hover {
+      color: var(--accent-yellow);
+    }
+
+    /* Print toolbar hides on print output - Expanded for landscape */
+    .print-toolbar {
+      max-width: 1250px;
+      margin: 0 auto 15px auto;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .print-pdf-btn {
+      background: var(--accent-orange);
+      color: #ffffff;
+      border: none;
+      padding: 8px 18px;
+      border-radius: var(--radius-full);
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: 0.9rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 4px 15px rgba(255, 106, 0, 0.3);
+      transition: var(--transition);
+    }
+
+    .print-pdf-btn:hover {
+      background: #e65c00;
+      transform: translateY(-1px);
+    }
+
+    .container {
+      max-width: 1250px; /* Expanded for landscape layout */
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ==========================================================================
+       T20 WORLD CUP BRANDED PROFILE HEADER
+       ========================================================================== */
+    .profile-header {
+      background: var(--card-bg);
+      border: 2px solid var(--border-color);
+      border-left: 6px solid var(--accent-orange);
+      border-radius: var(--radius-lg);
+      padding: 24px 30px;
+      margin-bottom: 20px;
+      box-shadow: var(--card-shadow);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .header-flex {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .profile-avatar-wrap {
+      width: 95px;
+      height: 95px;
+      border-radius: 50%;
+      border: 3px solid var(--accent-orange);
+      overflow: hidden;
+      flex-shrink: 0;
+      box-shadow: var(--glow-orange);
+    }
+
+    .profile-avatar {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 15%;
+    }
+
+    .flag-overlap {
+      position: absolute;
+      bottom: -2px;
+      left: -2px;
+      width: 28px;
+      height: 28px;
+      border: 2px solid #ffffff;
+      border-radius: 50%;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+      z-index: 10;
+      background: #006a4e;
+    }
+
+    .player-info {
+      flex: 1;
+    }
+
+    .player-info h1 {
+      font-size: 2.2rem;
+      line-height: 1.05;
+      margin-bottom: 4px;
+      color: #ffffff;
+      text-transform: uppercase;
+    }
+
+    .player-info .subtitle {
+      font-size: 1.15rem;
+      color: var(--accent-yellow);
+      font-weight: 700;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      text-transform: uppercase;
+      font-family: 'Share Tech Mono', monospace;
+    }
+
+    .header-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 0.88rem;
+      color: var(--text-light);
+    }
+
+    .header-meta span, .header-meta a {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--text-light);
+    }
+
+    /* Clickable Hygiene Passport Card - T20 branded */
+    .highlight-card {
+      background: rgba(255, 106, 0, 0.08);
+      border: 1px solid rgba(255, 106, 0, 0.35);
+      border-radius: var(--radius-md);
+      padding: 10px 14px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      transition: var(--transition);
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(255, 106, 0, 0.15);
+      flex-shrink: 0;
+    }
+
+    .highlight-card:hover {
+      transform: translateY(-2px);
+      background: rgba(255, 106, 0, 0.15);
+      border-color: var(--accent-yellow);
+      box-shadow: 0 8px 20px rgba(255, 106, 0, 0.25);
+    }
+
+    .highlight-icon {
+      font-size: 1.6rem;
+      flex-shrink: 0;
+    }
+
+    .highlight-text h4 {
+      font-size: 0.88rem;
+      color: #ffffff;
+      margin-bottom: 1px;
+      line-height: 1.2;
+    }
+
+    .highlight-text p {
+      font-size: 0.74rem;
+      color: var(--text-muted);
+      line-height: 1.2;
+    }
+
+    /* Modal for Certificate Preview */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 100000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .modal.show {
+      display: flex;
+      opacity: 1;
+    }
+
+    .modal-content {
+      max-width: 90%;
+      max-height: 85vh;
+      border-radius: var(--radius-md);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+      border: 2px solid rgba(255, 106, 0, 0.4);
+      transform: scale(0.9);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .modal.show .modal-content {
+      transform: scale(1);
+    }
+
+    .close-modal {
+      position: absolute;
+      top: 25px;
+      right: 35px;
+      color: #fff;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: var(--transition);
+      z-index: 100001;
+    }
+
+    .close-modal:hover {
+      color: var(--accent-orange);
+      transform: scale(1.1);
+    }
+
+    /* ==========================================================================
+       MAIN COLUMN LAYOUT (Landscape 3-Column Grid)
+       ========================================================================== */
+    .cv-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr; /* Balanced 3-column split for landscape aspect */
+      gap: 20px;
+      align-items: stretch;
+    }
+
+    .left-col, .center-col, .right-col {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 2px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 22px;
+      margin-bottom: 20px;
+      box-shadow: var(--card-shadow);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .left-col .card:last-child,
+    .center-col .card:last-child,
+    .right-col .card:last-child {
+      flex: 1;
+      margin-bottom: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Branded Sporty Header Tags */
+    .card-header-badge {
+      background: rgba(255, 106, 0, 0.1);
+      color: var(--accent-yellow);
+      padding: 8px 16px;
+      border-radius: var(--radius-sm);
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 1.1rem; /* Enlarged header text size */
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+      border-left: 5px solid var(--accent-pink);
+    }
+
+    /* ==========================================================================
+       CREATIVE LEFT COLUMN (LINEUP & PLAYBOOK)
+       ========================================================================== */
+    .pitch-points {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .pitch-points li {
+      position: relative;
+      padding-left: 28px;
+      margin-bottom: 12px;
+      font-size: 0.94rem;
+      color: var(--text-light);
+    }
+
+    .pitch-points li::before {
+      content: "🏏";
+      position: absolute;
+      left: 0;
+      top: 1px;
+      font-size: 1.1rem;
+    }
+
+    .pitch-points li strong {
+      color: var(--accent-orange);
+      text-transform: uppercase;
+      font-family: 'Outfit', sans-serif;
+    }
+
+    /* Sporty Lists */
+    .sports-list {
+      list-style-type: none;
+      padding: 0;
+      margin-top: 8px;
+    }
+
+    .sports-list li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 10px;
+      font-size: 0.94rem;
+      color: var(--text-light);
+    }
+
+    .sports-list li:last-child {
+      margin-bottom: 0;
+    }
+
+    .sport-icon {
+      font-size: 1.6rem; 
+      line-height: 1;
+      display: inline-block;
+      transition: var(--transition);
+      flex-shrink: 0;
+    }
+
+    .sports-list li:hover .sport-icon {
+      transform: scale(1.2) rotate(8deg);
+    }
+
+    .sports-list li strong {
+      font-family: 'Outfit', sans-serif;
+      text-transform: uppercase;
+      font-size: 0.96rem;
+    }
+
+    /* ==========================================================================
+       CREATIVE CENTER COLUMN (TRADING CARD STATS)
+       ========================================================================== */
+    .physical-stat-box {
+      background: rgba(255, 106, 0, 0.08);
+      border: 1px solid rgba(255, 106, 0, 0.2);
+      padding: 8px;
+      border-radius: var(--radius-sm);
+      text-align: center;
+      transition: var(--transition);
+    }
+    
+    .physical-stat-box:hover {
+      background: rgba(255, 106, 0, 0.15);
+      border-color: var(--accent-orange);
+    }
+
+    .phys-label {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      font-family: 'Share Tech Mono', monospace;
+      font-weight: bold;
+    }
+
+    .phys-value {
+      font-size: 1.15rem;
+      font-weight: bold;
+      color: #ffffff;
+      font-family: 'Outfit', sans-serif;
+    }
+
+    .trading-card-stats {
+      background: rgba(13, 8, 45, 0.4);
+      border: 1px solid rgba(165, 180, 252, 0.15);
+      border-radius: var(--radius-md);
+      padding: 15px;
+    }
+
+    .stat-row {
+      display: grid;
+      grid-template-columns: 1fr 45px;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .stat-row:last-child {
+      margin-bottom: 0;
+    }
+
+    .stat-name {
+      font-size: 0.8rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: #ffffff;
+    }
+
+    .stat-crease {
+      width: 100%;
+      height: 10px;
+      background: rgba(13, 8, 45, 0.9);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      position: relative;
+      border: 1px solid rgba(165, 180, 252, 0.15);
+      margin-top: 2px;
+    }
+
+    .stat-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--accent-pink) 0%, var(--accent-orange) 100%);
+      border-radius: var(--radius-sm);
+      position: relative;
+    }
+
+    .stat-fill::after {
+      content: "";
+      position: absolute;
+      right: 2px;
+      top: 2px;
+      width: 4px;
+      height: 4px;
+      background: #ffffff;
+      border-radius: 50%;
+    }
+
+    .stat-num {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 1.1rem;
+      color: var(--accent-yellow);
+      font-weight: bold;
+      text-align: right;
+    }
+
+    /* Sporty tag pills - Enlarged text sizes */
+    .sporty-tags {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+      margin-top: 8px;
+    }
+
+    .sporty-tag {
+      background: rgba(255, 106, 0, 0.08);
+      border: 1px solid rgba(255, 106, 0, 0.2);
+      color: var(--text-light);
+      border-radius: var(--radius-sm);
+      padding: 7px 10px;
+      font-size: 0.88rem; /* Enlarged from 0.72rem */
+      font-family: 'Share Tech Mono', monospace;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      text-transform: uppercase;
+    }
+
+    .sporty-tag i {
+      color: var(--accent-yellow);
+    }
+
+    /* Training ground Academy block */
+    .academy-block {
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px dashed var(--border-color);
+    }
+
+    .academy-block:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+
+    .academy-title {
+      font-size: 0.88rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: #ffffff;
+    }
+
+    .academy-sub {
+      font-size: 0.8rem;
+      color: var(--accent-orange);
+      font-weight: 700;
+    }
+
+    .academy-meta {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+    }
+
+    /* ==========================================================================
+       RESPONSIVE BREAKPOINTS (Mobile Stacking)
+       ========================================================================== */
+    @media (max-width: 900px) {
+      .cv-grid {
+        grid-template-columns: 1fr;
+      }
+      .profile-header {
+        padding: 20px;
+      }
+      .header-flex {
+        flex-direction: column;
+        text-align: center;
+      }
+      .profile-avatar-wrap {
+        margin: 0 auto;
+      }
+      .player-info h1 {
+        font-size: 1.8rem;
+      }
+      .player-info .subtitle {
+        justify-content: center;
+      }
+      .header-meta {
+        justify-content: center;
+      }
+      .highlight-card {
+        margin-top: 10px;
+      }
+    }
+
+    /* ==========================================================================
+       PRINT STYLES (Light Mode, LANDSCAPE A4 PRINT, Ink-Saving)
+       ========================================================================== */
+    @media print {
+      @page {
+        size: A4 landscape; /* Print page turned horizontally */
+        margin: 8mm 10mm;
+      }
+
+      body {
+        background: #ffffff !important;
+        background-image: none !important;
+        color: #111827 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        font-size: 8.5pt !important;
+      }
+
+      body::before, body::after {
+        display: none !important;
+      }
+
+      .no-print {
+        display: none !important;
+      }
+
+      .container {
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+
+      .profile-header {
+        background: #ffffff !important;
+        border: 1px solid #d1d5db !important;
+        border-left: 4px solid #ff6a00 !important;
+        padding: 10px 14px !important;
+        margin-bottom: 12px !important;
+        box-shadow: none !important;
+      }
+
+      .header-flex {
+        display: flex !important;
+        align-items: center !important;
+        gap: 15px !important;
+      }
+
+      .profile-avatar-wrap {
+        width: 65px !important;
+        height: 65px !important;
+        border: 2px solid #ff6a00 !important;
+      }
+
+      .profile-avatar {
+        object-fit: cover !important;
+        object-position: center 15% !important;
+      }
+
+      .flag-overlap {
+        border: 1.5px solid #ffffff !important;
+        width: 20px !important;
+        height: 20px !important;
+        bottom: -1px !important;
+        left: -1px !important;
+        box-shadow: none !important;
+      }
+
+      .player-info h1 {
+        font-size: 14pt !important;
+        color: #111827 !important;
+      }
+
+      .player-info .subtitle {
+        font-size: 9pt !important;
+        color: #ff6a00 !important;
+      }
+
+      .header-meta {
+        font-size: 7.5pt !important;
+        gap: 10px !important;
+        color: #4b5563 !important;
+      }
+
+      .header-meta span, .header-meta a {
+        color: #374151 !important;
+      }
+
+      .highlight-card {
+        background: #fffbeb !important;
+        border: 1px solid #d97706 !important;
+        padding: 4px 6px !important;
+        border-radius: 6px !important;
+        display: flex !important;
+        box-shadow: none !important;
+      }
+
+      .highlight-icon {
+        font-size: 10pt !important;
+      }
+
+      .highlight-text h4 {
+        font-size: 7.5pt !important;
+        color: #111827 !important;
+      }
+
+      .highlight-text p {
+        font-size: 6.5pt !important;
+        color: #4b5563 !important;
+      }
+
+      .cv-grid {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr 1fr !important;
+        gap: 12px !important;
+        align-items: stretch !important;
+      }
+
+      .left-col, .center-col, .right-col {
+        display: flex !important;
+        flex-direction: column !important;
+      }
+
+      .card {
+        background: #ffffff !important;
+        border: 1px solid #d1d5db !important;
+        border-radius: 10px !important;
+        padding: 10px !important;
+        margin-bottom: 10px !important;
+        box-shadow: none !important;
+      }
+
+      .left-col .card:last-child,
+      .center-col .card:last-child,
+      .right-col .card:last-child {
+        margin-bottom: 0 !important;
+      }
+
+      .card-header-badge {
+        background: #f3f4f6 !important;
+        color: #ff6a00 !important;
+        border-left: 3px solid #ec4899 !important;
+        padding: 4px 10px !important;
+        font-size: 10.5pt !important; /* Enlarged in print too */
+        margin-bottom: 8px !important;
+      }
+
+      .pitch-points li {
+        font-size: 8pt !important;
+        margin-bottom: 4px !important;
+        color: #374151 !important;
+      }
+
+      .sports-list li {
+        font-size: 8.5pt !important;
+        margin-bottom: 4px !important;
+        color: #374151 !important;
+      }
+
+      .sport-icon {
+        font-size: 12pt !important;
+      }
+
+      .physical-stat-box {
+        background: #f3f4f6 !important;
+        border: 1px solid #d1d5db !important;
+        padding: 6px !important;
+      }
+
+      .phys-label {
+        color: #4b5563 !important;
+      }
+
+      .phys-value {
+        color: #111827 !important;
+        font-size: 10.5pt !important;
+      }
+
+      .trading-card-stats {
+        background: #f9fafb !important;
+        border: 1px solid #d1d5db !important;
+        padding: 6px !important;
+      }
+
+      .stat-name {
+        color: #374151 !important;
+        font-size: 7.5pt !important;
+      }
+
+      .stat-crease {
+        background: #e5e7eb !important;
+        border: 1px solid #d1d5db !important;
+        height: 8px !important;
+      }
+
+      .stat-fill {
+        background: #ff6a00 !important;
+      }
+
+      .stat-num {
+        color: #ff6a00 !important;
+        font-size: 9pt !important;
+      }
+
+      .sporty-tag {
+        background: #f3f4f6 !important;
+        border: 1px solid #d1d5db !important;
+        color: #374151 !important;
+        font-size: 8.5pt !important; /* Larger text size in print */
+        padding: 3px 5px !important;
+      }
+
+      .sporty-tag i {
+        color: #ff6a00 !important;
+      }
+
+      .academy-block {
+        margin-bottom: 6px !important;
+        border-bottom-color: #e5e7eb !important;
+      }
+
+      .academy-title {
+        color: #111827 !important;
+        font-size: 8pt !important;
+      }
+
+      .academy-sub {
+        color: #ff6a00 !important;
+        font-size: 7.5pt !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ==========================================================================
+       EXTERNAL PRINT / PDF TOOLBAR
+       ========================================================================== -->
+  <div class="no-print print-toolbar">
+    <button onclick="window.print()" class="print-pdf-btn" title="Download Volunteer Profile">
+      <i class="fa-solid fa-file-pdf"></i> Download Playbook PDF
+    </button>
+  </div>
+
+  <!-- ==========================================================================
+       MAIN CV CONTAINER
+       ========================================================================== -->
+  <div class="container">
+
+    <!-- T20 WORLD CUP BRANDED PROFILE HEADER -->
+    <header class="profile-header">
+      <div class="header-flex">
+        
+        <!-- Marathon Photo wrapper with overlapping flag -->
+        <div style="position: relative; flex-shrink: 0;">
+          <div class="profile-avatar-wrap">
+            <img class="profile-avatar" src="assets/img/me_sports.jpg" alt="Shamit Ahmed">
+          </div>
+          <!-- Overlapping circular Bangladesh Flag -->
+          <div class="flag-overlap" title="Bangladesh">
+            <svg viewBox="0 0 100 100" width="100%" height="100%">
+              <circle cx="50" cy="50" r="50" fill="#006a4e"/>
+              <circle cx="45" cy="50" r="28" fill="#f42a41"/>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Name & Subtitle -->
+        <div class="player-info">
+          <h1>Shamit Ahmed</h1>
+          <div class="subtitle">
+            Future T20 World Cup Qualifier Volunteer
+          </div>
+          <div class="header-meta">
+            <span><i class="fa-solid fa-location-dot"></i> Helsinki, Finland</span>
+            <span><i class="fa-solid fa-envelope"></i> <a href="mailto:shamitaditta380@gmail.com">shamitaditta380@gmail.com</a></span>
+            <span><i class="fa-brands fa-linkedin"></i> <a href="https://www.linkedin.com/in/shamitahmed/" target="_blank">LinkedIn</a></span>
+          </div>
+        </div>
+
+        <!-- Clickable Hygiene Passport Card -->
+        <div class="highlight-card" onclick="openCertModal('assets/img/certs/hygiene_passport.png')" title="Click to view official certificate">
+          <div class="highlight-icon">🏆</div>
+          <div class="highlight-text">
+            <h4>Hygiene Passport: 40/40</h4>
+            <p>Finnish Food Authority<br><strong style="color: var(--accent-gold);">Perfect Score (2026)</strong></p>
+          </div>
+        </div>
+
+      </div>
+    </header>
+
+    <!-- 2-COLUMN MODULAR GRID -->
+    <div class="cv-grid">
+
+      <!-- LEFT COLUMN: PRE-MATCH PITCH -->
+      <main class="left-col">
+
+        <!-- PRE-MATCH PITCH -->
+        <section class="card">
+          <div class="card-header-badge">
+            <i class="fa-solid fa-microphone"></i> Team Talk: Why I want to join the squad
+          </div>
+          <ul class="pitch-points">
+            <li><strong>Cricket is in my DNA:</strong> Coming from a background where cricket is a national religion, volunteering at the ICC T20 World Cup Qualifier is the ultimate goal! I want to help bring the tournament alive in Finland.</li>
+            <li><strong>Unlimited Stamina:</strong> Marathon runner and long-distance cyclist. I have the physical stamina and energy to stand, run, and assist on-field for 8+ hours straight.</li>
+            <li><strong>Solid Captaincy Skills:</strong> Experienced in managing gaming event setups, hosting crowds, and tutoring groups of international students at Aalto University.</li>
+            <li><strong>Safe Hands:</strong> Holds a perfect <strong>40/40 Hygiene Passport</strong>. I am fully ready to safely assist in food stands, concession setups, or VIP catering boxes!</li>
+          </ul>
+        </section>
+
+      </main>
+
+      <!-- CENTER COLUMN: PLAYER ATTRIBUTES -->
+      <section class="center-col">
+
+        <!-- PLAYER CARD STATS -->
+        <section class="card">
+          <div class="card-header-badge">
+            <i class="fa-solid fa-dumbbell"></i> Physique
+          </div>
+
+          <!-- Physical stats row (Height, Weight & Build) -->
+          <div class="physical-stats" style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin-bottom: 15px;">
+            <div class="physical-stat-box">
+              <div class="phys-label">HEIGHT</div>
+              <div class="phys-value">5'10"</div>
+            </div>
+            <div class="physical-stat-box">
+              <div class="phys-label">WEIGHT</div>
+              <div class="phys-value">74 Kg</div>
+            </div>
+            <div class="physical-stat-box">
+              <div class="phys-label">BUILD</div>
+              <div class="phys-value">Medium</div>
+            </div>
+          </div>
+
+          <div class="trading-card-stats">
+            <div class="stat-row">
+              <div>
+                <div class="stat-name">🔋 Stamina (Endurance)</div>
+                <div class="stat-crease"><div class="stat-fill" style="width: 100%;"></div></div>
+              </div>
+              <div class="stat-num">99</div>
+            </div>
+
+            <div class="stat-row">
+              <div>
+                <div class="stat-name">📣 Team Play & Tutoring</div>
+                <div class="stat-crease"><div class="stat-fill" style="width: 95%;"></div></div>
+              </div>
+              <div class="stat-num">95</div>
+            </div>
+
+            <div class="stat-row">
+              <div>
+                <div class="stat-name">📦 Event Operations</div>
+                <div class="stat-crease"><div class="stat-fill" style="width: 92%;"></div></div>
+              </div>
+              <div class="stat-num">92</div>
+            </div>
+
+            <div class="stat-row">
+              <div>
+                <div class="stat-name">🧤 Safety (Hygiene Pass)</div>
+                <div class="stat-crease"><div class="stat-fill" style="width: 100%;"></div></div>
+              </div>
+              <div class="stat-num">99</div>
+            </div>
+          </div>
+
+          <!-- Playbook gear -->
+          <h4 style="font-size: 0.88rem; color: var(--text-muted); margin-top: 15px; margin-bottom: 6px; text-transform: uppercase;">Volunteer Gear</h4>
+          <div class="sporty-tags">
+            <span class="sporty-tag"><i class="fa-solid fa-clock"></i> Punctual</span>
+            <span class="sporty-tag"><i class="fa-solid fa-bolt"></i> Energetic</span>
+            <span class="sporty-tag"><i class="fa-solid fa-smile"></i> Friendly</span>
+            <span class="sporty-tag"><i class="fa-solid fa-shield"></i> Reliable</span>
+          </div>
+
+          <!-- Languages -->
+          <h4 style="font-size: 0.88rem; color: var(--text-muted); margin-top: 15px; margin-bottom: 6px; text-transform: uppercase;">Languages</h4>
+          <div class="sporty-tags">
+            <span class="sporty-tag"><i class="fa-solid fa-globe"></i> EN: Fluent</span>
+            <span class="sporty-tag"><i class="fa-solid fa-globe"></i> FI: A1</span>
+          </div>
+        </section>
+
+      </section>
+
+      <!-- RIGHT COLUMN: ACADEMY & SPORTS -->
+      <aside class="right-col">
+
+        <!-- SPORTS PLAYED (Playful specific icons & larger size) -->
+        <section class="card">
+          <div class="card-header-badge">
+            <i class="fa-solid fa-running"></i> Sports I Play
+          </div>
+          <ul class="sports-list">
+            <li><span class="sport-icon">🏏</span> <strong>1. Cricket</strong></li>
+            <li><span class="sport-icon">🏓</span> <strong>2. Table Tennis</strong></li>
+            <li><span class="sport-icon">🏸</span> <strong>3. Badminton</strong></li>
+            <li><span class="sport-icon">🏐</span> <strong>4. Volleyball</strong></li>
+            <li><span class="sport-icon">⚽</span> <strong>5. Football</strong></li>
+          </ul>
+        </section>
+
+        <!-- TRAINING ACADEMY -->
+        <section class="card">
+          <div class="card-header-badge">
+            <i class="fa-solid fa-university"></i> Academy & Training
+          </div>
+
+          <div class="academy-block">
+            <div class="academy-title">MSc in CCIS (Game Design)</div>
+            <div class="academy-sub">Aalto University, Finland</div>
+            <div class="academy-meta">Graduated with Honours (2025)</div>
+          </div>
+
+          <div class="academy-block">
+            <div class="academy-title">BSc in CSE</div>
+            <div class="academy-sub">Ahsanullah Univ. of Science & Tech.</div>
+          </div>
+
+          <div class="academy-block">
+            <div class="academy-title">Hygiene Passport</div>
+            <div class="academy-sub">Ruokavirasto (Perfect 40/40)</div>
+          </div>
+        </section>
+
+      </aside>
+
+    </div>
+
+  </div>
+
+  <!-- ==========================================================================
+       MODAL FOR CERTIFICATE PREVIEW
+       ========================================================================== -->
+  <div id="certModal" class="modal" onclick="closeCertModal(event)">
+    <span class="close-modal">&times;</span>
+    <img class="modal-content" id="certModalImg" alt="Certificate Preview">
+  </div>
+
+  <script>
+    // Modal Preview Logic
+    function openCertModal(imageSrc) {
+      const modal = document.getElementById('certModal');
+      const modalImg = document.getElementById('certModalImg');
+      modalImg.src = imageSrc;
+      modal.classList.add('show');
+    }
+
+    function closeCertModal(event) {
+      if (event.target.id === 'certModal' || event.target.className === 'close-modal') {
+        document.getElementById('certModal').classList.remove('show');
+      }
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        document.getElementById('certModal').classList.remove('show');
+      }
+    });
+  </script>
+
+</body>
+</html>

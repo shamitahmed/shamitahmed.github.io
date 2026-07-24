@@ -291,6 +291,25 @@ h2 {
     background-position: 0% center;
   }
 }
+
+.yellow-header-glow {
+  background: linear-gradient(to right, #e8a600 0%, #e8a600 40%, #ffff00 50%, #e8a600 60%, #e8a600 100%);
+  background-size: 200% auto;
+  color: transparent !important;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: yellowGradientAnim 2s linear infinite;
+}
+
+@keyframes yellowGradientAnim {
+  0% {
+    background-position: 200% center;
+  }
+  100% {
+    background-position: 0% center;
+  }
+}
 .ss:hover{
   height: 200%;
   width: 200%;
