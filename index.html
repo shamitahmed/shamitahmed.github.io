@@ -50,7 +50,7 @@
     .featured-project {
       opacity: 0;
       will-change: transform, opacity;
-      transition: transform 3.2s cubic-bezier(0.05, 0.7, 0.1, 1.0), opacity 3.2s cubic-bezier(0.05, 0.7, 0.1, 1.0);
+      transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1), opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .featured-project-left {
       transform: translate3d(-150px, 0, 0);
@@ -59,15 +59,15 @@
       transform: translate3d(150px, 0, 0);
     }
     .featured-project.show-on-scroll {
-      opacity: 1;
-      transform: translate3d(0, 0, 0);
+      opacity: 1 !important;
+      transform: translate3d(0, 0, 0) !important;
     }
     @media (max-width: 768px) {
       .featured-project-left {
-        transform: translate3d(-40px, 0, 0);
+        transform: translate3d(-60px, 0, 0);
       }
       .featured-project-right {
-        transform: translate3d(40px, 0, 0);
+        transform: translate3d(60px, 0, 0);
       }
     }
   </style>
@@ -1740,9 +1740,7 @@ document.addEventListener('keydown', function(event) {
                    View All Projects
                 </a>
             </div>
-      
-
-        
+          </div>
         </section><!-- End Portfolio Section -->
 
  
@@ -2041,8 +2039,7 @@ document.addEventListener('keydown', function(event) {
       </div>
 
     </div>
-  </div>
-</section>
+  </section>
           
     
 
@@ -3071,7 +3068,8 @@ document.addEventListener('keydown', function(event) {
         </div>
       </div> -->
     </div>
-        </section>
+  </div>
+</section>
 
         
     <section section id="recommsc" class="section-title">
@@ -3436,34 +3434,45 @@ document.querySelectorAll('a').forEach(link => {
 </script>
 
 <script>
-  // Featured Projects Scroll Animation
-  document.addEventListener("DOMContentLoaded", function() {
-    const featuredProjects = document.querySelectorAll('.portfolio-container > .col-12.portfolio-item');
-    
-    const observer = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('show-on-scroll');
-          observer.unobserve(entry.target);
+  // Featured Projects Scroll Animation (Alternating Left/Right)
+  (function initFeaturedProjectAnimations() {
+    function setupAnimation() {
+      const featuredProjects = document.querySelectorAll('.portfolio-container > .col-12.portfolio-item');
+      if (!featuredProjects.length) return;
+
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('show-on-scroll');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.05,
+        rootMargin: "0px 0px -20px 0px"
+      });
+
+      featuredProjects.forEach((project, index) => {
+        const innerTarget = project.querySelector('.row') || project;
+        if (!innerTarget.classList.contains('featured-project')) {
+          innerTarget.classList.add('featured-project');
+          if (index % 2 === 0) {
+            innerTarget.classList.add('featured-project-left');
+          } else {
+            innerTarget.classList.add('featured-project-right');
+          }
+          observer.observe(innerTarget);
         }
       });
-    }, {
-      threshold: 0.1,
-      rootMargin: "0px 0px -50px 0px"
-    });
-    
-    featuredProjects.forEach((project, index) => {
-      const innerRow = project.querySelector('.row');
-      if (innerRow) {
-        innerRow.classList.add('featured-project');
-        if (index % 2 === 0) {
-          innerRow.classList.add('featured-project-left');
-        } else {
-          innerRow.classList.add('featured-project-right');
-        }
-        observer.observe(innerRow);
-      }
-  });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener("DOMContentLoaded", setupAnimation);
+    } else {
+      setupAnimation();
+    }
+    window.addEventListener('load', setupAnimation);
+  })();
 </script>
 
 <script>
