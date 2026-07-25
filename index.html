@@ -961,9 +961,62 @@ body.page-loaded {
     }
   }
 
+  /* Teaser auto-tilt animation on page load / scroll */
+  @keyframes autoTeaserTilt {
+    0% {
+      transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1);
+    }
+    25% {
+      transform: perspective(1000px) rotateX(-6deg) rotateY(8deg) scale(1.025);
+    }
+    55% {
+      transform: perspective(1000px) rotateX(5deg) rotateY(-7deg) scale(1.025);
+    }
+    80% {
+      transform: perspective(1000px) rotateX(-2deg) rotateY(3deg) scale(1.01);
+    }
+    100% {
+      transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1);
+    }
+  }
+
   .profile-tilt {
     animation: floatAndSway 4.5s ease-in-out infinite;
     transition: transform 0.3s ease-out;
+  }
+
+  .profile-tilt.auto-teaser {
+    animation: autoTeaserTilt 3s ease-in-out forwards !important;
+  }
+
+  .profile-tilt.auto-teaser .profile-card {
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5), 
+                0 0 35px rgba(255, 105, 180, 0.4), 
+                0 10px 35px rgba(0, 0, 0, 0.8);
+  }
+
+  .profile-tilt.auto-teaser .glare {
+    opacity: 1;
+  }
+
+  .profile-tilt.auto-teaser .profile-card::after {
+    opacity: 1;
+    animation: holoSweep 2.5s ease-in-out infinite;
+  }
+
+  .profile-tilt.auto-teaser .profile-card::before {
+    opacity: 0.65;
+    animation: sparkleMove 3s linear infinite;
+  }
+
+  .profile-tilt.auto-teaser .poke-bg-img {
+    filter: brightness(0.6) blur(0.5px);
+  }
+
+  .profile-tilt.auto-teaser .poke-info-overlay {
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.45);
   }
 
   .profile-tilt:hover {
@@ -3869,7 +3922,75 @@ document.querySelectorAll('a').forEach(link => {
     } else {
       setupScrollReveal();
     }
-    window.addEventListener('load', setupScrollReveal);
+  })();
+</script>
+
+<script>
+  // Profile Pokémon Card Auto-Teaser Animation (Milder rotation, replays periodically after delay)
+  (function initProfileCardTeaser() {
+    const profileTilt = document.querySelector('.profile-tilt');
+    if (!profileTilt) return;
+
+    let isHovered = false;
+    let teaserTimer = null;
+    let removeTimer = null;
+
+    function playTeaser() {
+      if (isHovered || !profileTilt) return;
+      profileTilt.classList.remove('auto-teaser');
+      // Trigger reflow to restart CSS keyframe animation smoothly
+      void profileTilt.offsetWidth;
+      profileTilt.classList.add('auto-teaser');
+
+      clearTimeout(removeTimer);
+      removeTimer = setTimeout(function() {
+        profileTilt.classList.remove('auto-teaser');
+      }, 3000);
+    }
+
+    function scheduleTeaser(delay) {
+      clearTimeout(teaserTimer);
+      teaserTimer = setTimeout(function() {
+        if (!isHovered) {
+          playTeaser();
+          // Replay teaser every 7.5 seconds of inactivity
+          scheduleTeaser(7500);
+        }
+      }, delay);
+    }
+
+    // Immediately stop auto-teaser and clear timer if user hovers
+    profileTilt.addEventListener('mouseenter', function() {
+      isHovered = true;
+      profileTilt.classList.remove('auto-teaser');
+      clearTimeout(teaserTimer);
+      clearTimeout(removeTimer);
+    });
+
+    // When mouse leaves, re-schedule teaser after 6 seconds of no hover
+    profileTilt.addEventListener('mouseleave', function() {
+      isHovered = false;
+      scheduleTeaser(6000);
+    });
+
+    // Trigger when scrolled into view
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            if (!isHovered) scheduleTeaser(700);
+          } else {
+            clearTimeout(teaserTimer);
+            clearTimeout(removeTimer);
+            profileTilt.classList.remove('auto-teaser');
+          }
+        });
+      }, { threshold: 0.25 });
+
+      observer.observe(profileTilt);
+    } else {
+      scheduleTeaser(1200);
+    }
   })();
 </script>
 
