@@ -183,26 +183,22 @@ body.light .section-bg-portfolio{
     linear-gradient(90deg, #daeeff 0%, #ffffff 50%, #daeeff 100%);
 }
 body.light .section-bg-skills {
-      min-height: 100vh;
   background:
     radial-gradient(ellipse 50% 100% at 0% 50%,   rgba(180, 220, 255, 0.7)  0%, transparent 70%),
     radial-gradient(ellipse 50% 100% at 100% 50%,  rgba(180, 220, 255, 0.7)  0%, transparent 70%),
     linear-gradient(90deg, #daeeff 0%, #ffffff 50%, #daeeff 100%);
 }
 body.light .section-bg-tools {
-      min-height: 100vh;
   background:
     radial-gradient(ellipse 50% 100% at 0% 50%,   rgba(180, 220, 255, 0.7)  0%, transparent 70%),
     radial-gradient(ellipse 50% 100% at 100% 50%,  rgba(180, 220, 255, 0.7)  0%, transparent 70%),
     linear-gradient(90deg, #daeeff 0%, #ffffff 50%, #daeeff 100%);
 }
 body.light #resume .resume {
-      min-height: 100vh;
   background:
     radial-gradient(ellipse 50% 100% at 0% 50%,   rgba(180, 220, 255, 0.7)  0%, transparent 70%),
     radial-gradient(ellipse 50% 100% at 100% 50%,  rgba(180, 220, 255, 0.7)  0%, transparent 70%),
     linear-gradient(90deg, #daeeff 0%, #ffffff 50%, #daeeff 100%);
-
 }
 body.light #header{
   /* background-color: #eaf1f9; */
@@ -2796,12 +2792,35 @@ img[onclick^="openModal"]:hover {
 /* ==========================================
    3D Interactable Tool Cubes
    ========================================== */
-.tool-logo-container {
-  height: 100px !important;
+#tools {
+  overflow: visible !important;
+  padding: 25px 0 10px 0 !important;
+}
+
+#tools .container {
+  overflow: visible !important;
+}
+
+#tools .tool-logo-container {
+  height: 80px !important;
   display: flex;
   align-items: center;
   justify-content: center;
   perspective: 500px;
+}
+
+#tools .resume-item {
+  position: relative;
+  height: 80px !important;
+  padding: 0 !important;
+  margin-bottom: 5px;
+}
+
+/* Elevate hovered tool column to top layer of stacking context */
+#tools [class*="col-"]:hover,
+#tools .resume-item:hover {
+  z-index: 99999 !important;
+  position: relative !important;
 }
 
 .tool-cube-scene {
@@ -2813,6 +2832,71 @@ img[onclick^="openModal"]:hover {
   cursor: grab;
   user-select: none;
   touch-action: none;
+  transition: transform 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+}
+
+/* Enlarge 3D Cube on Hover */
+#tools .resume-item:hover .tool-cube-scene,
+.tool-cube-scene:hover {
+  transform: scale(1.35) !important;
+}
+
+/* Centered Popup Card right over the middle of the cube */
+#tools .resume-item h4 {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -60%) scale(0.85);
+  width: 185px;
+  z-index: 1000;
+  background: rgba(10, 14, 30, 0.97);
+  border: 1px solid rgba(232, 166, 0, 0.6);
+  border-radius: 8px 8px 0 0;
+  padding: 6px 10px;
+  box-shadow: 0 -4px 15px rgba(0,0,0,0.5);
+  font-size: 0.95rem !important;
+  color: #ffd700 !important;
+  margin: 0 !important;
+  pointer-events: none;
+  transition: opacity 0.28s ease, transform 0.28s cubic-bezier(0.175, 0.885, 0.32, 1.275), visibility 0.28s ease;
+}
+
+#tools .resume-item p {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, 15%) scale(0.85);
+  width: 185px;
+  z-index: 1000;
+  background: rgba(10, 14, 30, 0.97);
+  border: 1px solid rgba(232, 166, 0, 0.6);
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+  padding: 0 10px 8px 10px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+  font-size: 0.78rem !important;
+  line-height: 1.3 !important;
+  color: #e0e0e0 !important;
+  margin: 0 !important;
+  pointer-events: none;
+  transition: opacity 0.28s ease, transform 0.28s cubic-bezier(0.175, 0.885, 0.32, 1.275), visibility 0.28s ease;
+}
+
+/* On hover, pop in right at the center of the cube */
+#tools .resume-item:hover h4 {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, -100%) scale(1);
+}
+
+#tools .resume-item:hover p {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, 0%) scale(1);
 }
 
 .tool-cube-scene:active {
@@ -2883,5 +2967,87 @@ img[onclick^="openModal"]:hover {
 .cube-face-left   { transform: rotateY(-90deg) translateZ(37.5px); }
 .cube-face-top    { transform: rotateX(90deg) translateZ(37.5px); background: rgba(35, 42, 70, 0.9); }
 .cube-face-bottom { transform: rotateX(-90deg) translateZ(37.5px); background: rgba(10, 12, 22, 0.9); }
+
+/* ==========================================
+   Light Mode Overrides for 3D Cubes & Popovers
+   ========================================== */
+body.light .cube-face {
+  background: rgba(245, 248, 255, 0.95);
+  border: 1.5px solid rgba(20, 157, 221, 0.45);
+  box-shadow: inset 0 0 10px rgba(20, 157, 221, 0.12), 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+body.light .cube-face-top {
+  background: rgba(230, 240, 255, 0.95);
+}
+
+body.light .cube-face-bottom {
+  background: rgba(215, 228, 248, 0.95);
+}
+
+body.light .tool-cube-scene:hover .cube-face {
+  border-color: rgba(20, 157, 221, 0.95);
+  box-shadow: inset 0 0 12px rgba(20, 157, 221, 0.25), 0 0 18px rgba(20, 157, 221, 0.4);
+}
+
+body.light #tools .resume-item h4 {
+  background: rgba(255, 255, 255, 0.98);
+  border: 1.5px solid rgba(20, 157, 221, 0.45);
+  color: #149ddd !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+body.light #tools .resume-item p {
+  background: rgba(255, 255, 255, 0.98);
+  border: 1.5px solid rgba(20, 157, 221, 0.45);
+  border-top: none;
+  color: #333333 !important;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+body.light #tools [class*="col-"]:nth-child(n+7) .resume-item h4 {
+  border-bottom: none;
+  border-top: 1.5px solid rgba(20, 157, 221, 0.45);
+}
+
+body.light #tools [class*="col-"]:nth-child(n+7) .resume-item p {
+  border-top: 1.5px solid rgba(20, 157, 221, 0.45);
+}
+
+/* Light mode News Section */
+body.light .news-item {
+  background: rgba(0, 0, 0, 0.02);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+body.light .news-item:hover {
+  background: rgba(0, 0, 0, 0.05);
+  border-color: rgba(255, 122, 0, 0.5);
+}
+
+body.light .news-content h4 {
+  color: #111827 !important;
+}
+
+body.light .news-content p {
+  color: #4b5563 !important;
+}
+
+/* General Light Mode Spacing & Contrast Cleanups */
+body.light section {
+  background: #ffffff;
+}
+
+body.light .section-bg {
+  background: #f8fafc !important;
+}
+
+body.light #tools {
+  background: #f8fafc !important;
+}
+
+body.light #gallerysc {
+  background: #ffffff !important;
+}
 
 
