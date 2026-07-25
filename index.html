@@ -629,6 +629,232 @@ body.page-loaded {
             font-size: 0.68rem;
           }
         }
+
+        /* Good Times Multi-Item Carousel Section */
+        .goodtimes-carousel-section {
+          position: relative;
+          width: 100%;
+          padding: 20px 0;
+        }
+        .goodtimes-container {
+          position: relative;
+          width: 100%;
+          max-width: 1240px;
+          margin: 0 auto;
+          padding: 0 55px;
+        }
+        .goodtimes-track-wrapper {
+          width: 100%;
+          overflow: hidden;
+          padding: 10px 0 20px 0;
+        }
+        .goodtimes-track {
+          display: flex;
+          gap: 20px;
+          transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+          will-change: transform;
+        }
+        .goodtimes-slide {
+          flex: 0 0 calc((100% - 60px) / 4);
+          min-width: 0;
+          box-sizing: border-box;
+        }
+        @media (max-width: 1200px) {
+          .goodtimes-slide {
+            flex: 0 0 calc((100% - 40px) / 3);
+          }
+        }
+        @media (max-width: 860px) {
+          .goodtimes-slide {
+            flex: 0 0 calc((100% - 20px) / 2);
+          }
+        }
+        @media (max-width: 576px) {
+          .goodtimes-slide {
+            flex: 0 0 100%;
+          }
+          .goodtimes-container {
+            padding: 0 40px;
+          }
+        }
+
+        .goodtimes-card {
+          display: flex;
+          flex-direction: column;
+          align-items: stretch;
+          background: rgba(255, 255, 255, 0.03);
+          backdrop-filter: blur(10px);
+          -webkit-backdrop-filter: blur(10px);
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          border-radius: 16px;
+          padding: 16px;
+          height: 100%;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+          transition: all 0.3s ease;
+          cursor: pointer;
+        }
+        .goodtimes-card:hover {
+          background: rgba(255, 255, 255, 0.06);
+          border-color: rgba(20, 157, 221, 0.4);
+          box-shadow: 0 15px 35px rgba(20, 157, 221, 0.15), 0 10px 30px rgba(0, 0, 0, 0.5);
+          transform: translateY(-4px);
+        }
+        .goodtimes-img-wrapper {
+          width: 100%;
+          height: 200px;
+          flex-shrink: 0;
+          margin-bottom: 14px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          overflow: hidden;
+          border-radius: 10px;
+          background: rgba(0, 0, 0, 0.2);
+          border: 1px solid rgba(255, 255, 255, 0.05);
+          position: relative;
+        }
+        .goodtimes-img-wrapper img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: transform 0.4s ease;
+        }
+        .goodtimes-card:hover .goodtimes-img-wrapper img {
+          transform: scale(1.08);
+        }
+        .goodtimes-info {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          flex-grow: 1;
+        }
+        .goodtimes-info h4 {
+          font-size: 0.95rem;
+          font-weight: 700;
+          margin: 0 0 6px 0;
+          line-height: 1.35;
+          color: #fff !important;
+        }
+        .goodtimes-info .org {
+          font-size: 0.82rem;
+          color: #cccccc !important;
+          margin: 0 0 10px 0;
+          line-height: 1.3;
+        }
+        .goodtimes-info .year {
+          font-size: 0.72rem;
+          font-weight: 600;
+          color: #149ddd;
+          background: rgba(20, 157, 221, 0.1);
+          border: 1px solid rgba(20, 157, 221, 0.3);
+          padding: 2px 8px;
+          border-radius: 4px;
+          display: inline-block;
+          align-self: flex-start;
+          text-shadow: 0 0 5px rgba(20, 157, 221, 0.2);
+        }
+
+        /* Light mode overrides for Good Times */
+        body.light .goodtimes-card {
+          background: rgba(0, 0, 0, 0.02);
+          border: 1px solid rgba(0, 0, 0, 0.08);
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+        body.light .goodtimes-card:hover {
+          background: rgba(0, 0, 0, 0.04);
+          border-color: rgba(26, 147, 253, 0.4);
+          box-shadow: 0 15px 35px rgba(26, 147, 253, 0.1), 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+        body.light .goodtimes-info h4 {
+          color: #0e0e11 !important;
+        }
+        body.light .goodtimes-info .org {
+          color: #4b5563 !important;
+        }
+        body.light .goodtimes-info .year {
+          background: rgba(26, 147, 253, 0.1);
+          border: 1px solid rgba(26, 147, 253, 0.3);
+          color: #1a93fd;
+          text-shadow: none;
+        }
+
+        /* Navigation Buttons */
+        .goodtimes-btn {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          background: rgba(255, 255, 255, 0.03);
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          color: #fff;
+          width: 45px;
+          height: 45px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          z-index: 15;
+          transition: all 0.3s ease;
+          backdrop-filter: blur(5px);
+          -webkit-backdrop-filter: blur(5px);
+        }
+        .goodtimes-btn:hover {
+          background: rgba(20, 157, 221, 0.2);
+          border-color: #149ddd;
+          box-shadow: 0 0 15px rgba(20, 157, 221, 0.4);
+          transform: translateY(-50%) scale(1.1);
+        }
+        .goodtimes-btn i {
+          font-size: 20px;
+        }
+        .goodtimes-prev-btn {
+          left: 0;
+        }
+        .goodtimes-next-btn {
+          right: 0;
+        }
+
+        body.light .goodtimes-btn {
+          background: rgba(0, 0, 0, 0.02);
+          border: 1px solid rgba(0, 0, 0, 0.08);
+          color: #333;
+        }
+        body.light .goodtimes-btn:hover {
+          background: rgba(26, 147, 253, 0.2);
+          border-color: #1a93fd;
+          color: #1a93fd;
+          box-shadow: 0 0 15px rgba(26, 147, 253, 0.4);
+        }
+
+        /* Dots */
+        .goodtimes-dots {
+          display: flex;
+          justify-content: center;
+          gap: 8px;
+          margin-top: 15px;
+        }
+        .goodtimes-dot {
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          background: rgba(255, 255, 255, 0.2);
+          border: none;
+          padding: 0;
+          cursor: pointer;
+          transition: all 0.3s ease;
+        }
+        .goodtimes-dot.active {
+          background: #149ddd;
+          transform: scale(1.3);
+          box-shadow: 0 0 8px rgba(20, 157, 221, 0.6);
+        }
+        body.light .goodtimes-dot {
+          background: rgba(0, 0, 0, 0.15);
+        }
+        body.light .goodtimes-dot.active {
+          background: #1a93fd;
+          box-shadow: 0 0 8px rgba(26, 147, 253, 0.6);
+        }
       </style>
     </div>
 
@@ -2560,119 +2786,7 @@ document.addEventListener('keydown', function(event) {
     
     <!-- ======= Skills Section ======= -->
 
-<!-- Art Section -->
-    <section id="art" class="art">
-      <div class="container">
-        <!-- <h6>level 05</h6> -->
-        <div class="section-title">
-          <h2>✦ART</h2>
-          <p></p>
-        </div>
-  
-        
-        <div class="wrapper">
 
-          <div class="card">
-            <img src="assets/img/art/scooter.png" class="cover" alt="">
-            <div class="info">
-              <div class="album">Low-poly scooter made in Blender</div>
-            </div>
-          </div>
-
-          <div class="card">
-            <img src="assets/img/art/bowls.gif" class="cover" alt="">
-            <div class="info">
-              <div class="album">Tableware made in Blender</div>
-            </div>
-          </div>
-
-          <div class="card">
-            <img src="assets/img/art/plane.png" class="cover" alt="">
-            <div class="info">
-              <div class="album">Airplane made in Blender</div>
-            </div>
-          </div>
-
-          <div class="card">
-            <img src="assets/img/art/toy.gif" class="cover" alt="">
-            <div class="info">
-              <div class="album">Toys made in Blender</div>
-            </div>
-          </div>
-
-                    <div class="card">
-            <img src="assets/img/art/ramen.gif" class="cover" alt="">
-            <div class="info">
-              <div class="album">Ramen bowl made in Blender</div>
-            </div>
-          </div>
-
-                    <div class="card">
-            <img src="assets/img/art/futurerickshaw.jpg" class="cover" alt="">
-            <div class="info">
-              <div class="album">Futuristic Rickshaw made in MagicaVoxel</div>
-            </div>
-          </div>
-          
-          <div class="card">
-            <img src="assets/img/art/3d.png" class="cover" alt="">
-            <div class="info">
-              <div class="album">Misc 3D models made in Blender</div>
-            </div>
-          </div>
-
-          <div class="card">
-            <img src="assets/img/art/tong.gif" class="cover" alt="">
-            <div class="info">
-              <div class="album">A local Bangladeshi tea stall made in Blender</div>
-            </div>
-          </div>
-        
-                    <!-- <div class="card">
-            <img src="assets/img/art/db.png" class="cover" alt="">
-            <div class="info">
-              <div class="album">3D model AI generation process from original 2D illustration</div>
-            </div>
-          </div> -->
-
-          <!-- <div class="card">
-            <img src="assets/img/art/tigerposter.jpg" class="cover" alt="">
-            <div class="info">
-              <div class="album">Poster for thesis user study made in Figma</div>
-            </div>
-          </div> -->
-        
-          <!-- <div class="card">
-            <img src="assets/img/art/mind.png" class="cover" alt="">
-            <div class="info">
-              <div class="album">T-Shirt worn by 1000+ students!</div>
-            </div>
-          </div> -->
-
-          <!-- <div class="card">
-            <img src="assets/img/art/fire.png" class="cover" alt="">
-            <div class="info">
-              <div class="album">Grave of the Fireflies Fan Art</div>
-            </div>
-          </div> -->
-          <p>For more: <a href="https://www.behance.net/roboshamit?isa0=1"  target="_blank">Behance Portfolio</a> </p>
-        </div>
-  
-  
-        <!-- <div class="acquiredSkills-container" data-aos="fade-up" data-aos-delay="100">
-
-          <div class="col-lg-4 col-md-6 acquiredSkills-item filter-db">
-  
-            <a href="https://www.behance.net/roboshamit?isa0=1">
-              <img src="assets/img/rsz_behance.png" class="img-fluid" alt="">
-            </a>
-            <p><a href="https://www.behance.net/roboshamit?isa0=1">Portfolio (Behance)</a> </p>
-
-        </div> -->
-  
-      </div>
-   </section>
-     <!-- End Art Section -->
     <!-- ======= Tools Section ======= -->
 
    <section id="tools" class="tools section-bg section-bg-tools">
@@ -2950,157 +3064,351 @@ document.addEventListener('keydown', function(event) {
     
     
 
-<section id="gallerysc" class="gallerysc section-bg section-gallery" >
-          <div class="container">
-            <!-- <h6>level 08</h6> -->
-            <div class="section-title">
-              <h2>✦GOOD TIMES</h2>        
+<section id="gallerysc" class="gallerysc section-bg section-gallery">
+  <div class="container">
+    <div class="section-title">
+      <h2>✦GOOD TIMES</h2>
+    </div>
+
+    <div class="goodtimes-carousel-section">
+      <div class="goodtimes-container">
+        <button class="goodtimes-btn goodtimes-prev-btn" aria-label="Previous Photo">
+          <i class="bx bx-chevron-left"></i>
+        </button>
+
+        <div class="goodtimes-track-wrapper">
+          <div class="goodtimes-track">
+
+            <!-- Item 1: IUT -->
+            <div class="goodtimes-slide">
+              <div class="goodtimes-card" onclick="openModal('assets/img/gallery/iut.jpg', 'landscape')">
+                <div class="goodtimes-img-wrapper">
+                  <img src="assets/img/gallery/iut.jpg" alt="1st Prize in Game Development at IUT ICT Fest 2016" loading="lazy">
+                </div>
+                <div class="goodtimes-info">
+                  <div>
+                    <h4>1st Prize in Game Development</h4>
+                    <p class="org">IUT ICT Fest 2016</p>
+                  </div>
+                  <span class="year">2016</span>
+                </div>
+              </div>
             </div>
-      
-    <!--         
-    
-        <script>
-        var myIndex = 0;
-        carousel();
-        
-     -->
-     <div class="wrapper">
-      <div class="card">
-        <img src="assets/img/gallery/iut.jpg" class="cover" alt="">
-        <div class="info">
-          <div class="album">1st Prize in Game Development at IUT ICT Fest 2016</div>
+
+            <!-- Item 2: Poster -->
+            <div class="goodtimes-slide">
+              <div class="goodtimes-card" onclick="openModal('assets/img/gallery/poster.jpg', 'landscape')">
+                <div class="goodtimes-img-wrapper">
+                  <img src="assets/img/gallery/poster.jpg" alt="Intra University Poster Presentation 2016, AUST" loading="lazy">
+                </div>
+                <div class="goodtimes-info">
+                  <div>
+                    <h4>Poster Presentation</h4>
+                    <p class="org">Intra University Poster Presentation 2016, AUST</p>
+                  </div>
+                  <span class="year">2016</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 3: GP -->
+            <div class="goodtimes-slide">
+              <div class="goodtimes-card" onclick="openModal('assets/img/gallery/gp.jpg', 'landscape')">
+                <div class="goodtimes-img-wrapper">
+                  <img src="assets/img/gallery/gp.jpg" alt="Hackathon team at Grameenphone Game Jam 2017" loading="lazy">
+                </div>
+                <div class="goodtimes-info">
+                  <div>
+                    <h4>Grameenphone Game Jam</h4>
+                    <p class="org">Hackathon Team at GP Game Jam 2017</p>
+                  </div>
+                  <span class="year">2017</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 4: Cartoon -->
+            <div class="goodtimes-slide">
+              <div class="goodtimes-card" onclick="openModal('assets/img/gallery/cartoon.jpg', 'landscape')">
+                <div class="goodtimes-img-wrapper">
+                  <img src="assets/img/gallery/cartoon.jpg" alt="2nd place winning artwork in Dhaka Tribune newspaper" loading="lazy">
+                </div>
+                <div class="goodtimes-info">
+                  <div>
+                    <h4>Featured Artwork</h4>
+                    <p class="org">2nd Place Winning Artwork in "Dhaka Tribune"</p>
+                  </div>
+                  <span class="year">2017</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 5: NASA -->
+            <div class="goodtimes-slide">
+              <div class="goodtimes-card" onclick="openModal('assets/img/gallery/nasa.jpg', 'landscape')">
+                <div class="goodtimes-img-wrapper">
+                  <img src="assets/img/gallery/nasa.jpg" alt="NASA Space Apps Challenge 2018 Team" loading="lazy">
+                </div>
+                <div class="goodtimes-info">
+                  <div>
+                    <h4>NASA Space Apps</h4>
+                    <p class="org">Team at NASA Space Apps Challenge 2018</p>
+                  </div>
+                  <span class="year">2018</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 6: Net War -->
+            <div class="goodtimes-slide">
+              <div class="goodtimes-card" onclick="openModal('assets/img/gallery/net.jpg', 'landscape')">
+                <div class="goodtimes-img-wrapper">
+                  <img src="assets/img/gallery/net.jpg" alt="1st Runner up in Net War at International Telco Warfare 2018" loading="lazy">
+                </div>
+                <div class="goodtimes-info">
+                  <div>
+                    <h4>1st Runner Up in Net War</h4>
+                    <p class="org">International Telco Warfare 2018</p>
+                  </div>
+                  <span class="year">2018</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 7: Intra -->
+            <div class="goodtimes-slide">
+              <div class="goodtimes-card" onclick="openModal('assets/img/gallery/intra.jpg', 'landscape')">
+                <div class="goodtimes-img-wrapper">
+                  <img src="assets/img/gallery/intra.jpg" alt="Champion in Software at Intra AUST Technomania 2018" loading="lazy">
+                </div>
+                <div class="goodtimes-info">
+                  <div>
+                    <h4>Champion in Software</h4>
+                    <p class="org">Intra AUST Technomania 2018</p>
+                  </div>
+                  <span class="year">2018</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 8: Intra2 -->
+            <div class="goodtimes-slide">
+              <div class="goodtimes-card" onclick="openModal('assets/img/gallery/intra2.jpg', 'landscape')">
+                <div class="goodtimes-img-wrapper">
+                  <img src="assets/img/gallery/intra2.jpg" alt="Receiving prize as Champion in Software at Intra AUST Technomania 2018" loading="lazy">
+                </div>
+                <div class="goodtimes-info">
+                  <div>
+                    <h4>Prize Ceremony</h4>
+                    <p class="org">Software Champion at AUST Technomania 2018</p>
+                  </div>
+                  <span class="year">2018</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 9: Hand -->
+            <div class="goodtimes-slide">
+              <div class="goodtimes-card" onclick="openModal('assets/img/gallery/hand.jpg', 'landscape')">
+                <div class="goodtimes-img-wrapper">
+                  <img src="assets/img/gallery/hand.jpg" alt="Micro-Controller Lab Project" loading="lazy">
+                </div>
+                <div class="goodtimes-info">
+                  <div>
+                    <h4>Gesture Control Project</h4>
+                    <p class="org">Image Processing & Servo Motor Gesture Lab</p>
+                  </div>
+                  <span class="year">2018</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 10: IDC Crest -->
+            <div class="goodtimes-slide">
+              <div class="goodtimes-card" onclick="openModal('assets/img/gallery/idccrest.jpg', 'landscape')">
+                <div class="goodtimes-img-wrapper">
+                  <img src="assets/img/gallery/idccrest.jpg" alt="Crest for service as Joint Secretary at AUST Innovation and Design Club" loading="lazy">
+                </div>
+                <div class="goodtimes-info">
+                  <div>
+                    <h4>Joint Secretary Award</h4>
+                    <p class="org">AUST Innovation and Design Club</p>
+                  </div>
+                  <span class="year">2019</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 11: MindSparks -->
+            <div class="goodtimes-slide">
+              <div class="goodtimes-card" onclick="openModal('assets/img/gallery/orgmind.jpg', 'landscape')">
+                <div class="goodtimes-img-wrapper">
+                  <img src="assets/img/gallery/orgmind.jpg" alt="Organizing MindSparks 19" loading="lazy">
+                </div>
+                <div class="goodtimes-info">
+                  <div>
+                    <h4>Organizer — MindSparks 19</h4>
+                    <p class="org">National Tech Fest Organizing Team</p>
+                  </div>
+                  <span class="year">2019</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 12: GWR50 -->
+            <div class="goodtimes-slide">
+              <div class="goodtimes-card" onclick="openModal('assets/img/gallery/gwr50.jpg', 'landscape')">
+                <div class="goodtimes-img-wrapper">
+                  <img src="assets/img/gallery/gwr50.jpg" alt="Guinness World Record Attempt 50km Bike Finisher Medal" loading="lazy">
+                </div>
+                <div class="goodtimes-info">
+                  <div>
+                    <h4>Guinness World Record Medal</h4>
+                    <p class="org">50km Cycling Challenge Finisher</p>
+                  </div>
+                  <span class="year">2020</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 13: Playense -->
+            <div class="goodtimes-slide">
+              <div class="goodtimes-card" onclick="openModal('assets/img/gallery/playon.jpg', 'landscape')">
+                <div class="goodtimes-img-wrapper">
+                  <img src="assets/img/gallery/playon.jpg" alt="Onboarding gifts from Playense" loading="lazy">
+                </div>
+                <div class="goodtimes-info">
+                  <div>
+                    <h4>Onboarding at Playense</h4>
+                    <p class="org">Senior Game Developer Welcome Gifts</p>
+                  </div>
+                  <span class="year">2021</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 14: BYLC -->
+            <div class="goodtimes-slide">
+              <div class="goodtimes-card" onclick="openModal('assets/img/gallery/bylc23.jpg', 'landscape')">
+                <div class="goodtimes-img-wrapper">
+                  <img src="assets/img/gallery/bylc23.jpg" alt="BYLC Running with Purpose 2023 Finisher Medal" loading="lazy">
+                </div>
+                <div class="goodtimes-info">
+                  <div>
+                    <h4>BYLC Run Finisher</h4>
+                    <p class="org">Running with Purpose 2023</p>
+                  </div>
+                  <span class="year">2023</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 15: Espoo Run -->
+            <div class="goodtimes-slide">
+              <div class="goodtimes-card" onclick="openModal('assets/img/gallery/espoo23.jpg', 'landscape')">
+                <div class="goodtimes-img-wrapper">
+                  <img src="assets/img/gallery/espoo23.jpg" alt="Espoo Ranta Marathon 2023 5K Run, Finland" loading="lazy">
+                </div>
+                <div class="goodtimes-info">
+                  <div>
+                    <h4>Espoo Ranta Marathon 5K</h4>
+                    <p class="org">Espoo, Finland</p>
+                  </div>
+                  <span class="year">2023</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 16: Winter Demoday -->
+            <div class="goodtimes-slide">
+              <div class="goodtimes-card" onclick="openModal('assets/img/gallery/wdemo.jpg', 'landscape')">
+                <div class="goodtimes-img-wrapper">
+                  <img src="assets/img/gallery/wdemo.jpg" alt="Presenting Dime Shift during MediaLab Winter Demoday 2023, Aalto University" loading="lazy">
+                </div>
+                <div class="goodtimes-info">
+                  <div>
+                    <h4>MediaLab Demoday Presentation</h4>
+                    <p class="org">Presenting Dime Shift @ Aalto University</p>
+                  </div>
+                  <span class="year">2023</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 17: Bit1 Competition -->
+            <div class="goodtimes-slide">
+              <div class="goodtimes-card" onclick="openModal('assets/img/gallery/ggbit.jpg', 'landscape')">
+                <div class="goodtimes-img-wrapper">
+                  <img src="assets/img/gallery/ggbit.jpg" alt="Presenting Galactic Gourmet during Bit1 Competition 2024" loading="lazy">
+                </div>
+                <div class="goodtimes-info">
+                  <div>
+                    <h4>Bit1 Competition Finalist</h4>
+                    <p class="org">Presenting Galactic Gourmet 2024</p>
+                  </div>
+                  <span class="year">2024</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 18: Helsinki City Run -->
+            <div class="goodtimes-slide">
+              <div class="goodtimes-card" onclick="openModal('assets/img/gallery/hel.jpg', 'landscape')">
+                <div class="goodtimes-img-wrapper">
+                  <img src="assets/img/gallery/hel.jpg" alt="Helsinki City Run 5K 2024" loading="lazy">
+                </div>
+                <div class="goodtimes-info">
+                  <div>
+                    <h4>Helsinki City Run 5K</h4>
+                    <p class="org">Helsinki, Finland</p>
+                  </div>
+                  <span class="year">2024</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 19: Medals -->
+            <div class="goodtimes-slide">
+              <div class="goodtimes-card" onclick="openModal('assets/img/gallery/medals.jpg', 'landscape')">
+                <div class="goodtimes-img-wrapper">
+                  <img src="assets/img/gallery/medals.jpg" alt="Finisher Medals from Running and Cycling events 2023-2024" loading="lazy">
+                </div>
+                <div class="goodtimes-info">
+                  <div>
+                    <h4>Running & Cycling Medals</h4>
+                    <p class="org">Finisher Collection 2023–2024</p>
+                  </div>
+                  <span class="year">2024</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 20: Aalto Research Assistant -->
+            <div class="goodtimes-slide">
+              <div class="goodtimes-card" onclick="openModal('assets/img/gallery/aalto.jpg', 'landscape')">
+                <div class="goodtimes-img-wrapper">
+                  <img src="assets/img/gallery/aalto.jpg" alt="Research Assistant at Aalto University 2024-2025" loading="lazy">
+                </div>
+                <div class="goodtimes-info">
+                  <div>
+                    <h4>Research Assistant</h4>
+                    <p class="org">Aalto University Department of Computer Science</p>
+                  </div>
+                  <span class="year">2024–2025</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
         </div>
-      </div>
-    
-      <div class="card">
-        <img src="assets/img/gallery/gp.jpg" class="cover" alt="">
-        <div class="info">
-          <div class="album">My Hackathon team at Grameenphone Game Jam 2017</div>
-        </div>
-      </div>
-      <!-- <div class="card">
-        <img src="assets/img/gallery/nasa.jpg" class="cover" alt="">
-        <div class="info">
-          <div class="album">My team at NASA Space App Challenge 2018</div>
-        </div>
-      </div> -->
-      <div class="card">
-        <img src="assets/img/gallery/net.jpg" class="cover" alt="">
-        <div class="info">
-          <div class="album">1st Runner up in Net War at International Telco Warfare 2018</div>
-        </div>
-      </div>
-    
-      <!-- <div class="card">
-        <img src="assets/img/gallery/intra2.jpg" class="cover" alt="">
-        <div class="info">
-          <div class="album">Receiving prize as "Champion in Software at Intra AUST Technomania 2018</div>
-        </div>
-      </div> -->
-    
-      <div class="card">
-        <img src="assets/img/gallery/idccrest.jpg" class="cover" alt="">
-        <div class="info">
-          <div class="album">Crest for my service as Joint Secretary at AUST Innovation and Design Club</div>
-        </div>
-      </div>
-    
-      <div class="card">
-        <img src="assets/img/gallery/orgmind.jpg" class="cover" alt="">
-        <div class="info">
-          <div class="album">Crest, Certificate etc for organizing "MindSparks 19"</div>
-        </div>
-      </div>
-    
-      <div class="card">
-        <img src="assets/img/gallery/poster.jpg" class="cover" alt="">
-        <div class="info">
-          <div class="album">Intra University Poster Presentation 2016, AUST</div>
-        </div>
-      </div>
-    
-      <div class="card">
-        <img src="assets/img/gallery/cartoon.jpg" class="cover" alt="">
-        <div class="info">
-          <div class="album">My 2nd place winning artwork featured in "Dhaka Tribune" newspaper</div>
-        </div>
-      </div>
-    
-      <div class="card">
-        <img src="assets/img/gallery/intra.jpg" class="cover" alt="">
-        <div class="info">
-          <div class="album">Crest, Certificate for being "Champion in Software at Intra AUST Technomania 2018</div>
-        </div>
-      </div>
-    
-      <div class="card">
-        <img src="assets/img/gallery/hand.jpg" class="cover" alt="">
-        <div class="info">
-          <div class="album">Micro-Controller Lab Project "Detecting hand gestures using Image Processing and displaying them using Arduino and Servo motors</div>
-        </div>
-      </div>
-    
-      <div class="card">
-        <img src="assets/img/gallery/playon.jpg" class="cover" alt="">
-        <div class="info">
-          <div class="album">Onboarding gifts from Playense</div>
-        </div>
-      </div>
-    
-      <!-- <div class="card">
-        <img src="assets/img/gallery/bylc23.jpg" class="cover" alt="">
-        <div class="info">
-          <div class="album">Finisher Medal BYLC Running with Purpose 2023</div>
-        </div>
-      </div> -->
-    
-      <div class="card">
-        <img src="assets/img/gallery/gwr50.jpg" class="cover" alt="">
-        <div class="info">
-          <div class="album">Finisher Medal Guinnesse World Record Attempt 50km Bike</div>
-        </div>
-      </div>
-    
-      <!-- <div class="card">
-        <img src="assets/img/gallery/espoo23.jpg" class="cover" alt="">
-        <div class="info">
-          <div class="album">5K run at Espoo Ranta Marathon 2023, Finland</div>
-        </div>
-      </div> -->
-    
-      <div class="card">
-        <img src="assets/img/gallery/wdemo.jpg" class="cover" alt="">
-        <div class="info">
-          <div class="album">Presenting Dime Shift during MediaLab Winter Demoday 2023, Aalto University</div>
-        </div>
+
+        <button class="goodtimes-btn goodtimes-next-btn" aria-label="Next Photo">
+          <i class="bx bx-chevron-right"></i>
+        </button>
       </div>
 
-      <div class="card">
-        <img src="assets/img/gallery/ggbit.jpg" class="cover" alt="">
-        <div class="info">
-          <div class="album">Presenting Galactic Gourmet during Bit1 Competition 2024</div>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="assets/img/gallery/medals.jpg" class="cover" alt="">
-        <div class="info">
-          <div class="album">Finisher Medals from Running and Cycling events 2023-2024</div>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="assets/img/gallery/aalto.jpg" class="cover" alt="">
-        <div class="info">
-          <div class="album">Research Assistant at Aalto University 2024-2025</div>
-        </div>
-      </div>
-      <!-- <div class="card">
-        <img src="assets/img/gallery/hel.jpg" class="cover" alt="">
-        <div class="info">
-          <div class="album">Helsinki City Run 5K 2024</div>
-        </div>
-      </div> -->
+      <!-- Pagination Dots -->
+      <div class="goodtimes-dots"></div>
     </div>
   </div>
 </section>
@@ -3575,16 +3883,13 @@ document.querySelectorAll('a').forEach(link => {
         registerElements([el], anim, 0);
       });
 
-      // 5. Art cards (staggered zoom & scale up)
-      const artCards = document.querySelectorAll('#art .card');
-      registerElements(artCards, 'scroll-reveal-scale', 0.12);
 
       // 6. Tools icons/cubes (staggered pop-in)
       const toolItems = document.querySelectorAll('#tools .resume-item');
       registerElements(toolItems, 'scroll-reveal-scale', 0.08);
 
       // 7. Good Times gallery photo cards (staggered float up & scale)
-      const galleryCards = document.querySelectorAll('#gallerysc .card');
+      const galleryCards = document.querySelectorAll('#gallerysc .goodtimes-card, #gallerysc .card');
       registerElements(galleryCards, 'scroll-reveal-up', 0.12);
 
       // 8. News timeline items (sliding from left)
@@ -3791,6 +4096,163 @@ document.querySelectorAll('a').forEach(link => {
     window.addEventListener('resize', updateCarousel);
     
     // Init values
+    updateCarousel();
+    startAutoRotate();
+  });
+</script>
+
+<script>
+  // Good Times Multi-Item Carousel Logic
+  document.addEventListener("DOMContentLoaded", function() {
+    const track = document.querySelector('.goodtimes-track');
+    const slides = Array.from(document.querySelectorAll('.goodtimes-slide'));
+    const prevBtn = document.querySelector('.goodtimes-prev-btn');
+    const nextBtn = document.querySelector('.goodtimes-next-btn');
+    const dotsContainer = document.querySelector('.goodtimes-dots');
+    
+    if (!track || slides.length === 0) return;
+    
+    let currentIndex = 0;
+    let autoRotateInterval;
+    const autoRotateDelay = 3500;
+    
+    function getVisibleCount() {
+      const w = window.innerWidth;
+      if (w <= 576) return 1;
+      if (w <= 860) return 2;
+      if (w <= 1200) return 3;
+      return 4;
+    }
+    
+    function getMaxIndex() {
+      const visible = getVisibleCount();
+      return Math.max(0, slides.length - visible);
+    }
+    
+    function createDots() {
+      if (!dotsContainer) return;
+      dotsContainer.innerHTML = '';
+      const maxIdx = getMaxIndex();
+      const dotCount = maxIdx + 1;
+      
+      for (let i = 0; i < dotCount; i++) {
+        const dot = document.createElement('button');
+        dot.classList.add('goodtimes-dot');
+        if (i === currentIndex) dot.classList.add('active');
+        dot.addEventListener('click', () => {
+          currentIndex = i;
+          updateCarousel();
+          resetAutoRotate();
+        });
+        dotsContainer.appendChild(dot);
+      }
+    }
+    
+    function updateCarousel() {
+      const maxIdx = getMaxIndex();
+      if (currentIndex > maxIdx) currentIndex = maxIdx;
+      if (currentIndex < 0) currentIndex = 0;
+      
+      if (slides.length > 0) {
+        const slideWidth = slides[0].getBoundingClientRect().width;
+        const gap = 20;
+        const translateX = -(currentIndex * (slideWidth + gap));
+        track.style.transform = `translateX(${translateX}px)`;
+      }
+      
+      if (dotsContainer) {
+        const dots = Array.from(dotsContainer.children);
+        dots.forEach((dot, idx) => {
+          if (idx === currentIndex) {
+            dot.classList.add('active');
+          } else {
+            dot.classList.remove('active');
+          }
+        });
+      }
+    }
+    
+    function nextSlide() {
+      const maxIdx = getMaxIndex();
+      if (currentIndex >= maxIdx) {
+        currentIndex = 0;
+      } else {
+        currentIndex++;
+      }
+      updateCarousel();
+    }
+    
+    function prevSlide() {
+      const maxIdx = getMaxIndex();
+      if (currentIndex <= 0) {
+        currentIndex = maxIdx;
+      } else {
+        currentIndex--;
+      }
+      updateCarousel();
+    }
+    
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => {
+        nextSlide();
+        resetAutoRotate();
+      });
+    }
+    
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => {
+        prevSlide();
+        resetAutoRotate();
+      });
+    }
+    
+    function startAutoRotate() {
+      stopAutoRotate();
+      autoRotateInterval = setInterval(nextSlide, autoRotateDelay);
+    }
+    
+    function stopAutoRotate() {
+      if (autoRotateInterval) clearInterval(autoRotateInterval);
+    }
+    
+    function resetAutoRotate() {
+      stopAutoRotate();
+      startAutoRotate();
+    }
+    
+    const carouselSection = document.querySelector('.goodtimes-carousel-section');
+    if (carouselSection) {
+      carouselSection.addEventListener('mouseenter', stopAutoRotate);
+      carouselSection.addEventListener('mouseleave', startAutoRotate);
+    }
+    
+    let startX = 0;
+    let isDragging = false;
+    
+    track.addEventListener('touchstart', (e) => {
+      startX = e.touches[0].clientX;
+      isDragging = true;
+      stopAutoRotate();
+    }, { passive: true });
+    
+    track.addEventListener('touchend', (e) => {
+      if (!isDragging) return;
+      isDragging = false;
+      const endX = e.changedTouches[0].clientX;
+      const diffX = startX - endX;
+      if (Math.abs(diffX) > 40) {
+        if (diffX > 0) nextSlide();
+        else prevSlide();
+      }
+      startAutoRotate();
+    });
+    
+    window.addEventListener('resize', () => {
+      createDots();
+      updateCarousel();
+    });
+    
+    createDots();
     updateCarousel();
     startAutoRotate();
   });
