@@ -50,7 +50,7 @@
     .featured-project {
       opacity: 0;
       will-change: transform, opacity;
-      transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1), opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: transform 2.2s cubic-bezier(0.08, 0.8, 0.15, 1.0), opacity 2.2s cubic-bezier(0.08, 0.8, 0.15, 1.0);
     }
     .featured-project-left {
       transform: translate3d(-150px, 0, 0);
@@ -68,6 +68,40 @@
       }
       .featured-project-right {
         transform: translate3d(60px, 0, 0);
+      }
+    }
+
+    /* Universal Scroll Reveal Animations (2.2s Smooth Slower Speed Across All Sections) */
+    .scroll-reveal {
+      opacity: 0;
+      will-change: transform, opacity;
+      transition: transform 2.2s cubic-bezier(0.08, 0.8, 0.15, 1.0), opacity 2.2s cubic-bezier(0.08, 0.8, 0.15, 1.0) !important;
+    }
+    .scroll-reveal-left {
+      transform: translate3d(-100px, 0, 0);
+    }
+    .scroll-reveal-right {
+      transform: translate3d(100px, 0, 0);
+    }
+    .scroll-reveal-up {
+      transform: translate3d(0, 60px, 0);
+    }
+    .scroll-reveal-scale {
+      transform: scale(0.82);
+    }
+    .scroll-reveal.revealed {
+      opacity: 1 !important;
+      transform: translate3d(0, 0, 0) scale(1) !important;
+    }
+    @media (max-width: 768px) {
+      .scroll-reveal-left {
+        transform: translate3d(-40px, 0, 0);
+      }
+      .scroll-reveal-right {
+        transform: translate3d(40px, 0, 0);
+      }
+      .scroll-reveal-up {
+        transform: translate3d(0, 30px, 0);
       }
     }
   </style>
@@ -3472,6 +3506,104 @@ document.querySelectorAll('a').forEach(link => {
       setupAnimation();
     }
     window.addEventListener('load', setupAnimation);
+  })();
+</script>
+
+<script>
+  // Universal Scroll Reveal Animations for Portfolio Sections
+  (function initUniversalScrollReveal() {
+    function setupScrollReveal() {
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.08,
+        rootMargin: "0px 0px -30px 0px"
+      });
+
+      function registerElements(elements, animationClass, delayStep = 0.1) {
+        elements.forEach((el, index) => {
+          if (!el.classList.contains('scroll-reveal')) {
+            el.classList.add('scroll-reveal', animationClass);
+            if (delayStep > 0) {
+              const delay = (index % 4) * delayStep;
+              el.style.transitionDelay = `${delay}s`;
+            }
+            observer.observe(el);
+          }
+        });
+      }
+
+      // 1. Publications items (alternating left & right)
+      const pubItems = document.querySelectorAll('#publications .acquiredSkills-item');
+      pubItems.forEach((el, idx) => {
+        const anim = (idx % 2 === 0) ? 'scroll-reveal-left' : 'scroll-reveal-right';
+        registerElements([el], anim, 0);
+      });
+
+      // 1b. Articles items (alternating left & right)
+      const articleItems = document.querySelectorAll('#articles .acquiredSkills-item');
+      articleItems.forEach((el, idx) => {
+        const anim = (idx % 2 === 0) ? 'scroll-reveal-left' : 'scroll-reveal-right';
+        registerElements([el], anim, 0);
+      });
+
+      // 2. Work Experience cards (alternating left, up, right)
+      const workCards = document.querySelectorAll('#resume .work-card');
+      workCards.forEach((el, idx) => {
+        const anims = ['scroll-reveal-left', 'scroll-reveal-up', 'scroll-reveal-right'];
+        const anim = anims[idx % anims.length];
+        registerElements([el], anim, 0);
+      });
+
+      // 3. Education cards (alternating left & right)
+      const eduCards = document.querySelectorAll('#education .work-card');
+      eduCards.forEach((el, idx) => {
+        const anim = (idx % 2 === 0) ? 'scroll-reveal-left' : 'scroll-reveal-right';
+        registerElements([el], anim, 0);
+      });
+
+      // 4. Volunteering cards (alternating left, scale, right)
+      const volCards = document.querySelectorAll('#achievements-volunteering .work-card, .achievements-volunteering .work-card');
+      volCards.forEach((el, idx) => {
+        const anims = ['scroll-reveal-left', 'scroll-reveal-scale', 'scroll-reveal-right'];
+        const anim = anims[idx % anims.length];
+        registerElements([el], anim, 0);
+      });
+
+      // 5. Art cards (staggered zoom & scale up)
+      const artCards = document.querySelectorAll('#art .card');
+      registerElements(artCards, 'scroll-reveal-scale', 0.12);
+
+      // 6. Tools icons/cubes (staggered pop-in)
+      const toolItems = document.querySelectorAll('#tools .resume-item');
+      registerElements(toolItems, 'scroll-reveal-scale', 0.08);
+
+      // 7. Good Times gallery photo cards (staggered float up & scale)
+      const galleryCards = document.querySelectorAll('#gallerysc .card');
+      registerElements(galleryCards, 'scroll-reveal-up', 0.12);
+
+      // 8. News timeline items (sliding from left)
+      const newsItems = document.querySelectorAll('#news .news-item');
+      registerElements(newsItems, 'scroll-reveal-left', 0.12);
+
+      // 9. Recommendations Testimonials card
+      const testimonial = document.querySelector('#recommsc #testimonial4');
+      if (testimonial) {
+        registerElements([testimonial], 'scroll-reveal-up', 0);
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener("DOMContentLoaded", setupScrollReveal);
+    } else {
+      setupScrollReveal();
+    }
+    window.addEventListener('load', setupScrollReveal);
   })();
 </script>
 
