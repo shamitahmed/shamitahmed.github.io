@@ -865,7 +865,6 @@ body.page-loaded {
         <li><a href="projects.html" style="color: white !important;">Projects</a></li>
         <li><a href="#publications" style="color: #ffffff !important;">Publications</a></li>
         <li><a href="#resume" style="color: white !important;">Experience</a></li>
-        <li><a href="art.html" style="color: white !important;">Art</a></li>
         <li><a href="#news" id="navNewsLink" class="nav-news-highlight" style="color: white !important;" onclick="this.classList.remove('nav-news-highlight'); const badge = this.querySelector('.nav-news-badge'); if(badge) badge.remove();">News <span class="nav-news-badge">✦</span></a></li>
 
         <!-- <li><a href="#gallerysc"><i class='bx bx-photo-album'></i> Good Times</a></li> -->
@@ -3811,6 +3810,14 @@ document.querySelectorAll('a').forEach(link => {
       const articleItems = document.querySelectorAll('#articles .acquiredSkills-item');
       articleItems.forEach((el, idx) => {
         const anim = (idx % 2 === 0) ? 'scroll-reveal-left' : 'scroll-reveal-right';
+        registerElements([el], anim, 0);
+      });
+
+      // 1c. Last 3 side-by-side featured projects (alternating left, up, right - matching Work Experience style)
+      const sideFeaturedProjects = document.querySelectorAll('.portfolio-container > .col-lg-4.portfolio-item');
+      sideFeaturedProjects.forEach((el, idx) => {
+        const anims = ['scroll-reveal-left', 'scroll-reveal-up', 'scroll-reveal-right'];
+        const anim = anims[idx % anims.length];
         registerElements([el], anim, 0);
       });
 
