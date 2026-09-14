@@ -212,7 +212,81 @@ body.page-loaded {
           animation: badgeSpinPulse 3s infinite linear;
         }
 
-        /* Custom Premium Work Experience Cards */
+        /* Custom Premium Work Experience Cards & Horizontal Scroll */
+        .work-experience-container {
+          position: relative;
+          width: 100%;
+        }
+        .work-prev-btn {
+          left: -20px;
+        }
+        .work-next-btn {
+          right: -20px;
+        }
+        @media (max-width: 768px) {
+          .work-prev-btn {
+            left: -5px;
+          }
+          .work-next-btn {
+            right: -5px;
+          }
+        }
+        .work-cards-scroll-track {
+          display: flex;
+          gap: 22px;
+          overflow-x: auto;
+          overflow-y: hidden;
+          padding: 12px 6px 24px 6px;
+          scroll-behavior: smooth;
+          -webkit-overflow-scrolling: touch;
+          scrollbar-width: thin;
+          scrollbar-color: rgba(20, 157, 221, 0.4) rgba(255, 255, 255, 0.05);
+          cursor: grab;
+        }
+        .work-cards-scroll-track.active {
+          cursor: grabbing;
+          user-select: none;
+        }
+        .work-cards-scroll-track::-webkit-scrollbar {
+          height: 8px;
+        }
+        .work-cards-scroll-track::-webkit-scrollbar-track {
+          background: rgba(255, 255, 255, 0.05);
+          border-radius: 10px;
+        }
+        .work-cards-scroll-track::-webkit-scrollbar-thumb {
+          background: rgba(20, 157, 221, 0.4);
+          border-radius: 10px;
+        }
+        .work-cards-scroll-track::-webkit-scrollbar-thumb:hover {
+          background: rgba(20, 157, 221, 0.7);
+        }
+        body.light .work-cards-scroll-track {
+          scrollbar-color: rgba(26, 147, 253, 0.4) rgba(0, 0, 0, 0.05);
+        }
+        body.light .work-cards-scroll-track::-webkit-scrollbar-track {
+          background: rgba(0, 0, 0, 0.05);
+        }
+        body.light .work-cards-scroll-track::-webkit-scrollbar-thumb {
+          background: rgba(26, 147, 253, 0.4);
+        }
+        .work-card-col {
+          flex: 0 0 360px;
+          max-width: 380px;
+          min-width: 300px;
+          display: flex;
+        }
+        @media (max-width: 768px) {
+          .work-card-col {
+            flex: 0 0 320px;
+          }
+        }
+        @media (max-width: 480px) {
+          .work-card-col {
+            flex: 0 0 86vw;
+            min-width: unset;
+          }
+        }
         .work-card {
           width: 100%;
           background: rgba(255, 255, 255, 0.03);
@@ -266,6 +340,83 @@ body.page-loaded {
           border-radius: 20px;
           white-space: nowrap;
           text-shadow: 0 0 5px rgba(20, 157, 221, 0.2);
+        }
+        .work-card-period.present {
+          background: rgba(40, 199, 111, 0.15) !important;
+          border-color: rgba(40, 199, 111, 0.45) !important;
+          color: #28c76f !important;
+          text-shadow: 0 0 8px rgba(40, 199, 111, 0.3);
+        }
+        body.light .work-card-period.present {
+          background: rgba(40, 199, 111, 0.12) !important;
+          border-color: rgba(40, 199, 111, 0.45) !important;
+          color: #129d52 !important;
+          text-shadow: none;
+        }
+        .text-present,
+        .work-card-body strong.text-present,
+        .work-card-body span.text-present {
+          color: #28c76f !important;
+          font-weight: 600;
+        }
+        body.light .text-present,
+        body.light .work-card-body strong.text-present,
+        body.light .work-card-body span.text-present {
+          color: #129d52 !important;
+        }
+
+        /* Small Game Thumbnail Badges in Work Cards */
+        .work-card-games-section {
+          margin-top: 14px;
+          padding-top: 10px;
+          border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        body.light .work-card-games-section {
+          border-top-color: rgba(0, 0, 0, 0.08);
+        }
+        .work-card-games-label {
+          font-size: 0.72rem;
+          color: #aaa;
+          display: block;
+          margin-bottom: 8px;
+          font-weight: 600;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+        }
+        body.light .work-card-games-label {
+          color: #666;
+        }
+        .work-card-game-icons {
+          display: flex;
+          gap: 12px;
+          align-items: center;
+          flex-wrap: wrap;
+        }
+        .game-icon-badge {
+          display: inline-block;
+          text-decoration: none !important;
+        }
+        .game-icon-badge img {
+          width: 58px;
+          height: 58px;
+          border-radius: 12px;
+          object-fit: cover;
+          border: 1.5px solid rgba(255, 255, 255, 0.18);
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+          transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .game-icon-badge:hover img {
+          transform: translateY(-4px) scale(1.12);
+          border-color: #149ddd;
+          box-shadow: 0 8px 20px rgba(20, 157, 221, 0.5);
+        }
+        body.light .game-icon-badge img {
+          border-color: rgba(0, 0, 0, 0.12);
+          box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+        }
+        body.light .game-icon-badge:hover img {
+          border-color: #1a93fd;
+          box-shadow: 0 6px 14px rgba(26, 147, 253, 0.35);
         }
         .work-card-body {
           font-size: 0.82rem;
@@ -2349,33 +2500,64 @@ document.addEventListener('keydown', function(event) {
         <!-- <h6>level 03</h6> -->
         <div class="section-title">
           <h2 style="color: rgb(0, 0, 0); margin-bottom: 20px;">✦WORK EXPERIENCE</h2>
-          <div class="row" style="margin-top: 20px;">
+        </div>
+
+        <div class="work-experience-container" style="position: relative;">
+          <button class="carousel-btn work-prev-btn" onclick="document.getElementById('work-scroll-track').scrollBy({left: -380, behavior: 'smooth'})" aria-label="Previous Work Experience">
+            <i class="bx bx-chevron-left"></i>
+          </button>
+          
+          <button class="carousel-btn work-next-btn" onclick="document.getElementById('work-scroll-track').scrollBy({left: 380, behavior: 'smooth'})" aria-label="Next Work Experience">
+            <i class="bx bx-chevron-right"></i>
+          </button>
+
+          <div id="work-scroll-track" class="work-cards-scroll-track">
             
+            <!-- Mopeful Games Oy -->
+            <div class="work-card-col" data-aos="fade-up">
+              <div class="work-card h-100">
+                <div class="work-card-header">
+                  <div class="work-card-brand">
+                    <img src="assets/img/mopeful.jpg" alt="Mopeful Games Oy" width="50" height="50">
+                    <h5 class="work-card-title">Mopeful Games Oy</h5>
+                  </div>
+                  <span class="work-card-period present">Aug 2026 - Present</span>
+                </div>
+                <div class="work-card-body">
+                  <strong class="text-present">Subcontractor Gameplay Programmer</strong> (<span class="text-present">Aug 2026 - Present</span>)<br>
+                  Working as a Unity C# programmer on an unannounced title.<br><br>My responsibilities include:<br>
+                  • Programming gameplay systems and implementing them in Unity<br>
+                  • Testing and bugfixing<br>
+                  • Light game design work
+                </div>
+              </div>
+            </div>
+
             <!-- Aalto University -->
-            <div class="col-lg-4 col-md-12 mb-4" data-aos="fade-up">
+            <div class="work-card-col" data-aos="fade-up">
               <div class="work-card h-100">
                 <div class="work-card-header">
                   <div class="work-card-brand">
                     <img src="assets/img/aalto.png" alt="Aalto University" width="50" height="50">
                     <h5 class="work-card-title">Aalto University</h5>
                   </div>
-                  <span class="work-card-period">2024 - Present</span>
+                  <span class="work-card-period present">2024 - Present</span>
                 </div>
                 <div class="work-card-body">
-                  <strong>✦ Teaching Assistant</strong> (Sep 2026 - Present)<br>
+                  <strong class="text-present">✦ Teaching Assistant</strong> (<span class="text-present">Sep 2026 - Present</span>)<br>
                   Teaching Assistant for course AXM-E0403 Coding Virtual Worlds in School of Arts, Design and Architecture.<br><br>
                   <strong>✦ Graduate Research Assistant</strong> (May 2026)<br>
                   Facilitated two in-person user studies consisting of around 50 participants for separate research projects. The work was done as a part of research by Markus Kirjonen under the supervision of Prof. Perttu Hämäläinen.<br><br>
-                  <strong>✦ Research Assistant</strong> (Jun 2024 - Dec 2025)<br>
+                  <strong>✦ Research Assistant</strong> (Nov 2024 - Dec 2025)<br>
                   Contributed as a Research Assistant in the Game Research Group led by Prof. Perttu Hämäläinen. Worked on 4 independent research projects submitted and accepted at top HCI and game conferences.<br><br>
-                  <strong>✦ Student Tutor</strong> (Mar 2024 - Dec 2024)<br>
-                  Responsible for tutoring 15 international exchange students at Aalto University during Autumn 2024.
+                  <strong>✦ Summer Intern</strong> (Jun 2024 - Oct 2024)<br>
+                  I worked on an Augmented Reality and Computer Vision-based indoor navigation system for Android OS, primarily during a summer internship at the Department of Computer Science at Aalto University.
                 </div>
               </div>
             </div>
             
             <!-- Playense -->
-            <div class="col-lg-4 col-md-12 mb-4" data-aos="fade-up">
+            <div class="work-card-col" data-aos="fade-up">
               <div class="work-card h-100">
                 <div class="work-card-header">
                   <div class="work-card-brand">
@@ -2391,12 +2573,30 @@ document.addEventListener('keydown', function(event) {
                   • Writing high-quality and reliable source code, creating prototypes from internal concepts and GDDs, and contributing new ideas<br>
                   • Integrating 3rd party tracking and monetization plugins such as Game Analytics, Firebase, App Metrica, MaxSDK, facebookSDK etc<br>
                   • Working with publishers, product managers, game designers, and artists to complete projects
+
+                  <div class="work-card-games-section">
+                    <span class="work-card-games-label">Featured Projects:</span>
+                    <div class="work-card-game-icons">
+                      <a href="mobile.html#forge-run" target="_blank" title="Forge Run" class="game-icon-badge">
+                        <img src="assets/img/projects/fr.png" alt="Forge Run">
+                      </a>
+                      <a href="mobile.html#rope-theft" target="_blank" title="Rope Theft" class="game-icon-badge">
+                        <img src="assets/img/projects/rope.png" alt="Rope Theft">
+                      </a>
+                      <a href="mobile.html#idle-sea-cleaner" target="_blank" title="Idle Sea Cleaner" class="game-icon-badge">
+                        <img src="assets/img/projects/isc.gif" alt="Idle Sea Cleaner">
+                      </a>
+                      <a href="mobile.html#tower-hero-idle" target="_blank" title="Tower Hero Idle: Army Rush 3D" class="game-icon-badge">
+                        <img src="assets/img/projects/tower.gif" alt="Tower Hero Idle: Army Rush 3D">
+                      </a>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
             
             <!-- Free Pixel Games -->
-            <div class="col-lg-4 col-md-12 mb-4" data-aos="fade-up">
+            <div class="work-card-col" data-aos="fade-up">
               <div class="work-card h-100">
                 <div class="work-card-header">
                   <div class="work-card-brand">
@@ -2411,41 +2611,27 @@ document.addEventListener('keydown', function(event) {
                   • Cross-platform game design, development and project management<br>
                   • Dynamic and reusable code creation, memory and performance optimization<br>
                   • integrating third party networking and analytics related plugins etc.
+
+                  <div class="work-card-games-section">
+                    <span class="work-card-games-label">Featured Projects:</span>
+                    <div class="work-card-game-icons">
+                      <a href="mobile.html#police-vs-thief" target="_blank" title="Police vs Thief 3D" class="game-icon-badge">
+                        <img src="assets/img/screenshots/pt1.jpg" alt="Police vs Thief 3D">
+                      </a>
+                      <a href="mobile.html#dinosaur-attack" target="_blank" title="Dinosaur Attack 3D" class="game-icon-badge">
+                        <img src="assets/img/projects/dino.jpg" alt="Dinosaur Attack 3D">
+                      </a>
+                      <a href="mobile.html#jurassic-sniper" target="_blank" title="Jurassic Sniper 3D" class="game-icon-badge">
+                        <img src="assets/img/screenshots/js1.jpg" alt="Jurassic Sniper 3D">
+                      </a>
+                      <a href="mobile.html#shark-attack" target="_blank" title="Shark Attack 3D" class="game-icon-badge">
+                        <img src="assets/img/projects/shark.jpg" alt="Shark Attack 3D">
+                      </a>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-
-            <!-- Commented out Fiverr and AUSTIDC -->
-            <!-- <div class="col-lg-4 col-md-12 mb-4">
-              <div class="work-card h-100">
-                <div class="work-card-header">
-                  <div class="work-card-brand">
-                    <img src="assets/img/fiverr.png" alt="fiverr" width="50" height="50">
-                    <h5 class="work-card-title">Fiverr</h5>
-                  </div>
-                  <span class="work-card-period">2016 - 2020</span>
-                </div>
-                <div class="work-card-body">
-                  <strong>Level 2 Graphic Designer, Cartoonist</strong>
-                </div>
-              </div>
-            </div> -->
-
-            <!-- <div class="col-lg-4 col-md-12 mb-4">
-              <div class="work-card h-100">
-                <div class="work-card-header">
-                  <div class="work-card-brand">
-                    <img src="assets/img/idc-logo.png" alt="aust IDC" width="50" height="50">
-                    <h5 class="work-card-title">AUST Innovation and Design Club (AUSTIDC)</h5>
-                  </div>
-                  <span class="work-card-period">2017 - 2018</span>
-                </div>
-                <div class="work-card-body">
-                  <strong>Joint Secretary, Graphic Designer</strong>
-                </div>
-              </div>
-            </div> -->
-
           </div>
         </div>
       </div>
@@ -2693,7 +2879,7 @@ document.addEventListener('keydown', function(event) {
                       <img src="assets/img/reviewer_icon.png" alt="Reviewer" width="45" height="45">
                       <h5 class="work-card-title">Reviewer</h5>
                     </div>
-                    <span class="work-card-period">2025 - Present</span>
+                    <span class="work-card-period present">2025 - Present</span>
                   </div>
                   <div class="work-card-body">
                     International Conferences (CHI PLAY, FDG, Academic Mindtrek, etc.)
@@ -2811,7 +2997,7 @@ document.addEventListener('keydown', function(event) {
                       <img src="assets/img/google_insights.png" alt="Google App Dev Insights" width="45" height="45">
                       <h5 class="work-card-title" style="font-size: 0.95rem;">Research Participant</h5>
                     </div>
-                    <span class="work-card-period">2024 - Present</span>
+                    <span class="work-card-period present">2024 - Present</span>
                   </div>
                   <div class="work-card-body">
                     Google App Dev Insights Community Member.
@@ -3933,6 +4119,50 @@ document.querySelectorAll('a').forEach(link => {
       document.addEventListener("DOMContentLoaded", setupScrollReveal);
     } else {
       setupScrollReveal();
+    }
+  })();
+</script>
+
+<script>
+  // Work Experience Drag-to-Scroll Support
+  (function initWorkExperienceDragScroll() {
+    function setupDrag() {
+      const track = document.getElementById('work-scroll-track');
+      if (!track) return;
+
+      let isDown = false;
+      let startX, scrollLeft;
+
+      track.addEventListener('mousedown', (e) => {
+        isDown = true;
+        track.classList.add('active');
+        startX = e.pageX - track.offsetLeft;
+        scrollLeft = track.scrollLeft;
+      });
+
+      track.addEventListener('mouseleave', () => {
+        isDown = false;
+        track.classList.remove('active');
+      });
+
+      track.addEventListener('mouseup', () => {
+        isDown = false;
+        track.classList.remove('active');
+      });
+
+      track.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - track.offsetLeft;
+        const walk = (x - startX) * 1.8;
+        track.scrollLeft = scrollLeft - walk;
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener("DOMContentLoaded", setupDrag);
+    } else {
+      setupDrag();
     }
   })();
 </script>

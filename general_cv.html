@@ -442,6 +442,21 @@
       border: 1px solid var(--border-color);
     }
 
+    .job-date.present {
+      color: #129d52 !important;
+      background: rgba(40, 199, 111, 0.12) !important;
+      border-color: rgba(40, 199, 111, 0.4) !important;
+      font-weight: 600;
+    }
+
+    .text-present,
+    .job-title.text-present,
+    .job-desc strong.text-present,
+    .job-desc span.text-present {
+      color: #129d52 !important;
+      font-weight: 700;
+    }
+
     .job-desc {
       font-size: 0.88rem;
       color: var(--text-light);
@@ -1092,21 +1107,40 @@
 
           <div class="timeline">
 
+            <!-- Mopeful Games Oy -->
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="job-header">
+                <div>
+                  <span class="job-title text-present">Subcontractor Gameplay Programmer</span>
+                  <span class="job-company">@ Mopeful Games Oy</span>
+                </div>
+                <span class="job-date present">Aug 2026 – Present</span>
+              </div>
+              <div class="job-desc">
+                <ul>
+                  <li><strong>Unity C# Development:</strong> Working as a Unity C# programmer on an unannounced title, programming core gameplay systems and implementing them in Unity.</li>
+                  <li><strong>Testing & Bugfixing:</strong> Rigorous testing and bugfixing to maintain gameplay quality and stability.</li>
+                  <li><strong>Game Design:</strong> Assisting with light game design work and system prototyping.</li>
+                </ul>
+              </div>
+            </div>
+
             <!-- Aalto University -->
             <div class="timeline-item">
               <div class="timeline-dot"></div>
               <div class="job-header">
                 <div>
-                  <span class="job-title">Teaching Assistant, Research Assistant & Student Tutor</span>
+                  <span class="job-title">Teaching Assistant & Research Assistant</span>
                   <span class="job-company">@ Aalto University (Espoo, Finland)</span>
                 </div>
-                <span class="job-date">Mar 2024 – Present</span>
+                <span class="job-date present">Jun 2024 – Present</span>
               </div>
               <div class="job-desc">
                 <ul>
-                  <li><strong>Teaching Assistant (Sep 2026 – Present):</strong> Teaching Assistant for course AXM-E0403 Coding Virtual Worlds in School of Arts, Design and Architecture.</li>
-                  <li><strong>Precision Quality Control & Research:</strong> Conducted rigorous user studies, data collection, and system testing across 4 independent projects in high-paced research teams, resulting in publications at top international conferences (CHI 2026 Best Paper Award).</li>
-                  <li><strong>Team Leadership & Cross-Cultural Communication:</strong> Tutored, guided, and onboarded 15 international exchange students during Autumn 2024, ensuring smooth integration, clear instructions, and collaborative problem-solving.</li>
+                  <li><strong class="text-present">Teaching Assistant (<span class="text-present">Sep 2026 – Present</span>):</strong> Teaching Assistant for course AXM-E0403 Coding Virtual Worlds in School of Arts, Design and Architecture.</li>
+                  <li><strong>Research Assistant (Nov 2024 – Dec 2025):</strong> Conducted rigorous user studies, data collection, and system testing across 4 independent projects in high-paced research teams, resulting in publications at top international conferences (CHI 2026 Best Paper Award).</li>
+                  <li><strong>Summer Intern (Jun 2024 – Oct 2024):</strong> Worked on an Augmented Reality and Computer Vision-based indoor navigation system for Android OS at the Department of Computer Science at Aalto University.</li>
                   <li><strong>Process Optimization:</strong> Managed strict documentation, project timelines, and technical equipment setups with zero error tolerance.</li>
                 </ul>
               </div>
