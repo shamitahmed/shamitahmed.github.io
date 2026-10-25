@@ -112,8 +112,7 @@ body.light .category-btn {
 }
 
 body.light .site-footer a,
-body.light .site-footer p,
-body.light .site-footer .btn-download {
+body.light .site-footer p {
   color: white !important;
 }
 
